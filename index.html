@@ -320,9 +320,14 @@
             50% { filter: brightness(1.6) saturate(2.2) contrast(1.2); }
         }
         .hero-bg-animated {
-            animation: coin-shimmer 6s ease-in-out infinite;
+            animation: coin-float-1 20s ease-in-out infinite, coin-shimmer 6s ease-in-out infinite;
             transform: scale(1.15);
             transform-origin: center center;
+        }
+        @media (max-width: 768px) {
+            .hero-bg-animated {
+                animation: coin-shimmer 6s ease-in-out infinite;
+            }
         }
         .coin-glow-field {
             animation: pulse-glow 8s ease-in-out infinite;
