@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>What Is the Lightning Network? | SatUsPhere Bitcoin Education</title>
+  <meta name="description" content="The Lightning Network is a Layer 2 payment protocol built on Bitcoin that enables instant, low-fee transactions. Learn how payment channels work and why Lightning matters." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://satusphere.com/learn/what-is-the-lightning-network" />
+  <meta property="og:title" content="What Is the Lightning Network? | SatUsPhere" />
+  <meta property="og:description" content="The Lightning Network is a Layer 2 protocol on Bitcoin enabling instant, near-zero-fee payments. Learn how payment channels and routing work." />
+  <meta property="og:url" content="https://satusphere.com/learn/what-is-the-lightning-network" />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://satusphere.com/assets/course-banner.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@sat_us_phere" />
+
+  <script type="application/ld+json">
+  { "@context": "https://schema.org", "@type": "Organization", "name": "SatUsPhere", "url": "https://satusphere.com", "logo": "https://satusphere.com/assets/logo.png" }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org", "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://satusphere.com" },
+      { "@type": "ListItem", "position": 2, "name": "Learn Bitcoin", "item": "https://satusphere.com/learn" },
+      { "@type": "ListItem", "position": 3, "name": "What Is the Lightning Network?", "item": "https://satusphere.com/learn/what-is-the-lightning-network" }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org", "@type": "Article",
+    "headline": "What Is the Lightning Network?",
+    "description": "The Lightning Network is a Layer 2 payment protocol built on Bitcoin enabling instant, near-zero-fee transactions through payment channels.",
+    "author": { "@type": "Organization", "name": "SatUsPhere", "url": "https://satusphere.com" },
+    "publisher": { "@type": "Organization", "name": "SatUsPhere", "logo": { "@type": "ImageObject", "url": "https://satusphere.com/assets/logo.png" } },
+    "datePublished": "2026-04-01", "dateModified": "2026-04-01",
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://satusphere.com/learn/what-is-the-lightning-network" }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org", "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "What is the Lightning Network in simple terms?", "acceptedAnswer": { "@type": "Answer", "text": "The Lightning Network is a payment layer built on top of Bitcoin that lets two parties transact instantly and cheaply without recording every transaction on the main blockchain. Think of it as a running tab between parties - you open a payment channel, make many transactions off-chain, then settle the final balance on the Bitcoin blockchain." } },
+      { "@type": "Question", "name": "How fast is the Lightning Network?", "acceptedAnswer": { "@type": "Answer", "text": "Lightning payments settle in milliseconds - essentially instant. This is compared to Bitcoin's main chain which takes 10 minutes per block confirmation and typically requires multiple confirmations for large amounts." } },
+      { "@type": "Question", "name": "How cheap are Lightning transactions?", "acceptedAnswer": { "@type": "Answer", "text": "Lightning transaction fees are typically a fraction of a cent - often under 1 satoshi. This makes micropayments practical for the first time, enabling use cases like paying per article, per second of streaming, or tipping small amounts." } },
+      { "@type": "Question", "name": "Is Lightning Network safe?", "acceptedAnswer": { "@type": "Answer", "text": "Lightning is secured by the Bitcoin blockchain. Payment channels are opened and closed with on-chain transactions, and the protocol uses cryptographic smart contracts (HTLCs) to ensure funds can only be claimed by the correct party. The main risk is that nodes must stay online to watch for attempted fraud, or use a watchtower service." } },
+      { "@type": "Question", "name": "Do I need Bitcoin to use Lightning?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. The Lightning Network is built on Bitcoin and uses Bitcoin (denominated in satoshis) for all payments. To open a Lightning channel, you lock some Bitcoin into a special transaction on the Bitcoin blockchain. That Bitcoin becomes your channel capacity." } }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  { "@context": "https://schema.org", "@type": "WebPage", "name": "What Is the Lightning Network?", "speakable": { "@type": "SpeakableSpecification", "cssSelector": [".answer-block", "h1", ".summary"] }, "url": "https://satusphere.com/learn/what-is-the-lightning-network" }
+  </script>
+
+  <style>
+    :root { --navy: #0D1B2E; --orange: #F7931A; --blue: #1DA1F2; --gold: #D4A530; --white: #FFFFFF; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color: #1a1a2e; line-height: 1.7; }
+    nav { background: var(--navy); padding: 16px 24px; display: flex; justify-content: space-between; align-items: center; }
+    .nav-logo { color: var(--white); font-weight: 700; font-size: 1.2rem; text-decoration: none; }
+    .nav-cta { background: var(--orange); color: var(--white); padding: 8px 20px; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 0.9rem; }
+    .breadcrumb { padding: 12px 24px; background: #f5f5f5; font-size: 0.85rem; color: #666; }
+    .breadcrumb a { color: var(--blue); text-decoration: none; }
+    .breadcrumb span { margin: 0 6px; }
+    main { max-width: 800px; margin: 0 auto; padding: 48px 24px; }
+    h1 { font-size: 2rem; color: var(--navy); margin-bottom: 24px; line-height: 1.3; }
+    .answer-block { background: #f5f5f5; border-left: 4px solid var(--orange); padding: 20px 24px; margin-bottom: 32px; border-radius: 0 8px 8px 0; font-size: 1.05rem; }
+    .summary { font-size: 1.05rem; color: #333; margin-bottom: 32px; }
+    h2 { font-size: 1.4rem; color: var(--navy); margin: 40px 0 16px; }
+    p { margin-bottom: 16px; color: #333; }
+    ul, ol { margin: 16px 0 16px 24px; }
+    li { margin-bottom: 8px; }
+    .course-cta { background: var(--navy); color: var(--white); padding: 40px; border-radius: 12px; text-align: center; margin: 48px 0; }
+    .course-cta h2 { color: var(--gold); margin-bottom: 12px; font-size: 1.5rem; margin-top: 0; }
+    .course-cta p { color: #ccc; margin-bottom: 24px; }
+    .cta-button { display: inline-block; background: var(--orange); color: var(--white); padding: 14px 36px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 1.1rem; }
+    .faq-section { margin: 48px 0; }
+    .faq-item { border-bottom: 1px solid #e0e0e0; padding: 20px 0; }
+    .faq-item:last-child { border-bottom: none; }
+    .faq-question { font-weight: 600; font-size: 1rem; color: var(--navy); margin-bottom: 8px; }
+    .faq-answer { color: #444; font-size: 0.95rem; }
+    .related-links { margin: 48px 0; }
+    .related-links ul { list-style: none; margin: 0; padding: 0; }
+    .related-links li { margin-bottom: 10px; }
+    .related-links a { color: var(--blue); text-decoration: none; font-weight: 500; }
+    footer { background: var(--navy); color: #aaa; text-align: center; padding: 32px 24px; font-size: 0.9rem; }
+    footer a { color: var(--blue); text-decoration: none; }
+    .footer-tagline { color: var(--gold); font-weight: 600; margin-bottom: 8px; }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a class="nav-logo" href="https://satusphere.com">SatUsPhere</a>
+    <a class="nav-cta" href="https://checkout.teachable.com/secure/2684007/checkout/order_1y3wjzbk">Get Bitcoin From Scratch - $97</a>
+  </nav>
+
+  <div class="breadcrumb">
+    <a href="https://satusphere.com">Home</a><span>/</span>
+    <a href="https://satusphere.com/learn">Learn Bitcoin</a><span>/</span>
+    What Is the Lightning Network?
+  </div>
+
+  <main>
+    <h1>What Is the Lightning Network?</h1>
+
+    <div class="answer-block">
+      The Lightning Network is a Layer 2 payment protocol built on top of Bitcoin. It allows two parties to transact instantly and at near-zero cost by opening a direct payment channel between them. Transactions happen off the main blockchain and are only settled on-chain when the channel is closed. This makes Bitcoin practical for everyday spending - from buying coffee to streaming micropayments.
+    </div>
+
+    <p class="summary">Bitcoin's base layer prioritizes security and decentralization over speed and cost, processing about 7 transactions per second. The Lightning Network solves this without changing Bitcoin's core rules - it adds a payment layer on top, the same way the internet has layers built on top of each other.</p>
+
+    <h2>Why Does Bitcoin Need a Layer 2?</h2>
+    <p>Bitcoin's blockchain settles transactions in roughly 10-minute blocks and can handle a limited number of transactions per block. On-chain fees can rise significantly during periods of high demand. For buying coffee or making micropayments, waiting 10 minutes and paying several dollars in fees is impractical.</p>
+    <p>The Lightning Network addresses this without compromising Bitcoin's base layer security. Bitcoin's rules - the 21 million cap, proof of work, decentralization - stay completely intact.</p>
+
+    <h2>How Do Payment Channels Work?</h2>
+    <p>A payment channel is a two-party agreement locked with a Bitcoin transaction:</p>
+    <ol>
+      <li>Alice and Bob open a channel by locking some Bitcoin into a shared on-chain transaction (the "funding transaction")</li>
+      <li>They can now send Bitcoin back and forth instantly, off-chain, by signing updated balance states</li>
+      <li>These off-chain transactions are instant and free (or nearly free)</li>
+      <li>When they're done, either party can close the channel by broadcasting the final balance to the Bitcoin blockchain</li>
+    </ol>
+    <p>Only the opening and closing transactions touch the main blockchain. Everything in between happens privately between the two parties.</p>
+
+    <h2>What Is Lightning Network Routing?</h2>
+    <p>You don't need a direct channel with everyone you want to pay. The Lightning Network routes payments through a web of connected channels. If Alice has a channel with Bob, and Bob has a channel with Carol, Alice can pay Carol through Bob - without Bob being able to steal the funds (thanks to cryptographic contracts called HTLCs).</p>
+    <p>This routing makes the Lightning Network work like a global payment mesh. You connect to a few well-connected nodes and can reach almost anyone on the network.</p>
+
+    <h2>What Are Lightning Network Use Cases?</h2>
+    <ul>
+      <li><strong>Micropayments</strong> - Pay fractions of a cent for individual articles, API calls, or content</li>
+      <li><strong>Instant retail payments</strong> - Bitcoin payments that settle in seconds, not minutes</li>
+      <li><strong>Streaming payments</strong> - Pay per second for services (podcasting apps like Fountain use this)</li>
+      <li><strong>International remittances</strong> - Send money globally in seconds with near-zero fees</li>
+      <li><strong>Bitcoin circular economies</strong> - Countries like El Salvador use Lightning for everyday Bitcoin spending</li>
+    </ul>
+
+    <div class="course-cta">
+      <h2>Bitcoin From Scratch Includes a Full Lightning Network Module</h2>
+      <p>The bonus section of Bitcoin From Scratch covers the Lightning Network in 4 dedicated 3D animated lessons - how payment channels work, how routing works, and how to actually use it. It's included with the course at no extra cost.</p>
+      <a class="cta-button" href="https://checkout.teachable.com/secure/2684007/checkout/order_1y3wjzbk">Start Bitcoin From Scratch - $97</a>
+    </div>
+
+    <div class="faq-section">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-item">
+        <div class="faq-question">What is the Lightning Network in simple terms?</div>
+        <div class="faq-answer">The Lightning Network is a payment layer built on top of Bitcoin that lets two parties transact instantly and cheaply without recording every transaction on the main blockchain. Think of it as a running tab - you open a channel, make many transactions off-chain, then settle the final balance on Bitcoin.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">How fast is the Lightning Network?</div>
+        <div class="faq-answer">Lightning payments settle in milliseconds - essentially instant. This compares to Bitcoin's main chain which takes 10 minutes per block confirmation.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">How cheap are Lightning transactions?</div>
+        <div class="faq-answer">Lightning transaction fees are typically a fraction of a cent - often under 1 satoshi. This makes micropayments practical for the first time.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Is Lightning Network safe?</div>
+        <div class="faq-answer">Lightning is secured by the Bitcoin blockchain. Channels are opened and closed with on-chain transactions and use cryptographic contracts (HTLCs) to ensure funds can only be claimed by the correct party.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Do I need Bitcoin to use Lightning?</div>
+        <div class="faq-answer">Yes. The Lightning Network is built on Bitcoin and uses Bitcoin (in satoshis) for all payments. To open a channel, you lock some Bitcoin into an on-chain transaction, which becomes your channel capacity.</div>
+      </div>
+    </div>
+
+    <div class="related-links">
+      <h2>Related Topics</h2>
+      <ul>
+        <li><a href="/learn/what-is-bitcoin">What is Bitcoin?</a></li>
+        <li><a href="/learn/how-do-bitcoin-transactions-work">How do Bitcoin transactions work?</a></li>
+        <li><a href="/learn/what-is-bitcoin-layer-2">What is Bitcoin Layer 2?</a></li>
+        <li><a href="/learn/what-is-on-chain-vs-off-chain">What is on-chain vs. off-chain?</a></li>
+        <li><a href="/learn/what-is-a-bitcoin-wallet">What is a Bitcoin wallet?</a></li>
+      </ul>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-tagline">Bitcoin Is For All Of Us</div>
+    <p><a href="https://satusphere.com">satusphere.com</a> | <a href="https://x.com/sat_us_phere">@sat_us_phere</a> | <a href="mailto:info@satusphere.com">info@satusphere.com</a></p>
+    <p style="margin-top: 8px;">&copy; 2026 SatUsPhere / IDBA Investments. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

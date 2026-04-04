@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>What Is a UTXO? | SatUsPhere Bitcoin Education</title>
+  <meta name="description" content="A UTXO (Unspent Transaction Output) is how Bitcoin tracks ownership. Learn how UTXOs work, why they matter, and how Bitcoin transactions consume and create them." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://satusphere.com/learn/what-is-a-utxo" />
+  <meta property="og:title" content="What Is a UTXO? | SatUsPhere" />
+  <meta property="og:description" content="A UTXO is an Unspent Transaction Output - the fundamental unit of Bitcoin ownership on the blockchain. Learn how UTXOs work." />
+  <meta property="og:url" content="https://satusphere.com/learn/what-is-a-utxo" />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://satusphere.com/assets/course-banner.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@sat_us_phere" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"SatUsPhere","url":"https://satusphere.com","logo":"https://satusphere.com/assets/logo.png"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://satusphere.com"},{"@type":"ListItem","position":2,"name":"Learn Bitcoin","item":"https://satusphere.com/learn"},{"@type":"ListItem","position":3,"name":"What Is a UTXO?","item":"https://satusphere.com/learn/what-is-a-utxo"}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"What Is a UTXO?","description":"A UTXO (Unspent Transaction Output) is the fundamental unit Bitcoin uses to track who owns what on the blockchain.","author":{"@type":"Organization","name":"SatUsPhere","url":"https://satusphere.com"},"publisher":{"@type":"Organization","name":"SatUsPhere","logo":{"@type":"ImageObject","url":"https://satusphere.com/assets/logo.png"}},"datePublished":"2026-04-01","dateModified":"2026-04-01","mainEntityOfPage":{"@type":"WebPage","@id":"https://satusphere.com/learn/what-is-a-utxo"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is a UTXO in Bitcoin?","acceptedAnswer":{"@type":"Answer","text":"UTXO stands for Unspent Transaction Output. It is a chunk of Bitcoin that has been received but not yet spent. Every time you receive Bitcoin, you receive one or more UTXOs. Your wallet balance is the sum of all your UTXOs. When you send Bitcoin, your wallet selects UTXOs as inputs, spends them entirely, and creates new outputs - one for the recipient and usually one back to yourself as change."}},{"@type":"Question","name":"How is a UTXO different from a bank balance?","acceptedAnswer":{"@type":"Answer","text":"A bank balance is a single number that increases and decreases. Bitcoin works differently - you don't have a balance, you have a collection of discrete UTXOs, like holding a pile of bills of different denominations. When you spend Bitcoin, you consume whole UTXOs and create new ones, rather than simply subtracting from a number."}},{"@type":"Question","name":"What is change in a Bitcoin transaction?","acceptedAnswer":{"@type":"Answer","text":"Because UTXOs must be spent entirely, if you send less than your full UTXO, the remainder is sent back to a new address you control as change. For example, if you have a 0.1 BTC UTXO and want to send 0.03 BTC, the transaction creates two outputs: 0.03 BTC to the recipient and roughly 0.07 BTC back to yourself as change (minus fees)."}},{"@type":"Question","name":"Why does UTXO management matter?","acceptedAnswer":{"@type":"Answer","text":"UTXO management affects transaction fees and privacy. Many small UTXOs (dust) can make transactions expensive because each input adds to transaction size. Consolidating UTXOs when fees are low can save money later. From a privacy perspective, combining UTXOs from different sources in one transaction can link those sources together on the public blockchain."}},{"@type":"Question","name":"What is the UTXO set?","acceptedAnswer":{"@type":"Answer","text":"The UTXO set is the complete collection of all unspent transaction outputs on the Bitcoin blockchain at any given moment. It represents the current state of who owns what Bitcoin. Every full node maintains the UTXO set to validate new transactions efficiently without replaying the entire blockchain."}}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"What Is a UTXO?","speakable":{"@type":"SpeakableSpecification","cssSelector":[".answer-block","h1",".summary"]},"url":"https://satusphere.com/learn/what-is-a-utxo"}</script>
+  <style>
+    :root{--navy:#0D1B2E;--orange:#F7931A;--blue:#1DA1F2;--gold:#D4A530;--white:#FFFFFF}
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;color:#1a1a2e;line-height:1.7}
+    nav{background:var(--navy);padding:16px 24px;display:flex;justify-content:space-between;align-items:center}
+    .nav-logo{color:var(--white);font-weight:700;font-size:1.2rem;text-decoration:none}
+    .nav-cta{background:var(--orange);color:var(--white);padding:8px 20px;border-radius:6px;text-decoration:none;font-weight:600;font-size:.9rem}
+    .breadcrumb{padding:12px 24px;background:#f5f5f5;font-size:.85rem;color:#666}
+    .breadcrumb a{color:var(--blue);text-decoration:none}
+    .breadcrumb span{margin:0 6px}
+    main{max-width:800px;margin:0 auto;padding:48px 24px}
+    h1{font-size:2rem;color:var(--navy);margin-bottom:24px;line-height:1.3}
+    .answer-block{background:#f5f5f5;border-left:4px solid var(--orange);padding:20px 24px;margin-bottom:32px;border-radius:0 8px 8px 0;font-size:1.05rem}
+    .summary{font-size:1.05rem;color:#333;margin-bottom:32px}
+    h2{font-size:1.4rem;color:var(--navy);margin:40px 0 16px}
+    p{margin-bottom:16px;color:#333}
+    ul,ol{margin:16px 0 16px 24px}
+    li{margin-bottom:8px}
+    .example-box{background:#e8f4fd;border-left:4px solid var(--blue);padding:16px 20px;border-radius:0 8px 8px 0;margin:24px 0;font-family:monospace;font-size:.9rem;line-height:1.8}
+    .course-cta{background:var(--navy);color:var(--white);padding:40px;border-radius:12px;text-align:center;margin:48px 0}
+    .course-cta h2{color:var(--gold);margin-bottom:12px;font-size:1.5rem;margin-top:0}
+    .course-cta p{color:#ccc;margin-bottom:24px}
+    .cta-button{display:inline-block;background:var(--orange);color:var(--white);padding:14px 36px;border-radius:8px;text-decoration:none;font-weight:700;font-size:1.1rem}
+    .faq-section{margin:48px 0}
+    .faq-item{border-bottom:1px solid #e0e0e0;padding:20px 0}
+    .faq-item:last-child{border-bottom:none}
+    .faq-question{font-weight:600;font-size:1rem;color:var(--navy);margin-bottom:8px}
+    .faq-answer{color:#444;font-size:.95rem}
+    .related-links{margin:48px 0}
+    .related-links ul{list-style:none;margin:0;padding:0}
+    .related-links li{margin-bottom:10px}
+    .related-links a{color:var(--blue);text-decoration:none;font-weight:500}
+    footer{background:var(--navy);color:#aaa;text-align:center;padding:32px 24px;font-size:.9rem}
+    footer a{color:var(--blue);text-decoration:none}
+    .footer-tagline{color:var(--gold);font-weight:600;margin-bottom:8px}
+  </style>
+</head>
+<body>
+  <nav><a class="nav-logo" href="https://satusphere.com">SatUsPhere</a><a class="nav-cta" href="https://checkout.teachable.com/secure/2684007/checkout/order_1y3wjzbk">Get Bitcoin From Scratch - $97</a></nav>
+  <div class="breadcrumb"><a href="https://satusphere.com">Home</a><span>/</span><a href="https://satusphere.com/learn">Learn Bitcoin</a><span>/</span>What Is a UTXO?</div>
+  <main>
+    <h1>What Is a UTXO?</h1>
+    <div class="answer-block">UTXO stands for Unspent Transaction Output. It is the fundamental unit Bitcoin uses to track ownership on the blockchain. Every Bitcoin you own exists as one or more UTXOs - discrete chunks of Bitcoin received from previous transactions that have not yet been spent. Your wallet balance is simply the sum of all your UTXOs.</div>
+    <p class="summary">Understanding UTXOs is key to understanding how Bitcoin transactions actually work under the hood. Unlike a bank account where you have a single balance number, Bitcoin tracks ownership through a collection of discrete, individually spendable outputs.</p>
+
+    <h2>How UTXOs Are Created and Consumed</h2>
+    <p>Every Bitcoin transaction takes UTXOs as inputs and creates new UTXOs as outputs. When a UTXO is used as an input, it is "consumed" - it ceases to exist as an unspent output. New UTXOs are created as the outputs of the transaction.</p>
+    <p>UTXOs must be spent entirely. You cannot spend part of a UTXO the way you might spend $20 out of a $50 bill. Instead, the whole UTXO is consumed and new outputs are created - one for the recipient and usually one back to yourself (called change).</p>
+
+    <h2>A Concrete Example</h2>
+    <div class="example-box">
+      You have: 1 UTXO worth 0.1 BTC<br>
+      You want to send: 0.03 BTC to a friend<br><br>
+      Transaction inputs:  [0.1 BTC UTXO]  (consumed, destroyed)<br>
+      Transaction outputs: [0.03 BTC to friend] + [0.069 BTC back to you as change] + [0.001 BTC fee to miner]<br><br>
+      Result: You now have 1 UTXO worth 0.069 BTC. Your friend has 1 UTXO worth 0.03 BTC.
+    </div>
+
+    <h2>What Is the UTXO Set?</h2>
+    <p>The UTXO set is the complete list of all unspent transaction outputs across the entire Bitcoin blockchain at a given moment. It represents the current state of Bitcoin ownership. Every full node maintains this set in memory to quickly validate new transactions - checking that any inputs being spent actually exist and haven't already been used.</p>
+    <p>As of 2024, the Bitcoin UTXO set contains roughly 100 million entries, occupying several gigabytes of data.</p>
+
+    <h2>Why UTXO Management Matters for Fees</h2>
+    <p>Bitcoin transaction fees are based on transaction size in bytes, not the amount being sent. Each UTXO you include as an input adds bytes to the transaction. If your wallet has accumulated many small UTXOs (called "dust"), your transactions will be larger and therefore more expensive.</p>
+    <p>Consolidating UTXOs during periods of low fees is a common best practice - combine many small UTXOs into fewer larger ones so future transactions are cheaper.</p>
+
+    <div class="course-cta">
+      <h2>See UTXOs and Transactions Animated in 3D</h2>
+      <p>Bitcoin From Scratch explains UTXOs, inputs, outputs, and how transactions flow through the blockchain - all visualized with 3D animation that makes the abstract model concrete.</p>
+      <a class="cta-button" href="https://checkout.teachable.com/secure/2684007/checkout/order_1y3wjzbk">Start Bitcoin From Scratch - $97</a>
+    </div>
+
+    <div class="faq-section">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-item"><div class="faq-question">What is a UTXO in Bitcoin?</div><div class="faq-answer">UTXO stands for Unspent Transaction Output. It is a chunk of Bitcoin that has been received but not yet spent. Your wallet balance is the sum of all your UTXOs. When you send Bitcoin, UTXOs are consumed as inputs and new ones are created as outputs.</div></div>
+      <div class="faq-item"><div class="faq-question">How is a UTXO different from a bank balance?</div><div class="faq-answer">A bank balance is a single number. Bitcoin works differently - you have a collection of discrete UTXOs, like a pile of bills. When you spend Bitcoin, you consume whole UTXOs and create new ones, rather than subtracting from a number.</div></div>
+      <div class="faq-item"><div class="faq-question">What is change in a Bitcoin transaction?</div><div class="faq-answer">Because UTXOs must be spent entirely, if you send less than your full UTXO, the remainder is sent back to you as change. A 0.1 BTC UTXO sending 0.03 BTC creates a 0.03 BTC output to the recipient and ~0.07 BTC back to you (minus fees).</div></div>
+      <div class="faq-item"><div class="faq-question">Why does UTXO management matter?</div><div class="faq-answer">Many small UTXOs make transactions expensive because each input adds to transaction size. Consolidating UTXOs when fees are low saves money. From a privacy angle, combining UTXOs from different sources can link them together on the public blockchain.</div></div>
+      <div class="faq-item"><div class="faq-question">What is the UTXO set?</div><div class="faq-answer">The UTXO set is the complete collection of all unspent transaction outputs on the Bitcoin blockchain. It represents the current state of ownership. Every full node maintains this set to validate new transactions without replaying the entire blockchain.</div></div>
+    </div>
+
+    <div class="related-links">
+      <h2>Related Topics</h2>
+      <ul>
+        <li><a href="/learn/how-does-blockchain-work">How does the blockchain work?</a></li>
+        <li><a href="/learn/how-do-bitcoin-transactions-work">How do Bitcoin transactions work?</a></li>
+        <li><a href="/learn/what-is-bitcoin-mining">What is Bitcoin mining?</a></li>
+        <li><a href="/learn/what-is-a-bitcoin-node">What is a Bitcoin node?</a></li>
+        <li><a href="/learn/what-is-bitcoin">What is Bitcoin?</a></li>
+      </ul>
+    </div>
+  </main>
+  <footer><div class="footer-tagline">Bitcoin Is For All Of Us</div><p><a href="https://satusphere.com">satusphere.com</a> | <a href="https://x.com/sat_us_phere">@sat_us_phere</a> | <a href="mailto:info@satusphere.com">info@satusphere.com</a></p><p style="margin-top:8px">&copy; 2026 SatUsPhere / IDBA Investments. All rights reserved.</p></footer>
+</body>
+</html>

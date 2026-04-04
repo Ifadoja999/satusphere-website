@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>What Is a Bitcoin Address? | SatUsPhere</title>
+  <meta name="description" content="A Bitcoin address is a public identifier used to receive bitcoin, derived from a public key. Learn about address types (Legacy, P2SH, SegWit), privacy best practices, and the difference between an address and a public key.">
+  <link rel="canonical" href="https://satusphere.com/learn/what-is-a-bitcoin-address">
+
+  <!-- JSON-LD: Organization -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "SatUsPhere",
+    "url": "https://satusphere.com",
+    "logo": "https://satusphere.com/assets/logo.png",
+    "sameAs": [
+      "https://x.com/sat_us_phere",
+      "https://www.youtube.com/channel/UC0jGCeBvr8qLmMhRpwda-5Q"
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "email": "info@satusphere.com",
+      "contactType": "customer support"
+    }
+  }
+  </script>
+
+  <!-- JSON-LD: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://satusphere.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Learn Bitcoin",
+        "item": "https://satusphere.com/learn"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "What Is a Bitcoin Address?",
+        "item": "https://satusphere.com/learn/what-is-a-bitcoin-address"
+      }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: Article -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "What Is a Bitcoin Address?",
+    "description": "A Bitcoin address is a public identifier used to receive bitcoin. It is derived from a public key through cryptographic hashing and comes in several formats including Legacy (starting with 1), P2SH (starting with 3), and native SegWit bech32 (starting with bc1).",
+    "author": {
+      "@type": "Organization",
+      "name": "SatUsPhere"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "SatUsPhere",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://satusphere.com/assets/logo.png"
+      }
+    },
+    "datePublished": "2026-04-01",
+    "dateModified": "2026-04-01",
+    "mainEntityOfPage": "https://satusphere.com/learn/what-is-a-bitcoin-address"
+  }
+  </script>
+
+  <!-- JSON-LD: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is a Bitcoin address the same as a public key?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. A Bitcoin address is derived from a public key by applying cryptographic hash functions (SHA-256 then RIPEMD-160), then encoding the result. The address is shorter and adds a checksum for error detection. You share your address to receive bitcoin; your public key is revealed only when you spend from that address."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What does a Bitcoin address look like?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Legacy addresses start with '1' (example: 1A1zP1eP5QGefi2DMPTfTL5SLmv7Divf), P2SH addresses start with '3', and native SegWit (bech32) addresses start with 'bc1'. All are 26-62 characters long and use Base58 or Bech32 encoding to avoid visually similar characters."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I reuse a Bitcoin address?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You can technically reuse an address, but it is a privacy risk. Every transaction to that address is permanently recorded on the blockchain, allowing anyone to see your full transaction history associated with that address. Best practice is to generate a new address for every payment received."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Which Bitcoin address type should I use?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Native SegWit addresses (starting with bc1) are the recommended standard today. They have lower transaction fees, better error detection, and are supported by all modern wallets. Legacy addresses (starting with 1) are still valid but result in higher fees."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How many Bitcoin addresses can one wallet generate?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Modern HD (Hierarchical Deterministic) wallets can generate billions of unique addresses from a single seed phrase. This is why you can use a fresh address for every transaction without losing track - all addresses from the same seed are controlled by the same wallet."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: Speakable -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "What Is a Bitcoin Address?",
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": [".answer-block", "h1"]
+    },
+    "url": "https://satusphere.com/learn/what-is-a-bitcoin-address"
+  }
+  </script>
+
+  <style>
+    :root {
+      --color-navy: #0D1B2E;
+      --color-orange: #F7931A;
+      --color-blue: #1DA1F2;
+      --color-gold: #D4A530;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #ffffff;
+      color: #1a1a1a;
+      line-height: 1.7;
+    }
+
+    nav {
+      background: var(--color-navy);
+      padding: 0 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-logo {
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 1.4rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+    }
+
+    .nav-logo span {
+      color: var(--color-orange);
+    }
+
+    .nav-cta {
+      background: var(--color-orange);
+      color: #ffffff;
+      text-decoration: none;
+      padding: 0.55rem 1.2rem;
+      border-radius: 4px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      white-space: nowrap;
+      transition: background 0.2s;
+    }
+
+    .nav-cta:hover {
+      background: #e6831a;
+    }
+
+    .breadcrumb {
+      background: #f5f5f5;
+      padding: 0.6rem 2rem;
+      font-size: 0.85rem;
+      color: #666;
+    }
+
+    .breadcrumb a {
+      color: var(--color-blue);
+      text-decoration: none;
+    }
+
+    .breadcrumb a:hover {
+      text-decoration: underline;
+    }
+
+    .breadcrumb span {
+      margin: 0 0.4rem;
+    }
+
+    main {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2.5rem 2rem 4rem;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      color: var(--color-navy);
+      margin-bottom: 1.2rem;
+      line-height: 1.25;
+    }
+
+    .answer-block {
+      background: #f0f6ff;
+      border-left: 4px solid var(--color-blue);
+      padding: 1rem 1.4rem;
+      margin-bottom: 1.8rem;
+      border-radius: 0 6px 6px 0;
+    }
+
+    .answer-block p {
+      font-size: 1.05rem;
+      color: #1a1a1a;
+      line-height: 1.6;
+    }
+
+    p.summary {
+      font-size: 1.05rem;
+      color: #333;
+      margin-bottom: 2rem;
+    }
+
+    h2 {
+      font-size: 1.45rem;
+      color: var(--color-navy);
+      margin-top: 2.2rem;
+      margin-bottom: 0.8rem;
+      border-bottom: 2px solid var(--color-gold);
+      padding-bottom: 0.3rem;
+    }
+
+    p {
+      margin-bottom: 1rem;
+      color: #333;
+    }
+
+    ul, ol {
+      margin: 0.8rem 0 1.2rem 1.5rem;
+      color: #333;
+    }
+
+    li {
+      margin-bottom: 0.45rem;
+    }
+
+    .address-example {
+      background: var(--color-navy);
+      color: #a8d8a0;
+      font-family: "Courier New", Courier, monospace;
+      font-size: 0.9rem;
+      padding: 0.8rem 1.2rem;
+      border-radius: 4px;
+      margin: 0.6rem 0 1.2rem;
+      word-break: break-all;
+    }
+
+    .address-type-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0 1.5rem;
+      font-size: 0.95rem;
+    }
+
+    .address-type-table th {
+      background: var(--color-navy);
+      color: #ffffff;
+      padding: 0.6rem 0.8rem;
+      text-align: left;
+    }
+
+    .address-type-table td {
+      padding: 0.55rem 0.8rem;
+      border-bottom: 1px solid #e0e0e0;
+      color: #333;
+    }
+
+    .address-type-table tr:nth-child(even) td {
+      background: #f9f9f9;
+    }
+
+    .course-cta {
+      background: var(--color-navy);
+      color: #ffffff;
+      padding: 2.5rem 2rem;
+      border-radius: 8px;
+      text-align: center;
+      margin: 3rem 0;
+    }
+
+    .course-cta h3 {
+      font-size: 1.6rem;
+      color: var(--color-gold);
+      margin-bottom: 0.8rem;
+    }
+
+    .course-cta p {
+      color: #cdd8e8;
+      margin-bottom: 1.5rem;
+      font-size: 1rem;
+    }
+
+    .course-cta a {
+      display: inline-block;
+      background: var(--color-orange);
+      color: #ffffff;
+      text-decoration: none;
+      padding: 0.8rem 2rem;
+      border-radius: 4px;
+      font-weight: 700;
+      font-size: 1.05rem;
+      transition: background 0.2s;
+    }
+
+    .course-cta a:hover {
+      background: #e6831a;
+    }
+
+    .faq-section {
+      margin-top: 3rem;
+    }
+
+    .faq-section h2 {
+      border-bottom: 2px solid var(--color-gold);
+    }
+
+    .faq-item {
+      margin-top: 1.4rem;
+    }
+
+    .faq-item h3 {
+      font-size: 1.05rem;
+      color: var(--color-navy);
+      margin-bottom: 0.4rem;
+    }
+
+    .faq-item p {
+      margin-bottom: 0;
+      color: #444;
+    }
+
+    .related-links {
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid #e0e0e0;
+    }
+
+    .related-links h2 {
+      font-size: 1.2rem;
+      color: var(--color-navy);
+      margin-bottom: 0.8rem;
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .related-links ul {
+      list-style: none;
+      margin-left: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
+
+    .related-links ul li a {
+      display: inline-block;
+      background: #f0f0f0;
+      color: var(--color-blue);
+      text-decoration: none;
+      padding: 0.4rem 0.9rem;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      transition: background 0.2s;
+    }
+
+    .related-links ul li a:hover {
+      background: #ddeeff;
+    }
+
+    footer {
+      background: var(--color-navy);
+      color: #8a9ab5;
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.9rem;
+    }
+
+    footer a {
+      color: var(--color-orange);
+      text-decoration: none;
+    }
+
+    footer .tagline {
+      color: var(--color-gold);
+      font-weight: 600;
+      margin-top: 0.4rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="https://satusphere.com" class="nav-logo">Sats<span>U</span>sPhere</a>
+    <a href="https://checkout.teachable.com/secure/2684007/checkout/order_1y3wjzbk" class="nav-cta">Get Bitcoin From Scratch - $97</a>
+  </nav>
+
+  <!-- BREADCRUMB -->
+  <div class="breadcrumb">
+    <a href="https://satusphere.com">Home</a>
+    <span>&rsaquo;</span>
+    <a href="https://satusphere.com/learn">Learn Bitcoin</a>
+    <span>&rsaquo;</span>
+    What Is a Bitcoin Address?
+  </div>
+
+  <!-- MAIN -->
+  <main>
+    <h1>What Is a Bitcoin Address?</h1>
+
+    <!-- ANSWER BLOCK (speakable) -->
+    <div class="answer-block">
+      <p>A Bitcoin address is a public identifier - a string of letters and numbers that you share with someone so they can send bitcoin to you. It functions like a bank account number, but instead of being assigned by a bank, it is mathematically derived from your private key. Anyone can send bitcoin to your address, but only you can spend from it.</p>
+    </div>
+
+    <p class="summary">Understanding Bitcoin addresses is foundational to using Bitcoin safely. Knowing how they are created, the differences between address types, and why you should use a new address for each transaction will help you protect your privacy and avoid costly mistakes.</p>
+
+    <h2>How a Bitcoin Address Is Created</h2>
+    <p>A Bitcoin address does not appear out of thin air - it is generated through a chain of cryptographic operations starting from your private key. Here is the path from private key to address:</p>
+    <ol>
+      <li><strong>Private key:</strong> A randomly generated 256-bit number known only to you.</li>
+      <li><strong>Public key:</strong> Derived from the private key using elliptic curve multiplication (ECDSA). This operation is mathematically one-way: you can derive the public key from the private key, but not the reverse.</li>
+      <li><strong>Bitcoin address:</strong> Derived from the public key by applying SHA-256, then RIPEMD-160 hash functions, followed by Base58Check or Bech32 encoding to produce a human-readable string with a built-in checksum.</li>
+    </ol>
+    <p>The checksum embedded in an address is important. It means if you mistype even a single character in a Bitcoin address, the wallet software will reject it before any funds are sent - protecting users from losing bitcoin to typos.</p>
+    <p>Your wallet handles all of this automatically. You never need to manually perform these operations - but understanding the chain of derivation helps you understand why Bitcoin's security model works.</p>
+
+    <h2>Bitcoin Address Types: Legacy, P2SH, and SegWit</h2>
+    <p>Bitcoin addresses come in several formats, each introduced at different points in Bitcoin's history. They are not interchangeable in appearance, but bitcoin can be sent from any address type to any other address type.</p>
+
+    <table class="address-type-table">
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Prefix</th>
+          <th>Standard</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Legacy</td>
+          <td>1</td>
+          <td>P2PKH</td>
+          <td>Still valid, higher fees</td>
+        </tr>
+        <tr>
+          <td>Pay-to-Script-Hash</td>
+          <td>3</td>
+          <td>P2SH</td>
+          <td>Widely used, wraps SegWit</td>
+        </tr>
+        <tr>
+          <td>Native SegWit</td>
+          <td>bc1q</td>
+          <td>P2WPKH (bech32)</td>
+          <td>Recommended - lowest fees</td>
+        </tr>
+        <tr>
+          <td>Taproot</td>
+          <td>bc1p</td>
+          <td>P2TR (bech32m)</td>
+          <td>Newest standard, growing adoption</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p><strong>Legacy addresses (P2PKH, starting with 1)</strong> are the original Bitcoin address format introduced by Satoshi. They are still valid and every Bitcoin node and wallet recognizes them, but transactions using them are larger in byte size, which means higher fees. Example:</p>
+    <div class="address-example">1A1zP1eP5QGefi2DMPTfTL5SLmv7Divf Ra (genesis block coinbase output address)</div>
+
+    <p><strong>P2SH addresses (starting with 3)</strong> were introduced to support more complex scripts, including multi-signature setups and wrapped SegWit transactions. Many wallets use 3-addresses to provide SegWit fee savings to users while maintaining compatibility with older software.</p>
+
+    <p><strong>Native SegWit (bech32, starting with bc1q)</strong> is the current best-practice address format for most users. It results in smaller transactions and lower fees, has better error detection, and is supported by all modern wallets and exchanges. This is what you should use unless a specific service requires a different type.</p>
+
+    <p><strong>Taproot (bech32m, starting with bc1p)</strong> is the newest address format, activated in November 2021. It enables enhanced privacy and more efficient smart contracts on Bitcoin. Adoption is growing as wallets and services update their software.</p>
+
+    <h2>Bitcoin Address vs. Public Key: What Is the Difference?</h2>
+    <p>These two terms are often confused, and the distinction matters for security.</p>
+    <p>Your <strong>public key</strong> is a 33 or 65-byte elliptic curve point derived from your private key. It is used inside Bitcoin's transaction signing system to verify that only the person with the corresponding private key authorized a spend. In older address formats, spending bitcoin reveals your public key on the blockchain for the first time.</p>
+    <p>Your <strong>Bitcoin address</strong> is a hash of your public key. Because it is a hash, it is one step further removed from your private key. This provides an extra layer of security - even if elliptic curve cryptography were somehow weakened in the future, the RIPEMD-160 hash provides an additional barrier. This is one reason why best practice is to use each address only once and never reuse addresses across transactions.</p>
+    <p>Think of the public key as the underlying cryptographic material and the address as the user-facing representation derived from it.</p>
+
+    <h2>Why You Should Use a New Address for Every Transaction</h2>
+    <p>Bitcoin's blockchain is entirely public. Every transaction ever made is permanently recorded and visible to anyone. When you reuse an address, you are creating a permanent, public link between all of the payments sent to that address.</p>
+    <p>This has real privacy implications:</p>
+    <ul>
+      <li>Anyone who knows one payment you received can see every other payment ever sent to the same address.</li>
+      <li>If you pay a merchant with bitcoin from a reused address, the merchant can see all of your incoming transaction history tied to that address.</li>
+      <li>Blockchain analytics companies specialize in clustering addresses to trace the movement of funds - reuse makes their job easier.</li>
+    </ul>
+    <p>Modern HD (Hierarchical Deterministic) wallets generate a new address automatically for each incoming transaction, all derived from the same 12 or 24-word seed phrase. You do not lose access to any of these addresses when you generate new ones - they are all recoverable from your seed. There is no practical cost to using a fresh address every time, and the privacy benefit is significant.</p>
+
+    <h2>Can You Send Bitcoin to the Wrong Address?</h2>
+    <p>Yes - and it would almost certainly be lost permanently. There is no bank or authority that can reverse a Bitcoin transaction or recover funds sent to the wrong address. This is why the checksum in every Bitcoin address is so important: it catches most typos before a transaction is broadcast.</p>
+    <p>However, the checksum does not protect against sending to a valid address that belongs to someone else. Best practices when sending bitcoin include:</p>
+    <ul>
+      <li>Always copy-paste addresses rather than typing them manually.</li>
+      <li>Double-check the first and last 4-6 characters after pasting.</li>
+      <li>For large amounts, send a small test transaction first and confirm receipt before sending the full amount.</li>
+      <li>Be aware of "clipboard hijacking" malware that replaces copied addresses with an attacker's address - always verify the address in your wallet's confirmation screen.</li>
+    </ul>
+
+    <!-- COURSE CTA -->
+    <div class="course-cta">
+      <h3>Learn Bitcoin The Visual Way</h3>
+      <p>Bitcoin From Scratch covers private keys, addresses, wallets, and self-custody through 34 3D animated lessons - the clearest explanation of how Bitcoin actually works.</p>
+      <a href="https://checkout.teachable.com/secure/2684007/checkout/order_1y3wjzbk">Get Bitcoin From Scratch - $97</a>
+    </div>
+
+    <!-- FAQ -->
+    <div class="faq-section">
+      <h2>Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <h3>Is a Bitcoin address the same as a public key?</h3>
+        <p>No. A Bitcoin address is derived from a public key by applying cryptographic hash functions (SHA-256 then RIPEMD-160), then encoding the result. The address is shorter and adds a checksum for error detection. You share your address to receive bitcoin; your public key is revealed only when you spend from that address.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>What does a Bitcoin address look like?</h3>
+        <p>Legacy addresses start with "1", P2SH addresses start with "3", and native SegWit (bech32) addresses start with "bc1q". All are 26-62 characters long and use Base58 or Bech32 encoding to avoid visually similar characters like 0 and O.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Can I reuse a Bitcoin address?</h3>
+        <p>You can technically reuse an address, but it is a privacy risk. Every transaction to that address is permanently recorded on the blockchain, allowing anyone to see your full transaction history associated with that address. Best practice is to generate a new address for every payment received.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Which Bitcoin address type should I use?</h3>
+        <p>Native SegWit addresses (starting with bc1q) are the recommended standard today. They have lower transaction fees, better error detection, and are supported by all modern wallets. Legacy addresses (starting with 1) are still valid but result in higher fees.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>How many Bitcoin addresses can one wallet generate?</h3>
+        <p>Modern HD (Hierarchical Deterministic) wallets can generate billions of unique addresses from a single seed phrase. This is why you can use a fresh address for every transaction without losing track - all addresses from the same seed are controlled by the same wallet.</p>
+      </div>
+    </div>
+
+    <!-- RELATED LINKS -->
+
+    <div class="related-links">
+      <h2>Related Topics</h2>
+      <ul>
+        <li><a href="/learn/what-is-a-bitcoin-wallet">What is a Bitcoin wallet?</a></li>
+        <li><a href="/learn/what-is-a-private-key">What is a private key?</a></li>
+        <li><a href="/learn/how-do-bitcoin-transactions-work">How do Bitcoin transactions work?</a></li>
+        <li><a href="/learn/what-is-self-custody">What is self-custody?</a></li>
+        <li><a href="/learn/what-is-a-seed-phrase">What is a seed phrase?</a></li>
+      </ul>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2026 <a href="https://satusphere.com">SatUsPhere</a>. All rights reserved.</p>
+    <p class="tagline">Bitcoin Is For All Of Us</p>
+  </footer>
+
+</body>
+</html>

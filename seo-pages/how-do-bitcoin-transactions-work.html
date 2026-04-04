@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How Do Bitcoin Transactions Work? | SatUsPhere</title>
+  <meta name="description" content="Learn how Bitcoin transactions work - from signing with your private key and broadcasting to the mempool, to miner selection, block confirmation, and why transactions are irreversible." />
+  <link rel="canonical" href="https://satusphere.com/learn/how-do-bitcoin-transactions-work" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "SatUsPhere",
+    "url": "https://satusphere.com",
+    "logo": "https://satusphere.com/assets/logo.png",
+    "description": "SatUsPhere is a Bitcoin education company that makes complex concepts visual through 3D animated lessons.",
+    "sameAs": [
+      "https://x.com/sat_us_phere",
+      "https://www.youtube.com/channel/UC0jGCeBvr8qLmMhRpwda-5Q"
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://satusphere.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Learn Bitcoin",
+        "item": "https://satusphere.com/learn"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "How Do Bitcoin Transactions Work?",
+        "item": "https://satusphere.com/learn/how-do-bitcoin-transactions-work"
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "How Do Bitcoin Transactions Work?",
+    "description": "A Bitcoin transaction is a cryptographically signed message that transfers ownership from one address to another. This guide covers inputs and outputs, the mempool, miner fees, confirmation time, and why transactions cannot be reversed.",
+    "author": {
+      "@type": "Organization",
+      "name": "SatUsPhere"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "SatUsPhere",
+      "url": "https://satusphere.com"
+    },
+    "url": "https://satusphere.com/learn/how-do-bitcoin-transactions-work",
+    "datePublished": "2026-04-01",
+    "dateModified": "2026-04-01"
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Why does a Bitcoin transaction sometimes take a long time to confirm?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Confirmation time depends on two things: network congestion and the fee you attached. Miners prioritize transactions with higher fees per byte. If the mempool is crowded because many people are transacting at once, a transaction with a low fee may wait hours or even days before being picked up. During calm periods, even low-fee transactions confirm within 10-20 minutes."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What happens to the transaction fee I pay?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Transaction fees go entirely to the miner who includes your transaction in a block. This is separate from the block subsidy (newly created Bitcoin). As the block subsidy decreases through halvings over time, transaction fees become an increasingly important part of miner revenue - which is by design in Bitcoin's economic model."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I cancel or reverse a Bitcoin transaction?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Once a transaction is confirmed in a block, it is irreversible. Before confirmation, if the transaction is still in the mempool, you can attempt to replace it using Replace-By-Fee (RBF) - essentially rebroadcasting the same transaction with a higher fee. But once one confirmation exists, reversal is not possible without controlling more than 50% of the network's hash power, which is economically impractical."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How many confirmations do I need before a Bitcoin transaction is considered final?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "For small everyday amounts, 1-3 confirmations is generally sufficient. For larger amounts, most businesses and exchanges wait for 6 confirmations, which represents about an hour of mining time at the 10-minute average block interval. For very large transfers, some parties wait for even more confirmations before treating the transaction as fully settled."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why does Bitcoin use inputs and outputs instead of account balances?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Bitcoin uses a UTXO (Unspent Transaction Output) model rather than an account balance model for important security and privacy reasons. UTXOs allow full verification of every coin's history all the way back to its creation in a coinbase transaction. It also makes parallel transaction validation easier and supports more advanced scripting capabilities than a simple balance system would allow."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SpeakableSpecification",
+    "cssSelector": [".answer-block", ".summary"]
+  }
+  </script>
+
+  <style>
+    :root {
+      --color-navy: #0D1B2E;
+      --color-orange: #F7931A;
+      --color-blue: #1DA1F2;
+      --color-gold: #D4A530;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #ffffff;
+      color: #1a1a1a;
+      line-height: 1.7;
+      font-size: 17px;
+    }
+
+    nav {
+      background: var(--color-navy);
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav a.logo {
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+
+    nav a.logo span {
+      color: var(--color-orange);
+    }
+
+    nav a.cta-btn {
+      background: var(--color-orange);
+      color: #ffffff;
+      text-decoration: none;
+      padding: 10px 18px;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 600;
+      white-space: nowrap;
+      transition: opacity 0.2s;
+    }
+
+    nav a.cta-btn:hover {
+      opacity: 0.88;
+    }
+
+    .breadcrumb {
+      background: #f5f5f5;
+      padding: 10px 24px;
+      font-size: 13px;
+      color: #666;
+    }
+
+    .breadcrumb a {
+      color: var(--color-blue);
+      text-decoration: none;
+    }
+
+    .breadcrumb a:hover {
+      text-decoration: underline;
+    }
+
+    .breadcrumb span {
+      margin: 0 6px;
+      color: #999;
+    }
+
+    .hero {
+      background: var(--color-navy);
+      color: #ffffff;
+      padding: 56px 24px 48px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: clamp(28px, 5vw, 46px);
+      font-weight: 800;
+      line-height: 1.2;
+      max-width: 760px;
+      margin: 0 auto 12px;
+    }
+
+    .hero h1 span {
+      color: var(--color-orange);
+    }
+
+    .hero .subtitle {
+      color: #a0b4c8;
+      font-size: 16px;
+      max-width: 560px;
+      margin: 0 auto;
+    }
+
+    .content-wrap {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 48px 24px;
+    }
+
+    .answer-block {
+      background: #f0f7ff;
+      border-left: 4px solid var(--color-blue);
+      padding: 20px 24px;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 32px;
+      font-size: 17px;
+      line-height: 1.65;
+      color: #1a2a3a;
+    }
+
+    .answer-block strong {
+      display: block;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: var(--color-blue);
+      margin-bottom: 8px;
+    }
+
+    p.summary {
+      font-size: 18px;
+      color: #2a2a2a;
+      line-height: 1.75;
+      margin-bottom: 40px;
+      border-bottom: 1px solid #e8e8e8;
+      padding-bottom: 40px;
+    }
+
+    h2 {
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--color-navy);
+      margin: 40px 0 16px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--color-gold);
+      display: inline-block;
+    }
+
+    p {
+      margin-bottom: 18px;
+      color: #333;
+    }
+
+    ul, ol {
+      margin: 0 0 20px 24px;
+      color: #333;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    /* LIFECYCLE STEPS */
+    .lifecycle {
+      counter-reset: step;
+      list-style: none;
+      margin-left: 0;
+      margin-bottom: 28px;
+    }
+
+    .lifecycle li {
+      counter-increment: step;
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      padding: 16px 0;
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    .lifecycle li::before {
+      content: counter(step);
+      min-width: 32px;
+      height: 32px;
+      background: var(--color-orange);
+      color: #ffffff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 14px;
+      flex-shrink: 0;
+    }
+
+    .lifecycle li .step-content strong {
+      display: block;
+      font-size: 16px;
+      color: var(--color-navy);
+      margin-bottom: 4px;
+    }
+
+    .lifecycle li .step-content p {
+      margin: 0;
+      font-size: 15px;
+    }
+
+    .callout {
+      background: #fff8ee;
+      border: 1px solid var(--color-gold);
+      border-radius: 8px;
+      padding: 18px 22px;
+      margin: 28px 0;
+    }
+
+    .callout strong {
+      color: var(--color-navy);
+    }
+
+    .info-box {
+      background: #f0f7ff;
+      border: 1px solid var(--color-blue);
+      border-radius: 8px;
+      padding: 18px 22px;
+      margin: 28px 0;
+    }
+
+    .course-cta {
+      background: var(--color-navy);
+      color: #ffffff;
+      border-radius: 12px;
+      padding: 48px 36px;
+      text-align: center;
+      margin: 56px 0 48px;
+    }
+
+    .course-cta h3 {
+      color: var(--color-gold);
+      font-size: 26px;
+      font-weight: 800;
+      margin-bottom: 14px;
+    }
+
+    .course-cta p {
+      color: #a0b4c8;
+      font-size: 16px;
+      max-width: 520px;
+      margin: 0 auto 28px;
+    }
+
+    .course-cta a {
+      display: inline-block;
+      background: var(--color-orange);
+      color: #ffffff;
+      text-decoration: none;
+      padding: 16px 32px;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 700;
+      transition: opacity 0.2s;
+    }
+
+    .course-cta a:hover {
+      opacity: 0.88;
+    }
+
+    .faq-section {
+      margin: 48px 0;
+    }
+
+    .faq-section h2 {
+      font-size: 26px;
+      display: block;
+      border-bottom: 2px solid var(--color-gold);
+      padding-bottom: 10px;
+      margin-bottom: 28px;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid #e8e8e8;
+      padding: 20px 0;
+    }
+
+    .faq-item h3 {
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--color-navy);
+      margin-bottom: 10px;
+    }
+
+    .faq-item p {
+      color: #444;
+      margin: 0;
+    }
+
+    .related-links {
+      margin: 48px 0;
+    }
+
+    .related-links h2 {
+      font-size: 22px;
+      display: block;
+      border-bottom: 2px solid var(--color-gold);
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+    }
+
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 12px;
+    }
+
+    .related-grid a {
+      background: #f5f5f5;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      padding: 14px 16px;
+      text-decoration: none;
+      color: var(--color-navy);
+      font-size: 14px;
+      font-weight: 500;
+      transition: border-color 0.2s, background 0.2s;
+    }
+
+    .related-grid a:hover {
+      border-color: var(--color-blue);
+      background: #f0f7ff;
+    }
+
+    footer {
+      background: var(--color-navy);
+      color: #a0b4c8;
+      text-align: center;
+      padding: 36px 24px;
+      font-size: 14px;
+    }
+
+    footer .tagline {
+      color: var(--color-orange);
+      font-weight: 600;
+      font-size: 16px;
+      margin-bottom: 8px;
+    }
+
+    footer a {
+      color: var(--color-blue);
+      text-decoration: none;
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@type": "WebPage", "name": "How Do Bitcoin Transactions Work?", "url": "https://satusphere.com/learn/how-do-bitcoin-transactions-work", "speakable": {"@type": "SpeakableSpecification", "cssSelector": [".answer-block", "h1", ".summary"]}}
+  </script>
+</head>
+<body>
+
+  <nav>
+    <a href="https://satusphere.com" class="logo">Sats<span>U</span>sPhere</a>
+    <a href="https://checkout.teachable.com/secure/2684007/checkout/order_1y3wjzbk" class="cta-btn">Get Bitcoin From Scratch - $97</a>
+  </nav>
+
+  <div class="breadcrumb">
+    <a href="https://satusphere.com">Home</a>
+    <span>></span>
+    <a href="https://satusphere.com/learn">Learn Bitcoin</a>
+    <span>></span>
+    How Do Bitcoin Transactions Work?
+  </div>
+
+  <div class="hero">
+    <h1>How Do <span>Bitcoin Transactions</span> Work?</h1>
+    <p class="subtitle">From private key signature to confirmed block - a complete walkthrough of what happens when you send Bitcoin.</p>
+  </div>
+
+  <div class="content-wrap">
+
+    <div class="answer-block">
+      <strong>Quick Answer</strong>
+      A Bitcoin transaction is a digitally signed message that tells the network you are authorizing the transfer of Bitcoin from your address to someone else's. You sign it with your private key, broadcast it to the network where it waits in the mempool, and a miner eventually picks it up and includes it in a new block. Once confirmed in a block, the transaction is permanent and cannot be reversed.
+    </div>
+
+    <p class="summary">
+      Most people think of sending Bitcoin the way they think of a bank transfer - you enter an amount, hit send, and money moves from account to account. But what is actually happening under the hood is quite different, and understanding it unlocks a lot of clarity about why Bitcoin works the way it does. There are no account balances in the traditional sense. Transactions reference previous outputs, fees are competitive, and miners are the ones who ultimately decide when your transaction gets settled. This guide walks through every stage of a Bitcoin transaction's lifecycle.
+    </p>
+
+    <!-- SECTION 1 -->
+    <h2>The Transaction Lifecycle: Step by Step</h2>
+    <p>When you send Bitcoin, the transaction goes through five distinct stages before it is considered fully settled:</p>
+
+    <ul class="lifecycle">
+      <li>
+        <div class="step-content">
+          <strong>Construction</strong>
+          <p>Your wallet software builds the transaction by identifying which of your unspent outputs to use as inputs, specifying the recipient address and amount, calculating a fee, and creating a change output to send remaining funds back to your own wallet.</p>
+        </div>
+      </li>
+      <li>
+        <div class="step-content">
+          <strong>Signing with your private key</strong>
+          <p>Your wallet uses your private key to produce a cryptographic signature. This signature proves you own the inputs being spent without ever revealing the private key itself. The signature is mathematically tied to this specific transaction - it cannot be reused for a different transaction.</p>
+        </div>
+      </li>
+      <li>
+        <div class="step-content">
+          <strong>Broadcast to the network</strong>
+          <p>The signed transaction is broadcast to the peer-to-peer Bitcoin network. Nodes receive it, verify the signature is valid, confirm the inputs have not already been spent, and relay it to their peers. Within seconds, the transaction has propagated to nodes around the world.</p>
+        </div>
+      </li>
+      <li>
+        <div class="step-content">
+          <strong>Waiting in the mempool</strong>
+          <p>The mempool (memory pool) is a holding area maintained by each node - a queue of valid transactions waiting to be included in a block. Your transaction sits here until a miner selects it. Miners prioritize transactions that pay more sats per byte of transaction data.</p>
+        </div>
+      </li>
+      <li>
+        <div class="step-content">
+          <strong>Confirmed in a block</strong>
+          <p>A miner packages your transaction along with others into a new block and solves the proof-of-work puzzle. When the block is broadcast and accepted by the network, your transaction receives its first confirmation. Each subsequent block added on top adds another confirmation.</p>
+        </div>
+      </li>
+    </ul>
+
+    <!-- SECTION 2 -->
+    <h2>Inputs and Outputs: How Bitcoin Value Actually Moves</h2>
+    <p>
+      Bitcoin does not track account balances. Instead, it uses a model called UTXOs - Unspent Transaction Outputs. Every Bitcoin that exists is the output of some previous transaction, and spending Bitcoin means consuming those outputs as inputs to create new ones.
+    </p>
+    <p>
+      Think of it like physical bills and coins. If you want to pay someone $27 and you only have a $50 bill, you hand over the $50 and receive $23 in change. Bitcoin works the same way: you reference the full value of a previous output as an input, specify the amount going to the recipient, and send the remainder back to yourself as a "change output" assigned to a new address in your own wallet.
+    </p>
+
+    <div class="info-box">
+      <strong>Example:</strong> You received 0.1 BTC in a previous transaction. You want to send 0.04 BTC to a friend and pay a 0.0001 BTC fee. Your wallet creates a transaction with one input (0.1 BTC) and two outputs: 0.04 BTC to your friend's address, and 0.0599 BTC back to a change address in your own wallet. The remaining 0.0001 BTC is the miner fee - the gap between inputs and outputs.
+    </div>
+
+    <p>
+      This structure means every Bitcoin's entire history is traceable back to the coinbase transaction (the reward transaction) in the block where it was originally created. There are no free-floating balances - just an unbroken chain of outputs.
+    </p>
+
+    <!-- SECTION 3 -->
+    <h2>Transaction Fees: Why They Exist and How to Set Them</h2>
+    <p>
+      Bitcoin transaction fees are not charged by a company or payment processor. They are competitive bids to get your transaction included in the next block. Miners are rational economic actors - they fill each block with transactions that maximize the fees they collect, so they naturally prioritize higher-fee transactions when the mempool is congested.
+    </p>
+    <p>
+      Fees are measured in satoshis per virtual byte (sat/vB) - not as a percentage of the amount sent. A transaction sending $1 worth of Bitcoin costs the same in absolute fee terms as one sending $1 million, assuming identical transaction sizes. This is very different from traditional payment rails where fees scale with transaction size.
+    </p>
+    <p>
+      When the network is quiet, fees can be as low as 1-5 sat/vB and transactions confirm in the next block (about 10 minutes). During periods of high demand - like a bull market surge or a popular NFT mint on a competing chain clogging activity - fees can spike to 100 sat/vB or higher, and low-fee transactions can wait days.
+    </p>
+
+    <div class="callout">
+      <strong>Practical tip:</strong> Most Bitcoin wallets let you choose between slow, standard, and fast fee tiers. For non-urgent transactions, choosing the slower option can save meaningful fees. For time-sensitive payments, pay the higher fee. Services like mempool.space show live mempool conditions and current fee estimates.
+    </div>
+
+    <!-- SECTION 4 -->
+    <h2>Confirmation Time and What "Confirmed" Means</h2>
+    <p>
+      Bitcoin targets a new block approximately every 10 minutes, enforced by the network's difficulty adjustment. So in theory, a transaction should confirm within 10 minutes of being picked up by a miner. In practice, block times vary - sometimes 2 minutes, sometimes 20 - because mining is a probabilistic process.
+    </p>
+    <p>
+      When your transaction is included in a block, it has 1 confirmation. Every block added after that gives it another confirmation. The significance of confirmations is about security: to reverse a confirmed transaction, an attacker would need to re-mine that block and every block since, faster than the honest network is building new blocks. The deeper in the chain, the more work required to undo it.
+    </p>
+    <ul>
+      <li><strong>0 confirmations (unconfirmed):</strong> Transaction is in the mempool. Low-value transactions may be accepted here by merchants, but it is technically reversible via Replace-By-Fee.</li>
+      <li><strong>1-2 confirmations:</strong> Sufficient for everyday purchases and small amounts.</li>
+      <li><strong>6 confirmations:</strong> The traditional standard for exchanges and larger amounts. Represents roughly 1 hour of mining time.</li>
+      <li><strong>100+ confirmations:</strong> Required before newly mined Bitcoin (coinbase rewards) can be spent, built into the protocol.</li>
+    </ul>
+
+    <!-- SECTION 5 -->
+    <h2>Irreversibility: Why Bitcoin Transactions Cannot Be Undone</h2>
+    <p>
+      Bitcoin's irreversibility is a feature, not a flaw, though it requires adjustment for people used to credit cards and PayPal chargebacks. Once a transaction has accumulated sufficient confirmations, reversing it would require an attacker to redo more proof-of-work than the entire honest network has done since then - an astronomically expensive proposition.
+    </p>
+    <p>
+      This irreversibility is what makes Bitcoin a reliable settlement layer. A merchant accepting Bitcoin does not need to worry about a customer reversing the payment 60 days later. The finality is guaranteed by mathematics and the economics of mining, not by a company's fraud department.
+    </p>
+    <p>
+      The practical implication for users is simple: double-check the recipient address before you send. Bitcoin addresses are long strings and mistakes do happen. A sent transaction cannot be recalled. Most wallet software lets you verify the first and last few characters of the address and some use QR codes specifically to avoid manual transcription errors.
+    </p>
+
+    <!-- COURSE CTA -->
+    <div class="course-cta">
+      <h3>Learn Bitcoin The Visual Way</h3>
+      <p>Bitcoin From Scratch is the only Bitcoin fundamentals course built entirely with 3D animation. Watch transactions, UTXOs, mining, and the mempool come to life across 34 animated lessons.</p>
+      <a href="https://checkout.teachable.com/secure/2684007/checkout/order_1y3wjzbk">Get Bitcoin From Scratch - $97</a>
+    </div>
+
+    <!-- FAQ -->
+    <div class="faq-section">
+      <h2>Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <h3>Why does a Bitcoin transaction sometimes take a long time to confirm?</h3>
+        <p>Confirmation time depends on two things: network congestion and the fee you attached. Miners prioritize transactions with higher fees per byte. If the mempool is crowded because many people are transacting at once, a transaction with a low fee may wait hours or even days before being picked up. During calm periods, even low-fee transactions confirm within 10-20 minutes.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>What happens to the transaction fee I pay?</h3>
+        <p>Transaction fees go entirely to the miner who includes your transaction in a block. This is separate from the block subsidy (newly created Bitcoin). As the block subsidy decreases through halvings over time, transaction fees become an increasingly important part of miner revenue - which is by design in Bitcoin's economic model.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Can I cancel or reverse a Bitcoin transaction?</h3>
+        <p>Once a transaction is confirmed in a block, it is irreversible. Before confirmation, if the transaction is still in the mempool, you can attempt to replace it using Replace-By-Fee (RBF) - essentially rebroadcasting the same transaction with a higher fee. But once one confirmation exists, reversal is not possible without controlling more than 50% of the network's hash power, which is economically impractical.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>How many confirmations do I need before a Bitcoin transaction is considered final?</h3>
+        <p>For small everyday amounts, 1-3 confirmations is generally sufficient. For larger amounts, most businesses and exchanges wait for 6 confirmations, which represents about an hour of mining time at the 10-minute average block interval. For very large transfers, some parties wait for even more confirmations before treating the transaction as fully settled.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Why does Bitcoin use inputs and outputs instead of account balances?</h3>
+        <p>Bitcoin uses a UTXO (Unspent Transaction Output) model rather than an account balance model for important security and privacy reasons. UTXOs allow full verification of every coin's history all the way back to its creation in a coinbase transaction. It also makes parallel transaction validation easier and supports more advanced scripting capabilities than a simple balance system would allow.</p>
+      </div>
+    </div>
+
+    <!-- RELATED LINKS -->
+
+    <div class="related-links">
+      <h2>Related Topics</h2>
+      <ul>
+        <li><a href="/learn/how-does-blockchain-work">How does the blockchain work?</a></li>
+        <li><a href="/learn/what-is-a-utxo">What is a UTXO?</a></li>
+        <li><a href="/learn/what-is-a-mempool">What is the mempool?</a></li>
+        <li><a href="/learn/what-is-a-bitcoin-address">What is a Bitcoin address?</a></li>
+        <li><a href="/learn/what-is-segwit">What is SegWit?</a></li>
+        <li><a href="/learn/what-is-bitcoin">What is Bitcoin?</a></li>
+      </ul>
+    </div>
+    </div>
+
+  </div>
+
+  <footer>
+    <p class="tagline">Bitcoin Is For All Of Us</p>
+    <p>&copy; 2026 SatUsPhere. Bitcoin education made visual.</p>
+    <p style="margin-top:8px;"><a href="https://satusphere.com">satusphere.com</a> &nbsp;|&nbsp; <a href="https://x.com/sat_us_phere">@sat_us_phere</a></p>
+  </footer>
+
+</body>
+</html>

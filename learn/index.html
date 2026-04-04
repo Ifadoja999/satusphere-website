@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Learn Bitcoin From Scratch | SatUsPhere Bitcoin Education</title>
+  <meta name="description" content="Free Bitcoin education from SatUsPhere. Learn what Bitcoin is, how it works, how to secure it, and why it matters - with clear answers to every beginner question." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://satusphere.com/learn" />
+  <meta property="og:title" content="Learn Bitcoin From Scratch | SatUsPhere" />
+  <meta property="og:description" content="Free Bitcoin education from SatUsPhere. Clear answers to every Bitcoin beginner question." />
+  <meta property="og:url" content="https://satusphere.com/learn" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://satusphere.com/assets/course-banner.png" />
+  <meta property="og:site_name" content="SatUsPhere" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@sat_us_phere" />
+  <meta name="twitter:title" content="Learn Bitcoin From Scratch | SatUsPhere" />
+  <meta name="twitter:description" content="Free Bitcoin education. Clear answers to every Bitcoin beginner question." />
+
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Organization","name":"SatUsPhere","url":"https://satusphere.com","logo":"https://satusphere.com/assets/logo.png","sameAs":["https://x.com/sat_us_phere","https://www.youtube.com/channel/UC0jGCeBvr8qLmMhRpwda-5Q","https://satusphere.teachable.com"],"contactPoint":{"@type":"ContactPoint","email":"info@satusphere.com","contactType":"customer support"}}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://satusphere.com"},{"@type":"ListItem","position":2,"name":"Learn Bitcoin","item":"https://satusphere.com/learn"}]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"CollectionPage","name":"Learn Bitcoin","description":"Free Bitcoin education from SatUsPhere. Clear answers to every Bitcoin beginner question.","url":"https://satusphere.com/learn","publisher":{"@type":"Organization","name":"SatUsPhere","url":"https://satusphere.com"}}
+  </script>
+
+  <style>
+    :root { --color-navy:#0D1B2E; --color-orange:#F7931A; --color-blue:#1DA1F2; --color-gold:#D4A530; --color-white:#FFFFFF; --color-light-gray:#f5f5f5; --color-text:#1a1a2e; }
+    * { box-sizing:border-box; margin:0; padding:0; }
+    body { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif; color:var(--color-text); background:#fff; line-height:1.7; }
+    nav { background:var(--color-navy); padding:16px 24px; display:flex; justify-content:space-between; align-items:center; }
+    .nav-logo { color:var(--color-white); font-weight:700; font-size:1.2rem; text-decoration:none; }
+    .nav-cta { background:var(--color-orange); color:var(--color-white); padding:8px 20px; border-radius:6px; text-decoration:none; font-weight:600; font-size:0.9rem; }
+    .breadcrumb { padding:12px 24px; background:var(--color-light-gray); font-size:0.85rem; color:#666; }
+    .breadcrumb a { color:var(--color-blue); text-decoration:none; }
+    .breadcrumb span { margin:0 6px; }
+    .hero { background:var(--color-navy); color:var(--color-white); padding:64px 24px; text-align:center; }
+    .hero h1 { font-size:2.4rem; color:var(--color-white); margin-bottom:16px; }
+    .hero p { font-size:1.1rem; color:#ccc; max-width:600px; margin:0 auto 32px; }
+    .hero-cta { background:var(--color-orange); color:var(--color-white); padding:14px 36px; border-radius:8px; text-decoration:none; font-weight:700; font-size:1.1rem; display:inline-block; }
+    main { max-width:1000px; margin:0 auto; padding:48px 24px; }
+    .section-label { font-size:0.75rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--color-orange); font-weight:700; margin-bottom:8px; }
+    h2 { font-size:1.6rem; color:var(--color-navy); margin-bottom:24px; }
+    .topic-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 1fr)); gap:16px; margin-bottom:48px; }
+    .topic-card { border:1px solid #e0e0e0; border-radius:10px; padding:20px; text-decoration:none; color:inherit; display:block; transition:box-shadow 0.2s; }
+    .topic-card:hover { box-shadow:0 4px 16px rgba(0,0,0,0.1); border-color:var(--color-orange); }
+    .topic-card h3 { font-size:1rem; color:var(--color-navy); margin-bottom:8px; }
+    .topic-card p { font-size:0.88rem; color:#555; line-height:1.5; margin:0; }
+    .section-divider { border:none; border-top:1px solid #e0e0e0; margin:32px 0; }
+    .course-cta { background:var(--color-navy); color:var(--color-white); padding:48px 40px; border-radius:12px; text-align:center; margin:48px 0; }
+    .course-cta h2 { color:var(--color-gold); margin-bottom:12px; font-size:1.8rem; }
+    .course-cta p { color:#ccc; margin-bottom:24px; max-width:500px; margin-left:auto; margin-right:auto; }
+    .cta-button { display:inline-block; background:var(--color-orange); color:var(--color-white); padding:14px 36px; border-radius:8px; text-decoration:none; font-weight:700; font-size:1.1rem; }
+    footer { background:var(--color-navy); color:#aaa; text-align:center; padding:32px 24px; font-size:0.9rem; }
+    footer a { color:var(--color-blue); text-decoration:none; }
+    .footer-tagline { color:var(--color-gold); font-weight:600; margin-bottom:8px; }
+    @media (max-width:600px) { .hero h1 { font-size:1.8rem; } .topic-grid { grid-template-columns:1fr; } }
+  </style>
+</head>
+<body>
+  <nav>
+    <a class="nav-logo" href="https://satusphere.com">SatUsPhere</a>
+    <a class="nav-cta" href="https://checkout.teachable.com/secure/2684007/checkout/order_1y3wjzbk">Get the Course - $97</a>
+  </nav>
+  <div class="breadcrumb">
+    <a href="https://satusphere.com">Home</a><span>/</span>
+    Learn Bitcoin
+  </div>
+
+  <div class="hero">
+    <h1>Learn Bitcoin From Scratch</h1>
+    <p>Free, clear answers to every Bitcoin question - from "what is Bitcoin?" to advanced topics like multisig and the Lightning Network.</p>
+    <a class="hero-cta" href="https://checkout.teachable.com/secure/2684007/checkout/order_1y3wjzbk">Get the Full Course - $97</a>
+  </div>
+
+  <main>
+
+    <div class="section-label">Start Here</div>
+    <h2>Bitcoin Fundamentals</h2>
+    <div class="topic-grid">
+      <a class="topic-card" href="/learn/what-is-bitcoin">
+        <h3>What Is Bitcoin?</h3>
+        <p>The definitive beginner answer: what Bitcoin is, how it works, and why it matters.</p>
+      </a>
+      <a class="topic-card" href="/learn/what-is-bitcoin-mining">
+        <h3>What Is Bitcoin Mining?</h3>
+        <p>How new bitcoin enters circulation and how the network stays secure.</p>
+      </a>
+      <a class="topic-card" href="/learn/how-does-blockchain-work">
+        <h3>How Does Blockchain Work?</h3>
+        <p>The immutable ledger that makes Bitcoin possible - explained clearly.</p>
+      </a>
+      <a class="topic-card" href="/learn/what-is-proof-of-work">
+        <h3>What Is Proof of Work?</h3>
+        <p>The consensus mechanism that secures Bitcoin and why it works.</p>
+      </a>
+      <a class="topic-card" href="/learn/what-is-bitcoin-halving">
+        <h3>What Is the Bitcoin Halving?</h3>
+        <p>How Bitcoin's supply schedule works and why halvings matter.</p>
+      </a>
+      <a class="topic-card" href="/learn/how-many-bitcoins-are-there">
+        <h3>How Many Bitcoins Are There?</h3>
+        <p>The 21 million cap, current supply, and why scarcity is a feature.</p>
+      </a>
+      <a class="topic-card" href="/learn/bitcoin-vs-blockchain">
+        <h3>Bitcoin vs. Blockchain</h3>
+        <p>Understanding what makes Bitcoin unique - not just the tech, but why it matters.</p>
+      </a>
+      <a class="topic-card" href="/learn/who-created-bitcoin">
+        <h3>Who Created Bitcoin?</h3>
+        <p>Satoshi Nakamoto, the 2008 whitepaper, and why the mystery matters.</p>
+      </a>
+      <a class="topic-card" href="/learn/what-is-the-bitcoin-whitepaper">
+        <h3>What Is the Bitcoin Whitepaper?</h3>
+        <p>The 9-page document that started it all - and what it actually says.</p>
+      </a>
+    </div>
+
+    <hr class="section-divider" />
+    <div class="section-label">Wallets and Security</div>
+    <h2>Owning Your Bitcoin</h2>
+    <div class="topic-grid">
+      <a class="topic-card" href="/learn/what-is-a-bitcoin-wallet">
+        <h3>What Is a Bitcoin Wallet?</h3>
+        <p>Hot wallets, cold wallets, and how to choose the right one.</p>
+      </a>
+      <a class="topic-card" href="/learn/what-is-a-hardware-wallet">
+        <h3>What Is a Hardware Wallet?</h3>
+        <p>The gold standard for securing your bitcoin - how it works and why you need one.</p>
+      </a>
+      <a class="topic-card" href="/learn/what-is-a-private-key">
+        <h3>What Is a Private Key?</h3>
+        <p>The cryptographic key that proves you own bitcoin - and why losing it means losing everything.</p>
+      </a>
+      <a class="topic-card" href="/learn/what-is-a-seed-phrase">
+        <h3>What Is a Seed Phrase?</h3>
+        <p>The 12-24 words that back up your entire wallet - and how to protect them.</p>
+      </a>
+      <a class="topic-card" href="/learn/what-is-self-custody">
+        <h3>What Is Self-Custody?</h3>
+        <p>Why "not your keys, not your coins" is the most important rule in Bitcoin.</p>
+      </a>
+      <a class="topic-card" href="/learn/what-is-a-bitcoin-address">
+        <h3>What Is a Bitcoin Address?</h3>
+        <p>Where bitcoin gets sent - address types, privacy, and how addresses are generated.</p>
+      </a>
+      <a class="topic-card" href="/learn/what-is-multisig">
+        <h3>What Is Multisig?</h3>
+        <p>How multi-signature wallets eliminate single points of failure.</p>
+      </a>
+      <a class="topic-card" href="/learn/can-bitcoin-be-hacked">
+        <h3>Can Bitcoin Be Hacked?</h3>
+        <p>The honest answer: what has and hasn't been compromised - and how to protect yourself.</p>
+      </a>
+    </div>
+
+    <hr class="section-divider" />
+    <div class="section-label">Transactions and the Network</div>
+    <h2>How Bitcoin Moves</h2>
+    <div class="topic-grid">
+      <a class="topic-card" href="/learn/how-do-bitcoin-transactions-work">
+        <h3>How Do Bitcoin Transactions Work?</h3>
+        <p>From signing to confirmation - the full lifecycle of a Bitcoin transaction.</p>
+      </a>
+      <a class="topic-card" href="/learn/what-is-a-utxo">
+        <h3>What Is a UTXO?</h3>
+        <p>The unspent transaction output model - how Bitcoin tracks balances.</p>
+      </a>
+      <a class="topic-card" href="/learn/what-is-a-mempool">
+        <h3>What Is a Mempool?</h3>
+        <p>The waiting room for unconfirmed transactions - and why it matters for fees.</p>
+      </a>
+      <a class="topic-card" href="/learn/what-is-a-bitcoin-node">
+        <h3>What Is a Bitcoin Node?</h3>
+        <p>How full nodes enforce the rules and why running one matters.</p>
+      </a>
+      <a class="topic-card" href="/learn/what-is-a-satoshi">
+        <h3>What Is a Satoshi?</h3>
+        <p>Bitcoin's smallest unit - and why denominating in sats matters.</p>
+      </a>
+      <a class="topic-card" href="/learn/what-is-a-bitcoin-address">
+        <h3>What Is a Bitcoin Address?</h3>
+        <p>Legacy, P2SH, and native SegWit - address types explained.</p>
+      </a>
+    </div>
+
+    <hr class="section-divider" />
+    <div class="section-label">Layer 2 and Scaling</div>
+    <h2>Beyond the Base Layer</h2>
+    <div class="topic-grid">
+      <a class="topic-card" href="/learn/what-is-the-lightning-network">
+        <h3>What Is the Lightning Network?</h3>
+        <p>Instant, near-free Bitcoin payments - how channels work and why it scales.</p>
+      </a>
+      <a class="topic-card" href="/learn/what-is-bitcoin-layer-2">
+        <h3>What Is Bitcoin Layer 2?</h3>
+        <p>Protocols built on top of Bitcoin - what they are and why they exist.</p>
+      </a>
+      <a class="topic-card" href="/learn/what-is-on-chain-vs-off-chain">
+        <h3>What Is On-Chain vs. Off-Chain?</h3>
+        <p>When transactions settle on the blockchain vs. off it - tradeoffs explained.</p>
+      </a>
+      <a class="topic-card" href="/learn/what-is-segwit">
+        <h3>What Is SegWit?</h3>
+        <p>The 2017 upgrade that fixed transaction malleability and enabled Lightning.</p>
+      </a>
+    </div>
+
+    <hr class="section-divider" />
+    <div class="section-label">Advanced Topics</div>
+    <h2>Going Deeper</h2>
+    <div class="topic-grid">
+      <a class="topic-card" href="/learn/what-is-a-bitcoin-fork">
+        <h3>What Is a Bitcoin Fork?</h3>
+        <p>Soft forks, hard forks, and what actually happened with Bitcoin Cash.</p>
+      </a>
+      <a class="topic-card" href="/learn/what-is-a-block-reward">
+        <h3>What Is a Block Reward?</h3>
+        <p>How miners get paid, how rewards decline, and the future fee market.</p>
+      </a>
+      <a class="topic-card" href="/learn/how-does-bitcoin-mining-difficulty-work">
+        <h3>How Does Mining Difficulty Work?</h3>
+        <p>Why Bitcoin always targets a 10-minute block time - and how it self-corrects.</p>
+      </a>
+      <a class="topic-card" href="/learn/what-is-a-51-percent-attack">
+        <h3>What Is a 51% Attack?</h3>
+        <p>What an attacker with majority hashrate can and cannot do.</p>
+      </a>
+      <a class="topic-card" href="/learn/what-is-bitcoin-dominance">
+        <h3>What Is Bitcoin Dominance?</h3>
+        <p>Bitcoin's share of total crypto market cap - and what it signals.</p>
+      </a>
+      <a class="topic-card" href="/learn/what-is-the-bitcoin-genesis-block">
+        <h3>What Is the Genesis Block?</h3>
+        <p>Block zero - Satoshi's timestamp, the embedded message, and its significance.</p>
+      </a>
+      <a class="topic-card" href="/learn/what-is-byzantine-fault-tolerance">
+        <h3>What Is Byzantine Fault Tolerance?</h3>
+        <p>The distributed systems problem Bitcoin solved - explained without jargon.</p>
+      </a>
+    </div>
+
+    <div class="course-cta">
+      <h2>Learn Bitcoin The Visual Way</h2>
+      <p>Bitcoin From Scratch is the only Bitcoin fundamentals course built entirely with 3D animation. 34 lessons, zero jargon, every concept from first principles.</p>
+      <a class="cta-button" href="https://checkout.teachable.com/secure/2684007/checkout/order_1y3wjzbk">Start Bitcoin From Scratch - $97</a>
+    </div>
+
+  </main>
+
+  <footer>
+    <div class="footer-tagline">Bitcoin Is For All Of Us</div>
+    <p><a href="https://satusphere.com">satusphere.com</a> | <a href="https://x.com/sat_us_phere">@sat_us_phere</a> | <a href="mailto:info@satusphere.com">info@satusphere.com</a></p>
+    <p style="margin-top:8px;">&copy; 2026 SatUsPhere / IDBA Investments. All rights reserved.</p>
+  </footer>
+</body>
+</html>

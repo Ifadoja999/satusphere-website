@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>What Is a Bitcoin Fork? | SatUsPhere</title>
+  <meta name="description" content="A Bitcoin fork is a change to the protocol rules. Learn the difference between soft forks and hard forks, what happened with Bitcoin Cash in 2017, how SegWit activated, and what happens to your Bitcoin during a hard fork.">
+  <link rel="canonical" href="https://satusphere.com/learn/what-is-a-bitcoin-fork">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "SatUsPhere",
+    "url": "https://satusphere.com",
+    "logo": "https://satusphere.com/assets/logo.png",
+    "description": "Bitcoin education company. Bitcoin From Scratch is the only Bitcoin fundamentals course built entirely with 3D animation.",
+    "sameAs": [
+      "https://x.com/sat_us_phere",
+      "https://www.youtube.com/channel/UC0jGCeBvr8qLmMhRpwda-5Q"
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "email": "info@satusphere.com",
+      "contactType": "customer support"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://satusphere.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Learn Bitcoin",
+        "item": "https://satusphere.com/learn"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "What Is a Bitcoin Fork?",
+        "item": "https://satusphere.com/learn/what-is-a-bitcoin-fork"
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "What Is a Bitcoin Fork?",
+    "description": "A Bitcoin fork is a change to the protocol rules. This article explains soft forks vs. hard forks, the history of Bitcoin Cash and Bitcoin SV, how SegWit activated as a soft fork, and what happens to Bitcoin holders when a hard fork creates a new coin.",
+    "author": {
+      "@type": "Organization",
+      "name": "SatUsPhere"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "SatUsPhere",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://satusphere.com/assets/logo.png"
+      }
+    },
+    "datePublished": "2026-04-01",
+    "dateModified": "2026-04-01",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://satusphere.com/learn/what-is-a-bitcoin-fork"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is a Bitcoin fork?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A Bitcoin fork is a change to the rules of the Bitcoin protocol. Because Bitcoin has no central authority to push updates, protocol changes require consensus among the network's participants - miners, nodes, and developers. When the network changes its rules, it is called a fork. If everyone upgrades together, it is a seamless update. If part of the network refuses to upgrade, the chain can split into two separate blockchains."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the difference between a soft fork and a hard fork?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A soft fork is a backward-compatible change. Old nodes that do not upgrade still accept blocks from upgraded nodes, so the network stays unified. SegWit (2017) is the most significant example - nodes that never upgraded still process transactions. A hard fork is a non-backward-compatible change. Old and new nodes reject each other's blocks, which permanently splits the chain into two separate networks with two separate coins if adoption is not unanimous. Bitcoin Cash (2017) resulted from a hard fork."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What happened with Bitcoin Cash?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "In August 2017, a faction of miners and developers who wanted larger block sizes forked away from Bitcoin to create Bitcoin Cash (BCH). The hard fork happened at block 478,558. Anyone holding Bitcoin at that moment received an equal amount of Bitcoin Cash. The two chains have operated independently ever since. Bitcoin has continued growing while Bitcoin Cash commands a small fraction of the market capitalization."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does a Bitcoin fork give me free coins?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "When a hard fork creates a new coin, everyone holding Bitcoin at the time of the fork receives an equal amount of the new coin on the new chain. In that sense, yes - the Bitcoin Cash fork in 2017 gave every Bitcoin holder an equal amount of BCH at no cost. However, to claim forked coins you typically need to control your private keys. If your Bitcoin was on an exchange during the fork, the exchange decided whether to distribute the new coins."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is Bitcoin Cash the same as Bitcoin?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Bitcoin Cash (BCH) is a separate cryptocurrency that forked from Bitcoin in 2017. It shares Bitcoin's transaction history up to block 478,558, but after that point it is an entirely different network with different rules. Bitcoin (BTC) is the original chain and by far the larger network in terms of hash rate, market capitalization, and adoption. The two are not interchangeable."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SpeakableSpecification",
+    "cssSelector": [".answer-block", ".summary"]
+  }
+  </script>
+
+  <style>
+    :root {
+      --color-navy: #0D1B2E;
+      --color-orange: #F7931A;
+      --color-blue: #1DA1F2;
+      --color-gold: #D4A530;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #f8f9fa;
+      color: #1a1a1a;
+      line-height: 1.7;
+    }
+
+    nav {
+      background: var(--color-navy);
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-logo {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1.4rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+
+    .nav-logo span { color: var(--color-orange); }
+
+    .nav-cta {
+      background: var(--color-orange);
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: opacity 0.2s;
+      white-space: nowrap;
+    }
+
+    .nav-cta:hover { opacity: 0.88; }
+
+    .breadcrumb {
+      background: #fff;
+      border-bottom: 1px solid #e5e7eb;
+      padding: 12px 24px;
+      font-size: 0.85rem;
+      color: #6b7280;
+    }
+
+    .breadcrumb a { color: var(--color-blue); text-decoration: none; }
+    .breadcrumb a:hover { text-decoration: underline; }
+    .breadcrumb span { margin: 0 8px; }
+
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 48px 24px 64px;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--color-navy);
+      line-height: 1.25;
+      margin-bottom: 24px;
+    }
+
+    .answer-block {
+      background: #fff;
+      border-left: 5px solid var(--color-orange);
+      border-radius: 0 8px 8px 0;
+      padding: 20px 24px;
+      margin-bottom: 28px;
+      font-size: 1.05rem;
+      font-weight: 500;
+      color: #111;
+    }
+
+    p.summary {
+      font-size: 1.05rem;
+      color: #374151;
+      margin-bottom: 40px;
+      line-height: 1.8;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--color-navy);
+      margin: 40px 0 16px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #e5e7eb;
+    }
+
+    p { margin-bottom: 16px; color: #374151; }
+
+    ul, ol {
+      padding-left: 24px;
+      margin-bottom: 16px;
+      color: #374151;
+    }
+
+    li { margin-bottom: 8px; }
+
+    strong { color: var(--color-navy); }
+
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 24px 0;
+      background: #fff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    }
+
+    .comparison-table th {
+      background: var(--color-navy);
+      color: #fff;
+      padding: 12px 16px;
+      text-align: left;
+      font-size: 0.95rem;
+    }
+
+    .comparison-table td {
+      padding: 12px 16px;
+      border-bottom: 1px solid #e5e7eb;
+      font-size: 0.95rem;
+      color: #374151;
+    }
+
+    .comparison-table tr:last-child td { border-bottom: none; }
+    .comparison-table tr:nth-child(even) td { background: #f8f9fa; }
+
+    .course-cta {
+      background: var(--color-navy);
+      border-radius: 12px;
+      padding: 48px 40px;
+      margin: 56px 0;
+      text-align: center;
+    }
+
+    .course-cta h2 {
+      color: var(--color-gold);
+      border: none;
+      font-size: 1.8rem;
+      margin: 0 0 16px;
+      padding: 0;
+    }
+
+    .course-cta p {
+      color: #cbd5e1;
+      font-size: 1.05rem;
+      margin-bottom: 28px;
+      max-width: 520px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .course-cta a {
+      display: inline-block;
+      background: var(--color-orange);
+      color: #fff;
+      text-decoration: none;
+      padding: 16px 36px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 1.05rem;
+      transition: opacity 0.2s;
+    }
+
+    .course-cta a:hover { opacity: 0.88; }
+
+    .faq-section { margin: 56px 0; }
+
+    .faq-section h2 {
+      font-size: 1.6rem;
+      border-bottom: 2px solid var(--color-orange);
+      color: var(--color-navy);
+    }
+
+    .faq-item {
+      border-bottom: 1px solid #e5e7eb;
+      padding: 20px 0;
+    }
+
+    .faq-item h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--color-navy);
+      margin-bottom: 10px;
+    }
+
+    .faq-item p { margin: 0; }
+
+    .related-links { margin: 48px 0; }
+
+    .related-links h2 {
+      font-size: 1.4rem;
+      color: var(--color-navy);
+    }
+
+    .related-links ul {
+      list-style: none;
+      padding: 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .related-links li { margin: 0; }
+
+    .related-links a {
+      display: block;
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+      padding: 14px 18px;
+      color: var(--color-blue);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .related-links a:hover {
+      border-color: var(--color-blue);
+      box-shadow: 0 2px 8px rgba(29,161,242,0.12);
+    }
+
+    footer {
+      background: var(--color-navy);
+      color: #94a3b8;
+      padding: 40px 24px;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+    footer .tagline {
+      color: var(--color-gold);
+      font-weight: 700;
+      font-size: 1.05rem;
+      margin-bottom: 16px;
+    }
+
+    footer a { color: #94a3b8; text-decoration: none; }
+    footer a:hover { color: #fff; }
+    footer .footer-links { display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; margin-top: 12px; }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 1.7rem; }
+      .related-links ul { grid-template-columns: 1fr; }
+      .course-cta { padding: 32px 20px; }
+      .nav-cta { font-size: 0.8rem; padding: 8px 14px; }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@type": "WebPage", "name": "What Is a Bitcoin Fork?", "url": "https://satusphere.com/learn/what-is-a-bitcoin-fork", "speakable": {"@type": "SpeakableSpecification", "cssSelector": [".answer-block", "h1", ".summary"]}}
+  </script>
+</head>
+<body>
+
+  <nav>
+    <a href="https://satusphere.com" class="nav-logo">Sat<span>Us</span>Phere</a>
+    <a href="https://checkout.teachable.com/secure/2684007/checkout/order_1y3wjzbk" class="nav-cta">Get Bitcoin From Scratch - $97</a>
+  </nav>
+
+  <div class="breadcrumb">
+    <a href="https://satusphere.com">Home</a>
+    <span>&#8250;</span>
+    <a href="https://satusphere.com/learn">Learn Bitcoin</a>
+    <span>&#8250;</span>
+    What Is a Bitcoin Fork?
+  </div>
+
+  <div class="container">
+
+    <h1>What Is a Bitcoin Fork?</h1>
+
+    <div class="answer-block">
+      A Bitcoin fork is a change to the rules of the Bitcoin protocol. Soft forks are backward-compatible upgrades that keep the network unified, while hard forks create an incompatible split that can produce two separate blockchains and two separate coins. Bitcoin Cash is the most well-known hard fork, created in 2017 when a faction wanted larger block sizes.
+    </div>
+
+    <p class="summary">
+      Bitcoin has no CEO and no central authority that can simply push an update. Protocol changes require consensus across a global network of independent participants. When agreement is not reached, the network can split - and that split is called a hard fork. Understanding how forks work helps explain both Bitcoin's resilience and why competing versions of "Bitcoin" appear from time to time. It also reveals how Bitcoin achieves decentralized governance in practice.
+    </p>
+
+    <h2>What a Fork Actually Is</h2>
+    <p>
+      Think of Bitcoin's protocol as a shared rulebook. Every node on the network follows the same rules to validate transactions and blocks. These rules define things like: how large a block can be, how transactions must be structured, and what counts as a valid digital signature.
+    </p>
+    <p>
+      When developers want to change any of these rules, they propose an upgrade. If the entire network adopts the change simultaneously, the transition is smooth and invisible to most users. The challenge arises when not everyone agrees - or when different factions want different changes. In those cases, the shared rulebook diverges into two separate rulebooks, and the blockchain splits into two separate chains.
+    </p>
+    <p>
+      The moment of the split is called the fork point. Every transaction that occurred before the fork is shared by both chains. After the fork, the two chains diverge completely and operate independently.
+    </p>
+
+    <h2>Soft Forks vs. Hard Forks</h2>
+    <p>
+      The critical distinction is backward compatibility.
+    </p>
+
+    <table class="comparison-table">
+      <thead>
+        <tr>
+          <th>Feature</th>
+          <th>Soft Fork</th>
+          <th>Hard Fork</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Backward compatible?</td>
+          <td>Yes</td>
+          <td>No</td>
+        </tr>
+        <tr>
+          <td>Chain split?</td>
+          <td>No (if majority of miners upgrade)</td>
+          <td>Yes (if adoption is not unanimous)</td>
+        </tr>
+        <tr>
+          <td>Creates new coin?</td>
+          <td>No</td>
+          <td>Potentially yes</td>
+        </tr>
+        <tr>
+          <td>Old nodes accept new blocks?</td>
+          <td>Yes</td>
+          <td>No</td>
+        </tr>
+        <tr>
+          <td>Example</td>
+          <td>SegWit (2017)</td>
+          <td>Bitcoin Cash (2017)</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>
+      <strong>A soft fork</strong> tightens the rules. New blocks produced under the upgraded rules are still valid under the old rules, so nodes that never upgrade continue to function on the same network. The change propagates as miners adopt it. SegWit, which moved signature data outside the main transaction block, is the best-known soft fork in Bitcoin's history.
+    </p>
+    <p>
+      <strong>A hard fork</strong> loosens or fundamentally changes the rules in a way that old nodes reject. If a group of miners starts producing blocks under the new rules, old nodes will reject those blocks as invalid. If neither group backs down, two separate chains persist indefinitely.
+    </p>
+
+    <h2>Bitcoin Cash: The Most Notable Hard Fork</h2>
+    <p>
+      By 2017, Bitcoin was experiencing congestion. Transaction fees were rising and confirmation times were slow during peak demand. One camp believed the solution was to increase the maximum block size from 1 MB to 8 MB, allowing more transactions per block. Another camp (the majority of Bitcoin's developer community) argued that large blocks would centralize the network by making it expensive to run a full node.
+    </p>
+    <p>
+      After months of intense debate, the pro-large-block faction forked away from Bitcoin at block 478,558 on August 1, 2017, creating <strong>Bitcoin Cash (BCH)</strong>. Every holder of Bitcoin at that moment received an equal amount of Bitcoin Cash on the new chain.
+    </p>
+    <p>
+      Bitcoin Cash later experienced its own contentious hard fork in November 2018, when Craig Wright's faction split off to create <strong>Bitcoin SV (BSV)</strong> - "Satoshi's Vision" - advocating for even larger blocks and a more literal interpretation of Satoshi's original whitepaper. Both BCH and BSV have shrunk dramatically in market share relative to Bitcoin since their creation.
+    </p>
+
+    <h2>SegWit: A Soft Fork That Changed Bitcoin's Architecture</h2>
+    <p>
+      While Bitcoin Cash grabbed headlines, a different kind of change was also activating in 2017: <strong>SegWit (Segregated Witness)</strong>. SegWit was a soft fork that restructured how transaction data is stored inside a block by moving the "witness" data (digital signatures) into a separate part of the block.
+    </p>
+    <p>
+      The change was backward-compatible. Nodes that never upgraded still process transactions and remained part of the same Bitcoin network. SegWit activated in August 2017 with about 80% miner signaling - demonstrating that meaningful protocol changes can happen in Bitcoin without creating a chain split, as long as there is sufficient consensus.
+    </p>
+    <p>
+      SegWit also fixed a long-standing bug called transaction malleability and made the Lightning Network possible by providing the technical foundation Layer 2 payments require.
+    </p>
+
+    <h2>What Happens to Bitcoin Holders During a Hard Fork</h2>
+    <p>
+      When a hard fork occurs, the blockchain history splits at a specific block. Everyone who held Bitcoin before that block has a claim to coins on both chains - because both chains share the same transaction history up to the fork point.
+    </p>
+    <p>
+      How this plays out in practice depends on how you hold Bitcoin:
+    </p>
+    <ul>
+      <li><strong>Self-custody (hardware wallet or software wallet):</strong> You control your private keys, so you have the ability to access your coins on both chains. You typically need to use chain-specific software or the receiving chain's wallet to claim forked coins.</li>
+      <li><strong>Exchange custody:</strong> The exchange decides whether to support the new coin and distribute it to customers. Some exchanges credited users with the new coin; others did not. Users had no control over this process.</li>
+    </ul>
+    <p>
+      This is one of many reasons why self-custody matters. When you hold your own private keys, you retain full control over your assets across any fork - without waiting for an exchange's policy decision.
+    </p>
+    <p>
+      Fork history also demonstrates how Bitcoin's decentralized governance works. There is no CEO who can impose a change. Developers propose, miners signal, nodes adopt, and the market assigns value. Bitcoin Cash and Bitcoin SV have both been tested in the open market against Bitcoin, and the market has returned a clear verdict.
+    </p>
+
+    <div class="course-cta">
+      <h2>Learn Bitcoin The Visual Way</h2>
+      <p>Bitcoin From Scratch explains forks, the blockchain, decentralized governance, and more through 34 3D animated lessons - designed for anyone starting from zero.</p>
+      <a href="https://checkout.teachable.com/secure/2684007/checkout/order_1y3wjzbk">Get Bitcoin From Scratch - $97</a>
+    </div>
+
+    <section class="faq-section">
+      <h2>Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <h3>What is a Bitcoin fork?</h3>
+        <p>A Bitcoin fork is a change to the rules of the Bitcoin protocol. Because Bitcoin has no central authority to push updates, protocol changes require consensus among the network's participants - miners, nodes, and developers. When the network changes its rules, it is called a fork. If everyone upgrades together, it is a seamless update. If part of the network refuses to upgrade, the chain can split into two separate blockchains.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>What is the difference between a soft fork and a hard fork?</h3>
+        <p>A soft fork is a backward-compatible change. Old nodes that do not upgrade still accept blocks from upgraded nodes, so the network stays unified. SegWit (2017) is the most significant example - nodes that never upgraded still process transactions. A hard fork is a non-backward-compatible change. Old and new nodes reject each other's blocks, which permanently splits the chain into two separate networks with two separate coins if adoption is not unanimous. Bitcoin Cash (2017) resulted from a hard fork.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>What happened with Bitcoin Cash?</h3>
+        <p>In August 2017, a faction of miners and developers who wanted larger block sizes forked away from Bitcoin to create Bitcoin Cash (BCH). The hard fork happened at block 478,558. Anyone holding Bitcoin at that moment received an equal amount of Bitcoin Cash. The two chains have operated independently ever since. Bitcoin has continued growing while Bitcoin Cash commands a small fraction of the market capitalization.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Does a Bitcoin fork give me free coins?</h3>
+        <p>When a hard fork creates a new coin, everyone holding Bitcoin at the time of the fork receives an equal amount of the new coin on the new chain. In that sense, yes - the Bitcoin Cash fork in 2017 gave every Bitcoin holder an equal amount of BCH at no cost. However, to claim forked coins you typically need to control your private keys. If your Bitcoin was on an exchange during the fork, the exchange decided whether to distribute the new coins.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Is Bitcoin Cash the same as Bitcoin?</h3>
+        <p>No. Bitcoin Cash (BCH) is a separate cryptocurrency that forked from Bitcoin in 2017. It shares Bitcoin's transaction history up to block 478,558, but after that point it is an entirely different network with different rules. Bitcoin (BTC) is the original chain and by far the larger network in terms of hash rate, market capitalization, and adoption. The two are not interchangeable.</p>
+      </div>
+    </section>
+
+  </div>
+
+  <footer>
+    <p class="tagline">Bitcoin Is For All Of Us</p>
+    <div class="footer-links">
+      <a href="https://satusphere.com">satusphere.com</a>
+      <a href="https://x.com/sat_us_phere">@sat_us_phere</a>
+      <a href="mailto:info@satusphere.com">info@satusphere.com</a>
+    </div>
+    <p style="margin-top:16px; font-size:0.8rem;">&copy; 2026 SatUsPhere. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

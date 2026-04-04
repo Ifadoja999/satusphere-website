@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>What Is Bitcoin Layer 2? | SatUsPhere</title>
+  <meta name="description" content="Bitcoin Layer 2 refers to protocols built on top of the Bitcoin base layer that enable faster, cheaper transactions without changing Bitcoin's core rules. Learn how Lightning Network and other Layer 2 solutions work.">
+  <link rel="canonical" href="https://satusphere.com/learn/what-is-bitcoin-layer-2">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "SatUsPhere",
+    "url": "https://satusphere.com",
+    "logo": "https://satusphere.com/logo.png",
+    "sameAs": [
+      "https://x.com/sat_us_phere",
+      "https://www.youtube.com/channel/UC0jGCeBvr8qLmMhRpwda-5Q"
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://satusphere.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Learn Bitcoin",
+        "item": "https://satusphere.com/learn"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "What Is Bitcoin Layer 2?",
+        "item": "https://satusphere.com/learn/what-is-bitcoin-layer-2"
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "What Is Bitcoin Layer 2?",
+    "description": "Bitcoin Layer 2 refers to protocols built on top of the Bitcoin base layer that enable faster, cheaper transactions without changing Bitcoin's core rules.",
+    "author": {
+      "@type": "Organization",
+      "name": "SatUsPhere"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "SatUsPhere",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://satusphere.com/logo.png"
+      }
+    },
+    "datePublished": "2026-04-01",
+    "dateModified": "2026-04-01",
+    "mainEntityOfPage": "https://satusphere.com/learn/what-is-bitcoin-layer-2"
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is Bitcoin Layer 2?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Bitcoin Layer 2 refers to any protocol or network built on top of Bitcoin's base layer (Layer 1) that processes transactions off the main blockchain. Layer 2 solutions inherit Bitcoin's security while adding capabilities like faster settlement and lower fees."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the most popular Bitcoin Layer 2?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The Lightning Network is by far the most widely used Bitcoin Layer 2. It enables near-instant Bitcoin payments at very low cost by routing transactions through payment channels that settle on the Bitcoin blockchain only when channels are opened or closed."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How is the Lightning Network a Layer 2?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The Lightning Network is a Layer 2 because it processes transactions off the Bitcoin blockchain using payment channels. Two parties lock bitcoin on-chain in a channel and can then transact freely between themselves. Only the opening and closing of the channel are recorded on Layer 1."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Layer 2 change Bitcoin's rules?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Layer 2 protocols do not alter Bitcoin's core consensus rules. They operate on top of Bitcoin without modifying the base layer. Bitcoin's 21 million supply cap, proof-of-work, and block structure remain unchanged regardless of what Layer 2 solutions exist."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is Layer 2 safe?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Layer 2 inherits Bitcoin's security at the settlement layer, but each implementation has its own tradeoffs. The Lightning Network, for example, requires users to stay online or use a watchtower to prevent channel fraud. Understanding the specific risks of each Layer 2 protocol is important before using it."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SpeakableSpecification",
+    "cssSelector": [".answer-block", ".summary"]
+  }
+  </script>
+
+  <style>
+    :root {
+      --color-navy: #0D1B2E;
+      --color-orange: #F7931A;
+      --color-blue: #1DA1F2;
+      --color-gold: #D4A530;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #ffffff;
+      color: #1a1a1a;
+      line-height: 1.7;
+      font-size: 17px;
+    }
+
+    a { color: var(--color-blue); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* NAV */
+    nav {
+      background: var(--color-navy);
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav-logo {
+      font-size: 22px;
+      font-weight: 700;
+      color: #ffffff;
+      text-decoration: none;
+      letter-spacing: 0.5px;
+    }
+    .nav-logo span { color: var(--color-orange); }
+    .nav-cta {
+      background: var(--color-orange);
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 14px;
+      padding: 10px 20px;
+      border-radius: 6px;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .nav-cta:hover { background: #e0820f; text-decoration: none; }
+
+    /* LAYOUT */
+    .container {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* BREADCRUMB */
+    .breadcrumb {
+      padding: 14px 0;
+      font-size: 14px;
+      color: #666;
+    }
+    .breadcrumb a { color: var(--color-blue); }
+    .breadcrumb span { margin: 0 6px; color: #999; }
+
+    /* HERO */
+    .page-hero {
+      padding: 40px 0 32px;
+      border-bottom: 3px solid var(--color-orange);
+      margin-bottom: 36px;
+    }
+    .page-hero h1 {
+      font-size: 40px;
+      font-weight: 800;
+      color: var(--color-navy);
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+
+    /* ANSWER BLOCK */
+    .answer-block {
+      background: #f0f7ff;
+      border-left: 5px solid var(--color-blue);
+      padding: 20px 24px;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 28px;
+      font-size: 18px;
+      font-weight: 500;
+      color: var(--color-navy);
+      line-height: 1.6;
+    }
+
+    /* SUMMARY */
+    .summary {
+      font-size: 18px;
+      color: #444;
+      margin-bottom: 40px;
+      line-height: 1.8;
+    }
+
+    /* CONTENT */
+    .content h2 {
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--color-navy);
+      margin: 44px 0 16px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #eee;
+    }
+    .content p {
+      margin-bottom: 18px;
+      color: #333;
+    }
+    .content ul {
+      margin: 0 0 18px 24px;
+      color: #333;
+    }
+    .content ul li {
+      margin-bottom: 8px;
+    }
+
+    /* COURSE CTA */
+    .course-cta {
+      background: var(--color-navy);
+      color: #ffffff;
+      padding: 48px 40px;
+      border-radius: 12px;
+      text-align: center;
+      margin: 56px 0;
+    }
+    .course-cta h2 {
+      font-size: 28px;
+      font-weight: 800;
+      color: var(--color-gold);
+      margin-bottom: 14px;
+    }
+    .course-cta p {
+      font-size: 17px;
+      color: #ccc;
+      margin-bottom: 28px;
+      line-height: 1.7;
+    }
+    .cta-btn {
+      display: inline-block;
+      background: var(--color-orange);
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 18px;
+      padding: 16px 36px;
+      border-radius: 8px;
+      text-decoration: none;
+    }
+    .cta-btn:hover { background: #e0820f; text-decoration: none; }
+
+    /* FAQ */
+    .faq-section { margin: 56px 0; }
+    .faq-section h2 {
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--color-navy);
+      margin-bottom: 28px;
+    }
+    .faq-item {
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      margin-bottom: 14px;
+      overflow: hidden;
+    }
+    .faq-question {
+      font-weight: 700;
+      font-size: 16px;
+      color: var(--color-navy);
+      padding: 18px 20px;
+      background: #f9f9f9;
+      border-bottom: 1px solid #e0e0e0;
+    }
+    .faq-answer {
+      padding: 16px 20px;
+      color: #444;
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    /* RELATED LINKS */
+    .related-section { margin: 48px 0; }
+    .related-section h2 {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--color-navy);
+      margin-bottom: 16px;
+    }
+    .related-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .related-links a {
+      background: #f0f7ff;
+      border: 1px solid var(--color-blue);
+      color: var(--color-blue);
+      padding: 10px 18px;
+      border-radius: 6px;
+      font-size: 15px;
+      font-weight: 500;
+    }
+    .related-links a:hover { background: var(--color-blue); color: #fff; text-decoration: none; }
+
+    /* FOOTER */
+    footer {
+      background: var(--color-navy);
+      color: #aaa;
+      text-align: center;
+      padding: 36px 24px;
+      margin-top: 72px;
+      font-size: 14px;
+    }
+    footer .tagline {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--color-gold);
+      margin-bottom: 10px;
+    }
+    footer a { color: var(--color-blue); }
+
+    @media (max-width: 600px) {
+      .page-hero h1 { font-size: 28px; }
+      .nav-cta { font-size: 12px; padding: 8px 14px; }
+      .course-cta { padding: 32px 20px; }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@type": "WebPage", "name": "What Is Bitcoin Layer 2?", "url": "https://satusphere.com/learn/what-is-bitcoin-layer-2", "speakable": {"@type": "SpeakableSpecification", "cssSelector": [".answer-block", "h1", ".summary"]}}
+  </script>
+</head>
+<body>
+
+  <nav>
+    <a href="https://satusphere.com" class="nav-logo">Sat<span>Us</span>Phere</a>
+    <a href="https://checkout.teachable.com/secure/2684007/checkout/order_1y3wjzbk" class="nav-cta">Get Bitcoin From Scratch - $97</a>
+  </nav>
+
+  <div class="container">
+
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="https://satusphere.com">Home</a>
+      <span>></span>
+      <a href="https://satusphere.com/learn">Learn Bitcoin</a>
+      <span>></span>
+      What Is Bitcoin Layer 2?
+    </nav>
+
+    <header class="page-hero">
+      <h1>What Is Bitcoin Layer 2?</h1>
+      <div class="answer-block">
+        Bitcoin Layer 2 refers to protocols built on top of Bitcoin's base blockchain (Layer 1) that process transactions off-chain while still settling on Bitcoin. Layer 2 solutions exist because Bitcoin's base layer prioritizes security and decentralization over speed, and Layer 2 adds the throughput Bitcoin needs for everyday use without changing a single rule of the underlying protocol.
+      </div>
+    </header>
+
+    <p class="summary">
+      Bitcoin's base layer is deliberately slow and limited - processing roughly 7 transactions per second. That's a feature, not a bug. The tradeoff is that Bitcoin's security and decentralization are unmatched. Layer 2 protocols solve the throughput problem by moving most of the action off-chain and settling the final result on Bitcoin's immutable ledger.
+    </p>
+
+    <div class="content">
+
+      <h2>Why Layer 2 Exists: Bitcoin's Deliberate Constraints</h2>
+      <p>
+        Bitcoin's base layer - sometimes called Layer 1 - processes roughly 7 transactions per second and produces a new block only about every 10 minutes. This is intentional. Each node on the network stores and validates every transaction ever made, which means throughput is capped by what every participant in the world can reasonably run. Increasing the block size to fit more transactions would push node requirements up, centralizing the network.
+      </p>
+      <p>
+        The result is a system that is extremely hard to corrupt or shut down, but not designed for small, rapid-fire purchases. If you want to buy a cup of coffee with Bitcoin at Layer 1, you'd wait 10 minutes for a confirmation and pay several dollars in fees. Layer 2 is the answer to that problem.
+      </p>
+
+      <h2>The Lightning Network: Bitcoin's Primary Layer 2</h2>
+      <p>
+        The Lightning Network is by far the most widely deployed Bitcoin Layer 2. It works by allowing two parties to open a payment channel by locking some bitcoin in a multisig address on Layer 1. Once the channel is open, those two parties can send payments back and forth as many times as they want, instantly and for near-zero fees. None of those in-channel transactions touch the Bitcoin blockchain.
+      </p>
+      <p>
+        When either party wants to close the channel, they broadcast the final balance to the Bitcoin blockchain and it settles on Layer 1. The blockchain only ever sees two transactions: the channel open and the channel close. Everything in between happens off-chain. Through a network of interconnected channels, you can route a Lightning payment to anyone on the network even if you don't have a direct channel with them.
+      </p>
+
+      <h2>Other Bitcoin Layer 2 Examples</h2>
+      <p>
+        The Lightning Network dominates, but it is not the only Layer 2 built on Bitcoin:
+      </p>
+      <ul>
+        <li><strong>Liquid Network</strong> - A federated sidechain by Blockstream aimed at exchanges and traders. It enables faster settlement and confidential transactions, and uses a peg mechanism to move bitcoin between the main chain and the Liquid sidechain.</li>
+        <li><strong>RSK (Rootstock)</strong> - A sidechain that adds Ethereum-compatible smart contract functionality to Bitcoin. RSK uses merge-mining, meaning Bitcoin miners can simultaneously mine RSK blocks without additional hardware.</li>
+        <li><strong>Statechains</strong> - An experimental protocol that transfers ownership of UTXOs off-chain by transferring private keys through a trusted server, without any on-chain transaction per transfer.</li>
+      </ul>
+
+      <h2>How Layer 2 Inherits Bitcoin Security</h2>
+      <p>
+        Layer 2 protocols ultimately settle on Bitcoin's blockchain. When a Lightning channel closes, the final balances are recorded on Layer 1 using the same proof-of-work-secured, globally distributed blockchain that protects all Bitcoin transactions. The security guarantee at settlement is identical to any other on-chain transaction.
+      </p>
+      <p>
+        This is a meaningful distinction from alternative blockchains. Lightning doesn't create a parallel system with its own security assumptions for final settlement. It piggybacks on Bitcoin's security - the most battle-tested distributed system in existence.
+      </p>
+
+      <h2>The Difference Between L1 Settlement and L2 Transactions</h2>
+      <p>
+        A Layer 1 transaction is final. It gets confirmed by miners, included in a block, and becomes a permanent part of the longest chain. No counterparty can reverse it. A Layer 2 transaction, by contrast, is a promise - backed by bitcoin locked on Layer 1 - but it doesn't hit the chain until the channel closes.
+      </p>
+      <p>
+        This means Layer 2 transactions have different security properties. They're fast and cheap but they carry assumptions: both parties must be capable of monitoring the channel and closing it if one party tries to submit a fraudulent state. For most everyday payment use cases, the convenience tradeoff is well worth it. For high-value, final settlement, the Bitcoin base layer remains the gold standard.
+      </p>
+
+    </div>
+
+    <div class="course-cta">
+      <h2>Learn Bitcoin The Visual Way</h2>
+      <p>Bitcoin From Scratch is the only Bitcoin fundamentals course built entirely with 3D animation. 34 lessons covering everything from the history of money to self-custody and the Lightning Network.</p>
+      <a href="https://checkout.teachable.com/secure/2684007/checkout/order_1y3wjzbk" class="cta-btn">Get Bitcoin From Scratch - $97</a>
+    </div>
+
+    <section class="faq-section">
+      <h2>Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <div class="faq-question">What is Bitcoin Layer 2?</div>
+        <div class="faq-answer">Bitcoin Layer 2 refers to any protocol or network built on top of Bitcoin's base layer (Layer 1) that processes transactions off the main blockchain. Layer 2 solutions inherit Bitcoin's security while adding capabilities like faster settlement and lower fees.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">What is the most popular Bitcoin Layer 2?</div>
+        <div class="faq-answer">The Lightning Network is by far the most widely used Bitcoin Layer 2. It enables near-instant Bitcoin payments at very low cost by routing transactions through payment channels that settle on the Bitcoin blockchain only when channels are opened or closed.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">How is the Lightning Network a Layer 2?</div>
+        <div class="faq-answer">The Lightning Network is a Layer 2 because it processes transactions off the Bitcoin blockchain using payment channels. Two parties lock bitcoin on-chain in a channel and can then transact freely between themselves. Only the opening and closing of the channel are recorded on Layer 1.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">Does Layer 2 change Bitcoin's rules?</div>
+        <div class="faq-answer">No. Layer 2 protocols do not alter Bitcoin's core consensus rules. They operate on top of Bitcoin without modifying the base layer. Bitcoin's 21 million supply cap, proof-of-work, and block structure remain unchanged regardless of what Layer 2 solutions exist.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">Is Layer 2 safe?</div>
+        <div class="faq-answer">Layer 2 inherits Bitcoin's security at the settlement layer, but each implementation has its own tradeoffs. The Lightning Network, for example, requires users to stay online or use a watchtower to prevent channel fraud. Understanding the specific risks of each Layer 2 protocol is important before using it.</div>
+      </div>
+    </section>
+
+    <section class="related-section">
+      <h2>Related Topics</h2>
+
+    <div class="related-links">
+      <h2>Related Topics</h2>
+      <ul>
+        <li><a href="/learn/what-is-the-lightning-network">What is the Lightning Network?</a></li>
+        <li><a href="/learn/what-is-on-chain-vs-off-chain">What is on-chain vs. off-chain?</a></li>
+        <li><a href="/learn/how-do-bitcoin-transactions-work">How do Bitcoin transactions work?</a></li>
+        <li><a href="/learn/what-is-bitcoin">What is Bitcoin?</a></li>
+        <li><a href="/learn/what-is-a-bitcoin-wallet">How to store Bitcoin</a></li>
+      </ul>
+    </div>
+    </section>
+
+  </div>
+
+  <footer>
+    <div class="tagline">Bitcoin Is For All Of Us</div>
+    <p>SatUsPhere | <a href="mailto:info@satusphere.com">info@satusphere.com</a> | <a href="https://x.com/sat_us_phere">@sat_us_phere</a></p>
+    <p style="margin-top:8px;">&copy; 2026 SatUsPhere. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

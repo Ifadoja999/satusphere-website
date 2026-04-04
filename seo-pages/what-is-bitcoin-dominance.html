@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>What Is Bitcoin Dominance? | SatUsPhere</title>
+  <meta name="description" content="Bitcoin dominance measures Bitcoin's share of the total crypto market cap. Learn how it's calculated, what it signals about market cycles, and why it matters for understanding the broader market." />
+  <link rel="canonical" href="https://satusphere.com/learn/what-is-bitcoin-dominance" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "SatUsPhere",
+    "url": "https://satusphere.com",
+    "logo": "https://satusphere.com/assets/logo.png",
+    "description": "SatUsPhere is a Bitcoin education company that makes complex concepts visual through 3D animated lessons.",
+    "sameAs": [
+      "https://x.com/sat_us_phere",
+      "https://www.youtube.com/channel/UC0jGCeBvr8qLmMhRpwda-5Q"
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://satusphere.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Learn Bitcoin",
+        "item": "https://satusphere.com/learn"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "What Is Bitcoin Dominance?",
+        "item": "https://satusphere.com/learn/what-is-bitcoin-dominance"
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "What Is Bitcoin Dominance?",
+    "description": "Bitcoin dominance is the percentage of the total cryptocurrency market capitalization held by Bitcoin. This guide explains how it is calculated, what rising or falling dominance signals about market cycles, historical ranges, and its limitations as a metric.",
+    "author": {
+      "@type": "Organization",
+      "name": "SatUsPhere"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "SatUsPhere",
+      "url": "https://satusphere.com"
+    },
+    "url": "https://satusphere.com/learn/what-is-bitcoin-dominance",
+    "datePublished": "2026-04-01",
+    "dateModified": "2026-04-01"
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is a good Bitcoin dominance percentage?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "There is no universally agreed-upon target, but historically Bitcoin dominance has ranged from around 40% during peak altcoin seasons to over 70% during risk-off periods. Many Bitcoin-focused analysts view higher dominance as a sign of the market being in a healthier, more conservative phase. Altcoin-heavy investors tend to prefer lower dominance periods when speculative capital flows outward."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Bitcoin dominance going up mean Bitcoin's price is rising?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Not necessarily. Bitcoin dominance is a relative measure, not an absolute one. Dominance can rise even if Bitcoin's price is falling - as long as altcoins are falling faster. Conversely, Bitcoin's price can rise while dominance falls if altcoin prices are rising faster. The two metrics measure different things and should be read together rather than in isolation."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What causes Bitcoin dominance to fall?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Bitcoin dominance typically falls when speculative capital rotates from Bitcoin into altcoins. This often happens after Bitcoin has already had a significant run and investors seek higher-percentage gains in smaller tokens. New altcoin narratives (DeFi, NFTs, Layer 2s) can also pull attention and capital away from Bitcoin temporarily. The launch of many new tokens also mathematically increases the denominator, which can reduce dominance even without Bitcoin losing value."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why was Bitcoin dominance nearly 100% in 2010?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "In Bitcoin's earliest years, it was essentially the only cryptocurrency in existence. Litecoin launched in 2011, Ethereum in 2015, and the explosion of altcoins came gradually. Bitcoin's dominance was naturally near 100% because there was nothing else for the denominator. As thousands of new projects launched over the following years, the denominator (total crypto market cap) expanded dramatically, pulling Bitcoin's percentage share down regardless of Bitcoin's own growth."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Should I use Bitcoin dominance to time market trades?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Bitcoin dominance is one data point among many - not a reliable standalone trading signal. It can provide useful context about where the market is in a cycle, but it is a lagging indicator and can stay at extreme levels longer than expected. Most serious Bitcoin analysts treat dominance as background context rather than a trigger for specific trading decisions."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SpeakableSpecification",
+    "cssSelector": [".answer-block", ".summary"]
+  }
+  </script>
+
+  <style>
+    :root {
+      --color-navy: #0D1B2E;
+      --color-orange: #F7931A;
+      --color-blue: #1DA1F2;
+      --color-gold: #D4A530;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #ffffff;
+      color: #1a1a1a;
+      line-height: 1.7;
+      font-size: 17px;
+    }
+
+    nav {
+      background: var(--color-navy);
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav a.logo {
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+
+    nav a.logo span {
+      color: var(--color-orange);
+    }
+
+    nav a.cta-btn {
+      background: var(--color-orange);
+      color: #ffffff;
+      text-decoration: none;
+      padding: 10px 18px;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 600;
+      white-space: nowrap;
+      transition: opacity 0.2s;
+    }
+
+    nav a.cta-btn:hover {
+      opacity: 0.88;
+    }
+
+    .breadcrumb {
+      background: #f5f5f5;
+      padding: 10px 24px;
+      font-size: 13px;
+      color: #666;
+    }
+
+    .breadcrumb a {
+      color: var(--color-blue);
+      text-decoration: none;
+    }
+
+    .breadcrumb a:hover {
+      text-decoration: underline;
+    }
+
+    .breadcrumb span {
+      margin: 0 6px;
+      color: #999;
+    }
+
+    .hero {
+      background: var(--color-navy);
+      color: #ffffff;
+      padding: 56px 24px 48px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: clamp(28px, 5vw, 46px);
+      font-weight: 800;
+      line-height: 1.2;
+      max-width: 760px;
+      margin: 0 auto 12px;
+    }
+
+    .hero h1 span {
+      color: var(--color-orange);
+    }
+
+    .hero .subtitle {
+      color: #a0b4c8;
+      font-size: 16px;
+      max-width: 560px;
+      margin: 0 auto;
+    }
+
+    .content-wrap {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 48px 24px;
+    }
+
+    .answer-block {
+      background: #f0f7ff;
+      border-left: 4px solid var(--color-blue);
+      padding: 20px 24px;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 32px;
+      font-size: 17px;
+      line-height: 1.65;
+      color: #1a2a3a;
+    }
+
+    .answer-block strong {
+      display: block;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: var(--color-blue);
+      margin-bottom: 8px;
+    }
+
+    p.summary {
+      font-size: 18px;
+      color: #2a2a2a;
+      line-height: 1.75;
+      margin-bottom: 40px;
+      border-bottom: 1px solid #e8e8e8;
+      padding-bottom: 40px;
+    }
+
+    h2 {
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--color-navy);
+      margin: 40px 0 16px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--color-gold);
+      display: inline-block;
+    }
+
+    p {
+      margin-bottom: 18px;
+      color: #333;
+    }
+
+    ul, ol {
+      margin: 0 0 20px 24px;
+      color: #333;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    .formula-box {
+      background: var(--color-navy);
+      color: #ffffff;
+      border-radius: 8px;
+      padding: 24px 28px;
+      margin: 28px 0;
+      font-family: 'Courier New', monospace;
+      font-size: 16px;
+      line-height: 1.8;
+    }
+
+    .formula-box .label {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: var(--color-gold);
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    .history-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 24px 0;
+      font-size: 15px;
+    }
+
+    .history-table th {
+      background: var(--color-navy);
+      color: #ffffff;
+      padding: 12px 16px;
+      text-align: left;
+    }
+
+    .history-table td {
+      padding: 12px 16px;
+      border-bottom: 1px solid #e8e8e8;
+    }
+
+    .history-table tr:nth-child(even) td {
+      background: #f8f8f8;
+    }
+
+    .callout {
+      background: #fff8ee;
+      border: 1px solid var(--color-gold);
+      border-radius: 8px;
+      padding: 18px 22px;
+      margin: 28px 0;
+    }
+
+    .callout strong {
+      color: var(--color-navy);
+    }
+
+    .signal-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin: 24px 0;
+    }
+
+    @media (max-width: 560px) {
+      .signal-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .signal-card {
+      border-radius: 8px;
+      padding: 20px;
+    }
+
+    .signal-card.rising {
+      background: #fff8ee;
+      border: 1px solid var(--color-gold);
+    }
+
+    .signal-card.falling {
+      background: #f0f7ff;
+      border: 1px solid var(--color-blue);
+    }
+
+    .signal-card h4 {
+      font-size: 15px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .signal-card.rising h4 {
+      color: var(--color-gold);
+    }
+
+    .signal-card.falling h4 {
+      color: var(--color-blue);
+    }
+
+    .signal-card ul {
+      margin-left: 18px;
+      font-size: 14px;
+    }
+
+    .course-cta {
+      background: var(--color-navy);
+      color: #ffffff;
+      border-radius: 12px;
+      padding: 48px 36px;
+      text-align: center;
+      margin: 56px 0 48px;
+    }
+
+    .course-cta h3 {
+      color: var(--color-gold);
+      font-size: 26px;
+      font-weight: 800;
+      margin-bottom: 14px;
+    }
+
+    .course-cta p {
+      color: #a0b4c8;
+      font-size: 16px;
+      max-width: 520px;
+      margin: 0 auto 28px;
+    }
+
+    .course-cta a {
+      display: inline-block;
+      background: var(--color-orange);
+      color: #ffffff;
+      text-decoration: none;
+      padding: 16px 32px;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 700;
+      transition: opacity 0.2s;
+    }
+
+    .course-cta a:hover {
+      opacity: 0.88;
+    }
+
+    .faq-section {
+      margin: 48px 0;
+    }
+
+    .faq-section h2 {
+      font-size: 26px;
+      display: block;
+      border-bottom: 2px solid var(--color-gold);
+      padding-bottom: 10px;
+      margin-bottom: 28px;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid #e8e8e8;
+      padding: 20px 0;
+    }
+
+    .faq-item h3 {
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--color-navy);
+      margin-bottom: 10px;
+    }
+
+    .faq-item p {
+      color: #444;
+      margin: 0;
+    }
+
+    .related-links {
+      margin: 48px 0;
+    }
+
+    .related-links h2 {
+      font-size: 22px;
+      display: block;
+      border-bottom: 2px solid var(--color-gold);
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+    }
+
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 12px;
+    }
+
+    .related-grid a {
+      background: #f5f5f5;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      padding: 14px 16px;
+      text-decoration: none;
+      color: var(--color-navy);
+      font-size: 14px;
+      font-weight: 500;
+      transition: border-color 0.2s, background 0.2s;
+    }
+
+    .related-grid a:hover {
+      border-color: var(--color-blue);
+      background: #f0f7ff;
+    }
+
+    footer {
+      background: var(--color-navy);
+      color: #a0b4c8;
+      text-align: center;
+      padding: 36px 24px;
+      font-size: 14px;
+    }
+
+    footer .tagline {
+      color: var(--color-orange);
+      font-weight: 600;
+      font-size: 16px;
+      margin-bottom: 8px;
+    }
+
+    footer a {
+      color: var(--color-blue);
+      text-decoration: none;
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@type": "WebPage", "name": "What Is Bitcoin Dominance?", "url": "https://satusphere.com/learn/what-is-bitcoin-dominance", "speakable": {"@type": "SpeakableSpecification", "cssSelector": [".answer-block", "h1", ".summary"]}}
+  </script>
+</head>
+<body>
+
+  <nav>
+    <a href="https://satusphere.com" class="logo">Sats<span>U</span>sPhere</a>
+    <a href="https://checkout.teachable.com/secure/2684007/checkout/order_1y3wjzbk" class="cta-btn">Get Bitcoin From Scratch - $97</a>
+  </nav>
+
+  <div class="breadcrumb">
+    <a href="https://satusphere.com">Home</a>
+    <span>></span>
+    <a href="https://satusphere.com/learn">Learn Bitcoin</a>
+    <span>></span>
+    What Is Bitcoin Dominance?
+  </div>
+
+  <div class="hero">
+    <h1>What Is <span>Bitcoin Dominance</span>?</h1>
+    <p class="subtitle">Bitcoin's share of the total crypto market cap - and what it tells you about where the market is headed.</p>
+  </div>
+
+  <div class="content-wrap">
+
+    <div class="answer-block">
+      <strong>Quick Answer</strong>
+      Bitcoin dominance is a percentage that represents Bitcoin's market capitalization as a share of the total cryptocurrency market capitalization. If Bitcoin is worth $1 trillion and all cryptocurrencies combined are worth $2 trillion, Bitcoin dominance is 50%. It is one of the most watched macro indicators in the crypto market because it tends to signal shifts between risk-on and risk-off behavior among market participants.
+    </div>
+
+    <p class="summary">
+      When you zoom out on the cryptocurrency market, individual coin prices tell only part of the story. Bitcoin dominance gives you a relative view - not just how Bitcoin is doing in dollar terms, but how it is performing compared to the entire universe of crypto assets. A rising dominance suggests capital is consolidating in Bitcoin. A falling dominance suggests it is spreading outward into altcoins. Understanding this metric helps you read the broader market cycle rather than just reacting to individual price moves.
+    </p>
+
+    <!-- SECTION 1 -->
+    <h2>How Bitcoin Dominance Is Calculated</h2>
+    <p>
+      The formula is straightforward. Bitcoin dominance is simply Bitcoin's market capitalization divided by the total market capitalization of all cryptocurrencies, expressed as a percentage.
+    </p>
+
+    <div class="formula-box">
+      <span class="label">Formula</span>
+      Bitcoin Dominance (%) = (Bitcoin Market Cap / Total Crypto Market Cap) x 100
+    </div>
+
+    <p>
+      Market capitalization for any asset is calculated by multiplying the current price by the number of coins in circulation. For Bitcoin, that means the current BTC price multiplied by the number of Bitcoin that have been mined so far (out of the 21 million maximum supply).
+    </p>
+    <p>
+      The "total crypto market cap" denominator includes Bitcoin plus every other cryptocurrency - Ethereum, stablecoins like USDT and USDC, and thousands of altcoins. This means Bitcoin's dominance percentage can change even if Bitcoin's price and supply do not move, simply because other assets are rising or falling. It is a relative metric, not an absolute one.
+    </p>
+    <p>
+      Data providers like CoinMarketCap and CoinGecko track Bitcoin dominance in real time on their market overview pages. TradingView also offers a tradeable chart ticker (BTC.D) that tracks dominance historically.
+    </p>
+
+    <!-- SECTION 2 -->
+    <h2>What Bitcoin Dominance Signals About the Market</h2>
+    <p>
+      Traders and analysts use Bitcoin dominance as a macro context indicator - not to predict exact prices, but to understand the current character of the market and where capital is flowing.
+    </p>
+
+    <div class="signal-grid">
+      <div class="signal-card rising">
+        <h4>Rising Bitcoin Dominance</h4>
+        <ul>
+          <li>Capital flowing into Bitcoin from altcoins</li>
+          <li>Risk-off behavior (market caution)</li>
+          <li>Often seen in bear markets or early bull market stages</li>
+          <li>Bitcoin acting as a safe harbor within crypto</li>
+          <li>Altcoins typically underperforming Bitcoin</li>
+        </ul>
+      </div>
+      <div class="signal-card falling">
+        <h4>Falling Bitcoin Dominance</h4>
+        <ul>
+          <li>Capital rotating from Bitcoin into altcoins</li>
+          <li>Risk-on behavior (market optimism)</li>
+          <li>Often signals an "altcoin season" phase</li>
+          <li>Speculators seeking higher-percentage gains</li>
+          <li>New altcoin narratives driving attention</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="callout">
+      <strong>Important context:</strong> Bitcoin dominance is a relative indicator. Rising dominance does not necessarily mean Bitcoin is going up in price - it means Bitcoin is holding value better than most altcoins. This distinction matters enormously when reading market conditions.
+    </div>
+
+    <!-- SECTION 3 -->
+    <h2>Historical Bitcoin Dominance Ranges</h2>
+    <p>
+      Bitcoin's dominance has shifted dramatically over its history as the cryptocurrency ecosystem expanded from a single asset to thousands of projects:
+    </p>
+
+    <table class="history-table">
+      <thead>
+        <tr>
+          <th>Period</th>
+          <th>Approx. Dominance</th>
+          <th>Context</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>2009-2013</strong></td>
+          <td>~95-100%</td>
+          <td>Bitcoin was virtually the only cryptocurrency in existence</td>
+        </tr>
+        <tr>
+          <td><strong>2017 ICO Boom</strong></td>
+          <td>~37% (low)</td>
+          <td>Ethereum and thousands of ICO tokens flooded the market</td>
+        </tr>
+        <tr>
+          <td><strong>2018-2019 Bear Market</strong></td>
+          <td>~50-70%</td>
+          <td>Altcoins collapsed faster than Bitcoin, driving dominance up</td>
+        </tr>
+        <tr>
+          <td><strong>2021 DeFi/NFT Cycle</strong></td>
+          <td>~40-45% (low)</td>
+          <td>Ethereum, Solana, and DeFi tokens captured speculative capital</td>
+        </tr>
+        <tr>
+          <td><strong>2022-2023 Bear Market</strong></td>
+          <td>~40-50%</td>
+          <td>Altcoins fell harder; dominance partially recovered</td>
+        </tr>
+        <tr>
+          <td><strong>2024-2025 Cycle</strong></td>
+          <td>~50-65%</td>
+          <td>Bitcoin ETF approval drove institutional capital specifically into BTC</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>
+      A notable structural shift happened with the approval of Bitcoin spot ETFs in the US in early 2024. Institutional investors entering through ETFs were buying Bitcoin specifically - not altcoins - which pushed dominance higher than many analysts had expected given the broader market growth.
+    </p>
+
+    <!-- SECTION 4 -->
+    <h2>Bitcoin Dominance and Altcoin Season</h2>
+    <p>
+      "Altcoin season" is an informal term for periods when altcoins significantly outperform Bitcoin on a percentage basis. It tends to follow a recognizable pattern across bull market cycles:
+    </p>
+    <ol>
+      <li>Bitcoin leads the bull market, often driven by institutional money or a macro catalyst like a halving.</li>
+      <li>As Bitcoin dominance rises and stabilizes at a new range, retail investors who missed early Bitcoin gains look for higher-risk, higher-reward opportunities.</li>
+      <li>Capital flows into large-cap altcoins (Ethereum, Solana), then progressively into smaller and more speculative tokens.</li>
+      <li>Bitcoin dominance falls as the altcoin market cap grows faster than Bitcoin's.</li>
+      <li>The cycle reverses as speculative excess collapses and capital flees back to Bitcoin or exits the market entirely.</li>
+    </ol>
+    <p>
+      This rotation is not perfectly predictable, but the general pattern has repeated across multiple market cycles. Bitcoin's halving events - which reduce new Bitcoin supply every four years - are one of the most closely watched triggers for initiating a new bull phase that eventually spills into altcoins.
+    </p>
+
+    <!-- SECTION 5 -->
+    <h2>Limitations of Bitcoin Dominance as a Metric</h2>
+    <p>
+      Bitcoin dominance is useful context but has several known limitations worth understanding:
+    </p>
+    <ul>
+      <li><strong>Stablecoins complicate the calculation.</strong> Tether (USDT), USDC, and other stablecoins are included in the total market cap. As stablecoin issuance has grown to hundreds of billions of dollars, they have mathematically diluted Bitcoin's percentage even without any Bitcoin price change. Some analysts track "Bitcoin dominance excluding stablecoins" for a cleaner signal.</li>
+      <li><strong>New token launches constantly expand the denominator.</strong> Thousands of new tokens launch every year. Even if none of them have meaningful value, they add to the total crypto market cap and dilute Bitcoin's percentage share structurally over time.</li>
+      <li><strong>It cannot tell you whether to buy or sell.</strong> Bitcoin dominance describes where the market is, not where it is going. It has no predictive precision on its own and is best used alongside price action, on-chain metrics, and broader macro context.</li>
+      <li><strong>The 50% mark carries psychological but not technical significance.</strong> Many analysts watch the 50% level as a key threshold, but it is a round number convention, not a mathematically special boundary. The market does not react to dominance levels mechanically.</li>
+    </ul>
+
+    <!-- COURSE CTA -->
+    <div class="course-cta">
+      <h3>Learn Bitcoin The Visual Way</h3>
+      <p>Bitcoin From Scratch is the only Bitcoin fundamentals course built entirely with 3D animation. 34 lessons covering Bitcoin's supply, halvings, market mechanics, and why Bitcoin stands apart from every other cryptocurrency.</p>
+      <a href="https://checkout.teachable.com/secure/2684007/checkout/order_1y3wjzbk">Get Bitcoin From Scratch - $97</a>
+    </div>
+
+    <!-- FAQ -->
+    <div class="faq-section">
+      <h2>Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <h3>What is a good Bitcoin dominance percentage?</h3>
+        <p>There is no universally agreed-upon target, but historically Bitcoin dominance has ranged from around 40% during peak altcoin seasons to over 70% during risk-off periods. Many Bitcoin-focused analysts view higher dominance as a sign of the market being in a healthier, more conservative phase. Altcoin-heavy investors tend to prefer lower dominance periods when speculative capital flows outward.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Does Bitcoin dominance going up mean Bitcoin's price is rising?</h3>
+        <p>Not necessarily. Bitcoin dominance is a relative measure, not an absolute one. Dominance can rise even if Bitcoin's price is falling - as long as altcoins are falling faster. Conversely, Bitcoin's price can rise while dominance falls if altcoin prices are rising faster. The two metrics measure different things and should be read together rather than in isolation.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>What causes Bitcoin dominance to fall?</h3>
+        <p>Bitcoin dominance typically falls when speculative capital rotates from Bitcoin into altcoins. This often happens after Bitcoin has already had a significant run and investors seek higher-percentage gains in smaller tokens. New altcoin narratives (DeFi, NFTs, Layer 2s) can also pull attention and capital away from Bitcoin temporarily. The launch of many new tokens also mathematically increases the denominator, which can reduce dominance even without Bitcoin losing value.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Why was Bitcoin dominance nearly 100% in 2010?</h3>
+        <p>In Bitcoin's earliest years, it was essentially the only cryptocurrency in existence. Litecoin launched in 2011, Ethereum in 2015, and the explosion of altcoins came gradually. Bitcoin's dominance was naturally near 100% because there was nothing else for the denominator. As thousands of new projects launched over the following years, the denominator (total crypto market cap) expanded dramatically, pulling Bitcoin's percentage share down regardless of Bitcoin's own growth.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Should I use Bitcoin dominance to time market trades?</h3>
+        <p>Bitcoin dominance is one data point among many - not a reliable standalone trading signal. It can provide useful context about where the market is in a cycle, but it is a lagging indicator and can stay at extreme levels longer than expected. Most serious Bitcoin analysts treat dominance as background context rather than a trigger for specific trading decisions.</p>
+      </div>
+    </div>
+
+    <!-- RELATED LINKS -->
+
+    <div class="related-links">
+      <h2>Related Topics</h2>
+      <ul>
+        <li><a href="/learn/what-is-bitcoin">What is Bitcoin?</a></li>
+        <li><a href="/learn/what-is-a-bitcoin-fork">What is a Bitcoin fork?</a></li>
+        <li><a href="/learn/what-is-bitcoin-halving">What is the Bitcoin halving?</a></li>
+        <li><a href="/learn/how-many-bitcoins-are-there">How many Bitcoins exist?</a></li>
+      </ul>
+    </div>
+    </div>
+
+  </div>
+
+  <footer>
+    <p class="tagline">Bitcoin Is For All Of Us</p>
+    <p>&copy; 2026 SatUsPhere. Bitcoin education made visual.</p>
+    <p style="margin-top:8px;"><a href="https://satusphere.com">satusphere.com</a> &nbsp;|&nbsp; <a href="https://x.com/sat_us_phere">@sat_us_phere</a></p>
+  </footer>
+
+</body>
+</html>

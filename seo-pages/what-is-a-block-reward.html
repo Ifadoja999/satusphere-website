@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>What Is a Bitcoin Block Reward? | SatUsPhere</title>
+  <meta name="description" content="The Bitcoin block reward is the newly minted bitcoin a miner receives for successfully mining a block. Currently 3.125 BTC per block since the April 2024 halving. Learn how it works, why it declines, and what happens when rewards reach zero.">
+  <link rel="canonical" href="https://satusphere.com/learn/what-is-a-block-reward">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "SatUsPhere",
+    "url": "https://satusphere.com",
+    "logo": "https://satusphere.com/logo.png",
+    "sameAs": [
+      "https://x.com/sat_us_phere",
+      "https://www.youtube.com/channel/UC0jGCeBvr8qLmMhRpwda-5Q"
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://satusphere.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Learn Bitcoin",
+        "item": "https://satusphere.com/learn"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "What Is a Block Reward?",
+        "item": "https://satusphere.com/learn/what-is-a-block-reward"
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "What Is a Bitcoin Block Reward?",
+    "description": "The Bitcoin block reward is the newly minted bitcoin a miner receives for successfully mining a block. Currently 3.125 BTC. Learn how it works and how it declines over time.",
+    "author": {
+      "@type": "Organization",
+      "name": "SatUsPhere"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "SatUsPhere",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://satusphere.com/logo.png"
+      }
+    },
+    "datePublished": "2026-04-01",
+    "dateModified": "2026-04-01",
+    "mainEntityOfPage": "https://satusphere.com/learn/what-is-a-block-reward"
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is a Bitcoin block reward?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The Bitcoin block reward is the amount of newly minted bitcoin automatically paid to the miner who successfully mines a valid block. It consists of two parts: the block subsidy (newly created bitcoin) and the transaction fees collected from all transactions in that block."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How much is the current Bitcoin block reward?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "As of the April 2024 halving, the Bitcoin block subsidy is 3.125 BTC per block. In addition, miners collect all the transaction fees from the transactions included in their block, so the total reward is 3.125 BTC plus fees."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is a coinbase transaction?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A coinbase transaction is the very first transaction in every Bitcoin block. It is created by the miner and sends the block reward (subsidy plus fees) to an address the miner controls. Unlike regular transactions, a coinbase transaction has no inputs - it creates new bitcoin from nothing, authorized by the protocol rules."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "When will Bitcoin block rewards end?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The block subsidy will effectively reach zero around the year 2140, after 32 halvings have reduced it to a fraction of a satoshi too small to record. After that, miners will earn only transaction fees. The total supply is capped at just under 21 million bitcoin."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do miners earn money when the block reward runs out?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "When the block subsidy reaches zero, miners will earn revenue entirely from transaction fees. Bitcoin's security model assumes that as the supply becomes fully circulated and demand for block space grows, fee revenue will be sufficient to incentivize mining. This is known as the fee market."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SpeakableSpecification",
+    "cssSelector": [".answer-block", ".summary"]
+  }
+  </script>
+
+  <style>
+    :root {
+      --color-navy: #0D1B2E;
+      --color-orange: #F7931A;
+      --color-blue: #1DA1F2;
+      --color-gold: #D4A530;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #ffffff;
+      color: #1a1a1a;
+      line-height: 1.7;
+      font-size: 17px;
+    }
+
+    a { color: var(--color-blue); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    nav {
+      background: var(--color-navy);
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav-logo {
+      font-size: 22px;
+      font-weight: 700;
+      color: #ffffff;
+      text-decoration: none;
+      letter-spacing: 0.5px;
+    }
+    .nav-logo span { color: var(--color-orange); }
+    .nav-cta {
+      background: var(--color-orange);
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 14px;
+      padding: 10px 20px;
+      border-radius: 6px;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .nav-cta:hover { background: #e0820f; text-decoration: none; }
+
+    .container { max-width: 820px; margin: 0 auto; padding: 0 24px; }
+
+    .breadcrumb { padding: 14px 0; font-size: 14px; color: #666; }
+    .breadcrumb a { color: var(--color-blue); }
+    .breadcrumb span { margin: 0 6px; color: #999; }
+
+    .page-hero {
+      padding: 40px 0 32px;
+      border-bottom: 3px solid var(--color-orange);
+      margin-bottom: 36px;
+    }
+    .page-hero h1 {
+      font-size: 40px;
+      font-weight: 800;
+      color: var(--color-navy);
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+
+    .answer-block {
+      background: #f0f7ff;
+      border-left: 5px solid var(--color-blue);
+      padding: 20px 24px;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 28px;
+      font-size: 18px;
+      font-weight: 500;
+      color: var(--color-navy);
+      line-height: 1.6;
+    }
+
+    .summary {
+      font-size: 18px;
+      color: #444;
+      margin-bottom: 40px;
+      line-height: 1.8;
+    }
+
+    .content h2 {
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--color-navy);
+      margin: 44px 0 16px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #eee;
+    }
+    .content p { margin-bottom: 18px; color: #333; }
+    .content ul { margin: 0 0 18px 24px; color: #333; }
+    .content ul li { margin-bottom: 8px; }
+
+    .halving-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 24px 0;
+      font-size: 15px;
+    }
+    .halving-table th {
+      background: var(--color-navy);
+      color: #fff;
+      padding: 12px 16px;
+      text-align: left;
+    }
+    .halving-table td {
+      padding: 12px 16px;
+      border-bottom: 1px solid #e0e0e0;
+      color: #333;
+    }
+    .halving-table tr:nth-child(even) td { background: #f9f9f9; }
+    .halving-table .current-row td { background: #fff8ee; font-weight: 600; }
+
+    .course-cta {
+      background: var(--color-navy);
+      color: #ffffff;
+      padding: 48px 40px;
+      border-radius: 12px;
+      text-align: center;
+      margin: 56px 0;
+    }
+    .course-cta h2 {
+      font-size: 28px;
+      font-weight: 800;
+      color: var(--color-gold);
+      margin-bottom: 14px;
+    }
+    .course-cta p {
+      font-size: 17px;
+      color: #ccc;
+      margin-bottom: 28px;
+      line-height: 1.7;
+    }
+    .cta-btn {
+      display: inline-block;
+      background: var(--color-orange);
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 18px;
+      padding: 16px 36px;
+      border-radius: 8px;
+      text-decoration: none;
+    }
+    .cta-btn:hover { background: #e0820f; text-decoration: none; }
+
+    .faq-section { margin: 56px 0; }
+    .faq-section h2 {
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--color-navy);
+      margin-bottom: 28px;
+    }
+    .faq-item {
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      margin-bottom: 14px;
+      overflow: hidden;
+    }
+    .faq-question {
+      font-weight: 700;
+      font-size: 16px;
+      color: var(--color-navy);
+      padding: 18px 20px;
+      background: #f9f9f9;
+      border-bottom: 1px solid #e0e0e0;
+    }
+    .faq-answer {
+      padding: 16px 20px;
+      color: #444;
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    .related-section { margin: 48px 0; }
+    .related-section h2 {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--color-navy);
+      margin-bottom: 16px;
+    }
+    .related-links { display: flex; flex-wrap: wrap; gap: 12px; }
+    .related-links a {
+      background: #f0f7ff;
+      border: 1px solid var(--color-blue);
+      color: var(--color-blue);
+      padding: 10px 18px;
+      border-radius: 6px;
+      font-size: 15px;
+      font-weight: 500;
+    }
+    .related-links a:hover { background: var(--color-blue); color: #fff; text-decoration: none; }
+
+    footer {
+      background: var(--color-navy);
+      color: #aaa;
+      text-align: center;
+      padding: 36px 24px;
+      margin-top: 72px;
+      font-size: 14px;
+    }
+    footer .tagline {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--color-gold);
+      margin-bottom: 10px;
+    }
+    footer a { color: var(--color-blue); }
+
+    @media (max-width: 600px) {
+      .page-hero h1 { font-size: 28px; }
+      .nav-cta { font-size: 12px; padding: 8px 14px; }
+      .course-cta { padding: 32px 20px; }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@type": "WebPage", "name": "What Is a Bitcoin Block Reward?", "url": "https://satusphere.com/learn/what-is-a-block-reward", "speakable": {"@type": "SpeakableSpecification", "cssSelector": [".answer-block", "h1", ".summary"]}}
+  </script>
+</head>
+<body>
+
+  <nav>
+    <a href="https://satusphere.com" class="nav-logo">Sat<span>Us</span>Phere</a>
+    <a href="https://checkout.teachable.com/secure/2684007/checkout/order_1y3wjzbk" class="nav-cta">Get Bitcoin From Scratch - $97</a>
+  </nav>
+
+  <div class="container">
+
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="https://satusphere.com">Home</a>
+      <span>></span>
+      <a href="https://satusphere.com/learn">Learn Bitcoin</a>
+      <span>></span>
+      What Is a Block Reward?
+    </nav>
+
+    <header class="page-hero">
+      <h1>What Is a Bitcoin Block Reward?</h1>
+      <div class="answer-block">
+        The Bitcoin block reward is the amount of newly minted bitcoin paid automatically to the miner who successfully mines a valid block. It has two components: the block subsidy (brand-new bitcoin created by the protocol) and the transaction fees from every transaction included in that block. Since the April 2024 halving, the block subsidy is 3.125 BTC per block.
+      </div>
+    </header>
+
+    <p class="summary">
+      The block reward is the mechanism that both introduces new bitcoin into circulation and compensates miners for securing the network. It's also the reason Bitcoin has a predictable, declining supply schedule. Every four years, the subsidy portion of the reward cuts in half - a process called the halving - marching Bitcoin toward its hard cap of just under 21 million coins.
+    </p>
+
+    <div class="content">
+
+      <h2>The Two Components of a Block Reward</h2>
+      <p>
+        When a miner successfully mines a block, they collect two forms of compensation:
+      </p>
+      <ul>
+        <li><strong>Block subsidy</strong> - New bitcoin created from nothing by the protocol. This is the number that halves every 210,000 blocks. Currently 3.125 BTC. This bitcoin did not exist before the block was mined.</li>
+        <li><strong>Transaction fees</strong> - The sum of all fees attached to transactions in that block. Users set their own fees when they broadcast transactions, and miners choose which transactions to include (typically prioritizing higher-fee transactions). Fees have always been part of the reward but historically represent a small fraction of it.</li>
+      </ul>
+      <p>
+        Total block reward = block subsidy + transaction fees. As halvings continue reducing the subsidy, fees will grow in importance as a percentage of miner revenue.
+      </p>
+
+      <h2>The Coinbase Transaction: How Block Rewards Are Claimed</h2>
+      <p>
+        Every Bitcoin block contains a special first transaction called the coinbase transaction. This is how the miner collects their reward. Unlike every other Bitcoin transaction, the coinbase transaction has no input - it creates new bitcoin from nothing, authorized by the protocol's consensus rules.
+      </p>
+      <p>
+        The coinbase transaction sends the block subsidy plus all the fees in the block to an address the miner controls. If another miner mines a competing block and wins, their coinbase transaction gets the reward instead. The losing block and its coinbase transaction become an orphan and are abandoned.
+      </p>
+      <p>
+        There is one restriction: coinbase outputs have a maturity requirement. A miner cannot spend their block reward for 100 blocks after the block was mined. This prevents them from spending a reward that could theoretically be reorganized out of the chain.
+      </p>
+
+      <h2>How Block Rewards Decline Over Time: The Halving Schedule</h2>
+      <p>
+        Every 210,000 blocks - approximately every four years - the block subsidy cuts in half. This is the halving event, and it's hardcoded into Bitcoin's protocol. Here's how the schedule has played out and where it's headed:
+      </p>
+      <table class="halving-table">
+        <thead>
+          <tr>
+            <th>Halving</th>
+            <th>Year</th>
+            <th>Block Subsidy</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Genesis</td>
+            <td>2009</td>
+            <td>50 BTC</td>
+          </tr>
+          <tr>
+            <td>1st Halving</td>
+            <td>2012</td>
+            <td>25 BTC</td>
+          </tr>
+          <tr>
+            <td>2nd Halving</td>
+            <td>2016</td>
+            <td>12.5 BTC</td>
+          </tr>
+          <tr>
+            <td>3rd Halving</td>
+            <td>2020</td>
+            <td>6.25 BTC</td>
+          </tr>
+          <tr class="current-row">
+            <td>4th Halving (Current)</td>
+            <td>2024</td>
+            <td>3.125 BTC</td>
+          </tr>
+          <tr>
+            <td>5th Halving</td>
+            <td>~2028</td>
+            <td>1.5625 BTC</td>
+          </tr>
+          <tr>
+            <td>6th Halving</td>
+            <td>~2032</td>
+            <td>0.78125 BTC</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>What Happens When Block Rewards Reach Zero</h2>
+      <p>
+        Around the year 2140, after 32 halvings, the block subsidy will reach a value smaller than one satoshi (the smallest unit of bitcoin) and will effectively be zero. At that point, miners will earn only transaction fees. This is known as the fee market.
+      </p>
+      <p>
+        Whether the fee market will generate enough revenue to keep Bitcoin secure is one of the most debated long-term questions in the Bitcoin ecosystem. The optimistic case: by 2140, Bitcoin's settlement layer will be prized for high-value, irreversible final settlement transactions that users will pay meaningful fees to have included. The pessimistic case: if blocks are consistently empty or demand for block space collapses, security could degrade.
+      </p>
+      <p>
+        Most Bitcoin developers and economists believe that economic demand for block space will grow as Bitcoin's adoption grows, producing a robust fee market that sustains security far into the future.
+      </p>
+
+      <h2>Why Block Rewards Matter for Bitcoin's Value</h2>
+      <p>
+        The block reward is not just about miner compensation - it's the mechanism that enforces Bitcoin's scarcity. Because the protocol creates a fixed, declining number of new coins per block, and because every node enforces those rules independently, no miner or government can create extra bitcoin. A miner who tries to give themselves a larger reward than the protocol allows will have their block rejected by every other node on the network.
+      </p>
+      <p>
+        This hard supply cap - enforced by every participant - is what makes Bitcoin fundamentally different from any fiat currency. There is no "emergency printing" in Bitcoin. The schedule is set, the halvings are predictable, and the block reward shrinks on a timeline that every holder and investor can verify themselves.
+      </p>
+
+    </div>
+
+    <div class="course-cta">
+      <h2>Learn Bitcoin The Visual Way</h2>
+      <p>Bitcoin From Scratch is the only Bitcoin fundamentals course built entirely with 3D animation. 34 lessons covering everything from the history of money to self-custody and the Lightning Network.</p>
+      <a href="https://checkout.teachable.com/secure/2684007/checkout/order_1y3wjzbk" class="cta-btn">Get Bitcoin From Scratch - $97</a>
+    </div>
+
+    <section class="faq-section">
+      <h2>Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <div class="faq-question">What is a Bitcoin block reward?</div>
+        <div class="faq-answer">The Bitcoin block reward is the amount of newly minted bitcoin automatically paid to the miner who successfully mines a valid block. It consists of two parts: the block subsidy (newly created bitcoin) and the transaction fees collected from all transactions in that block.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">How much is the current Bitcoin block reward?</div>
+        <div class="faq-answer">As of the April 2024 halving, the Bitcoin block subsidy is 3.125 BTC per block. In addition, miners collect all the transaction fees from the transactions included in their block, so the total reward is 3.125 BTC plus fees.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">What is a coinbase transaction?</div>
+        <div class="faq-answer">A coinbase transaction is the very first transaction in every Bitcoin block. It is created by the miner and sends the block reward (subsidy plus fees) to an address the miner controls. Unlike regular transactions, a coinbase transaction has no inputs - it creates new bitcoin from nothing, authorized by the protocol rules.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">When will Bitcoin block rewards end?</div>
+        <div class="faq-answer">The block subsidy will effectively reach zero around the year 2140, after 32 halvings have reduced it to a fraction of a satoshi too small to record. After that, miners will earn only transaction fees. The total supply is capped at just under 21 million bitcoin.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">How do miners earn money when the block reward runs out?</div>
+        <div class="faq-answer">When the block subsidy reaches zero, miners will earn revenue entirely from transaction fees. Bitcoin's security model assumes that as the supply becomes fully circulated and demand for block space grows, fee revenue will be sufficient to incentivize mining. This is known as the fee market.</div>
+      </div>
+    </section>
+
+    <section class="related-section">
+      <h2>Related Topics</h2>
+
+    <div class="related-links">
+      <h2>Related Topics</h2>
+      <ul>
+        <li><a href="/learn/what-is-bitcoin-mining">What is Bitcoin mining?</a></li>
+        <li><a href="/learn/what-is-bitcoin-halving">What is the Bitcoin halving?</a></li>
+        <li><a href="/learn/how-many-bitcoins-are-there">How many Bitcoins exist?</a></li>
+        <li><a href="/learn/what-is-proof-of-work">What is proof of work?</a></li>
+        <li><a href="/learn/what-is-bitcoin">What is Bitcoin?</a></li>
+      </ul>
+    </div>
+    </section>
+
+  </div>
+
+  <footer>
+    <div class="tagline">Bitcoin Is For All Of Us</div>
+    <p>SatUsPhere | <a href="mailto:info@satusphere.com">info@satusphere.com</a> | <a href="https://x.com/sat_us_phere">@sat_us_phere</a></p>
+    <p style="margin-top:8px;">&copy; 2026 SatUsPhere. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

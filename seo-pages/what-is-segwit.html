@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>What Is SegWit? | SatUsPhere</title>
+  <meta name="description" content="SegWit (Segregated Witness) activated on Bitcoin in August 2017. Learn what it changed, how it fixed transaction malleability, why it enabled the Lightning Network, what bech32 addresses are, and how SegWit reduces transaction fees.">
+  <link rel="canonical" href="https://satusphere.com/learn/what-is-segwit">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "SatUsPhere",
+    "url": "https://satusphere.com",
+    "logo": "https://satusphere.com/assets/logo.png",
+    "description": "Bitcoin education company. Bitcoin From Scratch is the only Bitcoin fundamentals course built entirely with 3D animation.",
+    "sameAs": [
+      "https://x.com/sat_us_phere",
+      "https://www.youtube.com/channel/UC0jGCeBvr8qLmMhRpwda-5Q"
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "email": "info@satusphere.com",
+      "contactType": "customer support"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://satusphere.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Learn Bitcoin",
+        "item": "https://satusphere.com/learn"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "What Is SegWit?",
+        "item": "https://satusphere.com/learn/what-is-segwit"
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "What Is SegWit?",
+    "description": "SegWit (Segregated Witness) is a Bitcoin upgrade that activated in August 2017. It moved signature data outside the main transaction block, fixed transaction malleability, introduced the block weight concept, enabled the Lightning Network, and reduced transaction fees via native bech32 addresses.",
+    "author": {
+      "@type": "Organization",
+      "name": "SatUsPhere"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "SatUsPhere",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://satusphere.com/assets/logo.png"
+      }
+    },
+    "datePublished": "2026-04-01",
+    "dateModified": "2026-04-01",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://satusphere.com/learn/what-is-segwit"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is SegWit in Bitcoin?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "SegWit stands for Segregated Witness. It is a Bitcoin protocol upgrade that changed how transaction data is structured inside a block. The 'witness' data - the digital signatures that prove ownership - was moved into a separate part of the block structure, outside the traditional block size limit. This allowed more transactions to fit per block and fixed a technical bug called transaction malleability."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "When did SegWit activate?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "SegWit activated on the Bitcoin mainnet at block 481,824 on August 24, 2017. It was deployed as a soft fork using BIP141, BIP143, and BIP148. Miner signaling for SegWit reached the required threshold (95% of blocks in a difficulty period under the original proposal, later lowered via a user-activated soft fork) and locked in before the August activation."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What problem did SegWit solve?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "SegWit solved two main problems. First, it increased effective block capacity without raising the 1 MB block size limit, by measuring transaction weight instead of raw byte size and discounting witness data. Second, it fixed transaction malleability - a bug that allowed third parties to alter a transaction's ID before it confirmed, without changing what the transaction did. Fixing malleability was essential for building reliable second-layer payment systems like the Lightning Network."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is a bech32 address?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A bech32 address is a native SegWit Bitcoin address format. These addresses start with 'bc1' (lowercase) and are sometimes called 'native SegWit' or 'P2WPKH' addresses. They are more compact than legacy addresses, use lowercase only (reducing typo errors), include built-in error detection, and produce lower transaction fees because their input data is weighted less under SegWit's block weight rules."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does SegWit change the 21 million supply cap?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. SegWit does not change Bitcoin's 21 million coin supply cap. It only changed how transaction data is structured and measured within blocks. The issuance schedule, the halving cycle, and the hard cap of 21 million Bitcoin are defined by entirely separate parts of the protocol and were untouched by SegWit."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SpeakableSpecification",
+    "cssSelector": [".answer-block", ".summary"]
+  }
+  </script>
+
+  <style>
+    :root {
+      --color-navy: #0D1B2E;
+      --color-orange: #F7931A;
+      --color-blue: #1DA1F2;
+      --color-gold: #D4A530;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #f8f9fa;
+      color: #1a1a1a;
+      line-height: 1.7;
+    }
+
+    nav {
+      background: var(--color-navy);
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-logo {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1.4rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+
+    .nav-logo span { color: var(--color-orange); }
+
+    .nav-cta {
+      background: var(--color-orange);
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: opacity 0.2s;
+      white-space: nowrap;
+    }
+
+    .nav-cta:hover { opacity: 0.88; }
+
+    .breadcrumb {
+      background: #fff;
+      border-bottom: 1px solid #e5e7eb;
+      padding: 12px 24px;
+      font-size: 0.85rem;
+      color: #6b7280;
+    }
+
+    .breadcrumb a { color: var(--color-blue); text-decoration: none; }
+    .breadcrumb a:hover { text-decoration: underline; }
+    .breadcrumb span { margin: 0 8px; }
+
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 48px 24px 64px;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--color-navy);
+      line-height: 1.25;
+      margin-bottom: 24px;
+    }
+
+    .answer-block {
+      background: #fff;
+      border-left: 5px solid var(--color-orange);
+      border-radius: 0 8px 8px 0;
+      padding: 20px 24px;
+      margin-bottom: 28px;
+      font-size: 1.05rem;
+      font-weight: 500;
+      color: #111;
+    }
+
+    p.summary {
+      font-size: 1.05rem;
+      color: #374151;
+      margin-bottom: 40px;
+      line-height: 1.8;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--color-navy);
+      margin: 40px 0 16px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #e5e7eb;
+    }
+
+    p { margin-bottom: 16px; color: #374151; }
+
+    ul, ol {
+      padding-left: 24px;
+      margin-bottom: 16px;
+      color: #374151;
+    }
+
+    li { margin-bottom: 8px; }
+
+    strong { color: var(--color-navy); }
+
+    .callout {
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+      padding: 20px 24px;
+      margin: 24px 0;
+    }
+
+    .callout-title {
+      font-weight: 700;
+      color: var(--color-navy);
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 8px;
+    }
+
+    .callout p { margin: 0; font-size: 0.95rem; }
+
+    .address-types {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 16px;
+      margin: 24px 0;
+    }
+
+    .address-card {
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+      padding: 16px;
+    }
+
+    .address-card .label {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #6b7280;
+      margin-bottom: 6px;
+    }
+
+    .address-card .type {
+      font-weight: 700;
+      color: var(--color-navy);
+      margin-bottom: 6px;
+    }
+
+    .address-card .example {
+      font-family: monospace;
+      font-size: 0.8rem;
+      color: var(--color-blue);
+      word-break: break-all;
+    }
+
+    .address-card .note {
+      font-size: 0.82rem;
+      color: #6b7280;
+      margin-top: 8px;
+    }
+
+    .course-cta {
+      background: var(--color-navy);
+      border-radius: 12px;
+      padding: 48px 40px;
+      margin: 56px 0;
+      text-align: center;
+    }
+
+    .course-cta h2 {
+      color: var(--color-gold);
+      border: none;
+      font-size: 1.8rem;
+      margin: 0 0 16px;
+      padding: 0;
+    }
+
+    .course-cta p {
+      color: #cbd5e1;
+      font-size: 1.05rem;
+      margin-bottom: 28px;
+      max-width: 520px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .course-cta a {
+      display: inline-block;
+      background: var(--color-orange);
+      color: #fff;
+      text-decoration: none;
+      padding: 16px 36px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 1.05rem;
+      transition: opacity 0.2s;
+    }
+
+    .course-cta a:hover { opacity: 0.88; }
+
+    .faq-section { margin: 56px 0; }
+
+    .faq-section h2 {
+      font-size: 1.6rem;
+      border-bottom: 2px solid var(--color-orange);
+      color: var(--color-navy);
+    }
+
+    .faq-item {
+      border-bottom: 1px solid #e5e7eb;
+      padding: 20px 0;
+    }
+
+    .faq-item h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--color-navy);
+      margin-bottom: 10px;
+    }
+
+    .faq-item p { margin: 0; }
+
+    .related-links { margin: 48px 0; }
+
+    .related-links h2 {
+      font-size: 1.4rem;
+      color: var(--color-navy);
+    }
+
+    .related-links ul {
+      list-style: none;
+      padding: 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .related-links li { margin: 0; }
+
+    .related-links a {
+      display: block;
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+      padding: 14px 18px;
+      color: var(--color-blue);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .related-links a:hover {
+      border-color: var(--color-blue);
+      box-shadow: 0 2px 8px rgba(29,161,242,0.12);
+    }
+
+    footer {
+      background: var(--color-navy);
+      color: #94a3b8;
+      padding: 40px 24px;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+    footer .tagline {
+      color: var(--color-gold);
+      font-weight: 700;
+      font-size: 1.05rem;
+      margin-bottom: 16px;
+    }
+
+    footer a { color: #94a3b8; text-decoration: none; }
+    footer a:hover { color: #fff; }
+    footer .footer-links { display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; margin-top: 12px; }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 1.7rem; }
+      .related-links ul { grid-template-columns: 1fr; }
+      .course-cta { padding: 32px 20px; }
+      .nav-cta { font-size: 0.8rem; padding: 8px 14px; }
+      .address-types { grid-template-columns: 1fr; }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@type": "WebPage", "name": "What Is SegWit?", "url": "https://satusphere.com/learn/what-is-segwit", "speakable": {"@type": "SpeakableSpecification", "cssSelector": [".answer-block", "h1", ".summary"]}}
+  </script>
+</head>
+<body>
+
+  <nav>
+    <a href="https://satusphere.com" class="nav-logo">Sat<span>Us</span>Phere</a>
+    <a href="https://checkout.teachable.com/secure/2684007/checkout/order_1y3wjzbk" class="nav-cta">Get Bitcoin From Scratch - $97</a>
+  </nav>
+
+  <div class="breadcrumb">
+    <a href="https://satusphere.com">Home</a>
+    <span>&#8250;</span>
+    <a href="https://satusphere.com/learn">Learn Bitcoin</a>
+    <span>&#8250;</span>
+    What Is SegWit?
+  </div>
+
+  <div class="container">
+
+    <h1>What Is SegWit?</h1>
+
+    <div class="answer-block">
+      SegWit (Segregated Witness) is a Bitcoin protocol upgrade that activated in August 2017. It restructured how transaction data is stored in a block by separating the signature data ("witness") from the transaction data, increasing effective block capacity, fixing transaction malleability, and enabling the Lightning Network.
+    </div>
+
+    <p class="summary">
+      SegWit is one of the most consequential upgrades in Bitcoin's history, and yet most people who use Bitcoin daily interact with its effects without knowing it. Lower transaction fees on native SegWit wallets, the existence of the Lightning Network, and addresses that start with "bc1" - all of these trace back to SegWit. Understanding what it changed, and why it mattered, gives a clearer picture of how Bitcoin evolves through decentralized consensus.
+    </p>
+
+    <h2>What SegWit Changed in Bitcoin's Transaction Structure</h2>
+    <p>
+      Before SegWit, every Bitcoin transaction was stored as a single block of data: inputs, outputs, and the digital signatures (called "witness" data) proving that the sender had the right to spend the coins. All of this counted equally toward the 1 MB block size limit.
+    </p>
+    <p>
+      SegWit - short for <strong>Segregated Witness</strong> - changed the layout. It moved the witness data (signatures) out of the traditional transaction data structure and into a separate "witness" section of the block. This witness section is not subject to the old 1 MB limit.
+    </p>
+    <p>
+      To measure how full a block is under SegWit, Bitcoin switched from counting raw bytes to counting <strong>block weight</strong>. Each byte of non-witness transaction data counts as 4 weight units. Each byte of witness data counts as only 1 weight unit. The maximum block weight is 4 million weight units - which is equivalent to the old 1 MB limit for non-SegWit data, but can accommodate more data when that data is witness information.
+    </p>
+    <p>
+      The practical effect: a block can hold significantly more SegWit transactions than legacy transactions. In practice, SegWit blocks average around 1.2 to 1.8 MB of actual data without ever changing the nominal 1 MB block size limit.
+    </p>
+
+    <h2>Transaction Malleability: The Bug SegWit Fixed</h2>
+    <p>
+      Before SegWit, Bitcoin had a subtle but serious vulnerability called <strong>transaction malleability</strong>. The transaction ID (TXID) of an unconfirmed transaction was a hash of the entire transaction data, including the signatures. Because signature data could be slightly modified (while remaining mathematically valid) by a third party, the TXID of a transaction could change before it was confirmed.
+    </p>
+    <p>
+      This created a problem: if the TXID could change, software watching for that specific TXID would not recognize the transaction when it confirmed under the modified ID. This was exploited in some exchange hacks to trigger duplicate withdrawals by claiming a transaction had not been received when in fact it had - just under a different TXID.
+    </p>
+    <p>
+      SegWit fixed this by computing the TXID from only the non-witness portion of the transaction data. Signatures are excluded from the TXID calculation, so no third-party manipulation of the witness data can change the TXID. The transaction ID becomes a stable, reliable identifier from the moment the transaction is broadcast.
+    </p>
+    <div class="callout">
+      <div class="callout-title">Why This Matters Beyond Security</div>
+      <p>Fixing transaction malleability was not just a security patch - it was a prerequisite for building reliable second-layer protocols. The Lightning Network requires chaining multiple unconfirmed transactions together, where each transaction references the TXID of an earlier one. This only works safely if those TXIDs cannot be changed by a third party.</p>
+    </div>
+
+    <h2>How SegWit Enabled the Lightning Network</h2>
+    <p>
+      The Lightning Network is a payment channel system built on top of Bitcoin. It allows two parties to open a channel, make many payments off-chain at near-zero fees, and then close the channel with a final settlement recorded on the Bitcoin blockchain. This scales Bitcoin's payment capacity dramatically.
+    </p>
+    <p>
+      Lightning requires constructing multi-transaction arrangements where each transaction is pre-signed but not yet broadcast. These "commitment transactions" must reference each other by TXID. Before SegWit, transaction malleability meant any of those pre-signed TXIDs could be changed, breaking the whole arrangement. The Lightning Network as designed was not safely deployable on Bitcoin without SegWit's malleability fix.
+    </p>
+    <p>
+      SegWit's activation in August 2017 was the technical green light that made Lightning Network development practical. The Lightning Network mainnet launched in March 2018 - less than seven months later.
+    </p>
+
+    <h2>Native SegWit and bech32 Addresses</h2>
+    <p>
+      SegWit introduced a new address format called <strong>bech32</strong>. Native SegWit addresses are easily recognizable because they start with <strong>bc1</strong> (lowercase). They are sometimes called "P2WPKH" (Pay to Witness Public Key Hash) or "P2WSH" (Pay to Witness Script Hash) addresses.
+    </p>
+
+    <div class="address-types">
+      <div class="address-card">
+        <div class="label">Legacy</div>
+        <div class="type">P2PKH</div>
+        <div class="example">1A1zP1eP5QGefi2DMPTfTL5SLmv7Divf Na</div>
+        <div class="note">Starts with "1" - highest fees</div>
+      </div>
+      <div class="address-card">
+        <div class="label">Wrapped SegWit</div>
+        <div class="type">P2SH-P2WPKH</div>
+        <div class="example">3J98t1WpEZ73CNmQviecrnyiWrnqRhWNLy</div>
+        <div class="note">Starts with "3" - medium fees</div>
+      </div>
+      <div class="address-card">
+        <div class="label">Native SegWit</div>
+        <div class="type">P2WPKH (bech32)</div>
+        <div class="example">bc1qar0srrr7xfkvy5l643lydnw9re59gtzzwf5mdq</div>
+        <div class="note">Starts with "bc1" - lowest fees</div>
+      </div>
+    </div>
+
+    <p>
+      Native SegWit addresses offer several advantages over legacy formats:
+    </p>
+    <ul>
+      <li><strong>Lower fees.</strong> Because inputs from native SegWit addresses are heavily weighted as witness data, they take up less effective block space and therefore cost less to spend.</li>
+      <li><strong>Error detection.</strong> bech32 includes a checksum that can detect and locate typos in the address. The encoding uses characters that look visually distinct (no "0" vs "O" confusion).</li>
+      <li><strong>Lowercase only.</strong> bech32 is case-insensitive (always lowercase), which reduces transcription errors and is QR code friendly.</li>
+    </ul>
+    <p>
+      A later improvement, <strong>bech32m</strong>, was introduced with Taproot (2021) for addresses starting with "bc1p". Taproot addresses are sometimes called "native SegWit v1."
+    </p>
+
+    <h2>SegWit's Legacy: Fee Savings and Protocol Architecture</h2>
+    <p>
+      The fee savings from native SegWit are real and measurable. Spending from a native SegWit address typically costs 30-40% less in fees than spending from a legacy address under the same network conditions. For users who transact frequently, this adds up significantly over time.
+    </p>
+    <p>
+      SegWit also demonstrated something important about Bitcoin's governance: major protocol upgrades are possible without a hard fork. By deploying SegWit as a backward-compatible soft fork, the network avoided splitting. Old nodes that never upgraded still process transactions and remain valid participants in the network. Miners who signaled for SegWit did so by majority vote, not by forcing an upgrade on holdouts.
+    </p>
+    <p>
+      Today, native SegWit adoption sits above 80% of all Bitcoin transactions. The fee and efficiency benefits have driven organic adoption, and most modern wallets default to creating bech32 addresses. SegWit's architecture also laid the groundwork for Taproot, Bitcoin's next major upgrade, which builds on the same witness structure to add privacy and scripting improvements.
+    </p>
+
+    <div class="course-cta">
+      <h2>Learn Bitcoin The Visual Way</h2>
+      <p>Bitcoin From Scratch covers SegWit, the Lightning Network, transaction structure, and the full technical picture - through 34 3D animated lessons designed for anyone starting from zero.</p>
+      <a href="https://checkout.teachable.com/secure/2684007/checkout/order_1y3wjzbk">Get Bitcoin From Scratch - $97</a>
+    </div>
+
+    <section class="faq-section">
+      <h2>Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <h3>What is SegWit in Bitcoin?</h3>
+        <p>SegWit stands for Segregated Witness. It is a Bitcoin protocol upgrade that changed how transaction data is structured inside a block. The "witness" data - the digital signatures that prove ownership - was moved into a separate part of the block structure, outside the traditional block size limit. This allowed more transactions to fit per block and fixed a technical bug called transaction malleability.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>When did SegWit activate?</h3>
+        <p>SegWit activated on the Bitcoin mainnet at block 481,824 on August 24, 2017. It was deployed as a soft fork using BIP141, BIP143, and BIP148. Miner signaling for SegWit reached the required threshold and locked in before the August activation.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>What problem did SegWit solve?</h3>
+        <p>SegWit solved two main problems. First, it increased effective block capacity without raising the 1 MB block size limit, by measuring transaction weight instead of raw byte size and discounting witness data. Second, it fixed transaction malleability - a bug that allowed third parties to alter a transaction's ID before it confirmed, without changing what the transaction did. Fixing malleability was essential for building reliable second-layer payment systems like the Lightning Network.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>What is a bech32 address?</h3>
+        <p>A bech32 address is a native SegWit Bitcoin address format. These addresses start with "bc1" (lowercase) and are sometimes called "native SegWit" or "P2WPKH" addresses. They are more compact than legacy addresses, use lowercase only (reducing typo errors), include built-in error detection, and produce lower transaction fees because their input data is weighted less under SegWit's block weight rules.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Does SegWit change the 21 million supply cap?</h3>
+        <p>No. SegWit does not change Bitcoin's 21 million coin supply cap. It only changed how transaction data is structured and measured within blocks. The issuance schedule, the halving cycle, and the hard cap of 21 million Bitcoin are defined by entirely separate parts of the protocol and were untouched by SegWit.</p>
+      </div>
+    </section>
+
+  </div>
+
+  <footer>
+    <p class="tagline">Bitcoin Is For All Of Us</p>
+    <div class="footer-links">
+      <a href="https://satusphere.com">satusphere.com</a>
+      <a href="https://x.com/sat_us_phere">@sat_us_phere</a>
+      <a href="mailto:info@satusphere.com">info@satusphere.com</a>
+    </div>
+    <p style="margin-top:16px; font-size:0.8rem;">&copy; 2026 SatUsPhere. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

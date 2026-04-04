@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>What Is a Bitcoin Wallet? | SatUsPhere Bitcoin Education</title>
+  <meta name="description" content="A Bitcoin wallet stores your private keys, not your Bitcoin. Learn the difference between custodial and non-custodial wallets, hot vs. cold storage, and how to choose." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://satusphere.com/learn/what-is-a-bitcoin-wallet" />
+  <meta property="og:title" content="What Is a Bitcoin Wallet? | SatUsPhere" />
+  <meta property="og:description" content="A Bitcoin wallet stores your private keys, not your Bitcoin. Learn the difference between custodial and non-custodial wallets, hot vs. cold storage, and how to choose." />
+  <meta property="og:url" content="https://satusphere.com/learn/what-is-a-bitcoin-wallet" />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://satusphere.com/assets/course-banner.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@sat_us_phere" />
+
+  <script type="application/ld+json">
+  { "@context": "https://schema.org", "@type": "Organization", "name": "SatUsPhere", "url": "https://satusphere.com", "logo": "https://satusphere.com/assets/logo.png" }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org", "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://satusphere.com" },
+      { "@type": "ListItem", "position": 2, "name": "Learn Bitcoin", "item": "https://satusphere.com/learn" },
+      { "@type": "ListItem", "position": 3, "name": "What Is a Bitcoin Wallet?", "item": "https://satusphere.com/learn/what-is-a-bitcoin-wallet" }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org", "@type": "Article",
+    "headline": "What Is a Bitcoin Wallet?",
+    "description": "A Bitcoin wallet stores your private keys, not your Bitcoin. Learn about custodial vs. non-custodial wallets and how self-custody works.",
+    "author": { "@type": "Organization", "name": "SatUsPhere", "url": "https://satusphere.com" },
+    "publisher": { "@type": "Organization", "name": "SatUsPhere", "logo": { "@type": "ImageObject", "url": "https://satusphere.com/assets/logo.png" } },
+    "datePublished": "2026-04-01", "dateModified": "2026-04-01",
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://satusphere.com/learn/what-is-a-bitcoin-wallet" }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org", "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "Does a Bitcoin wallet store Bitcoin?", "acceptedAnswer": { "@type": "Answer", "text": "No. A Bitcoin wallet does not store Bitcoin. Your Bitcoin always exists on the blockchain. What a wallet stores is your private key - the cryptographic proof that you have the right to spend specific Bitcoin. Without your private key, you cannot move your Bitcoin." } },
+      { "@type": "Question", "name": "What is the difference between a hot wallet and a cold wallet?", "acceptedAnswer": { "@type": "Answer", "text": "A hot wallet is connected to the internet (phone apps, desktop apps, exchange accounts). A cold wallet stores private keys offline (hardware wallets, paper wallets). Hot wallets are more convenient but more exposed to hacking. Cold wallets are less convenient but far more secure for larger amounts." } },
+      { "@type": "Question", "name": "What is a custodial wallet?", "acceptedAnswer": { "@type": "Answer", "text": "A custodial wallet is one where a third party (like an exchange) holds your private keys on your behalf. You trust them to give you access to your Bitcoin when you want it. Not your keys, not your coins - if the exchange is hacked or goes bankrupt, your Bitcoin can be lost." } },
+      { "@type": "Question", "name": "What is a Bitcoin address?", "acceptedAnswer": { "@type": "Answer", "text": "A Bitcoin address is a string of letters and numbers (like a bank account number) that you share with others so they can send Bitcoin to you. It is derived from your public key, which in turn is derived from your private key. You can generate unlimited addresses from a single wallet." } },
+      { "@type": "Question", "name": "What is a seed phrase?", "acceptedAnswer": { "@type": "Answer", "text": "A seed phrase (also called a recovery phrase or mnemonic) is a sequence of 12 or 24 words that can regenerate your entire wallet, including all private keys. It is the master backup of your wallet. If you lose your device, you can restore your wallet on any compatible app using your seed phrase. Never share it with anyone." } }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  { "@context": "https://schema.org", "@type": "WebPage", "name": "What Is a Bitcoin Wallet?", "speakable": { "@type": "SpeakableSpecification", "cssSelector": [".answer-block", "h1", ".summary"] }, "url": "https://satusphere.com/learn/what-is-a-bitcoin-wallet" }
+  </script>
+
+  <style>
+    :root { --navy: #0D1B2E; --orange: #F7931A; --blue: #1DA1F2; --gold: #D4A530; --white: #FFFFFF; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color: #1a1a2e; line-height: 1.7; }
+    nav { background: var(--navy); padding: 16px 24px; display: flex; justify-content: space-between; align-items: center; }
+    .nav-logo { color: var(--white); font-weight: 700; font-size: 1.2rem; text-decoration: none; }
+    .nav-cta { background: var(--orange); color: var(--white); padding: 8px 20px; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 0.9rem; }
+    .breadcrumb { padding: 12px 24px; background: #f5f5f5; font-size: 0.85rem; color: #666; }
+    .breadcrumb a { color: var(--blue); text-decoration: none; }
+    .breadcrumb span { margin: 0 6px; }
+    main { max-width: 800px; margin: 0 auto; padding: 48px 24px; }
+    h1 { font-size: 2rem; color: var(--navy); margin-bottom: 24px; line-height: 1.3; }
+    .answer-block { background: #f5f5f5; border-left: 4px solid var(--orange); padding: 20px 24px; margin-bottom: 32px; border-radius: 0 8px 8px 0; font-size: 1.05rem; }
+    .summary { font-size: 1.05rem; color: #333; margin-bottom: 32px; }
+    h2 { font-size: 1.4rem; color: var(--navy); margin: 40px 0 16px; }
+    p { margin-bottom: 16px; color: #333; }
+    ul, ol { margin: 16px 0 16px 24px; }
+    li { margin-bottom: 8px; }
+    .callout { background: #fff3e0; border-left: 4px solid var(--orange); padding: 16px 20px; border-radius: 0 8px 8px 0; margin: 24px 0; }
+    .callout strong { color: var(--navy); }
+    .course-cta { background: var(--navy); color: var(--white); padding: 40px; border-radius: 12px; text-align: center; margin: 48px 0; }
+    .course-cta h2 { color: var(--gold); margin-bottom: 12px; font-size: 1.5rem; margin-top: 0; }
+    .course-cta p { color: #ccc; margin-bottom: 24px; }
+    .cta-button { display: inline-block; background: var(--orange); color: var(--white); padding: 14px 36px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 1.1rem; }
+    .faq-section { margin: 48px 0; }
+    .faq-item { border-bottom: 1px solid #e0e0e0; padding: 20px 0; }
+    .faq-item:last-child { border-bottom: none; }
+    .faq-question { font-weight: 600; font-size: 1rem; color: var(--navy); margin-bottom: 8px; }
+    .faq-answer { color: #444; font-size: 0.95rem; }
+    .related-links { margin: 48px 0; }
+    .related-links ul { list-style: none; margin: 0; padding: 0; }
+    .related-links li { margin-bottom: 10px; }
+    .related-links a { color: var(--blue); text-decoration: none; font-weight: 500; }
+    footer { background: var(--navy); color: #aaa; text-align: center; padding: 32px 24px; font-size: 0.9rem; }
+    footer a { color: var(--blue); text-decoration: none; }
+    .footer-tagline { color: var(--gold); font-weight: 600; margin-bottom: 8px; }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a class="nav-logo" href="https://satusphere.com">SatUsPhere</a>
+    <a class="nav-cta" href="https://checkout.teachable.com/secure/2684007/checkout/order_1y3wjzbk">Get Bitcoin From Scratch - $97</a>
+  </nav>
+
+  <div class="breadcrumb">
+    <a href="https://satusphere.com">Home</a><span>/</span>
+    <a href="https://satusphere.com/learn">Learn Bitcoin</a><span>/</span>
+    What Is a Bitcoin Wallet?
+  </div>
+
+  <main>
+    <h1>What Is a Bitcoin Wallet?</h1>
+
+    <div class="answer-block">
+      A Bitcoin wallet is software (or hardware) that stores your private keys and lets you send, receive, and manage Bitcoin. Crucially, your Bitcoin never leaves the blockchain - a wallet doesn't hold Bitcoin the way a physical wallet holds cash. It holds the cryptographic keys that prove you own specific Bitcoin on the blockchain.
+    </div>
+
+    <p class="summary">Understanding what a wallet actually does is one of the most important foundational concepts in Bitcoin. The common phrase "not your keys, not your coins" comes from this: whoever controls the private keys controls the Bitcoin.</p>
+
+    <h2>What Does a Bitcoin Wallet Actually Store?</h2>
+    <p>Your Bitcoin exists as entries on the blockchain - a public record. What a wallet stores is your <strong>private key</strong>, which is a secret number that mathematically proves you have the right to spend certain Bitcoin.</p>
+    <p>Think of it this way: the blockchain is a public safe-deposit box visible to everyone. Your private key is the only key that opens it. Your wallet is the keychain.</p>
+
+    <h2>Types of Bitcoin Wallets</h2>
+
+    <h2>Custodial vs. Non-Custodial</h2>
+    <ul>
+      <li><strong>Custodial wallet</strong> - A third party (like an exchange) holds your private keys. You log in with a username and password. Convenient, but you're trusting that company with your Bitcoin. Examples: Coinbase, Kraken accounts.</li>
+      <li><strong>Non-custodial wallet</strong> - You hold your own private keys. No company can freeze or seize your Bitcoin. You are solely responsible for security. Examples: Blue Wallet, Sparrow, Ledger, Trezor.</li>
+    </ul>
+
+    <div class="callout">
+      <strong>Key rule:</strong> If you don't control the private keys, you don't truly own the Bitcoin. You have an IOU from whoever does. The 2022 FTX collapse proved why this matters - customers lost billions when the exchange went bankrupt.
+    </div>
+
+    <h2>Hot Wallets vs. Cold Wallets</h2>
+    <ul>
+      <li><strong>Hot wallet</strong> - Connected to the internet. Mobile apps (Blue Wallet, Muun), desktop apps, browser extensions. Convenient for spending small amounts.</li>
+      <li><strong>Cold wallet</strong> - Private keys stored offline. Hardware wallets (Ledger, Trezor, Coldcard) never expose private keys to the internet. Best for storing larger amounts long-term.</li>
+    </ul>
+
+    <h2>What Is a Bitcoin Address?</h2>
+    <p>A Bitcoin address is what you share with others to receive Bitcoin - like a bank account number but public. It's a string of letters and numbers derived from your public key. You can generate a new address for every transaction, which is recommended for privacy. All addresses derived from the same wallet are controlled by the same private key.</p>
+
+    <h2>What Is a Seed Phrase?</h2>
+    <p>When you set up a non-custodial wallet, it generates a seed phrase: 12 or 24 common English words in a specific order. This is the master backup of your entire wallet. Anyone with these words can access all your Bitcoin. Treat it like the combination to a vault:</p>
+    <ul>
+      <li>Write it down on paper (or stamp it in metal for fire/flood resistance)</li>
+      <li>Never type it into any website or app</li>
+      <li>Never take a photo or store it digitally</li>
+      <li>Store it in a secure physical location</li>
+    </ul>
+
+    <div class="course-cta">
+      <h2>Master Bitcoin Wallets and Self-Custody</h2>
+      <p>Bitcoin From Scratch has an entire section dedicated to private keys, seed phrases, wallet types, and self-custody - all animated in 3D so the concepts actually click. Stop guessing at wallet security. Learn it properly.</p>
+      <a class="cta-button" href="https://checkout.teachable.com/secure/2684007/checkout/order_1y3wjzbk">Start Bitcoin From Scratch - $97</a>
+    </div>
+
+    <div class="faq-section">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-item">
+        <div class="faq-question">Does a Bitcoin wallet store Bitcoin?</div>
+        <div class="faq-answer">No. A Bitcoin wallet does not store Bitcoin. Your Bitcoin always exists on the blockchain. What a wallet stores is your private key - the cryptographic proof that you have the right to spend specific Bitcoin. Without your private key, you cannot move your Bitcoin.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">What is the difference between a hot wallet and a cold wallet?</div>
+        <div class="faq-answer">A hot wallet is connected to the internet (phone apps, desktop apps, exchange accounts). A cold wallet stores private keys offline (hardware wallets). Hot wallets are more convenient but more exposed to hacking. Cold wallets are less convenient but far more secure for larger amounts.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">What is a custodial wallet?</div>
+        <div class="faq-answer">A custodial wallet is one where a third party (like an exchange) holds your private keys on your behalf. If the exchange is hacked or goes bankrupt, your Bitcoin can be lost. "Not your keys, not your coins" is the reason self-custody matters.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">What is a Bitcoin address?</div>
+        <div class="faq-answer">A Bitcoin address is a string of letters and numbers that you share with others so they can send Bitcoin to you. It is derived from your public key, which comes from your private key. You can generate unlimited addresses from a single wallet.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">What is a seed phrase?</div>
+        <div class="faq-answer">A seed phrase is a sequence of 12 or 24 words that can regenerate your entire wallet, including all private keys. It is your master backup. Never share it with anyone, never store it digitally - write it on paper and keep it physically secure.</div>
+      </div>
+    </div>
+
+    <div class="related-links">
+      <h2>Related Topics</h2>
+      <ul>
+        <li><a href="/learn/what-is-a-private-key">What is a private key?</a></li>
+        <li><a href="/learn/what-is-self-custody">What is self-custody?</a></li>
+        <li><a href="/learn/what-is-a-seed-phrase">What is a seed phrase?</a></li>
+        <li><a href="/learn/what-is-a-hardware-wallet">What is a hardware wallet?</a></li>
+        <li><a href="/learn/how-do-bitcoin-transactions-work">How do Bitcoin transactions work?</a></li>
+        <li><a href="/learn/what-is-bitcoin">What is Bitcoin?</a></li>
+      </ul>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-tagline">Bitcoin Is For All Of Us</div>
+    <p><a href="https://satusphere.com">satusphere.com</a> | <a href="https://x.com/sat_us_phere">@sat_us_phere</a> | <a href="mailto:info@satusphere.com">info@satusphere.com</a></p>
+    <p style="margin-top: 8px;">&copy; 2026 SatUsPhere / IDBA Investments. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

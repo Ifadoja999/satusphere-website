@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>What Is a Bitcoin Mempool? | SatUsPhere</title>
+  <meta name="description" content="The Bitcoin mempool is the waiting room for unconfirmed transactions. Learn how the mempool works, why transactions get stuck, how miners pick which transactions to include, and how to use RBF to unstick a transaction.">
+  <link rel="canonical" href="https://satusphere.com/learn/what-is-a-mempool">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "SatUsPhere",
+    "url": "https://satusphere.com",
+    "logo": "https://satusphere.com/assets/logo.png",
+    "description": "Bitcoin education company. Bitcoin From Scratch is the only Bitcoin fundamentals course built entirely with 3D animation.",
+    "sameAs": [
+      "https://x.com/sat_us_phere",
+      "https://www.youtube.com/channel/UC0jGCeBvr8qLmMhRpwda-5Q"
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "email": "info@satusphere.com",
+      "contactType": "customer support"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://satusphere.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Learn Bitcoin",
+        "item": "https://satusphere.com/learn"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "What Is a Mempool?",
+        "item": "https://satusphere.com/learn/what-is-a-mempool"
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "What Is a Bitcoin Mempool?",
+    "description": "The Bitcoin mempool (memory pool) is the staging area for unconfirmed transactions waiting to be included in a block. This article explains how transactions enter and exit the mempool, how miners select transactions based on fees, what causes mempool congestion, and how Replace-by-Fee (RBF) works.",
+    "author": {
+      "@type": "Organization",
+      "name": "SatUsPhere"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "SatUsPhere",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://satusphere.com/assets/logo.png"
+      }
+    },
+    "datePublished": "2026-04-01",
+    "dateModified": "2026-04-01",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://satusphere.com/learn/what-is-a-mempool"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is a Bitcoin mempool?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The Bitcoin mempool (memory pool) is the holding area on each Bitcoin node where unconfirmed transactions wait before being included in a block. When you broadcast a Bitcoin transaction, it does not go directly into a block - it first enters the mempool on every node that receives it. Miners then pull transactions from the mempool to build the next block, and once a transaction is confirmed in a block, it is removed from the mempool."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long do transactions stay in the mempool?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Most transactions confirm within the next few blocks (10-30 minutes) if the fee is appropriate for the current network conditions. Transactions with very low fees can sit in the mempool for hours, days, or even weeks during high congestion. Most Bitcoin nodes automatically drop transactions from their local mempool after 336 hours (14 days) if they remain unconfirmed. A dropped transaction is not permanently gone - the inputs become spendable again and the transaction can be rebroadcast with a higher fee."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why is my Bitcoin transaction stuck?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A stuck Bitcoin transaction almost always means the fee per vbyte was too low for current network conditions. Miners fill each block with the highest-fee transactions first - if your fee is lower than what other senders are offering, your transaction waits at the back of the line. During busy periods, this can mean your transaction stays unconfirmed for a long time. The fix is either to wait for congestion to ease, or to use Replace-by-Fee (RBF) to rebroadcast the transaction with a higher fee."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What causes mempool congestion?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Mempool congestion happens when the number of pending transactions exceeds what miners can confirm in a reasonable number of blocks. Common causes include: bull market price surges bringing large transaction volumes, popular NFT or token inscriptions competing for block space, exchange activities like mass withdrawals, and periods following a halving when miner fee revenue becomes more important. During congestion, fees spike as senders compete to have their transactions prioritized."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do miners choose which transactions to include?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Miners are economically incentivized to maximize revenue from each block. They sort pending mempool transactions by fee rate - the fee paid per virtual byte (sat/vbyte) of transaction data. Higher fee-rate transactions generate more revenue per unit of block space, so miners fill blocks from the top of this sorted list downward until the block is full. This is why paying a higher fee rate gets your transaction confirmed faster - it moves you higher in the priority queue."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SpeakableSpecification",
+    "cssSelector": [".answer-block", ".summary"]
+  }
+  </script>
+
+  <style>
+    :root {
+      --color-navy: #0D1B2E;
+      --color-orange: #F7931A;
+      --color-blue: #1DA1F2;
+      --color-gold: #D4A530;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #f8f9fa;
+      color: #1a1a1a;
+      line-height: 1.7;
+    }
+
+    nav {
+      background: var(--color-navy);
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-logo {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1.4rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+
+    .nav-logo span { color: var(--color-orange); }
+
+    .nav-cta {
+      background: var(--color-orange);
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: opacity 0.2s;
+      white-space: nowrap;
+    }
+
+    .nav-cta:hover { opacity: 0.88; }
+
+    .breadcrumb {
+      background: #fff;
+      border-bottom: 1px solid #e5e7eb;
+      padding: 12px 24px;
+      font-size: 0.85rem;
+      color: #6b7280;
+    }
+
+    .breadcrumb a { color: var(--color-blue); text-decoration: none; }
+    .breadcrumb a:hover { text-decoration: underline; }
+    .breadcrumb span { margin: 0 8px; }
+
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 48px 24px 64px;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--color-navy);
+      line-height: 1.25;
+      margin-bottom: 24px;
+    }
+
+    .answer-block {
+      background: #fff;
+      border-left: 5px solid var(--color-orange);
+      border-radius: 0 8px 8px 0;
+      padding: 20px 24px;
+      margin-bottom: 28px;
+      font-size: 1.05rem;
+      font-weight: 500;
+      color: #111;
+    }
+
+    p.summary {
+      font-size: 1.05rem;
+      color: #374151;
+      margin-bottom: 40px;
+      line-height: 1.8;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--color-navy);
+      margin: 40px 0 16px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #e5e7eb;
+    }
+
+    p { margin-bottom: 16px; color: #374151; }
+
+    ul, ol {
+      padding-left: 24px;
+      margin-bottom: 16px;
+      color: #374151;
+    }
+
+    li { margin-bottom: 8px; }
+
+    strong { color: var(--color-navy); }
+
+    .flow-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      margin: 24px 0;
+    }
+
+    .flow-step {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+    }
+
+    .flow-step-connector {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex-shrink: 0;
+    }
+
+    .flow-step-dot {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--color-navy);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.85rem;
+      flex-shrink: 0;
+    }
+
+    .flow-step-line {
+      width: 2px;
+      flex: 1;
+      min-height: 20px;
+      background: #e5e7eb;
+      margin: 4px 0;
+    }
+
+    .flow-step:last-child .flow-step-line { display: none; }
+
+    .flow-step-content {
+      padding-bottom: 20px;
+      flex: 1;
+    }
+
+    .flow-step-title {
+      font-weight: 700;
+      color: var(--color-navy);
+      margin-bottom: 4px;
+    }
+
+    .flow-step-desc {
+      font-size: 0.95rem;
+      color: #374151;
+    }
+
+    .callout {
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+      padding: 20px 24px;
+      margin: 24px 0;
+    }
+
+    .callout-title {
+      font-weight: 700;
+      color: var(--color-navy);
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 8px;
+    }
+
+    .callout p { margin: 0; font-size: 0.95rem; }
+
+    .highlight-box {
+      background: linear-gradient(135deg, #0D1B2E 0%, #162336 100%);
+      border-radius: 8px;
+      padding: 24px;
+      margin: 24px 0;
+      color: #fff;
+    }
+
+    .highlight-box h3 {
+      color: var(--color-gold);
+      font-size: 1rem;
+      margin-bottom: 12px;
+    }
+
+    .highlight-box p { color: #cbd5e1; margin: 0; font-size: 0.95rem; }
+
+    .course-cta {
+      background: var(--color-navy);
+      border-radius: 12px;
+      padding: 48px 40px;
+      margin: 56px 0;
+      text-align: center;
+    }
+
+    .course-cta h2 {
+      color: var(--color-gold);
+      border: none;
+      font-size: 1.8rem;
+      margin: 0 0 16px;
+      padding: 0;
+    }
+
+    .course-cta p {
+      color: #cbd5e1;
+      font-size: 1.05rem;
+      margin-bottom: 28px;
+      max-width: 520px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .course-cta a {
+      display: inline-block;
+      background: var(--color-orange);
+      color: #fff;
+      text-decoration: none;
+      padding: 16px 36px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 1.05rem;
+      transition: opacity 0.2s;
+    }
+
+    .course-cta a:hover { opacity: 0.88; }
+
+    .faq-section { margin: 56px 0; }
+
+    .faq-section h2 {
+      font-size: 1.6rem;
+      border-bottom: 2px solid var(--color-orange);
+      color: var(--color-navy);
+    }
+
+    .faq-item {
+      border-bottom: 1px solid #e5e7eb;
+      padding: 20px 0;
+    }
+
+    .faq-item h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--color-navy);
+      margin-bottom: 10px;
+    }
+
+    .faq-item p { margin: 0; }
+
+    .related-links { margin: 48px 0; }
+
+    .related-links h2 {
+      font-size: 1.4rem;
+      color: var(--color-navy);
+    }
+
+    .related-links ul {
+      list-style: none;
+      padding: 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .related-links li { margin: 0; }
+
+    .related-links a {
+      display: block;
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+      padding: 14px 18px;
+      color: var(--color-blue);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .related-links a:hover {
+      border-color: var(--color-blue);
+      box-shadow: 0 2px 8px rgba(29,161,242,0.12);
+    }
+
+    footer {
+      background: var(--color-navy);
+      color: #94a3b8;
+      padding: 40px 24px;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+    footer .tagline {
+      color: var(--color-gold);
+      font-weight: 700;
+      font-size: 1.05rem;
+      margin-bottom: 16px;
+    }
+
+    footer a { color: #94a3b8; text-decoration: none; }
+    footer a:hover { color: #fff; }
+    footer .footer-links { display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; margin-top: 12px; }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 1.7rem; }
+      .related-links ul { grid-template-columns: 1fr; }
+      .course-cta { padding: 32px 20px; }
+      .nav-cta { font-size: 0.8rem; padding: 8px 14px; }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@type": "WebPage", "name": "What Is a Bitcoin Mempool?", "url": "https://satusphere.com/learn/what-is-a-mempool", "speakable": {"@type": "SpeakableSpecification", "cssSelector": [".answer-block", "h1", ".summary"]}}
+  </script>
+</head>
+<body>
+
+  <nav>
+    <a href="https://satusphere.com" class="nav-logo">Sat<span>Us</span>Phere</a>
+    <a href="https://checkout.teachable.com/secure/2684007/checkout/order_1y3wjzbk" class="nav-cta">Get Bitcoin From Scratch - $97</a>
+  </nav>
+
+  <div class="breadcrumb">
+    <a href="https://satusphere.com">Home</a>
+    <span>&#8250;</span>
+    <a href="https://satusphere.com/learn">Learn Bitcoin</a>
+    <span>&#8250;</span>
+    What Is a Mempool?
+  </div>
+
+  <div class="container">
+
+    <h1>What Is a Bitcoin Mempool?</h1>
+
+    <div class="answer-block">
+      The Bitcoin mempool (memory pool) is the waiting room for unconfirmed transactions. When you send Bitcoin, your transaction is broadcast to the network and held in the mempool on each node until a miner picks it up and includes it in the next block. Transactions with higher fees get confirmed first - lower-fee transactions wait longer.
+    </div>
+
+    <p class="summary">
+      Every Bitcoin transaction goes through the mempool before it is confirmed. During quiet periods, the mempool is nearly empty and transactions confirm within the next block or two. During busy periods, the mempool can swell to hundreds of thousands of transactions, fee rates spike, and low-fee transactions can sit unconfirmed for hours or days. Understanding how the mempool works explains why Bitcoin fees are not fixed, why transactions sometimes appear stuck, and what you can do about it.
+    </p>
+
+    <h2>The Mempool: Bitcoin's Waiting Room</h2>
+    <p>
+      "Mempool" is short for memory pool. It is not a single place - every Bitcoin node maintains its own local mempool. When a new transaction is broadcast to the Bitcoin network, it propagates from node to node, and each node that receives and validates it adds it to its own mempool.
+    </p>
+    <p>
+      The mempool is stored in RAM, not on disk. This is why it is called a "memory" pool - the data is held in fast temporary memory, not written to the blockchain. It is also why the mempool is not perfectly synchronized across all nodes. Different nodes have different mempools depending on which transactions have reached them, what limits their node software sets on mempool size, and what transactions they have already rejected or evicted.
+    </p>
+    <p>
+      The purpose of the mempool is to act as a buffer. Bitcoin blocks are produced roughly every 10 minutes and have limited capacity. The mempool absorbs incoming transaction demand and holds transactions until block space is available to confirm them.
+    </p>
+
+    <h2>How Transactions Enter and Exit the Mempool</h2>
+
+    <div class="flow-steps">
+      <div class="flow-step">
+        <div class="flow-step-connector">
+          <div class="flow-step-dot">1</div>
+          <div class="flow-step-line"></div>
+        </div>
+        <div class="flow-step-content">
+          <div class="flow-step-title">Transaction is created and broadcast</div>
+          <div class="flow-step-desc">Your wallet constructs a transaction, signs it with your private key, and broadcasts it to the Bitcoin peer-to-peer network. It immediately reaches nearby nodes.</div>
+        </div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-step-connector">
+          <div class="flow-step-dot">2</div>
+          <div class="flow-step-line"></div>
+        </div>
+        <div class="flow-step-content">
+          <div class="flow-step-title">Nodes validate and add to mempool</div>
+          <div class="flow-step-desc">Each node checks the transaction against the ruleset: valid signatures, no double-spend, outputs do not exceed inputs, fee above minimum threshold. Valid transactions are added to the local mempool and relayed to peers.</div>
+        </div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-step-connector">
+          <div class="flow-step-dot">3</div>
+          <div class="flow-step-line"></div>
+        </div>
+        <div class="flow-step-content">
+          <div class="flow-step-title">Miners select from the mempool</div>
+          <div class="flow-step-desc">Mining nodes pull transactions from their mempool to build a candidate block. They sort by fee rate and select the highest-paying transactions until the block weight limit is reached.</div>
+        </div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-step-connector">
+          <div class="flow-step-dot">4</div>
+          <div class="flow-step-line"></div>
+        </div>
+        <div class="flow-step-content">
+          <div class="flow-step-title">Block is mined and broadcast</div>
+          <div class="flow-step-desc">The miner finds a valid block and broadcasts it to the network. All nodes verify the block and add it to the chain.</div>
+        </div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-step-connector">
+          <div class="flow-step-dot">5</div>
+          <div class="flow-step-line"></div>
+        </div>
+        <div class="flow-step-content">
+          <div class="flow-step-title">Confirmed transactions leave the mempool</div>
+          <div class="flow-step-desc">Every node removes the transactions included in the new block from its local mempool. The transaction is now confirmed with one block of depth.</div>
+        </div>
+      </div>
+    </div>
+
+    <h2>Mempool Congestion and Fee Spikes</h2>
+    <p>
+      Bitcoin can confirm roughly 3,000-4,000 transactions per block, and a new block is produced approximately every 10 minutes. That gives the network a throughput ceiling of about 5-7 transactions per second under normal conditions. When demand exceeds that ceiling, transactions queue up in the mempool faster than they are confirmed.
+    </p>
+    <p>
+      When this happens, fees spike. Senders who need fast confirmations bid up their fee rate to outcompete everyone else in the mempool queue. Fee rates are measured in <strong>satoshis per virtual byte (sat/vbyte)</strong>. During normal periods, a fee of 2-10 sat/vbyte is sufficient. During peak congestion, fees can spike to 100, 200, or even 500+ sat/vbyte.
+    </p>
+    <p>
+      Common triggers for mempool congestion:
+    </p>
+    <ul>
+      <li><strong>Bull market price surges</strong> - rising prices bring a flood of trading activity from exchanges, increasing transaction volume significantly.</li>
+      <li><strong>Ordinals and inscriptions</strong> - since 2023, Bitcoin has seen periods of heavy congestion from on-chain inscription activity competing with payment transactions for block space.</li>
+      <li><strong>Exchange mass withdrawals</strong> - when exchanges process large batches of user withdrawals simultaneously, the volume can temporarily overwhelm available block space.</li>
+      <li><strong>Halving periods</strong> - reduced block subsidy makes transaction fees relatively more important for miner revenue, and the publicity around halvings often brings new users onto the network.</li>
+    </ul>
+
+    <h2>How to Check the Current Mempool</h2>
+    <p>
+      Several public tools let you see the real-time state of the Bitcoin mempool before deciding on your fee:
+    </p>
+    <ul>
+      <li><strong>mempool.space</strong> - The most widely used mempool explorer. Shows current pending transactions organized by fee rate, a visual block explorer, fee recommendations, and historical fee data.</li>
+      <li><strong>Johoe's Mempool Statistics</strong> - Long-running historical charts showing mempool size over time.</li>
+      <li><strong>Your node's mempool</strong> - If you run a full Bitcoin node (Bitcoin Core), you can query your own local mempool directly via the command line for real-time data.</li>
+    </ul>
+    <p>
+      Most modern Bitcoin wallets also display a fee estimate and let you select between priority tiers (fast, standard, economy) based on current mempool conditions. The wallet queries the mempool state and recommends an appropriate fee rate for your desired confirmation time.
+    </p>
+
+    <h2>RBF: Replace-by-Fee for Stuck Transactions</h2>
+    <p>
+      If you send a transaction with a fee that turns out to be too low, there is a mechanism to rescue it: <strong>Replace-by-Fee (RBF)</strong>. RBF allows you to rebroadcast the same transaction with a higher fee, effectively replacing the stuck version in the mempool.
+    </p>
+    <p>
+      How RBF works:
+    </p>
+    <ul>
+      <li>The original transaction must have been broadcast with the RBF flag enabled (opt-in RBF). Most modern wallets enable this by default.</li>
+      <li>The replacement transaction spends the same inputs (same UTXOs) as the original, but includes a higher fee rate. Nodes accept it because the higher-fee version supersedes the lower-fee version.</li>
+      <li>The replacement transaction is broadcast to the network and nodes update their mempools, dropping the original and queuing the replacement.</li>
+      <li>Miners now see a higher-fee transaction and are more likely to include it in the next block.</li>
+    </ul>
+
+    <div class="highlight-box">
+      <h3>What If a Transaction Was Sent Without RBF Enabled?</h3>
+      <p>If the original transaction was not marked as RBF-eligible, nodes may refuse the replacement. In that case, another option is CPFP (Child Pays for Parent) - where the recipient creates a new transaction spending the stuck unconfirmed output with a very high fee, incentivizing miners to confirm both the parent and child transaction together in the same block.</p>
+    </div>
+
+    <p>
+      Mempool dynamics are a real-time auction. The mempool is not a first-in, first-out queue - it is a fee-rate-sorted priority queue. Understanding this means you can make informed decisions about fees: paying more when you need speed, and saving money during off-peak hours when block space is plentiful.
+    </p>
+
+    <div class="course-cta">
+      <h2>Learn Bitcoin The Visual Way</h2>
+      <p>Bitcoin From Scratch covers the mempool, transactions, mining, and the full technical picture of how Bitcoin works - through 34 3D animated lessons built for beginners.</p>
+      <a href="https://checkout.teachable.com/secure/2684007/checkout/order_1y3wjzbk">Get Bitcoin From Scratch - $97</a>
+    </div>
+
+    <section class="faq-section">
+      <h2>Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <h3>What is a Bitcoin mempool?</h3>
+        <p>The Bitcoin mempool (memory pool) is the holding area on each Bitcoin node where unconfirmed transactions wait before being included in a block. When you broadcast a Bitcoin transaction, it does not go directly into a block - it first enters the mempool on every node that receives it. Miners then pull transactions from the mempool to build the next block, and once a transaction is confirmed in a block, it is removed from the mempool.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>How long do transactions stay in the mempool?</h3>
+        <p>Most transactions confirm within the next few blocks (10-30 minutes) if the fee is appropriate for the current network conditions. Transactions with very low fees can sit in the mempool for hours, days, or even weeks during high congestion. Most Bitcoin nodes automatically drop transactions from their local mempool after 336 hours (14 days) if they remain unconfirmed. A dropped transaction is not permanently gone - the inputs become spendable again and the transaction can be rebroadcast with a higher fee.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Why is my Bitcoin transaction stuck?</h3>
+        <p>A stuck Bitcoin transaction almost always means the fee per vbyte was too low for current network conditions. Miners fill each block with the highest-fee transactions first - if your fee is lower than what other senders are offering, your transaction waits at the back of the line. During busy periods, this can mean your transaction stays unconfirmed for a long time. The fix is either to wait for congestion to ease, or to use Replace-by-Fee (RBF) to rebroadcast the transaction with a higher fee.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>What causes mempool congestion?</h3>
+        <p>Mempool congestion happens when the number of pending transactions exceeds what miners can confirm in a reasonable number of blocks. Common causes include: bull market price surges bringing large transaction volumes, popular inscription activity competing for block space, exchange mass withdrawals, and periods following a halving when miner fee revenue becomes more important. During congestion, fees spike as senders compete to have their transactions prioritized.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>How do miners choose which transactions to include?</h3>
+        <p>Miners are economically incentivized to maximize revenue from each block. They sort pending mempool transactions by fee rate - the fee paid per virtual byte (sat/vbyte) of transaction data. Higher fee-rate transactions generate more revenue per unit of block space, so miners fill blocks from the top of this sorted list downward until the block is full. This is why paying a higher fee rate gets your transaction confirmed faster - it moves you higher in the priority queue.</p>
+      </div>
+    </section>
+
+  </div>
+
+  <footer>
+    <p class="tagline">Bitcoin Is For All Of Us</p>
+    <div class="footer-links">
+      <a href="https://satusphere.com">satusphere.com</a>
+      <a href="https://x.com/sat_us_phere">@sat_us_phere</a>
+      <a href="mailto:info@satusphere.com">info@satusphere.com</a>
+    </div>
+    <p style="margin-top:16px; font-size:0.8rem;">&copy; 2026 SatUsPhere. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
