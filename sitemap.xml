@@ -17,6 +17,14 @@
     <lastmod>2026-04-01</lastmod>
   </url>
 
+  <!-- Wallet Selector (lead generator) -->
+  <url>
+    <loc>https://satusphere.com/wallet-selector/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2026-04-04</lastmod>
+  </url>
+
   <!-- Tier 1 SEO Pages (highest priority) -->
   <url>
     <loc>https://satusphere.com/learn/what-is-bitcoin</loc>
