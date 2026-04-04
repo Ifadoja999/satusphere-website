@@ -1,0 +1,58 @@
+/*
+  SatUsPhere - Shared Styles
+  Include this stylesheet on every tool and hub page:
+    <link rel="stylesheet" href="/assets/shared.css" />
+*/
+
+/* -------------------------------------------------------
+   DISCLAIMER COMPONENT
+   Usage: add the following HTML near your tool output
+   (below results, or just before the CTA section):
+
+   <div class="disclaimer">
+     This tool is for educational purposes only. Not financial advice.
+   </div>
+
+   On the /tools hub page use the wider variant:
+   <div class="disclaimer disclaimer--hub">
+     These tools are for educational purposes only. Not financial advice.
+   </div>
+------------------------------------------------------- */
+
+.disclaimer {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin: 20px auto 0;
+  max-width: 560px;
+  padding: 10px 14px;
+  background: #fff8e1;
+  border-left: 3px solid #D4A530;
+  border-radius: 0 6px 6px 0;
+  font-size: 0.78rem;
+  color: #555;
+  line-height: 1.5;
+}
+
+.disclaimer::before {
+  content: "i";
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 16px;
+  height: 16px;
+  background: #D4A530;
+  color: #fff;
+  border-radius: 50%;
+  font-size: 0.7rem;
+  font-weight: bold;
+  font-style: italic;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+/* Wider variant for the /tools hub page */
+.disclaimer--hub {
+  max-width: 100%;
+  margin: 0 0 24px;
+}
