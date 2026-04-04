@@ -5,7 +5,12 @@
     { "source": "/learn/:slug", "destination": "/seo-pages/:slug" }
   ],
   "redirects": [
-    { "source": "/learn/", "destination": "/learn", "permanent": true }
+    { "source": "/learn/", "destination": "/learn", "permanent": true },
+    { "source": "/tools/wallet-selector", "destination": "/tools/bitcoin-wallet-selector", "permanent": false },
+    { "source": "/tools/quiz", "destination": "/tools/knowledge-quiz", "permanent": false },
+    { "source": "/tools/stack-the-sats", "destination": "/tools/stack-the-sats-calculator", "permanent": false },
+    { "source": "/tools/roadmap", "destination": "/tools/bitcoin-roadmap", "permanent": false },
+    { "source": "/tools/news-decoder", "destination": "/tools/bitcoin-news-decoder", "permanent": false }
   ],
   "headers": [
     {

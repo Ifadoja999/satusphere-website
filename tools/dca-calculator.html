@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bitcoin DCA Calculator | Dollar Cost Averaging Returns | SatUsPhere</title>
+  <meta name="description" content="See what you would have made if you dollar-cost averaged into Bitcoin. Enter an amount and start date and see your total invested, current value, and gain. Free tool from SatUsPhere." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://satusphere.com/tools/dca-calculator" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Bitcoin DCA Calculator | SatUsPhere" />
+  <meta property="og:description" content="See what you would have made DCA-ing into Bitcoin. Enter an amount and start date, see your return. Free tool." />
+  <meta property="og:url" content="https://satusphere.com/tools/dca-calculator" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://satusphere.com/assets/course-banner.png" />
+  <meta property="og:site_name" content="SatUsPhere" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@sat_us_phere" />
+  <meta name="twitter:title" content="Bitcoin DCA Calculator | SatUsPhere" />
+  <meta name="twitter:description" content="See what DCA-ing into Bitcoin would have returned. Enter an amount and start date." />
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Bitcoin DCA Calculator",
+    "description": "A free calculator showing the returns from dollar-cost averaging into Bitcoin over any time period up to one year.",
+    "url": "https://satusphere.com/tools/dca-calculator",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Web",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "author": { "@type": "Organization", "name": "SatUsPhere", "url": "https://satusphere.com" }
+  }
+  </script>
+
+  <link rel="stylesheet" href="/assets/shared.css" />
+
+  <style>
+    :root {
+      --navy: #0D1B2E;
+      --orange: #F7931A;
+      --blue: #1DA1F2;
+      --gold: #D4A530;
+      --white: #FFFFFF;
+      --light-bg: #f8f9fa;
+      --border: #e0e0e0;
+      --text: #1a1a2e;
+      --text-muted: #555;
+      --green: #16a34a;
+      --red: #dc2626;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      color: var(--text);
+      line-height: 1.7;
+      background: #fff;
+    }
+
+    nav {
+      background: var(--navy);
+      padding: 16px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .nav-logo {
+      color: var(--white);
+      font-weight: 700;
+      font-size: 1.2rem;
+      text-decoration: none;
+    }
+    .nav-cta {
+      background: var(--orange);
+      color: var(--white);
+      padding: 8px 20px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: opacity 0.2s;
+    }
+    .nav-cta:hover { opacity: 0.88; }
+
+    .hero {
+      background: var(--navy);
+      color: var(--white);
+      text-align: center;
+      padding: 56px 24px 48px;
+    }
+    .hero-label {
+      display: inline-block;
+      background: var(--orange);
+      color: var(--white);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 4px;
+      margin-bottom: 20px;
+    }
+    .hero h1 {
+      font-size: clamp(1.6rem, 4vw, 2.4rem);
+      font-weight: 800;
+      line-height: 1.25;
+      margin-bottom: 16px;
+      max-width: 680px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .hero p {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.75);
+      max-width: 560px;
+      margin: 0 auto;
+    }
+
+    .container {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 48px 24px;
+    }
+
+    .intro-note {
+      background: var(--light-bg);
+      border-left: 4px solid var(--orange);
+      padding: 16px 20px;
+      border-radius: 0 8px 8px 0;
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      margin-bottom: 36px;
+      line-height: 1.6;
+    }
+
+    .calc-form {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 32px;
+    }
+
+    .field-group {
+      margin-bottom: 24px;
+    }
+    .field-group label {
+      display: block;
+      font-weight: 600;
+      font-size: 0.95rem;
+      margin-bottom: 8px;
+      color: var(--text);
+    }
+    .field-hint {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin-top: 6px;
+    }
+
+    .input-wrap {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+    .input-prefix {
+      position: absolute;
+      left: 14px;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      pointer-events: none;
+    }
+    .input-wrap input, .input-wrap select {
+      width: 100%;
+      padding: 13px 16px 13px 32px;
+      font-size: 1rem;
+      border: 2px solid var(--border);
+      border-radius: 8px;
+      transition: border-color 0.2s;
+      background: #fff;
+      color: var(--text);
+      appearance: none;
+    }
+    .input-wrap input.no-prefix, .input-wrap select.no-prefix {
+      padding-left: 16px;
+    }
+    .input-wrap input:focus, .input-wrap select:focus {
+      outline: none;
+      border-color: var(--orange);
+    }
+
+    .freq-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .freq-btn {
+      padding: 12px;
+      border: 2px solid var(--border);
+      border-radius: 8px;
+      background: #fff;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: border-color 0.2s, background 0.2s, color 0.2s;
+      color: var(--text);
+    }
+    .freq-btn.active {
+      border-color: var(--orange);
+      background: var(--orange);
+      color: var(--white);
+    }
+
+    .calc-btn {
+      width: 100%;
+      padding: 16px;
+      background: var(--orange);
+      color: var(--white);
+      border: none;
+      border-radius: 8px;
+      font-size: 1.05rem;
+      font-weight: 700;
+      cursor: pointer;
+      margin-top: 8px;
+      transition: opacity 0.2s;
+    }
+    .calc-btn:hover { opacity: 0.88; }
+    .calc-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+    /* Loading */
+    .loading-msg {
+      display: none;
+      text-align: center;
+      padding: 24px;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    /* Results */
+    .results-wrap { display: none; margin-top: 32px; }
+
+    .results-card {
+      background: var(--light-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 32px;
+    }
+
+    .results-headline {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+    .results-subline {
+      font-size: 1rem;
+      color: var(--text-muted);
+      margin-bottom: 28px;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+    .stat-box {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 20px 16px;
+      text-align: center;
+    }
+    .stat-value {
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: var(--text);
+      line-height: 1.2;
+      margin-bottom: 6px;
+    }
+    .stat-value.gain { color: var(--green); }
+    .stat-value.loss { color: var(--red); }
+    .stat-label {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .results-note {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-top: 12px;
+      line-height: 1.5;
+    }
+
+    .reset-link {
+      display: inline-block;
+      margin-top: 16px;
+      background: none;
+      border: none;
+      color: var(--orange);
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: underline;
+      padding: 0;
+    }
+
+    .disclaimer {
+      margin-top: 28px;
+      padding: 14px 18px;
+      background: #fff8e6;
+      border: 1px solid #ffe08a;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      color: #7a5c00;
+      line-height: 1.5;
+    }
+
+    .divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 36px 0;
+    }
+
+    .error-msg {
+      display: none;
+      margin-top: 16px;
+      padding: 14px 18px;
+      background: #fef2f2;
+      border: 1px solid #fca5a5;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      color: #991b1b;
+    }
+
+    .bfs-cta {
+      background: var(--navy);
+      color: var(--white);
+      border-radius: 12px;
+      padding: 32px;
+      text-align: center;
+    }
+    .bfs-cta p {
+      font-size: 1rem;
+      line-height: 1.7;
+      color: rgba(255,255,255,0.85);
+      margin-bottom: 20px;
+    }
+    .bfs-btn {
+      display: inline-block;
+      background: var(--orange);
+      color: var(--white);
+      padding: 14px 32px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1rem;
+      transition: opacity 0.2s;
+    }
+    .bfs-btn:hover { opacity: 0.88; }
+
+    .tools-link {
+      text-align: center;
+      margin-top: 28px;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+    .tools-link a {
+      color: var(--orange);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .tools-link a:hover { text-decoration: underline; }
+
+    footer {
+      background: var(--navy);
+      color: rgba(255,255,255,0.5);
+      text-align: center;
+      padding: 28px 24px;
+      font-size: 0.85rem;
+      margin-top: 64px;
+    }
+    footer a { color: rgba(255,255,255,0.7); text-decoration: none; }
+    footer a:hover { color: var(--white); }
+
+    @media (max-width: 520px) {
+      .calc-form { padding: 24px 18px; }
+      .results-card { padding: 24px 18px; }
+      .stats-grid { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="https://satusphere.com" class="nav-logo">SatUsPhere</a>
+    <a href="https://satusphere.teachable.com/p/bitcoin-from-scratch" class="nav-cta">Get the Course</a>
+  </nav>
+
+  <div class="hero">
+    <div class="hero-label">Free Tool</div>
+    <h1>Bitcoin DCA Calculator</h1>
+    <p>Pick an amount and a start date. See what you would have made dollar-cost averaging into Bitcoin.</p>
+  </div>
+
+  <div class="container">
+
+    <div class="intro-note">
+      Dollar-cost averaging (DCA) means buying a fixed amount on a regular schedule, regardless of price. It removes the pressure of timing the market. This tool shows you the historical result of any DCA strategy going back up to 1 year.
+    </div>
+
+    <div class="calc-form">
+
+      <div class="field-group">
+        <label>How often are you buying?</label>
+        <div class="freq-row">
+          <button class="freq-btn active" id="freq-weekly" onclick="setFreq('weekly')">Weekly</button>
+          <button class="freq-btn" id="freq-monthly" onclick="setFreq('monthly')">Monthly</button>
+        </div>
+      </div>
+
+      <div class="field-group">
+        <label for="input-amount">How much per <span id="freq-label">week</span>? (USD)</label>
+        <div class="input-wrap">
+          <span class="input-prefix">$</span>
+          <input type="number" id="input-amount" min="1" step="1" placeholder="e.g. 25" />
+        </div>
+        <div class="field-hint">Even $10 per week adds up fast.</div>
+      </div>
+
+      <div class="field-group">
+        <label for="input-start">Start date</label>
+        <div class="input-wrap">
+          <input type="date" id="input-start" class="no-prefix" />
+        </div>
+        <div class="field-hint" id="date-hint">CoinGecko free tier supports up to 1 year of history. Earliest allowed: <span id="earliest-date"></span></div>
+      </div>
+
+      <button class="calc-btn" id="calc-btn" onclick="runCalc()">Calculate My DCA Returns</button>
+
+    </div>
+
+    <div class="loading-msg" id="loading-msg">
+      Fetching Bitcoin price history from CoinGecko...
+    </div>
+
+    <div class="error-msg" id="error-msg"></div>
+
+    <div class="results-wrap" id="results-wrap">
+      <div class="results-card">
+        <div class="results-headline" id="results-headline"></div>
+        <div class="results-subline" id="results-subline"></div>
+        <div class="stats-grid">
+          <div class="stat-box">
+            <div class="stat-value" id="stat-invested"></div>
+            <div class="stat-label">Total Invested</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-value" id="stat-value"></div>
+            <div class="stat-label">Current Value</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-value" id="stat-gain"></div>
+            <div class="stat-label">Gain / Loss</div>
+          </div>
+        </div>
+        <div class="stat-box" style="margin-bottom:16px;">
+          <div class="stat-value" id="stat-btc"></div>
+          <div class="stat-label">Total BTC Accumulated</div>
+        </div>
+        <div class="results-note" id="results-note"></div>
+        <button class="reset-link" onclick="resetCalc()">Recalculate</button>
+      </div>
+
+      <div class="disclaimer">
+        This tool is for educational purposes only. Not financial advice. Past performance does not predict future results. Price data from CoinGecko.
+      </div>
+    </div>
+
+    <hr class="divider" />
+
+    <div class="bfs-cta">
+      <p>DCA is one of the most talked-about Bitcoin strategies - but why does it work? Bitcoin From Scratch teaches you the fundamentals behind Bitcoin's price behavior, the halving cycle, and how to think about accumulation over time. 34 lessons, 3D animated, built for beginners.</p>
+      <a href="https://satusphere.teachable.com/p/bitcoin-from-scratch" class="bfs-btn">Get Bitcoin From Scratch</a>
+    </div>
+
+    <div class="tools-link">
+      <a href="/tools">Explore all free Bitcoin tools</a>
+    </div>
+
+  </div>
+
+  <footer>
+    <p><a href="https://satusphere.com">SatUsPhere</a> - Bitcoin Is For All Of Us &nbsp;|&nbsp; <a href="mailto:info@satusphere.com">info@satusphere.com</a></p>
+  </footer>
+
+  <script>
+    const SATS_PER_BTC = 100_000_000;
+    let selectedFreq = 'weekly';
+    let priceHistory = null; // array of [timestamp_ms, price_usd]
+
+    // Set earliest allowed date (365 days ago)
+    function initDates() {
+      const today = new Date();
+      const earliest = new Date(today);
+      earliest.setDate(today.getDate() - 365);
+
+      const startInput = document.getElementById('input-start');
+      const earliestStr = earliest.toISOString().split('T')[0];
+      const todayStr = today.toISOString().split('T')[0];
+
+      startInput.min = earliestStr;
+      startInput.max = todayStr;
+
+      // Default: 6 months ago
+      const defaultStart = new Date(today);
+      defaultStart.setMonth(today.getMonth() - 6);
+      if (defaultStart < earliest) defaultStart.setTime(earliest.getTime());
+      startInput.value = defaultStart.toISOString().split('T')[0];
+
+      document.getElementById('earliest-date').textContent = earliestStr;
+    }
+
+    function setFreq(freq) {
+      selectedFreq = freq;
+      document.getElementById('freq-weekly').classList.toggle('active', freq === 'weekly');
+      document.getElementById('freq-monthly').classList.toggle('active', freq === 'monthly');
+      document.getElementById('freq-label').textContent = freq === 'weekly' ? 'week' : 'month';
+    }
+
+    async function runCalc() {
+      const amountEl = document.getElementById('input-amount');
+      const startEl  = document.getElementById('input-start');
+      const errEl    = document.getElementById('error-msg');
+      const loadEl   = document.getElementById('loading-msg');
+      const resEl    = document.getElementById('results-wrap');
+      const btn      = document.getElementById('calc-btn');
+
+      errEl.style.display = 'none';
+      resEl.style.display = 'none';
+
+      const amount = parseFloat(amountEl.value);
+      const startDateStr = startEl.value;
+
+      if (!amount || amount <= 0) {
+        showError('Please enter an amount greater than $0.');
+        return;
+      }
+      if (!startDateStr) {
+        showError('Please select a start date.');
+        return;
+      }
+
+      const startDate = new Date(startDateStr + 'T00:00:00');
+      const today = new Date();
+      today.setHours(0, 0, 0, 0);
+
+      if (startDate >= today) {
+        showError('Start date must be in the past.');
+        return;
+      }
+
+      const earliest = new Date(today);
+      earliest.setDate(today.getDate() - 365);
+      if (startDate < earliest) {
+        showError('Start date cannot be more than 365 days ago (CoinGecko free tier limitation). Please choose a more recent start date.');
+        return;
+      }
+
+      btn.disabled = true;
+      loadEl.style.display = 'block';
+
+      try {
+        // Fetch historical price data from CoinGecko
+        const days = Math.ceil((today - startDate) / (1000 * 60 * 60 * 24)) + 1;
+        const url = `https://api.coingecko.com/api/v3/coins/bitcoin/market_chart?vs_currency=usd&days=${days}&interval=daily`;
+        const res = await fetch(url);
+        if (!res.ok) throw new Error('Price data fetch failed');
+        const data = await res.json();
+        priceHistory = data.prices; // [[timestamp_ms, price], ...]
+
+        // Fetch current price
+        const currentRes = await fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd');
+        const currentData = await currentRes.json();
+        const currentPrice = currentData.bitcoin.usd;
+
+        // Build buy dates based on frequency
+        const buyDates = [];
+        const cursor = new Date(startDate);
+        while (cursor <= today) {
+          buyDates.push(new Date(cursor));
+          if (selectedFreq === 'weekly') {
+            cursor.setDate(cursor.getDate() + 7);
+          } else {
+            cursor.setMonth(cursor.getMonth() + 1);
+          }
+        }
+
+        if (buyDates.length === 0) {
+          showError('Not enough time has passed for any purchases. Try an earlier start date.');
+          return;
+        }
+
+        // For each buy date, find the closest price point
+        let totalInvested = 0;
+        let totalBTC = 0;
+
+        for (const buyDate of buyDates) {
+          const price = getPriceForDate(buyDate, priceHistory);
+          if (price) {
+            totalInvested += amount;
+            totalBTC += amount / price;
+          }
+        }
+
+        const currentValue = totalBTC * currentPrice;
+        const gainLoss = currentValue - totalInvested;
+        const gainPct = (gainLoss / totalInvested) * 100;
+
+        loadEl.style.display = 'none';
+        btn.disabled = false;
+        renderResults(totalInvested, currentValue, gainLoss, gainPct, totalBTC, currentPrice, buyDates.length, startDateStr);
+
+      } catch (e) {
+        loadEl.style.display = 'none';
+        btn.disabled = false;
+        showError('Could not fetch price data from CoinGecko. Please try again in a moment.');
+      }
+    }
+
+    function getPriceForDate(targetDate, prices) {
+      const targetMs = targetDate.getTime();
+      let closest = null;
+      let closestDiff = Infinity;
+      for (const [ts, price] of prices) {
+        const diff = Math.abs(ts - targetMs);
+        if (diff < closestDiff) {
+          closestDiff = diff;
+          closest = price;
+        }
+      }
+      return closest;
+    }
+
+    function renderResults(invested, value, gain, gainPct, btc, currentPrice, numBuys, startDateStr) {
+      const isGain = gain >= 0;
+      const resEl = document.getElementById('results-wrap');
+
+      document.getElementById('results-headline').textContent =
+        isGain
+          ? `You turned $${fmt(invested)} into $${fmt(value)}`
+          : `Your $${fmt(invested)} is now worth $${fmt(value)}`;
+
+      document.getElementById('results-subline').textContent =
+        `${numBuys} ${selectedFreq === 'weekly' ? 'weekly' : 'monthly'} purchases of $${Math.round(invested/numBuys)} each, starting ${startDateStr}`;
+
+      document.getElementById('stat-invested').textContent = '$' + fmt(invested);
+      document.getElementById('stat-value').textContent = '$' + fmt(value);
+
+      const gainEl = document.getElementById('stat-gain');
+      gainEl.textContent = (isGain ? '+' : '') + '$' + fmt(Math.abs(gain)) + ' (' + (isGain ? '+' : '-') + Math.abs(gainPct).toFixed(1) + '%)';
+      gainEl.className = 'stat-value ' + (isGain ? 'gain' : 'loss');
+
+      document.getElementById('stat-btc').textContent =
+        btc.toFixed(8) + ' BTC (' + Math.round(btc * SATS_PER_BTC).toLocaleString() + ' sats)';
+
+      document.getElementById('results-note').textContent =
+        `Current BTC price used: $${currentPrice.toLocaleString('en-US', {minimumFractionDigits:2,maximumFractionDigits:2})}. Price data from CoinGecko.`;
+
+      resEl.style.display = 'block';
+    }
+
+    function fmt(n) {
+      return n.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    }
+
+    function showError(msg) {
+      const el = document.getElementById('error-msg');
+      el.textContent = msg;
+      el.style.display = 'block';
+      document.getElementById('loading-msg').style.display = 'none';
+      document.getElementById('calc-btn').disabled = false;
+    }
+
+    function resetCalc() {
+      document.getElementById('results-wrap').style.display = 'none';
+      document.getElementById('error-msg').style.display = 'none';
+      document.getElementById('input-amount').value = '';
+      initDates();
+    }
+
+    initDates();
+  </script>
+
+</body>
+</html>
