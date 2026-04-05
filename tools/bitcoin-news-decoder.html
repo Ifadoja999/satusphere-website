@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bitcoin News Decoder - Understand Any Bitcoin Headline | SatUsPhere</title>
+  <meta name="description" content="Paste any Bitcoin headline and get a plain-English explanation. Free tool from SatUsPhere - Bitcoin education for beginners." />
+  <link rel="canonical" href="https://satusphere.com/tools/bitcoin-news-decoder" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Bitcoin News Decoder - Understand Any Bitcoin Headline" />
+  <meta property="og:description" content="Paste any Bitcoin headline and get a plain-English explanation. Free from SatUsPhere." />
+  <meta property="og:url" content="https://satusphere.com/tools/bitcoin-news-decoder" />
+  <meta property="og:image" content="https://satusphere.com/assets/og-default.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Bitcoin News Decoder" />
+  <meta name="twitter:description" content="Paste any Bitcoin headline and get a plain-English explanation." />
+  <meta name="twitter:image" content="https://satusphere.com/assets/og-default.png" />
+  <style>
+    :root {
+      --orange: #F7931A;
+      --navy: #0D1B2E;
+      --navy-light: #122236;
+      --navy-mid: #1a2f47;
+      --blue: #1A6EF7;
+      --gold: #E5B94B;
+      --white: #FFFFFF;
+      --muted: #8BA0B4;
+      --border: rgba(255,255,255,0.08);
+      --bullish: #22c55e;
+      --bearish: #ef4444;
+      --neutral: #94a3b8;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--navy);
+      color: var(--white);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    /* NAV */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 24px;
+      border-bottom: 1px solid var(--border);
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .nav-logo {
+      font-weight: 700;
+      font-size: 18px;
+      color: var(--orange);
+      text-decoration: none;
+    }
+    .nav-cta {
+      background: var(--orange);
+      color: var(--white);
+      text-decoration: none;
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+    .nav-cta:hover { opacity: 0.88; }
+
+    /* MAIN */
+    main {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 40px 24px 80px;
+    }
+
+    /* HERO */
+    .hero { text-align: center; margin-bottom: 40px; }
+    .hero h1 {
+      font-size: clamp(28px, 5vw, 40px);
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 12px;
+    }
+    .hero h1 span { color: var(--orange); }
+    .hero p {
+      font-size: 17px;
+      color: var(--muted);
+      max-width: 520px;
+      margin: 0 auto;
+    }
+
+    /* DECODER CARD */
+    .decoder-card {
+      background: var(--navy-light);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 28px;
+      margin-bottom: 28px;
+    }
+    .decoder-card label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 10px;
+      font-size: 15px;
+    }
+    textarea {
+      width: 100%;
+      background: var(--navy);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--white);
+      font-size: 15px;
+      font-family: inherit;
+      padding: 14px;
+      resize: vertical;
+      min-height: 100px;
+      transition: border-color 0.2s;
+    }
+    textarea:focus { outline: none; border-color: var(--orange); }
+    textarea::placeholder { color: var(--muted); }
+    .char-count {
+      text-align: right;
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 6px;
+    }
+    .char-count.warning { color: var(--orange); }
+
+    /* SAMPLE PILLS */
+    .pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 14px 0 20px;
+    }
+    .pill {
+      background: var(--navy-mid);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 6px 14px;
+      font-size: 13px;
+      color: var(--muted);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .pill:hover { border-color: var(--orange); color: var(--white); }
+
+    /* DECODE BUTTON */
+    .btn-decode {
+      width: 100%;
+      background: var(--orange);
+      color: var(--white);
+      border: none;
+      border-radius: 8px;
+      padding: 14px;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: opacity 0.2s;
+    }
+    .btn-decode:hover { opacity: 0.88; }
+    .btn-decode:disabled { opacity: 0.5; cursor: default; }
+
+    /* LOADING */
+    .loading { display: none; text-align: center; padding: 32px; }
+    .loading.visible { display: block; }
+    .spinner {
+      width: 36px; height: 36px;
+      border: 3px solid var(--border);
+      border-top-color: var(--orange);
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+      margin: 0 auto 12px;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .loading p { color: var(--muted); }
+
+    /* RESULTS */
+    .results { display: none; }
+    .results.visible { display: block; }
+    .results-card {
+      background: var(--navy-light);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      margin-bottom: 24px;
+    }
+    .results-header {
+      padding: 20px 24px 16px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .results-header h2 {
+      font-size: 18px;
+      font-weight: 700;
+    }
+    .signal-badge {
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .signal-bullish { background: rgba(34,197,94,0.15); color: var(--bullish); }
+    .signal-bearish { background: rgba(239,68,68,0.15); color: var(--bearish); }
+    .signal-neutral { background: rgba(148,163,184,0.15); color: var(--neutral); }
+    .results-body { padding: 20px 24px; }
+    .result-section { margin-bottom: 20px; }
+    .result-section:last-child { margin-bottom: 0; }
+    .result-section h3 {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--orange);
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+    .result-section p {
+      font-size: 15px;
+      line-height: 1.65;
+      color: rgba(255,255,255,0.88);
+    }
+    .signal-reason {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 14px;
+      background: var(--navy-mid);
+      border-radius: 8px;
+    }
+    .signal-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      margin-top: 6px;
+      flex-shrink: 0;
+    }
+    .signal-reason p { font-size: 14px; }
+    .ai-disclaimer {
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+    }
+    .decode-again {
+      background: none;
+      border: none;
+      color: var(--orange);
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 600;
+      padding: 0;
+      text-decoration: underline;
+      margin-top: 16px;
+      display: block;
+    }
+
+    /* NOT RELATED */
+    .not-related {
+      display: none;
+      background: var(--navy-light);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      text-align: center;
+      margin-bottom: 24px;
+    }
+    .not-related.visible { display: block; }
+    .not-related p { color: var(--muted); margin-bottom: 12px; }
+
+    /* EMAIL CAPTURE */
+    .email-capture {
+      background: var(--navy-light);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 28px;
+      margin-bottom: 28px;
+    }
+    .email-capture h3 {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .email-capture p {
+      font-size: 15px;
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+    .email-form {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .email-form input[type="email"] {
+      flex: 1;
+      min-width: 200px;
+      background: var(--navy);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--white);
+      font-size: 15px;
+      font-family: inherit;
+      padding: 12px 14px;
+    }
+    .email-form input[type="email"]:focus { outline: none; border-color: var(--orange); }
+    .email-form input[type="email"]::placeholder { color: var(--muted); }
+    .btn-email {
+      background: var(--blue);
+      color: var(--white);
+      border: none;
+      border-radius: 8px;
+      padding: 12px 20px;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: opacity 0.2s;
+    }
+    .btn-email:hover { opacity: 0.88; }
+    .btn-email:disabled { opacity: 0.5; cursor: default; }
+    .email-success { display: none; }
+    .email-success.visible { display: block; }
+    .email-success p { color: var(--bullish); font-weight: 600; }
+    .privacy-note { font-size: 12px; color: var(--muted); margin-top: 10px; }
+
+    /* CTA */
+    .cta-card {
+      background: linear-gradient(135deg, var(--navy-mid) 0%, #1e3a5c 100%);
+      border: 1px solid rgba(247,147,26,0.2);
+      border-radius: 12px;
+      padding: 32px 28px;
+      text-align: center;
+      margin-bottom: 28px;
+    }
+    .cta-card h3 {
+      font-size: 22px;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+    .cta-card p {
+      color: var(--muted);
+      font-size: 15px;
+      margin-bottom: 22px;
+    }
+    .btn-cta {
+      display: inline-block;
+      background: var(--orange);
+      color: var(--white);
+      text-decoration: none;
+      padding: 14px 32px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 16px;
+      transition: opacity 0.2s;
+    }
+    .btn-cta:hover { opacity: 0.88; }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 24px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 13px;
+    }
+    footer a { color: var(--orange); text-decoration: none; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="https://satusphere.com" class="nav-logo">SatUsPhere</a>
+  <a href="https://checkout.teachable.com/secure/2684007/checkout/order_1y3wjzbk" class="nav-cta" target="_blank" rel="noopener">Get the Course</a>
+</nav>
+
+<main>
+
+  <!-- HERO -->
+  <div class="hero">
+    <h1>Bitcoin News <span>Decoded</span></h1>
+    <p>Paste any Bitcoin headline or excerpt. Get a plain-English explanation of what it means and why it matters.</p>
+  </div>
+
+  <!-- DECODER CARD -->
+  <div class="decoder-card">
+    <label for="headline-input">Paste a Bitcoin headline or excerpt here</label>
+
+    <div class="pills" id="sample-pills">
+      <button class="pill" onclick="fillPill(this)">Bitcoin hits new all-time high</button>
+      <button class="pill" onclick="fillPill(this)">Fed raises interest rates by 50 basis points</button>
+      <button class="pill" onclick="fillPill(this)">Bitcoin halving is 90 days away</button>
+      <button class="pill" onclick="fillPill(this)">BlackRock files for Bitcoin ETF</button>
+      <button class="pill" onclick="fillPill(this)">El Salvador makes Bitcoin legal tender</button>
+    </div>
+
+    <textarea
+      id="headline-input"
+      placeholder="e.g. Bitcoin surges 15% as institutional buyers return..."
+      maxlength="500"
+      oninput="updateCharCount()"
+    ></textarea>
+    <div class="char-count" id="char-count">0 / 500</div>
+
+    <button class="btn-decode" id="decode-btn" onclick="decode()">Decode This</button>
+  </div>
+
+  <!-- LOADING -->
+  <div class="loading" id="loading">
+    <div class="spinner"></div>
+    <p>Decoding...</p>
+  </div>
+
+  <!-- NOT RELATED -->
+  <div class="not-related" id="not-related">
+    <p id="not-related-msg">That does not appear to be a Bitcoin-related headline. Try pasting a Bitcoin news headline.</p>
+    <button class="decode-again" onclick="resetForm()">Try another headline</button>
+  </div>
+
+  <!-- RESULTS -->
+  <div class="results" id="results">
+    <div class="results-card">
+      <div class="results-header">
+        <h2>Here is what that means</h2>
+        <span class="signal-badge" id="signal-badge"></span>
+      </div>
+      <div class="results-body">
+        <div class="result-section">
+          <h3>Plain English</h3>
+          <p id="result-explanation"></p>
+        </div>
+        <div class="result-section">
+          <h3>Why It Matters</h3>
+          <p id="result-why"></p>
+        </div>
+        <div class="result-section">
+          <h3>Market Signal</h3>
+          <div class="signal-reason">
+            <div class="signal-dot" id="signal-dot"></div>
+            <p id="result-signal-reason"></p>
+          </div>
+        </div>
+        <p class="ai-disclaimer">Explanation generated by AI. Always verify with primary sources.</p>
+      </div>
+    </div>
+    <button class="decode-again" onclick="resetForm()">Decode another one</button>
+  </div>
+
+  <!-- EMAIL CAPTURE -->
+  <div class="email-capture" id="email-section">
+    <h3>Want to understand Bitcoin at a deeper level?</h3>
+    <p>SatUsPhere teaches Bitcoin fundamentals from scratch - no jargon, no experience needed. Join the list for free education.</p>
+    <div class="email-form" id="email-form">
+      <input type="email" id="email-input" placeholder="your@email.com" />
+      <button class="btn-email" id="email-btn" onclick="submitEmail(event)">Get Free Bitcoin Education</button>
+    </div>
+    <div class="email-success" id="email-success">
+      <p>Welcome. Check your inbox.</p>
+    </div>
+    <p class="privacy-note">No spam. Unsubscribe anytime.</p>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-card">
+    <h3>Ready to learn Bitcoin from the ground up?</h3>
+    <p>34 animated lessons covering everything from the history of money to the Lightning Network. Built for complete beginners.</p>
+    <a href="https://checkout.teachable.com/secure/2684007/checkout/order_1y3wjzbk" class="btn-cta" target="_blank" rel="noopener">Start Bitcoin From Scratch</a>
+  </div>
+
+</main>
+
+<footer>
+  <p>Built by <a href="https://satusphere.com" rel="noopener">SatUsPhere</a> - Bitcoin Is For All Of Us.</p>
+  <p style="margin-top:6px;">&copy; 2026 SatUsPhere / IDBA Investments</p>
+</footer>
+
+<script>
+  var WEBHOOK_URL = 'https://ireaje.app.n8n.cloud/webhook/bitcoin-news-decoder-email';
+  var API_URL = '/api/decode';
+
+  function updateCharCount() {
+    var input = document.getElementById('headline-input');
+    var count = document.getElementById('char-count');
+    var len = input.value.length;
+    count.textContent = len + ' / 500';
+    count.classList.toggle('warning', len > 450);
+  }
+
+  function fillPill(btn) {
+    document.getElementById('headline-input').value = btn.textContent;
+    updateCharCount();
+    document.getElementById('headline-input').focus();
+  }
+
+  function decode() {
+    var input = document.getElementById('headline-input').value.trim();
+    if (input.length < 10) {
+      document.getElementById('headline-input').focus();
+      return;
+    }
+
+    // Hide previous results
+    document.getElementById('results').classList.remove('visible');
+    document.getElementById('not-related').classList.remove('visible');
+    document.getElementById('loading').classList.add('visible');
+    document.getElementById('decode-btn').disabled = true;
+
+    fetch(API_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ headline: input })
+    })
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+      document.getElementById('loading').classList.remove('visible');
+      document.getElementById('decode-btn').disabled = false;
+
+      if (data.notRelated) {
+        document.getElementById('not-related-msg').textContent = data.message || 'That does not appear to be a Bitcoin-related headline. Try pasting a Bitcoin news headline.';
+        document.getElementById('not-related').classList.add('visible');
+        return;
+      }
+
+      if (data.error) {
+        alert(data.error);
+        return;
+      }
+
+      // Populate results
+      document.getElementById('result-explanation').textContent = data.explanation || '';
+      document.getElementById('result-why').textContent = data.whyItMatters || '';
+      document.getElementById('result-signal-reason').textContent = data.signalReason || '';
+
+      var signal = (data.signal || 'neutral').toLowerCase();
+      var badge = document.getElementById('signal-badge');
+      var dot = document.getElementById('signal-dot');
+      badge.textContent = signal.charAt(0).toUpperCase() + signal.slice(1);
+      badge.className = 'signal-badge signal-' + signal;
+      dot.style.background = signal === 'bullish' ? 'var(--bullish)' : signal === 'bearish' ? 'var(--bearish)' : 'var(--neutral)';
+
+      document.getElementById('results').classList.add('visible');
+    })
+    .catch(function() {
+      document.getElementById('loading').classList.remove('visible');
+      document.getElementById('decode-btn').disabled = false;
+      alert('Something went wrong. Please try again.');
+    });
+  }
+
+  function resetForm() {
+    document.getElementById('headline-input').value = '';
+    updateCharCount();
+    document.getElementById('results').classList.remove('visible');
+    document.getElementById('not-related').classList.remove('visible');
+    document.getElementById('headline-input').focus();
+  }
+
+  function submitEmail(event) {
+    event.preventDefault();
+    var email = document.getElementById('email-input').value.trim();
+    if (!email || !email.includes('@')) {
+      document.getElementById('email-input').focus();
+      return;
+    }
+    var btn = document.getElementById('email-btn');
+    btn.disabled = true;
+    btn.textContent = 'Sending...';
+
+    fetch(WEBHOOK_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        email: email,
+        source: 'bitcoin-news-decoder',
+        tool: 'bitcoin-news-decoder',
+        timestamp: new Date().toISOString()
+      })
+    })
+    .then(function() {
+      showEmailSuccess();
+    })
+    .catch(function() {
+      showEmailSuccess();
+    });
+  }
+
+  function showEmailSuccess() {
+    document.getElementById('email-form').style.display = 'none';
+    document.getElementById('email-success').classList.add('visible');
+  }
+
+  // Allow Enter key in textarea to not submit (textarea default)
+  document.getElementById('headline-input').addEventListener('keydown', function(e) {
+    if (e.key === 'Enter' && !e.shiftKey) {
+      e.preventDefault();
+      decode();
+    }
+  });
+</script>
+
+</body>
+</html>
