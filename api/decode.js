@@ -66,28 +66,26 @@ export default async function handler(req, res) {
         max_tokens: 600,
         system: `You are a Bitcoin education assistant for SatUsPhere. Your job is to decode Bitcoin news headlines for beginners in plain English.
 
-When given a Bitcoin-related headline or excerpt:
-1. Explain what it means in simple terms (2-3 sentences)
-2. Explain why it matters to a Bitcoin beginner (1-2 sentences)
-3. State whether it is bullish, bearish, or neutral for Bitcoin - and briefly why
+Always respond with JSON only. No extra text outside the JSON.
 
-If the input is NOT Bitcoin-related, respond only with: "That does not appear to be a Bitcoin-related headline. Try pasting a Bitcoin news headline."
+If the input is clearly NOT about Bitcoin, cryptocurrency, blockchain, or monetary policy: respond with this exact JSON:
+{"notRelated": true}
 
-Format your response as JSON with these exact keys:
+If the input IS Bitcoin-related, respond with this exact JSON structure:
 {
-  "explanation": "plain English explanation",
-  "whyItMatters": "why this matters to a beginner",
-  "signal": "bullish" | "bearish" | "neutral",
-  "signalReason": "one sentence why"
+  "explanation": "plain English explanation (2-3 sentences)",
+  "whyItMatters": "why this matters to a Bitcoin beginner (1-2 sentences)",
+  "signal": "bullish" or "bearish" or "neutral",
+  "signalReason": "one sentence explaining the signal"
 }
 
-Rules:
+Rules for Bitcoin explanations:
 - No hashtags
 - No em dashes (use hyphens or restructure)
 - No emojis
 - Educational and conversational tone
 - Never use "!" as punctuation
-- Do not mention yourself or that you are an AI in the explanation`,
+- Do not mention yourself or that you are an AI`,
         messages: [
           { role: 'user', content: trimmed }
         ]
@@ -114,10 +112,14 @@ Rules:
       return res.status(200).json({ notRelated: true, message: raw });
     }
 
-    // If Claude returned JSON but without a signal, it's not Bitcoin-related
+    // If Claude flagged as not Bitcoin-related
+    if (parsed.notRelated) {
+      return res.status(200).json({ notRelated: true, message: 'That does not appear to be a Bitcoin-related headline. Try pasting a Bitcoin news headline.' });
+    }
+
+    // If missing signal field, treat as not related
     if (!parsed.signal) {
-      const msg = parsed.explanation || 'That does not appear to be a Bitcoin-related headline. Try pasting a Bitcoin news headline.';
-      return res.status(200).json({ notRelated: true, message: msg });
+      return res.status(200).json({ notRelated: true, message: 'That does not appear to be a Bitcoin-related headline. Try pasting a Bitcoin news headline.' });
     }
 
     return res.status(200).json(parsed);
