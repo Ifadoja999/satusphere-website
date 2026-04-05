@@ -1,0 +1,253 @@
+<!DOCTYPE html><html class="dark" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>SatUsPhere Tools | Fiery Desert Journey</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&amp;family=Quicksand:wght@300;400;500;600;700&amp;family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                "adventure-bg": "#EA6C1F",
+                "adventure-terracotta": "#EA6C1F",
+                "adventure-turquoise": "#40E0D0",
+                "adventure-orange": "#EA6C1F",
+                "adventure-gold": "#B8860B",
+                "adventure-dark-desert": "#8B4A0A",
+                "primary": "#EA6C1F",
+                "secondary": "#40E0D0",
+                "tertiary": "#B8860B",
+                "surface": "#EA6C1F",
+                "on-surface": "#ffffff"
+              },
+              "borderRadius": {
+                "DEFAULT": "0.75rem",
+                "lg": "1rem",
+                "xl": "1.5rem",
+                "full": "9999px"
+              },
+              "fontFamily": {
+                "headline": ["Fredoka", "sans-serif"],
+                "body": ["Quicksand", "sans-serif"],
+                "label": ["Quicksand", "sans-serif"]
+              }
+            },
+          },
+        }
+    </script>
+<style type="text/tailwindcss">
+        body {
+            font-family: "Quicksand", sans-serif;
+            background: #EA6C1F;
+            background-image:
+                radial-gradient(circle at 50% 50%, #C25510 0%, #EA6C1F 100%),
+                linear-gradient(rgba(64, 224, 208, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(64, 224, 208, 0.1) 1px, transparent 1px);
+            background-size: 100% 100%, 60px 60px, 60px 60px;
+        }
+        .headline-font { font-family: "Fredoka", sans-serif; }
+        .bubble-glow-turquoise { box-shadow: 0 0 25px rgba(64, 224, 208, 0.3); border: 4px solid #40E0D0; }
+        .bubble-glow-orange { box-shadow: 0 0 25px rgba(255, 69, 0, 0.3); border: 4px solid #EA6C1F; }
+        .bubble-glow-gold { box-shadow: 0 0 25px rgba(184, 134, 11, 0.3); border: 4px solid #B8860B; }
+        .chibi-border {
+            border: 6px solid #ffffff;
+            box-shadow: 
+                4px 4px 0px rgba(0,0,0,0.2),
+                0 0 0 6px #EA6C1F;
+        }
+        .pixel-texture {
+            background-image: radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 0);
+            background-size: 4px 4px;
+        }
+    </style>
+</head>
+<body id="top" class="text-on-surface selection:bg-adventure-orange selection:text-white overflow-x-hidden">
+<header class="w-full bg-[#051426] border-b-8 border-adventure-turquoise relative z-30">
+<div class="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-3">
+<img alt="SatUsPhere Logo" class="h-10 w-10 rounded-full" src="https://res.cloudinary.com/dohifm2sv/image/upload/q_auto/f_auto/v1775244863/satusphere_logo_cwrmdt.png">
+<h1 class="text-4xl font-extrabold tracking-tight text-adventure-gold" style="font-family: 'Inter', sans-serif;">
+                        SatUsPhere
+                    </h1>
+</div>
+<nav class="hidden lg:flex items-center gap-2">
+<a class="px-5 py-2 text-white font-bold bg-adventure-orange rounded-full" href="#top" style="">Home</a>
+<a class="px-5 py-2 text-adventure-turquoise font-bold hover:bg-adventure-turquoise/20 rounded-full transition-all" href="#tools" style="">Tools</a>
+</nav>
+</div>
+</div>
+</header>
+<main class="max-w-7xl mx-auto px-6 py-10 relative z-20">
+<section class="relative w-full h-[650px] mb-16 rounded-[2rem] border-8 border-adventure-turquoise overflow-hidden bg-adventure-dark-desert shadow-[0_20px_50px_rgba(0,0,0,0.4)]">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover" alt="Futuristic Bitcoin cityscape with glowing coins" src="images/hero-tools-hub.png" style="">
+<div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+</div>
+<div class="absolute inset-0 z-10 flex flex-col items-center justify-center text-center px-4">
+<h2 class="text-5xl md:text-7xl font-extrabold text-white drop-shadow-[0_6px_0px_#EA6C1F] leading-[1.1] mb-10 tracking-tight" style="font-family: 'Inter', sans-serif;">
+                    WELCOME TO THE <br>
+<span class="text-white" style="">BITCOIN TOOLS HUB</span>
+</h2>
+<div class="flex justify-center">
+<button class="px-12 py-6 border-4 border-adventure-turquoise bg-adventure-turquoise/20 backdrop-blur-md text-white font-extrabold text-2xl rounded-2xl hover:bg-adventure-turquoise/30 transition-all flex items-center gap-3" style="font-family: 'Inter', sans-serif;">
+<span class="material-symbols-outlined font-bold text-3xl" style="">apps</span>
+                        Explore Tools
+                    </button>
+</div>
+</div>
+</section>
+<section class="flex flex-col md:flex-row items-center justify-between gap-6 mb-16 py-8 border-y-4 border-adventure-dark-desert">
+<div class="flex flex-wrap gap-4">
+<button onclick="filterTools('all')" class="filter-btn active px-8 py-4 bg-adventure-turquoise text-adventure-dark-desert font-bold text-sm rounded-full shadow-[4px_4px_0px_#EA6C1F]" data-filter="all">All Tools</button>
+<button onclick="filterTools('calculator')" class="filter-btn px-8 py-4 border-4 border-adventure-dark-desert text-white/50 font-bold text-sm rounded-full hover:border-adventure-gold hover:text-white transition-all" data-filter="calculator">Calculators</button>
+<button onclick="filterTools('converter')" class="filter-btn px-8 py-4 border-4 border-adventure-dark-desert text-white/50 font-bold text-sm rounded-full hover:border-adventure-gold hover:text-white transition-all" data-filter="converter">Converters</button>
+<button onclick="filterTools('quiz')" class="filter-btn px-8 py-4 border-4 border-adventure-dark-desert text-white/50 font-bold text-sm rounded-full hover:border-adventure-gold hover:text-white transition-all" data-filter="quiz">Quizzes</button>
+<button onclick="filterTools('countdown')" class="filter-btn px-8 py-4 border-4 border-adventure-dark-desert text-white/50 font-bold text-sm rounded-full hover:border-adventure-gold hover:text-white transition-all" data-filter="countdown">Countdowns</button>
+<button onclick="filterTools('guide')" class="filter-btn px-8 py-4 border-4 border-adventure-dark-desert text-white/50 font-bold text-sm rounded-full hover:border-adventure-gold hover:text-white transition-all" data-filter="guide">Guides</button>
+</div>
+</section>
+<section id="tools" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 scroll-mt-28">
+<!-- Quiz: Knowledge Quiz -->
+<div class="tool-card relative group bubble-glow-turquoise h-[500px] bg-adventure-dark-desert rounded-[2.5rem] overflow-hidden flex flex-col cursor-pointer hover:translate-y-[-8px] transition-all" data-category="quiz">
+<img class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-110 transition-all duration-700" alt="Knowledge Quiz" src="images/knowledge-quiz.png" style="">
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
+<div class="mt-auto p-10 relative z-20">
+<span class="bg-adventure-turquoise text-adventure-dark-desert text-[11px] font-bold px-4 py-1 rounded-full uppercase mb-4 inline-block" style="">Quiz</span>
+<h4 class="headline-font text-4xl font-bold text-white mb-3" style="">Knowledge Quiz</h4>
+<p class="text-base text-white/80 mb-8 font-medium" style="">Test your Bitcoin knowledge and earn badges along the way.</p>
+<button class="w-full py-5 bg-adventure-orange text-white font-bold rounded-2xl shadow-[6px_6px_0px_#ffffff] hover:translate-y-1 hover:shadow-none transition-all text-lg" style="">Begin Quest</button>
+</div>
+</div>
+<!-- Guide: News Decoder -->
+<div class="tool-card relative group bubble-glow-orange h-[500px] bg-adventure-dark-desert rounded-[2.5rem] overflow-hidden flex flex-col cursor-pointer hover:translate-y-[-8px] transition-all" data-category="guide">
+<img class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-110 transition-all duration-700" alt="News Decoder" src="images/news-decoder.png" style="">
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
+<div class="mt-auto p-10 relative z-20">
+<span class="bg-adventure-orange text-white text-[11px] font-bold px-4 py-1 rounded-full uppercase mb-4 inline-block" style="">Guide</span>
+<h4 class="headline-font text-4xl font-bold text-white mb-3" style="">News Decoder</h4>
+<p class="text-base text-white/80 font-medium mb-8" style="">Let our AI companion help you decode what's really happening in Bitcoin news.</p>
+<button class="w-full py-5 bg-adventure-gold text-white font-bold rounded-2xl shadow-[6px_6px_0px_#ffffff] hover:translate-y-1 hover:shadow-none transition-all text-lg" style="">Magic Scan</button>
+</div>
+</div>
+<!-- Calculator: Stack the Sats -->
+<div class="tool-card relative group bubble-glow-gold h-[500px] bg-adventure-dark-desert rounded-[2.5rem] overflow-hidden flex flex-col cursor-pointer hover:translate-y-[-8px] transition-all" data-category="calculator">
+<img class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-110 transition-all duration-700" alt="Stack the Sats Calculator" src="images/stack-the-sats.png" style="">
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
+<div class="mt-auto p-10 relative z-20">
+<span class="bg-adventure-gold text-white text-[11px] font-bold px-4 py-1 rounded-full uppercase mb-4 inline-block" style="">Calculator</span>
+<h4 class="headline-font text-4xl font-bold text-white mb-3" style="">Stack the Sats Calculator</h4>
+<p class="text-base text-white/80 font-medium mb-8" style="">Track your stacking goals and watch your sats pile up.</p>
+<button class="w-full py-5 bg-adventure-turquoise text-adventure-dark-desert font-bold rounded-2xl shadow-[6px_6px_0px_#ffffff] hover:translate-y-1 hover:shadow-none transition-all text-lg" style="">Join Party</button>
+</div>
+</div>
+<!-- Guide: Wallet Selector -->
+<a href="https://satusphere.com/tools/bitcoin-wallet-selector" class="tool-card relative group bubble-glow-turquoise h-[500px] bg-adventure-dark-desert rounded-[2.5rem] overflow-hidden flex flex-col cursor-pointer hover:translate-y-[-8px] transition-all no-underline" data-category="guide">
+<img class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-110 transition-all duration-700" alt="Wallet Selector" src="images/wallet-selector.png" style="">
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
+<div class="mt-auto p-10 relative z-20">
+<span class="bg-adventure-turquoise text-adventure-dark-desert text-[11px] font-bold px-4 py-1 rounded-full uppercase mb-4 inline-block" style="">Guide</span>
+<h4 class="headline-font text-4xl font-bold text-white mb-3" style="">Wallet Selector</h4>
+<p class="text-base text-white/80 mb-8 font-medium" style="">Find the perfect wallet for your Bitcoin journey, guided step by step.</p>
+<span class="block w-full py-5 bg-adventure-orange text-white font-bold rounded-2xl shadow-[6px_6px_0px_#ffffff] group-hover:translate-y-1 group-hover:shadow-none transition-all text-lg text-center" style="">Launch Tool</span>
+</div>
+</a>
+<!-- Guide: Learning Roadmap -->
+<div class="tool-card relative group bubble-glow-orange h-[500px] bg-adventure-dark-desert rounded-[2.5rem] overflow-hidden flex flex-col cursor-pointer hover:translate-y-[-8px] transition-all" data-category="guide">
+<img class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-110 transition-all duration-700" alt="Learning Roadmap" src="images/learning-roadmap.png" style="">
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
+<div class="mt-auto p-10 relative z-20">
+<span class="bg-adventure-orange text-white text-[11px] font-bold px-4 py-1 rounded-full uppercase mb-4 inline-block" style="">Guide</span>
+<h4 class="headline-font text-4xl font-bold text-white mb-3" style="">Learning Roadmap</h4>
+<p class="text-base text-white/80 font-medium mb-8" style="">Follow the path from beginner to Bitcoin master with clear milestones.</p>
+<button class="w-full py-5 bg-adventure-gold text-white font-bold rounded-2xl shadow-[6px_6px_0px_#ffffff] hover:translate-y-1 hover:shadow-none transition-all text-lg" style="">Start Path</button>
+</div>
+</div>
+<!-- Converter: Satoshi / BTC / USD -->
+<div class="tool-card relative group bubble-glow-gold h-[500px] bg-adventure-dark-desert rounded-[2.5rem] overflow-hidden flex flex-col cursor-pointer hover:translate-y-[-8px] transition-all" data-category="converter">
+<img class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-110 transition-all duration-700" alt="Satoshi Converter" src="images/satoshi-converter.png" style="">
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
+<div class="mt-auto p-10 relative z-20">
+<span class="bg-adventure-gold text-white text-[11px] font-bold px-4 py-1 rounded-full uppercase mb-4 inline-block" style="">Converter</span>
+<h4 class="headline-font text-4xl font-bold text-white mb-3" style="">Satoshi / BTC / USD Converter</h4>
+<p class="text-base text-white/80 font-medium mb-8" style="">Flip between sats, BTC, and dollars instantly with live pricing.</p>
+<button class="w-full py-5 bg-adventure-turquoise text-adventure-dark-desert font-bold rounded-2xl shadow-[6px_6px_0px_#ffffff] hover:translate-y-1 hover:shadow-none transition-all text-lg" style="">Convert Now</button>
+</div>
+</div>
+<!-- Calculator: DCA Calculator -->
+<div class="tool-card relative group bubble-glow-turquoise h-[500px] bg-adventure-dark-desert rounded-[2.5rem] overflow-hidden flex flex-col cursor-pointer hover:translate-y-[-8px] transition-all" data-category="calculator">
+<img class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-110 transition-all duration-700" alt="DCA Calculator" src="images/dca-calculator.png" style="">
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
+<div class="mt-auto p-10 relative z-20">
+<span class="bg-adventure-turquoise text-adventure-dark-desert text-[11px] font-bold px-4 py-1 rounded-full uppercase mb-4 inline-block" style="">Calculator</span>
+<h4 class="headline-font text-4xl font-bold text-white mb-3" style="">DCA Calculator</h4>
+<p class="text-base text-white/80 mb-8 font-medium" style="">See how steady stacking would have built your treasure over time.</p>
+<button class="w-full py-5 bg-adventure-orange text-white font-bold rounded-2xl shadow-[6px_6px_0px_#ffffff] hover:translate-y-1 hover:shadow-none transition-all text-lg" style="">Calculate</button>
+</div>
+</div>
+<!-- Countdown: Bitcoin Halving -->
+<div class="tool-card relative group bubble-glow-orange h-[500px] bg-adventure-dark-desert rounded-[2.5rem] overflow-hidden flex flex-col cursor-pointer hover:translate-y-[-8px] transition-all" data-category="countdown">
+<img class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-110 transition-all duration-700" alt="Halving Countdown" src="images/halving-countdown.png" style="">
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
+<div class="mt-auto p-10 relative z-20">
+<span class="bg-adventure-orange text-white text-[11px] font-bold px-4 py-1 rounded-full uppercase mb-4 inline-block" style="">Countdown</span>
+<h4 class="headline-font text-4xl font-bold text-white mb-3" style="">Bitcoin Halving Countdown</h4>
+<p class="text-base text-white/80 font-medium mb-8" style="">Watch the clock tick down to the next great halving event.</p>
+<button class="w-full py-5 bg-adventure-gold text-white font-bold rounded-2xl shadow-[6px_6px_0px_#ffffff] hover:translate-y-1 hover:shadow-none transition-all text-lg" style="">View Timer</button>
+</div>
+</div>
+<!-- Quiz: Self-Custody Readiness -->
+<div class="tool-card relative group bubble-glow-gold h-[500px] bg-adventure-dark-desert rounded-[2.5rem] overflow-hidden flex flex-col cursor-pointer hover:translate-y-[-8px] transition-all" data-category="quiz">
+<img class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-110 transition-all duration-700" alt="Self-Custody Readiness Quiz" src="images/self-custody-quiz.png" style="">
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
+<div class="mt-auto p-10 relative z-20">
+<span class="bg-adventure-gold text-white text-[11px] font-bold px-4 py-1 rounded-full uppercase mb-4 inline-block" style="">Quiz</span>
+<h4 class="headline-font text-4xl font-bold text-white mb-3" style="">Self-Custody Readiness Quiz</h4>
+<p class="text-base text-white/80 font-medium mb-8" style="">Find out if you're ready to hold your own keys and guard your treasure.</p>
+<button class="w-full py-5 bg-adventure-turquoise text-adventure-dark-desert font-bold rounded-2xl shadow-[6px_6px_0px_#ffffff] hover:translate-y-1 hover:shadow-none transition-all text-lg" style="">Take Quiz</button>
+</div>
+</div>
+</section>
+<script>
+function filterTools(category) {
+  const cards = document.querySelectorAll('.tool-card');
+  const buttons = document.querySelectorAll('.filter-btn');
+  buttons.forEach(btn => {
+    if (btn.dataset.filter === category) {
+      btn.className = 'filter-btn active px-8 py-4 bg-adventure-turquoise text-adventure-dark-desert font-bold text-sm rounded-full shadow-[4px_4px_0px_#EA6C1F]';
+    } else {
+      btn.className = 'filter-btn px-8 py-4 border-4 border-adventure-dark-desert text-white/50 font-bold text-sm rounded-full hover:border-adventure-gold hover:text-white transition-all';
+    }
+  });
+  cards.forEach(card => {
+    if (category === 'all' || card.dataset.category === category) {
+      card.style.display = '';
+    } else {
+      card.style.display = 'none';
+    }
+  });
+}
+</script>
+</main>
+<footer class="bg-[#051426] border-t-8 border-adventure-turquoise py-16 mt-20 relative z-30">
+<div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-10">
+<div class="text-center md:text-left">
+<div class="flex items-center gap-3 mb-2">
+<img alt="SatUsPhere Logo" class="h-10 w-10 rounded-full" src="https://res.cloudinary.com/dohifm2sv/image/upload/q_auto/f_auto/v1775244863/satusphere_logo_cwrmdt.png">
+<h2 class="text-4xl font-extrabold tracking-tight text-adventure-gold" style="font-family: 'Inter', sans-serif;">SatUsPhere</h2>
+</div>
+<p class="text-[12px] text-white/50 uppercase tracking-[0.3em]" style="">Adventure Version v2.1</p>
+</div>
+<div class="flex flex-wrap gap-6 items-center">
+<a href="https://satusphere.com" class="text-white/70 hover:text-adventure-turquoise font-bold text-sm transition-colors no-underline">SatUsPhere.com</a>
+<a href="https://satusphere.teachable.com/p/bitcoin-from-scratch" target="_blank" rel="noopener" class="text-white/70 hover:text-adventure-turquoise font-bold text-sm transition-colors no-underline">Bitcoin From Scratch</a>
+<a href="https://satusphere.com/privacy" class="text-white/70 hover:text-adventure-turquoise font-bold text-sm transition-colors no-underline">Privacy Policy</a>
+<a href="https://satusphere.com/terms" class="text-white/70 hover:text-adventure-turquoise font-bold text-sm transition-colors no-underline">Terms &amp; Conditions</a>
+</div>
+</div>
+</footer>
+
+</body></html>
