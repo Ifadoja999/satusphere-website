@@ -114,6 +114,12 @@ Rules:
       return res.status(200).json({ notRelated: true, message: raw });
     }
 
+    // If Claude returned JSON but without a signal, it's not Bitcoin-related
+    if (!parsed.signal) {
+      const msg = parsed.explanation || 'That does not appear to be a Bitcoin-related headline. Try pasting a Bitcoin news headline.';
+      return res.status(200).json({ notRelated: true, message: msg });
+    }
+
     return res.status(200).json(parsed);
   } catch (err) {
     console.error('Handler error:', err);
