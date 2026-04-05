@@ -19,10 +19,10 @@
 
   <!-- Wallet Selector (lead generator) -->
   <url>
-    <loc>https://satusphere.com/wallet-selector/</loc>
+    <loc>https://satusphere.com/tools/bitcoin-wallet-selector</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <lastmod>2026-04-04</lastmod>
+    <lastmod>2026-04-05</lastmod>
   </url>
 
   <!-- Tier 1 SEO Pages (highest priority) -->
