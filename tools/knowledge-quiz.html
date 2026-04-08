@@ -1,1120 +1,820 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="dark" lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>How Much Do You Know About Bitcoin? | SatUsPhere</title>
-  <meta name="description" content="Test your Bitcoin knowledge with this free quiz. 10 questions for beginners. Find out your Bitcoin IQ and get a personalized learning recommendation." />
-  <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://satusphere.com/tools/knowledge-quiz" />
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Bitcoin Knowledge Quiz | Test What You Know About Bitcoin | SatUsPhere</title>
+<meta name="description" content="10 questions. 15 seconds each. Test your Bitcoin knowledge and see how you stack up. Free quiz from SatUsPhere." />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://satusphere.com/tools/bitcoin-knowledge-quiz" />
 
-  <!-- Open Graph -->
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="How Much Do You Know About Bitcoin? | SatUsPhere" />
-  <meta property="og:description" content="Test your Bitcoin knowledge with this free 10-question quiz. Get a personalized learning recommendation." />
-  <meta property="og:url" content="https://satusphere.com/tools/knowledge-quiz" />
-  <meta property="og:site_name" content="SatUsPhere" />
-  <meta property="og:image" content="https://satusphere.com/assets/course-banner.png" />
+<!-- Open Graph -->
+<meta property="og:title" content="Bitcoin Knowledge Quiz | SatUsPhere" />
+<meta property="og:description" content="10 questions, 15 seconds each. Test your Bitcoin knowledge. Free quiz from SatUsPhere." />
+<meta property="og:url" content="https://satusphere.com/tools/bitcoin-knowledge-quiz" />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="https://satusphere.com/assets/course-banner.png" />
+<meta property="og:site_name" content="SatUsPhere" />
 
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="How Much Do You Know About Bitcoin?" />
-  <meta name="twitter:description" content="Free Bitcoin quiz for beginners. 10 questions. Get your score and a personalized recommendation." />
-  <meta name="twitter:image" content="https://satusphere.com/assets/course-banner.png" />
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@sat_us_phere" />
+<meta name="twitter:title" content="Bitcoin Knowledge Quiz | SatUsPhere" />
+<meta name="twitter:description" content="10 questions, 15 seconds each. Test your Bitcoin knowledge." />
 
-  <!-- Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebApplication",
-    "name": "Bitcoin Knowledge Quiz",
-    "description": "A free 10-question quiz testing Bitcoin fundamentals for beginners. Get a personalized learning recommendation based on your score.",
-    "url": "https://satusphere.com/tools/knowledge-quiz",
-    "applicationCategory": "EducationalApplication",
-    "operatingSystem": "Web",
-    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-    "author": { "@type": "Organization", "name": "SatUsPhere", "url": "https://satusphere.com" }
-  }
-  </script>
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Bitcoin Knowledge Quiz",
+  "description": "A free 10-question quiz that tests your Bitcoin knowledge across fundamentals, mining, wallets, and the Lightning Network.",
+  "url": "https://satusphere.com/tools/bitcoin-knowledge-quiz",
+  "applicationCategory": "EducationalApplication",
+  "operatingSystem": "Web",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "author": { "@type": "Organization", "name": "SatUsPhere", "url": "https://satusphere.com" }
+}
+</script>
 
-  <style>
-    :root {
-      --orange: #F7931A;
-      --navy: #0D1B2E;
-      --navy-mid: #122438;
-      --blue: #00B4D8;
-      --blue-dark: #0090AD;
-      --text: #1A1A2E;
-      --muted: #5A6478;
-      --border: #E2E8F0;
-      --bg-light: #F8F9FB;
-      --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+<!-- AEO: FAQ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the maximum supply of Bitcoin?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The maximum supply of Bitcoin is 21 million coins. This hard cap is enforced by Bitcoin's code and cannot be changed. As of 2026, over 19.8 million bitcoins have already been mined, leaving fewer than 1.2 million still to be created through mining rewards."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Who created Bitcoin?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bitcoin was created by an anonymous person or group using the pseudonym Satoshi Nakamoto. The Bitcoin whitepaper was published on October 31, 2008, and the first block (the genesis block) was mined on January 3, 2009. Satoshi's true identity has never been confirmed."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is a Bitcoin halving?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A Bitcoin halving is an event that cuts the block reward miners receive in half, approximately every 4 years (every 210,000 blocks). This reduces the rate at which new bitcoins are created, making Bitcoin increasingly scarce over time. The most recent halving occurred in April 2024, reducing the reward from 6.25 BTC to 3.125 BTC per block."
+      }
     }
+  ]
+}
+</script>
 
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600;700;800;900&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<script>
+    tailwind.config = {
+        darkMode: "class",
+        theme: {
+            extend: {
+                colors: {
+                    primary: "#ea6c1f",
+                    "primary-glow": "#ff8f4c",
+                    teal: "#43e2d2",
+                    "teal-dim": "#2bb8aa",
+                    gold: "#f7bd48",
+                    "gold-dim": "#d9a030",
+                    surface: "#12121d",
+                    "surface-light": "#1a1a2e",
+                    "nav-bg": "#0a0a14",
+                    error: "#ff6b6b",
+                    success: "#43e2d2"
+                },
+                fontFamily: {
+                    headline: ["Exo 2", "sans-serif"],
+                    body: ["Outfit", "sans-serif"]
+                }
+            }
+        }
+    };
+</script>
+<style>
+body {
+    font-family: "Outfit", sans-serif;
+    background-color: #0A0A14;
+    color: #e4e1f0;
+    min-height: 100vh;
+}
 
-    body {
-      font-family: var(--font);
-      color: var(--text);
-      background: var(--navy);
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
+/* Background effects */
+.bg-glow {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80vw;
+    height: 80vh;
+    background: radial-gradient(circle, rgba(234, 108, 31, 0.1) 0%, rgba(10, 10, 20, 0) 70%);
+    z-index: -2;
+    pointer-events: none;
+}
+.bg-pattern {
+    position: fixed;
+    inset: 0;
+    background-image: linear-gradient(rgba(234, 108, 31, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(234, 108, 31, 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+    z-index: -1;
+    pointer-events: none;
+}
+.bg-visual {
+    position: fixed;
+    inset: 0;
+    background:
+        radial-gradient(ellipse at 20% 30%, rgba(234, 108, 31, 0.08), transparent 50%),
+        radial-gradient(ellipse at 80% 70%, rgba(67, 226, 210, 0.05), transparent 40%),
+        radial-gradient(ellipse at 50% 90%, rgba(247, 189, 72, 0.04), transparent 35%);
+    z-index: -3;
+    pointer-events: none;
+}
 
-    /* NAV */
-    nav {
-      background: rgba(13, 27, 46, 0.95);
-      backdrop-filter: blur(8px);
-      padding: 0 24px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 64px;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      border-bottom: 1px solid rgba(255,255,255,0.06);
-    }
-    .nav-logo {
-      color: var(--orange);
-      font-weight: 800;
-      font-size: 1.3rem;
-      text-decoration: none;
-      letter-spacing: -0.5px;
-    }
-    .nav-logo span { color: #fff; }
-    .nav-cta {
-      background: var(--orange);
-      color: #fff;
-      padding: 10px 20px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 0.875rem;
-      transition: opacity 0.2s;
-    }
-    .nav-cta:hover { opacity: 0.88; }
+/* HUD panel */
+.hud-panel {
+    background: rgba(234, 108, 31, 0.06);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(234, 108, 31, 0.15);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+.hud-sub-panel {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+}
 
-    /* MAIN */
-    main {
-      flex: 1;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 40px 16px;
-    }
+/* Glitch text */
+.glitch-text {
+    text-shadow: 2px 0 #ea6c1f, -2px 0 #43e2d2;
+}
 
-    .quiz-shell {
-      background: #fff;
-      border-radius: 20px;
-      width: 100%;
-      max-width: 680px;
-      overflow: hidden;
-      box-shadow: 0 24px 64px rgba(0,0,0,0.4);
-    }
+/* Option buttons */
+.option-btn {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+.option-btn:hover:not(.selected):not(.disabled) {
+    background: rgba(234, 108, 31, 0.1);
+    border-color: rgba(234, 108, 31, 0.4);
+    transform: translateY(-2px);
+}
+.option-btn.selected {
+    background: rgba(234, 108, 31, 0.15);
+    border-color: #ea6c1f;
+    box-shadow: 0 0 20px rgba(234, 108, 31, 0.2);
+}
+.option-btn.correct {
+    background: rgba(67, 226, 210, 0.15);
+    border-color: #43e2d2;
+    box-shadow: 0 0 20px rgba(67, 226, 210, 0.2);
+}
+.option-btn.wrong {
+    background: rgba(255, 107, 107, 0.15);
+    border-color: #ff6b6b;
+}
+.option-btn.disabled {
+    cursor: default;
+    opacity: 0.7;
+}
 
-    /* SCREENS */
-    .screen { display: none; }
-    .screen.active { display: block; }
+/* Timer bar */
+.timer-track {
+    background: rgba(255, 255, 255, 0.1);
+    height: 4px;
+    border-radius: 2px;
+    overflow: hidden;
+}
+.timer-fill {
+    height: 100%;
+    border-radius: 2px;
+    transition: width 0.1s linear, background-color 0.3s ease;
+}
 
-    /* INTRO SCREEN */
-    .intro-header {
-      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
-      padding: 48px 40px 36px;
-      text-align: center;
-    }
-    .intro-badge {
-      display: inline-block;
-      background: rgba(247,147,26,0.15);
-      color: var(--orange);
-      border: 1px solid rgba(247,147,26,0.3);
-      border-radius: 100px;
-      padding: 6px 16px;
-      font-size: 0.78rem;
-      font-weight: 700;
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
-      margin-bottom: 20px;
-    }
-    .intro-title {
-      font-size: 2rem;
-      font-weight: 800;
-      color: #fff;
-      line-height: 1.2;
-      margin-bottom: 14px;
-    }
-    .intro-title span { color: var(--orange); }
-    .intro-sub {
-      color: rgba(255,255,255,0.7);
-      font-size: 1rem;
-      line-height: 1.6;
-    }
+/* Progress dots */
+.progress-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+.progress-dot.correct { background: #43e2d2; box-shadow: 0 0 8px rgba(67, 226, 210, 0.5); }
+.progress-dot.wrong { background: #ff6b6b; box-shadow: 0 0 8px rgba(255, 107, 107, 0.5); }
+.progress-dot.current { background: #ea6c1f; box-shadow: 0 0 8px rgba(234, 108, 31, 0.5); transform: scale(1.3); }
+.progress-dot.skipped { background: rgba(255, 255, 255, 0.3); }
 
-    .intro-body { padding: 32px 40px 40px; }
-    .intro-stats {
-      display: flex;
-      gap: 16px;
-      margin-bottom: 28px;
-    }
-    .stat-box {
-      flex: 1;
-      background: var(--bg-light);
-      border-radius: 12px;
-      padding: 16px 12px;
-      text-align: center;
-    }
-    .stat-num {
-      font-size: 1.5rem;
-      font-weight: 800;
-      color: var(--orange);
-      line-height: 1;
-      margin-bottom: 4px;
-    }
-    .stat-label {
-      font-size: 0.78rem;
-      color: var(--muted);
-      font-weight: 600;
-    }
+/* Screen transitions */
+.screen { display: none; }
+.screen.active { display: flex; }
 
-    .intro-topics {
-      background: var(--bg-light);
-      border-radius: 12px;
-      padding: 20px 24px;
-      margin-bottom: 28px;
-    }
-    .intro-topics h3 {
-      font-size: 0.8rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      color: var(--muted);
-      margin-bottom: 12px;
-    }
-    .topics-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 8px;
-    }
-    .topic-item {
-      font-size: 0.88rem;
-      color: var(--text);
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-    .topic-dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--orange);
-      flex-shrink: 0;
-    }
+/* Pulse animation */
+@keyframes pulse-glow {
+    0%, 100% { box-shadow: 0 0 20px rgba(234, 108, 31, 0.2); }
+    50% { box-shadow: 0 0 40px rgba(234, 108, 31, 0.4); }
+}
+.pulse-glow { animation: pulse-glow 2s ease-in-out infinite; }
 
-    .btn-start {
-      width: 100%;
-      background: var(--orange);
-      color: #fff;
-      border: none;
-      border-radius: 12px;
-      padding: 18px;
-      font-size: 1.05rem;
-      font-weight: 800;
-      cursor: pointer;
-      transition: transform 0.15s, opacity 0.15s;
-      letter-spacing: 0.2px;
-    }
-    .btn-start:hover { transform: translateY(-2px); opacity: 0.92; }
-    .btn-start:active { transform: translateY(0); }
-
-    /* QUESTION SCREEN */
-    .q-progress-bar-wrap {
-      height: 4px;
-      background: var(--border);
-    }
-    .q-progress-bar {
-      height: 100%;
-      background: linear-gradient(90deg, var(--orange), #ffb347);
-      transition: width 0.4s ease;
-    }
-
-    .q-header {
-      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
-      padding: 24px 32px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .q-counter {
-      font-size: 0.82rem;
-      font-weight: 700;
-      color: rgba(255,255,255,0.55);
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-    .q-counter strong { color: var(--orange); }
-
-    .q-body { padding: 32px; }
-    .q-category {
-      font-size: 0.72rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      color: var(--blue);
-      margin-bottom: 10px;
-    }
-    .q-text {
-      font-size: 1.2rem;
-      font-weight: 700;
-      color: var(--navy);
-      line-height: 1.4;
-      margin-bottom: 24px;
-    }
-
-    .options { display: flex; flex-direction: column; gap: 10px; }
-    .option-btn {
-      background: var(--bg-light);
-      border: 2px solid var(--border);
-      border-radius: 12px;
-      padding: 14px 20px;
-      font-size: 0.95rem;
-      font-weight: 500;
-      color: var(--text);
-      cursor: pointer;
-      text-align: left;
-      transition: border-color 0.15s, background 0.15s;
-      display: flex;
-      align-items: center;
-      gap: 14px;
-    }
-    .option-btn:hover:not(:disabled) {
-      border-color: var(--orange);
-      background: #fff8f0;
-    }
-    .option-label {
-      width: 28px;
-      height: 28px;
-      border-radius: 50%;
-      background: #fff;
-      border: 2px solid var(--border);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.78rem;
-      font-weight: 700;
-      color: var(--muted);
-      flex-shrink: 0;
-      transition: all 0.15s;
-    }
-    .option-btn:hover:not(:disabled) .option-label {
-      border-color: var(--orange);
-      color: var(--orange);
-    }
-    .option-btn.selected {
-      border-color: var(--orange);
-      background: #fff8f0;
-    }
-    .option-btn.selected .option-label {
-      background: var(--orange);
-      border-color: var(--orange);
-      color: #fff;
-    }
-    .option-btn.correct {
-      border-color: #22c55e;
-      background: #f0fdf4;
-    }
-    .option-btn.correct .option-label {
-      background: #22c55e;
-      border-color: #22c55e;
-      color: #fff;
-    }
-    .option-btn.wrong {
-      border-color: #ef4444;
-      background: #fef2f2;
-    }
-    .option-btn.wrong .option-label {
-      background: #ef4444;
-      border-color: #ef4444;
-      color: #fff;
-    }
-    .option-btn:disabled { cursor: default; }
-
-    .q-feedback {
-      display: none;
-      margin-top: 16px;
-      padding: 14px 18px;
-      border-radius: 10px;
-      font-size: 0.9rem;
-      line-height: 1.5;
-    }
-    .q-feedback.correct-fb {
-      background: #f0fdf4;
-      border-left: 3px solid #22c55e;
-      color: #166534;
-    }
-    .q-feedback.wrong-fb {
-      background: #fef2f2;
-      border-left: 3px solid #ef4444;
-      color: #991b1b;
-    }
-    .q-feedback strong { display: block; margin-bottom: 4px; }
-
-    .q-next-wrap {
-      padding: 0 32px 32px;
-      display: none;
-    }
-    .btn-next {
-      width: 100%;
-      background: var(--navy);
-      color: #fff;
-      border: none;
-      border-radius: 10px;
-      padding: 15px;
-      font-size: 0.95rem;
-      font-weight: 700;
-      cursor: pointer;
-      transition: opacity 0.15s;
-    }
-    .btn-next:hover { opacity: 0.88; }
-
-    /* EMAIL SCREEN */
-    .email-header {
-      background: linear-gradient(135deg, var(--blue-dark) 0%, var(--navy) 100%);
-      padding: 36px 40px;
-      text-align: center;
-    }
-    .email-icon {
-      width: 64px;
-      height: 64px;
-      border-radius: 50%;
-      background: rgba(0,180,216,0.2);
-      border: 2px solid rgba(0,180,216,0.4);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 16px;
-    }
-    .email-icon svg { width: 28px; height: 28px; }
-    .email-header h2 {
-      font-size: 1.5rem;
-      font-weight: 800;
-      color: #fff;
-      margin-bottom: 10px;
-    }
-    .email-header p {
-      color: rgba(255,255,255,0.7);
-      font-size: 0.95rem;
-      line-height: 1.6;
-    }
-    .email-header p strong { color: var(--blue); }
-
-    .email-body { padding: 32px 40px 40px; }
-
-    .score-preview {
-      background: var(--bg-light);
-      border-radius: 12px;
-      padding: 20px 24px;
-      margin-bottom: 24px;
-      display: flex;
-      align-items: center;
-      gap: 20px;
-    }
-    .score-circle {
-      width: 72px;
-      height: 72px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--orange), #ffb347);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      font-size: 1.4rem;
-      font-weight: 800;
-      color: #fff;
-    }
-    .score-preview-text h3 {
-      font-size: 1rem;
-      font-weight: 700;
-      color: var(--navy);
-      margin-bottom: 4px;
-    }
-    .score-preview-text p {
-      font-size: 0.875rem;
-      color: var(--muted);
-      line-height: 1.4;
-    }
-
-    .email-form { display: flex; flex-direction: column; gap: 12px; }
-    .email-form input[type="email"] {
-      border: 2px solid var(--border);
-      border-radius: 10px;
-      padding: 14px 16px;
-      font-size: 0.95rem;
-      color: var(--text);
-      font-family: var(--font);
-      transition: border-color 0.15s;
-      outline: none;
-      width: 100%;
-    }
-    .email-form input[type="email"]:focus {
-      border-color: var(--blue);
-    }
-    .email-form input[type="email"]::placeholder { color: var(--muted); }
-    .btn-email-submit {
-      width: 100%;
-      background: var(--blue);
-      color: #fff;
-      border: none;
-      border-radius: 10px;
-      padding: 16px;
-      font-size: 1rem;
-      font-weight: 700;
-      cursor: pointer;
-      transition: opacity 0.15s;
-      font-family: var(--font);
-    }
-    .btn-email-submit:hover { opacity: 0.88; }
-    .btn-skip {
-      background: none;
-      border: none;
-      color: var(--muted);
-      font-size: 0.85rem;
-      cursor: pointer;
-      text-align: center;
-      padding: 8px;
-      font-family: var(--font);
-      text-decoration: underline;
-      transition: color 0.15s;
-    }
-    .btn-skip:hover { color: var(--text); }
-    .email-privacy {
-      text-align: center;
-      font-size: 0.78rem;
-      color: var(--muted);
-      margin-top: 4px;
-    }
-
-    /* RESULTS SCREEN */
-    .results-header {
-      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
-      padding: 40px 40px 32px;
-      text-align: center;
-    }
-    .results-score-ring {
-      width: 110px;
-      height: 110px;
-      margin: 0 auto 20px;
-      position: relative;
-    }
-    .results-score-ring svg { transform: rotate(-90deg); }
-    .ring-bg { fill: none; stroke: rgba(255,255,255,0.1); stroke-width: 8; }
-    .ring-fill { fill: none; stroke: var(--orange); stroke-width: 8; stroke-linecap: round; transition: stroke-dashoffset 1s ease; }
-    .score-label {
-      position: absolute;
-      top: 50%; left: 50%;
-      transform: translate(-50%, -50%);
-      text-align: center;
-    }
-    .score-label .score-num {
-      font-size: 1.8rem;
-      font-weight: 800;
-      color: #fff;
-      line-height: 1;
-    }
-    .score-label .score-denom {
-      font-size: 0.8rem;
-      color: rgba(255,255,255,0.5);
-    }
-    .results-title {
-      font-size: 1.5rem;
-      font-weight: 800;
-      color: #fff;
-      margin-bottom: 8px;
-    }
-    .results-subtitle {
-      font-size: 0.95rem;
-      color: rgba(255,255,255,0.65);
-    }
-
-    .results-body { padding: 32px 40px 40px; }
-
-    .results-level {
-      background: linear-gradient(135deg, #fff8ee, #fffbf4);
-      border: 1px solid rgba(247,147,26,0.2);
-      border-radius: 14px;
-      padding: 22px 24px;
-      margin-bottom: 24px;
-    }
-    .level-label {
-      font-size: 0.72rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      color: var(--orange);
-      margin-bottom: 6px;
-    }
-    .level-name {
-      font-size: 1.25rem;
-      font-weight: 800;
-      color: var(--navy);
-      margin-bottom: 8px;
-    }
-    .level-desc {
-      font-size: 0.9rem;
-      color: var(--text);
-      line-height: 1.6;
-    }
-
-    .results-breakdown {
-      margin-bottom: 28px;
-    }
-    .results-breakdown h3 {
-      font-size: 0.8rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      color: var(--muted);
-      margin-bottom: 12px;
-    }
-    .breakdown-list {
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-    }
-    .breakdown-item {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 0.875rem;
-      color: var(--text);
-    }
-    .breakdown-status {
-      width: 20px;
-      height: 20px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      font-size: 0.7rem;
-      font-weight: 700;
-    }
-    .breakdown-status.ok { background: #dcfce7; color: #166534; }
-    .breakdown-status.no { background: #fee2e2; color: #991b1b; }
-
-    .cta-block {
-      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
-      border-radius: 16px;
-      padding: 32px;
-      text-align: center;
-    }
-    .cta-block h2 {
-      font-size: 1.25rem;
-      font-weight: 800;
-      color: var(--orange);
-      margin-bottom: 10px;
-    }
-    .cta-block p {
-      color: rgba(255,255,255,0.75);
-      font-size: 0.9rem;
-      line-height: 1.6;
-      margin-bottom: 20px;
-    }
-    .btn-cta {
-      display: inline-block;
-      background: var(--orange);
-      color: #fff;
-      padding: 16px 32px;
-      border-radius: 10px;
-      text-decoration: none;
-      font-weight: 800;
-      font-size: 1rem;
-      transition: transform 0.15s, opacity 0.15s;
-    }
-    .btn-cta:hover { transform: translateY(-2px); opacity: 0.92; }
-    .cta-guarantee {
-      font-size: 0.78rem;
-      color: rgba(255,255,255,0.45);
-      margin-top: 12px;
-    }
-
-    .btn-retake {
-      width: 100%;
-      background: none;
-      border: 2px solid var(--border);
-      border-radius: 10px;
-      padding: 13px;
-      font-size: 0.9rem;
-      font-weight: 600;
-      color: var(--muted);
-      cursor: pointer;
-      margin-top: 12px;
-      transition: border-color 0.15s, color 0.15s;
-      font-family: var(--font);
-    }
-    .btn-retake:hover { border-color: var(--navy); color: var(--navy); }
-
-    /* FOOTER */
-    footer {
-      text-align: center;
-      padding: 20px 16px;
-      font-size: 0.78rem;
-      color: rgba(255,255,255,0.3);
-    }
-    footer a { color: rgba(255,255,255,0.45); text-decoration: none; }
-    footer a:hover { color: rgba(255,255,255,0.7); }
-
-    /* RESPONSIVE */
-    @media (max-width: 520px) {
-      .intro-header, .intro-body, .email-body, .email-header, .results-header, .results-body { padding-left: 24px; padding-right: 24px; }
-      .q-header { padding: 20px 24px; }
-      .q-body { padding: 24px; }
-      .q-next-wrap { padding: 0 24px 24px; }
-      .intro-title { font-size: 1.6rem; }
-      .topics-grid { grid-template-columns: 1fr; }
-      .intro-stats { flex-direction: column; }
-    }
-  </style>
+/* Score ring animation */
+@keyframes score-fill {
+    from { stroke-dashoffset: 565.48; }
+}
+</style>
 </head>
-<body>
+<body class="antialiased overflow-x-hidden selection:bg-primary selection:text-white flex flex-col min-h-screen">
 
-  <nav>
-    <a href="https://satusphere.com" class="nav-logo">Sat<span>Us</span>Phere</a>
-    <a href="https://checkout.teachable.com/secure/2684007/checkout/order_1y3wjzbk" class="nav-cta">Get the Course</a>
-  </nav>
+<div class="bg-visual"></div>
+<div class="bg-glow"></div>
+<div class="bg-pattern"></div>
 
-  <main>
-    <div class="quiz-shell">
-
-      <!-- INTRO SCREEN -->
-      <div id="screen-intro" class="screen active">
-        <div class="intro-header">
-          <div class="intro-badge">Free Bitcoin Quiz</div>
-          <h1 class="intro-title">How Much Do You Know About <span>Bitcoin?</span></h1>
-          <p class="intro-sub">10 questions. 3 minutes. Find out where you really stand and what to learn next.</p>
-        </div>
-        <div class="intro-body">
-          <div class="intro-stats">
-            <div class="stat-box">
-              <div class="stat-num">10</div>
-              <div class="stat-label">Questions</div>
+<!-- Nav -->
+<nav class="bg-nav-bg/90 backdrop-blur-md border-b border-white/10 sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-20">
+            <a href="https://satusphere.com" class="flex items-center gap-3 no-underline">
+                <img src="../satusphere-logo.png" alt="SatUsPhere" class="w-10 h-10 rounded-full object-cover" />
+                <span class="font-headline font-bold text-xl tracking-wide text-primary-glow">SatUsPhere</span>
+            </a>
+            <div class="hidden md:flex space-x-8">
+                <a class="text-white/70 hover:text-white transition font-medium no-underline" href="https://satusphere.com">Home</a>
             </div>
-            <div class="stat-box">
-              <div class="stat-num">3 min</div>
-              <div class="stat-label">Average time</div>
-            </div>
-            <div class="stat-box">
-              <div class="stat-num">Free</div>
-              <div class="stat-label">No signup needed</div>
-            </div>
-          </div>
-          <div class="intro-topics">
-            <h3>Topics Covered</h3>
-            <div class="topics-grid">
-              <div class="topic-item"><span class="topic-dot"></span>What Bitcoin is</div>
-              <div class="topic-item"><span class="topic-dot"></span>Supply and scarcity</div>
-              <div class="topic-item"><span class="topic-dot"></span>The halving</div>
-              <div class="topic-item"><span class="topic-dot"></span>Wallets and keys</div>
-              <div class="topic-item"><span class="topic-dot"></span>The blockchain</div>
-              <div class="topic-item"><span class="topic-dot"></span>Self-custody</div>
-            </div>
-          </div>
-          <button class="btn-start" onclick="startQuiz()">Start the Quiz</button>
+            <a class="flex items-center gap-2 px-4 py-2 rounded-lg hud-sub-panel text-sm font-semibold hover:bg-white/10 transition no-underline" href="https://satusphere.com/tools">
+                <span class="material-symbols-outlined text-[20px]">arrow_back</span>
+                Back to Tools
+            </a>
         </div>
-      </div>
-
-      <!-- QUESTION SCREEN -->
-      <div id="screen-question" class="screen">
-        <div class="q-progress-bar-wrap">
-          <div class="q-progress-bar" id="progress-bar" style="width: 0%"></div>
-        </div>
-        <div class="q-header">
-          <span class="q-counter">Question <strong id="q-num">1</strong> of 10</span>
-          <span class="q-counter" id="q-score-live">Score: <strong>0</strong></span>
-        </div>
-        <div class="q-body">
-          <div class="q-category" id="q-category"></div>
-          <p class="q-text" id="q-text"></p>
-          <div class="options" id="options-container"></div>
-          <div class="q-feedback" id="q-feedback"></div>
-        </div>
-        <div class="q-next-wrap" id="q-next-wrap">
-          <button class="btn-next" id="btn-next" onclick="nextQuestion()">Next Question</button>
-        </div>
-      </div>
-
-      <!-- EMAIL CAPTURE SCREEN -->
-      <div id="screen-email" class="screen">
-        <div class="email-header">
-          <div class="email-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="#00B4D8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-              <polyline points="22,6 12,13 2,6"/>
-            </svg>
-          </div>
-          <h2>Your results are ready</h2>
-          <p>Enter your email to get your score, a personalized recommendation, and <strong>free Bitcoin tips</strong> for beginners.</p>
-        </div>
-        <div class="email-body">
-          <div class="score-preview">
-            <div class="score-circle" id="email-score-circle">?</div>
-            <div class="score-preview-text">
-              <h3>Your score is waiting</h3>
-              <p>Submit your email to unlock your results and see how you compare to other beginners.</p>
-            </div>
-          </div>
-          <form class="email-form" onsubmit="submitEmail(event)">
-            <input type="email" id="email-input" placeholder="Enter your email address" autocomplete="email" />
-            <button type="submit" class="btn-email-submit">Show My Results</button>
-            <p class="email-privacy">No spam. Unsubscribe any time. SatUsPhere respects your privacy.</p>
-            <button type="button" class="btn-skip" onclick="showResults()">Skip and see results without email</button>
-          </form>
-        </div>
-      </div>
-
-      <!-- RESULTS SCREEN -->
-      <div id="screen-results" class="screen">
-        <div class="results-header">
-          <div class="results-score-ring">
-            <svg width="110" height="110" viewBox="0 0 110 110">
-              <circle class="ring-bg" cx="55" cy="55" r="46" />
-              <circle class="ring-fill" id="ring-fill" cx="55" cy="55" r="46"
-                stroke-dasharray="289"
-                stroke-dashoffset="289" />
-            </svg>
-            <div class="score-label">
-              <div class="score-num" id="results-score-num">0</div>
-              <div class="score-denom">out of 10</div>
-            </div>
-          </div>
-          <h2 class="results-title" id="results-title">Your Results</h2>
-          <p class="results-subtitle" id="results-subtitle"></p>
-        </div>
-        <div class="results-body">
-          <div class="results-level">
-            <div class="level-label">Your Bitcoin Level</div>
-            <div class="level-name" id="level-name"></div>
-            <p class="level-desc" id="level-desc"></p>
-          </div>
-
-          <div class="results-breakdown">
-            <h3>Question Breakdown</h3>
-            <div class="breakdown-list" id="breakdown-list"></div>
-          </div>
-
-          <div class="cta-block">
-            <h2 id="cta-heading">Go from beginner to confident</h2>
-            <p id="cta-body">Bitcoin From Scratch is SatUsPhere's flagship course. Animated 3D lessons that explain Bitcoin the way no book or YouTube video can.</p>
-            <a href="https://checkout.teachable.com/secure/2684007/checkout/order_1y3wjzbk" class="btn-cta" id="cta-btn">Get Bitcoin From Scratch</a>
-            <p class="cta-guarantee">30-day money-back guarantee. No risk.</p>
-          </div>
-          <button class="btn-retake" onclick="retakeQuiz()">Take the quiz again</button>
-        </div>
-      </div>
-
     </div>
-  </main>
+</nav>
 
-  <footer>
-    <p>&copy; 2026 <a href="https://satusphere.com">SatUsPhere</a>. All rights reserved.</p>
-  </footer>
+<main class="flex-grow w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 flex flex-col items-center justify-center relative z-10">
 
-  <script>
-    const QUESTIONS = [
-      {
-        category: "Bitcoin Basics",
-        question: "What is the maximum supply of Bitcoin that will ever exist?",
-        options: ["1 million BTC", "21 million BTC", "100 million BTC", "There is no limit"],
-        correct: 1,
-        explanation: "Bitcoin's supply is capped at 21 million coins. This hard limit is written into the protocol and can never be changed. That scarcity is a core part of Bitcoin's value."
-      },
-      {
-        category: "Bitcoin History",
+    <!-- ═══════════════════ LOBBY SCREEN ═══════════════════ -->
+    <div id="screen-lobby" class="screen active flex-col items-center w-full gap-12">
+
+        <div class="text-center space-y-6">
+            <div class="flex items-center justify-center gap-3 mb-4">
+                <span class="w-8 h-px bg-primary"></span>
+                <span class="text-xs uppercase tracking-[0.5em] font-headline font-bold text-primary">Bitcoin Knowledge</span>
+                <span class="w-8 h-px bg-primary"></span>
+            </div>
+            <h1 class="text-5xl sm:text-7xl md:text-8xl font-black font-headline tracking-tighter text-white leading-none glitch-text">
+                QUIZ
+            </h1>
+            <p class="text-lg sm:text-xl text-white/60 max-w-lg mx-auto leading-relaxed">
+                Test what you know about Bitcoin. 10 questions, 15 seconds each.
+            </p>
+        </div>
+
+        <!-- Stats grid -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 w-full max-w-2xl">
+            <div class="hud-panel rounded-2xl p-6 text-center">
+                <span class="block text-xs uppercase tracking-[0.3em] font-headline text-white/40 mb-2">Questions</span>
+                <span class="text-3xl font-bold font-headline text-white">10</span>
+            </div>
+            <div class="hud-panel rounded-2xl p-6 text-center">
+                <span class="block text-xs uppercase tracking-[0.3em] font-headline text-white/40 mb-2">Timer</span>
+                <span class="text-3xl font-bold font-headline text-white">15s</span>
+            </div>
+            <div class="hud-panel rounded-2xl p-6 text-center">
+                <span class="block text-xs uppercase tracking-[0.3em] font-headline text-white/40 mb-2">Topics</span>
+                <span class="text-3xl font-bold font-headline text-primary">4</span>
+            </div>
+            <div class="hud-panel rounded-2xl p-6 text-center">
+                <span class="block text-xs uppercase tracking-[0.3em] font-headline text-white/40 mb-2">Level</span>
+                <span class="text-lg font-bold font-headline text-teal">Beginner</span>
+            </div>
+        </div>
+
+        <!-- Topics -->
+        <div class="hud-panel rounded-2xl p-8 w-full max-w-2xl">
+            <h3 class="text-sm uppercase tracking-[0.3em] font-headline text-white/40 mb-6">Topics Covered</h3>
+            <div class="grid grid-cols-2 gap-4">
+                <div class="flex items-center gap-3">
+                    <span class="material-symbols-outlined text-primary">currency_bitcoin</span>
+                    <span class="text-white/80 font-medium">Bitcoin Fundamentals</span>
+                </div>
+                <div class="flex items-center gap-3">
+                    <span class="material-symbols-outlined text-teal">precision_manufacturing</span>
+                    <span class="text-white/80 font-medium">Mining & Supply</span>
+                </div>
+                <div class="flex items-center gap-3">
+                    <span class="material-symbols-outlined text-gold">wallet</span>
+                    <span class="text-white/80 font-medium">Wallets & Security</span>
+                </div>
+                <div class="flex items-center gap-3">
+                    <span class="material-symbols-outlined text-primary-glow">bolt</span>
+                    <span class="text-white/80 font-medium">Lightning Network</span>
+                </div>
+            </div>
+        </div>
+
+        <button onclick="startQuiz()" class="px-12 py-5 rounded-xl bg-primary text-white font-headline font-bold text-lg uppercase tracking-widest hover:bg-primary-glow hover:shadow-[0_0_30px_rgba(234,108,31,0.4)] transition-all pulse-glow">
+            Start Quiz
+        </button>
+    </div>
+
+    <!-- ═══════════════════ QUIZ SCREEN ═══════════════════ -->
+    <div id="screen-quiz" class="screen flex-col items-center w-full gap-8">
+
+        <!-- Top bar: progress + timer -->
+        <div class="w-full space-y-4">
+            <div class="flex items-center justify-between">
+                <span class="text-sm font-headline text-white/50 uppercase tracking-widest">
+                    Question <span id="q-number" class="text-primary font-bold">1</span> / 10
+                </span>
+                <div class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-lg" id="timer-icon">timer</span>
+                    <span id="timer-display" class="text-lg font-headline font-bold text-white tabular-nums">15</span>
+                </div>
+            </div>
+            <div class="timer-track">
+                <div id="timer-bar" class="timer-fill bg-teal" style="width: 100%;"></div>
+            </div>
+            <!-- Progress dots -->
+            <div class="flex justify-center gap-2" id="progress-dots"></div>
+        </div>
+
+        <!-- Question -->
+        <div class="hud-panel rounded-2xl p-8 sm:p-12 w-full">
+            <div class="mb-3">
+                <span id="q-category" class="text-xs uppercase tracking-[0.4em] font-headline text-primary">Fundamentals</span>
+            </div>
+            <h2 id="q-text" class="text-2xl sm:text-3xl md:text-4xl font-bold font-headline text-white leading-tight">
+                What is the maximum supply of Bitcoin?
+            </h2>
+        </div>
+
+        <!-- Options -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full" id="options-grid">
+            <!-- Filled by JS -->
+        </div>
+
+        <!-- Feedback bar -->
+        <div id="feedback-bar" class="w-full hud-panel rounded-xl p-6 hidden">
+            <div class="flex items-center gap-4">
+                <span id="feedback-icon" class="material-symbols-outlined text-3xl"></span>
+                <div>
+                    <p id="feedback-title" class="font-headline font-bold text-lg"></p>
+                    <p id="feedback-detail" class="text-sm text-white/60"></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Score tracker -->
+        <div class="flex items-center justify-between w-full">
+            <div class="flex items-center gap-3">
+                <span class="material-symbols-outlined text-teal">check_circle</span>
+                <span class="text-sm text-white/50">Score: <span id="running-score" class="text-teal font-bold">0</span> / <span id="running-total">0</span></span>
+            </div>
+            <button id="next-btn" onclick="nextQuestion()" class="px-6 py-3 rounded-xl bg-primary/20 border border-primary/40 text-primary font-headline font-bold uppercase tracking-wider hover:bg-primary/30 transition hidden">
+                Next
+                <span class="material-symbols-outlined text-sm align-middle ml-1">arrow_forward</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- ═══════════════════ RESULTS SCREEN ═══════════════════ -->
+    <div id="screen-results" class="screen flex-col items-center w-full gap-10">
+
+        <div class="text-center space-y-4">
+            <h2 class="text-4xl sm:text-6xl font-black font-headline text-white glitch-text">Quiz Complete</h2>
+            <p id="result-badge" class="text-lg font-headline text-gold uppercase tracking-widest"></p>
+        </div>
+
+        <!-- Score ring -->
+        <div class="relative w-[220px] h-[220px]">
+            <svg viewBox="0 0 220 220" class="w-full h-full" style="transform: rotate(-90deg);">
+                <circle cx="110" cy="110" r="90" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="16"/>
+                <circle id="score-ring" cx="110" cy="110" r="90" fill="none" stroke="#ea6c1f" stroke-width="16"
+                    stroke-dasharray="565.48" stroke-dashoffset="565.48" stroke-linecap="round"
+                    style="transition: stroke-dashoffset 1.5s ease;"/>
+            </svg>
+            <div class="absolute inset-0 flex flex-col items-center justify-center">
+                <span id="score-big" class="text-5xl font-black font-headline text-white">0</span>
+                <span class="text-sm text-white/40 font-headline uppercase tracking-wider">/ 10</span>
+            </div>
+        </div>
+
+        <!-- Stats row -->
+        <div class="grid grid-cols-3 gap-4 w-full max-w-lg">
+            <div class="hud-panel rounded-2xl p-5 text-center">
+                <span class="block text-xs uppercase tracking-[0.3em] font-headline text-white/40 mb-1">Correct</span>
+                <span id="stat-correct" class="text-2xl font-bold text-teal font-headline">0</span>
+            </div>
+            <div class="hud-panel rounded-2xl p-5 text-center">
+                <span class="block text-xs uppercase tracking-[0.3em] font-headline text-white/40 mb-1">Wrong</span>
+                <span id="stat-wrong" class="text-2xl font-bold text-error font-headline">0</span>
+            </div>
+            <div class="hud-panel rounded-2xl p-5 text-center">
+                <span class="block text-xs uppercase tracking-[0.3em] font-headline text-white/40 mb-1">Skipped</span>
+                <span id="stat-skipped" class="text-2xl font-bold text-white/50 font-headline">0</span>
+            </div>
+        </div>
+
+        <!-- Answer review -->
+        <div class="w-full max-w-2xl space-y-3" id="review-list"></div>
+
+        <!-- Actions -->
+        <div class="flex flex-wrap justify-center gap-4 pt-4">
+            <button onclick="resetQuiz()" class="px-8 py-4 rounded-xl bg-primary text-white font-headline font-bold uppercase tracking-wider hover:bg-primary-glow hover:shadow-[0_0_20px_rgba(234,108,31,0.3)] transition">
+                Play Again
+            </button>
+            <a href="https://satusphere.com/tools" class="px-8 py-4 rounded-xl bg-white/5 border border-white/10 text-white font-headline font-bold uppercase tracking-wider hover:bg-white/10 transition no-underline text-center">
+                Back to Tools Hub
+            </a>
+        </div>
+
+        <!-- Course CTA -->
+        <div class="hud-panel rounded-2xl p-8 w-full max-w-2xl border-l-4 border-l-primary relative overflow-hidden group mt-4">
+            <div class="absolute -right-10 -bottom-10 opacity-5 group-hover:opacity-10 transition-opacity">
+                <span class="material-symbols-outlined text-[200px]">auto_stories</span>
+            </div>
+            <h3 class="text-2xl font-bold font-headline text-white mb-2">Want to learn more?</h3>
+            <p class="text-white/60 mb-6 max-w-md">Go deeper on every topic in this quiz. 34 lessons, 3D animated, built for beginners.</p>
+            <a class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-primary text-white font-bold hover:bg-primary-glow transition shadow-[0_4px_20px_rgba(234,108,31,0.3)] no-underline" href="https://satusphere.teachable.com/p/bitcoin-from-scratch">
+                Get Full Bitcoin Course
+                <span class="material-symbols-outlined text-sm">arrow_forward</span>
+            </a>
+        </div>
+
+        <!-- Tools link -->
+        <div class="text-center">
+            <a href="https://satusphere.com/tools" class="text-teal font-bold hover:underline hover:text-primary transition-colors no-underline">Explore all free Bitcoin tools</a>
+        </div>
+    </div>
+
+</main>
+
+<!-- Footer -->
+<footer class="bg-nav-bg border-t border-white/5 py-10 mt-auto relative z-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+            <a href="https://satusphere.com" class="flex items-center gap-3 no-underline">
+                <img src="../satusphere-logo.png" alt="SatUsPhere" class="w-8 h-8 rounded-full object-cover" />
+                <span class="font-headline font-bold text-lg text-primary-glow">SatUsPhere</span>
+            </a>
+            <div class="flex flex-wrap justify-center gap-6 text-sm text-white/50">
+                <a class="hover:text-primary-glow transition no-underline" href="https://satusphere.com/privacy">Privacy</a>
+                <a class="hover:text-primary-glow transition no-underline" href="https://satusphere.com/terms">Terms</a>
+                <a class="hover:text-primary-glow transition no-underline" href="mailto:info@satusphere.com">Support</a>
+            </div>
+            <div class="text-sm text-white/40">&copy; 2026 SatUsPhere</div>
+        </div>
+    </div>
+</footer>
+
+<script>
+// ── Questions ──
+const QUESTIONS = [
+    {
+        category: "Fundamentals",
+        question: "What is the maximum supply of Bitcoin?",
+        options: ["21 million", "100 million", "1 billion", "Unlimited"],
+        correct: 0,
+        explanation: "Bitcoin's code enforces a hard cap of 21 million coins. This makes Bitcoin a scarce digital asset."
+    },
+    {
+        category: "Fundamentals",
         question: "Who created Bitcoin?",
-        options: ["Elon Musk", "Vitalik Buterin", "Satoshi Nakamoto", "Nick Szabo"],
-        correct: 2,
-        explanation: "Bitcoin was created by Satoshi Nakamoto, a pseudonymous person or group who published the Bitcoin whitepaper in 2008 and launched the network in January 2009. Their real identity remains unknown."
-      },
-      {
-        category: "Wallets and Keys",
-        question: "What is a Bitcoin wallet?",
-        options: [
-          "A physical coin that stores Bitcoin",
-          "Software that stores your private and public keys",
-          "A bank account managed by a Bitcoin company",
-          "A paper certificate for Bitcoin ownership"
-        ],
+        options: ["Vitalik Buterin", "Satoshi Nakamoto", "Elon Musk", "Hal Finney"],
         correct: 1,
-        explanation: "A Bitcoin wallet stores your cryptographic keys, not Bitcoin itself. Bitcoin lives on the blockchain. Your wallet holds the keys that prove you have the right to move specific coins."
-      },
-      {
-        category: "Supply and Mining",
-        question: "What is a Bitcoin halving?",
-        options: [
-          "When the Bitcoin price drops by 50%",
-          "When the network splits into two separate blockchains",
-          "When the reward miners receive for adding a block is cut in half",
-          "When half of all Bitcoin gets destroyed"
-        ],
+        explanation: "Bitcoin was created by the pseudonymous Satoshi Nakamoto, who published the whitepaper in October 2008."
+    },
+    {
+        category: "Fundamentals",
+        question: "What is the smallest unit of Bitcoin called?",
+        options: ["Bit", "Finney", "Satoshi", "Wei"],
         correct: 2,
-        explanation: "Every 210,000 blocks (roughly every 4 years), the reward paid to Bitcoin miners for validating transactions is cut in half. This gradually reduces the rate at which new Bitcoin enters circulation until the supply cap is reached."
-      },
-      {
-        category: "Wallets and Keys",
-        question: "What is a private key in Bitcoin?",
-        options: [
-          "A password for your exchange account",
-          "The address where others can send you Bitcoin",
-          "A secret number that proves ownership and authorizes transactions",
-          "A backup phrase stored with your bank"
-        ],
-        correct: 2,
-        explanation: "Your private key is a unique secret number that gives you control over your Bitcoin. Anyone who has your private key can move your funds. Keeping it safe and secret is the most important responsibility in Bitcoin."
-      },
-      {
-        category: "The Blockchain",
-        question: "What is the Bitcoin blockchain?",
-        options: [
-          "A type of cryptocurrency exchange",
-          "A company that processes Bitcoin payments",
-          "A public ledger that records every Bitcoin transaction ever made",
-          "An encryption tool used by miners"
-        ],
-        correct: 2,
-        explanation: "The blockchain is a public, permanent record of every Bitcoin transaction. It is maintained by thousands of computers worldwide and cannot be altered. Anyone can verify any transaction that has ever occurred."
-      },
-      {
-        category: "Self-Custody",
-        question: "What does the phrase 'not your keys, not your coins' mean?",
-        options: [
-          "You need a physical USB key to access Bitcoin",
-          "If you do not control your private keys, you do not truly own your Bitcoin",
-          "Bitcoin must be stored in a physical vault with a key",
-          "Exchanges own all the Bitcoin they hold on your behalf and share profits"
-        ],
+        explanation: "A satoshi (sat) is the smallest unit of Bitcoin. 1 BTC = 100,000,000 satoshis."
+    },
+    {
+        category: "Mining & Supply",
+        question: "What happens during a Bitcoin halving?",
+        options: ["Transaction fees double", "The block reward is cut in half", "Bitcoin's price is halved", "Mining difficulty resets"],
         correct: 1,
-        explanation: "If your Bitcoin sits on an exchange, the exchange holds the private keys, not you. That means the exchange controls your coins. History has shown that exchanges can be hacked, freeze accounts, or go bankrupt. True ownership requires holding your own keys."
-      },
-      {
-        category: "Self-Custody",
-        question: "What is self-custody of Bitcoin?",
-        options: [
-          "Storing your Bitcoin on a regulated exchange",
-          "Paying a financial advisor to manage your Bitcoin",
-          "Taking personal control of your private keys and removing reliance on third parties",
-          "Insuring your Bitcoin holdings with a licensed custodian"
-        ],
+        explanation: "Every 210,000 blocks (~4 years), the mining reward is cut in half. This makes Bitcoin increasingly scarce."
+    },
+    {
+        category: "Mining & Supply",
+        question: "Approximately how often is a new Bitcoin block mined?",
+        options: ["Every 1 minute", "Every 10 minutes", "Every 30 minutes", "Every hour"],
+        correct: 1,
+        explanation: "Bitcoin's difficulty adjustment targets a 10-minute average block time."
+    },
+    {
+        category: "Wallets & Security",
+        question: "What is a seed phrase used for?",
+        options: ["Mining new coins", "Backing up and restoring a wallet", "Sending transactions faster", "Reducing transaction fees"],
+        correct: 1,
+        explanation: "A seed phrase (usually 12 or 24 words) is the master backup for a Bitcoin wallet. It can restore all your keys."
+    },
+    {
+        category: "Wallets & Security",
+        question: "What does 'not your keys, not your coins' mean?",
+        options: ["You need a physical key to use Bitcoin", "Only hardware wallets are safe", "If you don't control the private keys, you don't truly own the bitcoin", "Bitcoin requires two-factor authentication"],
         correct: 2,
-        explanation: "Self-custody means you hold your own private keys, often using a hardware wallet or paper wallet. No exchange, broker, or institution can freeze your funds or lose them. You are fully responsible for your own security."
-      },
-      {
-        category: "Supply and Mining",
-        question: "Approximately how often does a Bitcoin halving event occur?",
-        options: ["Every year", "Every 2 years", "Every 4 years", "Every 10 years"],
+        explanation: "If someone else holds your private keys (like an exchange), they control your bitcoin. Self-custody means holding your own keys."
+    },
+    {
+        category: "Fundamentals",
+        question: "What type of network is Bitcoin?",
+        options: ["Centralized", "Federated", "Peer-to-peer (decentralized)", "Client-server"],
         correct: 2,
-        explanation: "A halving happens every 210,000 blocks, which takes approximately 4 years at the average block time of 10 minutes. The most recent halvings occurred in 2012, 2016, 2020, and 2024."
-      },
-      {
-        category: "Wallets and Keys",
-        question: "What is a public key (Bitcoin address) used for?",
-        options: [
-          "Unlocking access to your wallet",
-          "Authorizing Bitcoin transactions",
-          "Sharing with others so they can send Bitcoin to you",
-          "Mining new Bitcoin blocks"
-        ],
-        correct: 2,
-        explanation: "Your public key, which is derived from your private key, is the address you share with others so they can send you Bitcoin. It is safe to share publicly. Think of it like an email address: anyone can send to it, but only the private key holder can access the funds."
-      }
-    ];
-
-    let currentQuestion = 0;
-    let score = 0;
-    let answers = [];
-    let answered = false;
-
-    function startQuiz() {
-      currentQuestion = 0;
-      score = 0;
-      answers = [];
-      showScreen('screen-question');
-      renderQuestion();
+        explanation: "Bitcoin is a peer-to-peer network with no central authority. Anyone can run a node and validate transactions."
+    },
+    {
+        category: "Lightning Network",
+        question: "What is the Lightning Network?",
+        options: ["A competing cryptocurrency", "A second layer for faster, cheaper Bitcoin payments", "A mining pool", "A type of Bitcoin wallet"],
+        correct: 1,
+        explanation: "The Lightning Network is a Layer 2 protocol built on top of Bitcoin that enables near-instant, low-fee transactions."
+    },
+    {
+        category: "Mining & Supply",
+        question: "When was the first Bitcoin block (genesis block) mined?",
+        options: ["January 3, 2007", "January 3, 2009", "October 31, 2008", "July 4, 2010"],
+        correct: 1,
+        explanation: "The genesis block (Block 0) was mined by Satoshi Nakamoto on January 3, 2009."
     }
+];
 
-    function showScreen(id) {
-      document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
-      document.getElementById(id).classList.add('active');
+// ── State ──
+let currentQ = 0;
+let score = 0;
+let answers = []; // { selected, correct, timedOut }
+let timerInterval = null;
+let timeLeft = 15;
+let answered = false;
+
+// ── Screen Management ──
+function showScreen(id) {
+    document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+}
+
+// ── Start Quiz ──
+function startQuiz() {
+    currentQ = 0;
+    score = 0;
+    answers = [];
+    answered = false;
+    showScreen('screen-quiz');
+    buildProgressDots();
+    loadQuestion();
+}
+
+// ── Build Progress Dots ──
+function buildProgressDots() {
+    const container = document.getElementById('progress-dots');
+    container.innerHTML = '';
+    for (let i = 0; i < QUESTIONS.length; i++) {
+        const dot = document.createElement('div');
+        dot.className = 'progress-dot' + (i === 0 ? ' current' : '');
+        dot.id = 'dot-' + i;
+        container.appendChild(dot);
     }
+}
 
-    function renderQuestion() {
-      answered = false;
-      const q = QUESTIONS[currentQuestion];
-      const progress = (currentQuestion / QUESTIONS.length) * 100;
+// ── Load Question ──
+function loadQuestion() {
+    answered = false;
+    const q = QUESTIONS[currentQ];
 
-      document.getElementById('progress-bar').style.width = progress + '%';
-      document.getElementById('q-num').textContent = currentQuestion + 1;
-      document.getElementById('q-score-live').innerHTML = 'Score: <strong>' + score + '</strong>';
-      document.getElementById('q-category').textContent = q.category;
-      document.getElementById('q-text').textContent = q.question;
+    document.getElementById('q-number').textContent = currentQ + 1;
+    document.getElementById('q-category').textContent = q.category;
+    document.getElementById('q-text').textContent = q.question;
+    document.getElementById('running-score').textContent = score;
+    document.getElementById('running-total').textContent = currentQ;
+    document.getElementById('next-btn').classList.add('hidden');
+    document.getElementById('feedback-bar').classList.add('hidden');
 
-      const container = document.getElementById('options-container');
-      container.innerHTML = '';
-      const labels = ['A', 'B', 'C', 'D'];
-      q.options.forEach((opt, i) => {
+    // Build options
+    const grid = document.getElementById('options-grid');
+    grid.innerHTML = '';
+    const labels = ['A', 'B', 'C', 'D'];
+    q.options.forEach((opt, i) => {
         const btn = document.createElement('button');
-        btn.className = 'option-btn';
-        btn.innerHTML = '<span class="option-label">' + labels[i] + '</span><span>' + opt + '</span>';
+        btn.className = 'option-btn rounded-xl p-6 text-left flex items-center gap-4';
+        btn.innerHTML = `
+            <span class="w-10 h-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-sm font-headline font-bold text-white/40 shrink-0">${labels[i]}</span>
+            <span class="text-lg font-medium text-white">${opt}</span>
+        `;
         btn.onclick = () => selectAnswer(i);
-        container.appendChild(btn);
-      });
+        btn.id = 'opt-' + i;
+        grid.appendChild(btn);
+    });
 
-      const feedback = document.getElementById('q-feedback');
-      feedback.style.display = 'none';
-      feedback.className = 'q-feedback';
+    // Update progress dots
+    document.querySelectorAll('.progress-dot').forEach((d, i) => {
+        if (i === currentQ) d.className = 'progress-dot current';
+        else if (answers[i]) {
+            d.className = 'progress-dot ' + (answers[i].correct ? 'correct' : (answers[i].timedOut ? 'skipped' : 'wrong'));
+        } else {
+            d.className = 'progress-dot';
+        }
+    });
 
-      const nextWrap = document.getElementById('q-next-wrap');
-      nextWrap.style.display = 'none';
-      document.getElementById('btn-next').textContent =
-        currentQuestion === QUESTIONS.length - 1 ? 'See My Results' : 'Next Question';
+    startTimer();
+}
+
+// ── Timer ──
+function startTimer() {
+    timeLeft = 15;
+    updateTimerDisplay();
+    clearInterval(timerInterval);
+    timerInterval = setInterval(() => {
+        timeLeft -= 0.1;
+        if (timeLeft <= 0) {
+            timeLeft = 0;
+            clearInterval(timerInterval);
+            if (!answered) timeUp();
+        }
+        updateTimerDisplay();
+    }, 100);
+}
+
+function updateTimerDisplay() {
+    const display = document.getElementById('timer-display');
+    const bar = document.getElementById('timer-bar');
+    const icon = document.getElementById('timer-icon');
+    const pct = (timeLeft / 15) * 100;
+
+    display.textContent = Math.ceil(timeLeft);
+    bar.style.width = pct + '%';
+
+    if (timeLeft <= 5) {
+        bar.style.backgroundColor = '#ff6b6b';
+        icon.style.color = '#ff6b6b';
+        display.style.color = '#ff6b6b';
+    } else {
+        bar.style.backgroundColor = '#43e2d2';
+        icon.style.color = '';
+        display.style.color = '';
     }
+}
 
-    function selectAnswer(index) {
-      if (answered) return;
-      answered = true;
+function timeUp() {
+    answered = true;
+    const q = QUESTIONS[currentQ];
+    answers[currentQ] = { selected: -1, correct: false, timedOut: true };
 
-      const q = QUESTIONS[currentQuestion];
-      const isCorrect = index === q.correct;
-      if (isCorrect) score++;
+    // Show correct answer
+    document.getElementById('opt-' + q.correct).classList.add('correct');
+    document.querySelectorAll('.option-btn').forEach(b => b.classList.add('disabled'));
 
-      answers.push({ correct: isCorrect, questionIndex: currentQuestion });
+    showFeedback(false, true, q.explanation);
+    document.getElementById('next-btn').classList.remove('hidden');
+    updateDot(currentQ, 'skipped');
+}
 
-      const buttons = document.querySelectorAll('.option-btn');
-      buttons.forEach((btn, i) => {
-        btn.disabled = true;
-        if (i === q.correct) btn.classList.add('correct');
-        else if (i === index && !isCorrect) btn.classList.add('wrong');
-      });
-      if (index !== q.correct) {
-        buttons[index].classList.add('selected');
-      }
+// ── Select Answer ──
+function selectAnswer(idx) {
+    if (answered) return;
+    answered = true;
+    clearInterval(timerInterval);
 
-      const feedback = document.getElementById('q-feedback');
-      feedback.style.display = 'block';
-      if (isCorrect) {
-        feedback.className = 'q-feedback correct-fb';
-        feedback.innerHTML = '<strong>Correct.</strong>' + q.explanation;
-      } else {
-        feedback.className = 'q-feedback wrong-fb';
-        feedback.innerHTML = '<strong>Not quite.</strong>' + q.explanation;
-      }
+    const q = QUESTIONS[currentQ];
+    const isCorrect = idx === q.correct;
 
-      document.getElementById('q-next-wrap').style.display = 'block';
-      document.getElementById('q-score-live').innerHTML = 'Score: <strong>' + score + '</strong>';
+    if (isCorrect) score++;
+
+    answers[currentQ] = { selected: idx, correct: isCorrect, timedOut: false };
+
+    // Style options
+    document.querySelectorAll('.option-btn').forEach(b => b.classList.add('disabled'));
+    document.getElementById('opt-' + idx).classList.add(isCorrect ? 'correct' : 'wrong');
+    if (!isCorrect) document.getElementById('opt-' + q.correct).classList.add('correct');
+    document.getElementById('opt-' + idx).classList.add('selected');
+
+    showFeedback(isCorrect, false, q.explanation);
+    document.getElementById('next-btn').classList.remove('hidden');
+    document.getElementById('running-score').textContent = score;
+    document.getElementById('running-total').textContent = currentQ + 1;
+    updateDot(currentQ, isCorrect ? 'correct' : 'wrong');
+}
+
+function updateDot(idx, state) {
+    document.getElementById('dot-' + idx).className = 'progress-dot ' + state;
+}
+
+function showFeedback(correct, timedOut, explanation) {
+    const bar = document.getElementById('feedback-bar');
+    const icon = document.getElementById('feedback-icon');
+    const title = document.getElementById('feedback-title');
+    const detail = document.getElementById('feedback-detail');
+
+    bar.classList.remove('hidden');
+
+    if (timedOut) {
+        icon.textContent = 'schedule';
+        icon.style.color = '#f7bd48';
+        title.textContent = "Time's up!";
+        title.style.color = '#f7bd48';
+    } else if (correct) {
+        icon.textContent = 'check_circle';
+        icon.style.color = '#43e2d2';
+        title.textContent = 'Correct!';
+        title.style.color = '#43e2d2';
+    } else {
+        icon.textContent = 'cancel';
+        icon.style.color = '#ff6b6b';
+        title.textContent = 'Not quite.';
+        title.style.color = '#ff6b6b';
     }
+    detail.textContent = explanation;
+}
 
-    function nextQuestion() {
-      currentQuestion++;
-      if (currentQuestion >= QUESTIONS.length) {
-        document.getElementById('email-score-circle').textContent = score + '/10';
-        showScreen('screen-email');
-      } else {
-        renderQuestion();
-      }
+// ── Next Question ──
+function nextQuestion() {
+    currentQ++;
+    if (currentQ >= QUESTIONS.length) {
+        showResults();
+    } else {
+        loadQuestion();
     }
+}
 
-    var EMAIL_WEBHOOK = "https://ireaje.app.n8n.cloud/webhook/004d62fc-5120-4e35-822f-287d578af89f";
+// ── Results ──
+function showResults() {
+    clearInterval(timerInterval);
+    showScreen('screen-results');
 
-    function submitEmail(e) {
-      e.preventDefault();
-      const email = document.getElementById('email-input').value.trim();
-      if (!email || !email.includes('@')) {
-        document.getElementById('email-input').focus();
-        return;
-      }
+    const wrong = answers.filter(a => !a.correct && !a.timedOut).length;
+    const skipped = answers.filter(a => a.timedOut).length;
 
-      const btn = document.querySelector('.btn-email-submit');
-      btn.textContent = 'Sending...';
-      btn.disabled = true;
+    document.getElementById('score-big').textContent = score;
+    document.getElementById('stat-correct').textContent = score;
+    document.getElementById('stat-wrong').textContent = wrong;
+    document.getElementById('stat-skipped').textContent = skipped;
 
-      var xhr = new XMLHttpRequest();
-      xhr.open("POST", EMAIL_WEBHOOK, true);
-      xhr.setRequestHeader("Content-Type", "application/json");
-      xhr.timeout = 8000;
-      xhr.onload = function() { showResults(); };
-      xhr.onerror = function() { showResults(); };
-      xhr.ontimeout = function() { showResults(); };
-      xhr.send(JSON.stringify({ email: email, source: "knowledge-quiz", score: score }));
-    }
+    // Badge
+    const badge = document.getElementById('result-badge');
+    if (score === 10) { badge.textContent = 'Satoshi Scholar'; badge.style.color = '#f7bd48'; }
+    else if (score >= 8) { badge.textContent = 'Bitcoin Believer'; badge.style.color = '#43e2d2'; }
+    else if (score >= 6) { badge.textContent = 'Block Explorer'; badge.style.color = '#ea6c1f'; }
+    else if (score >= 4) { badge.textContent = 'Curious Miner'; badge.style.color = '#ff8f4c'; }
+    else { badge.textContent = 'Keep Learning'; badge.style.color = '#ffffff80'; }
 
-    function showResults() {
-      showScreen('screen-results');
-      renderResults();
-    }
+    // Animate score ring
+    setTimeout(() => {
+        const ring = document.getElementById('score-ring');
+        const pct = score / 10;
+        const offset = 565.48 * (1 - pct);
+        ring.setAttribute('stroke-dashoffset', offset);
 
-    function renderResults() {
-      const pct = score / QUESTIONS.length;
-      const circumference = 289;
-      const offset = circumference - (pct * circumference);
+        // Color based on score
+        if (score >= 8) ring.setAttribute('stroke', '#43e2d2');
+        else if (score >= 5) ring.setAttribute('stroke', '#ea6c1f');
+        else ring.setAttribute('stroke', '#ff6b6b');
+    }, 100);
 
-      document.getElementById('results-score-num').textContent = score;
+    // Build review list
+    const list = document.getElementById('review-list');
+    list.innerHTML = '<h3 class="text-sm uppercase tracking-[0.3em] font-headline text-white/40 mb-2">Answer Review</h3>';
 
-      setTimeout(() => {
-        document.getElementById('ring-fill').style.strokeDashoffset = offset;
-      }, 100);
+    QUESTIONS.forEach((q, i) => {
+        const a = answers[i];
+        const labels = ['A', 'B', 'C', 'D'];
+        let statusIcon, statusColor;
+        if (a.timedOut) { statusIcon = 'schedule'; statusColor = 'text-gold'; }
+        else if (a.correct) { statusIcon = 'check_circle'; statusColor = 'text-teal'; }
+        else { statusIcon = 'cancel'; statusColor = 'text-error'; }
 
-      let level, desc, ctaHeading, ctaBody;
+        const row = document.createElement('div');
+        row.className = 'hud-sub-panel rounded-xl p-4 flex items-start gap-4';
+        row.innerHTML = `
+            <span class="material-symbols-outlined ${statusColor} mt-0.5 shrink-0">${statusIcon}</span>
+            <div class="flex-grow min-w-0">
+                <p class="font-medium text-white text-sm leading-snug mb-1">${q.question}</p>
+                <p class="text-xs text-white/40">
+                    ${a.timedOut ? 'Skipped' : 'Your answer: ' + labels[a.selected] + '. ' + q.options[a.selected]}
+                    ${!a.correct ? ' · Correct: ' + labels[q.correct] + '. ' + q.options[q.correct] : ''}
+                </p>
+            </div>
+        `;
+        list.appendChild(row);
+    });
+}
 
-      if (score <= 3) {
-        document.getElementById('results-title').textContent = 'You scored ' + score + ' out of 10';
-        document.getElementById('results-subtitle').textContent = 'A solid starting point. Most people score here before studying the fundamentals.';
-        level = 'Bitcoin Beginner';
-        desc = 'You have heard of Bitcoin but the core concepts are still fuzzy. That is completely normal. The fundamentals take about an hour to learn properly, and once they click, everything else follows.';
-        ctaHeading = 'The fundamentals course is exactly what you need';
-        ctaBody = 'Bitcoin From Scratch covers everything in this quiz and more, with animated 3D visuals that make the concepts stick. Designed specifically for beginners who want to get it right.';
-      } else if (score <= 6) {
-        document.getElementById('results-title').textContent = 'You scored ' + score + ' out of 10';
-        document.getElementById('results-subtitle').textContent = 'You know the basics. A few gaps remain that are worth filling.';
-        level = 'Bitcoin Curious';
-        desc = 'You understand some of what makes Bitcoin work, but there are gaps in your foundation. Getting those gaps filled now prevents confusion later when the stakes are higher.';
-        ctaHeading = 'Fill the gaps before they become problems';
-        ctaBody = 'Bitcoin From Scratch will take your partial knowledge and turn it into a complete, confident understanding. Structured lessons, no jargon, no assumptions about what you already know.';
-      } else if (score <= 8) {
-        document.getElementById('results-title').textContent = 'Strong score: ' + score + ' out of 10';
-        document.getElementById('results-subtitle').textContent = 'You are on the right track. A structured review will sharpen what you know.';
-        level = 'Bitcoin Student';
-        desc = 'You clearly understand Bitcoin at a solid level. The areas you missed in this quiz point to concepts worth reinforcing. Confidence in self-custody and key management is worth getting right.';
-        ctaHeading = 'Turn strong knowledge into practical confidence';
-        ctaBody = 'Bitcoin From Scratch covers self-custody, hardware wallets, and real-world Bitcoin security in depth. The course builds on what you already know and fills the rest in.';
-      } else {
-        document.getElementById('results-title').textContent = 'Excellent: ' + score + ' out of 10';
-        document.getElementById('results-subtitle').textContent = 'You have a strong grasp of Bitcoin fundamentals.';
-        level = 'Bitcoin Aware';
-        desc = 'You scored at the top of this quiz. You understand Bitcoin at a conceptual level. The next step is making sure your practical knowledge, especially around self-custody and key management, matches your theory.';
-        ctaHeading = 'Take your knowledge from theory to practice';
-        ctaBody = 'Bitcoin From Scratch covers real-world self-custody setups, hardware wallets, seed phrase security, and more. The people who score well on quizzes but skip the practical parts are often the ones who make costly mistakes.';
-      }
+// ── Reset ──
+function resetQuiz() {
+    // Reset ring
+    document.getElementById('score-ring').setAttribute('stroke-dashoffset', '565.48');
+    document.getElementById('score-ring').setAttribute('stroke', '#ea6c1f');
+    startQuiz();
+}
+</script>
 
-      document.getElementById('level-name').textContent = level;
-      document.getElementById('level-desc').textContent = desc;
-      document.getElementById('cta-heading').textContent = ctaHeading;
-      document.getElementById('cta-body').textContent = ctaBody;
-
-      const breakdownList = document.getElementById('breakdown-list');
-      breakdownList.innerHTML = '';
-      answers.forEach((a, i) => {
-        const q = QUESTIONS[a.questionIndex];
-        const item = document.createElement('div');
-        item.className = 'breakdown-item';
-        item.innerHTML =
-          '<span class="breakdown-status ' + (a.correct ? 'ok' : 'no') + '">' + (a.correct ? 'Y' : 'N') + '</span>' +
-          '<span>' + q.question + '</span>';
-        breakdownList.appendChild(item);
-      });
-    }
-
-    function retakeQuiz() {
-      startQuiz();
-    }
-  </script>
 </body>
 </html>

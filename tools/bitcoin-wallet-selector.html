@@ -1,639 +1,862 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="dark" lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bitcoin Wallet Selector | Find the Right Wallet for You | SatUsPhere</title>
-  <meta name="description" content="Answer 5 quick questions and get a personalized Bitcoin wallet recommendation. Free tool from SatUsPhere Bitcoin education." />
-  <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://satusphere.com/tools/bitcoin-wallet-selector" />
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Bitcoin Wallet Selector | Find the Right Wallet for You | SatUsPhere</title>
+<meta name="description" content="Answer 5 questions and get a personalized Bitcoin wallet recommendation. Compare hardware and software wallets side by side. Free tool from SatUsPhere." />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://satusphere.com/tools/bitcoin-wallet-selector" />
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Bitcoin Wallet Selector | SatUsPhere" />
-  <meta property="og:description" content="Answer 5 quick questions and get a personalized Bitcoin wallet recommendation. Free tool from SatUsPhere." />
-  <meta property="og:url" content="https://satusphere.com/tools/bitcoin-wallet-selector" />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://satusphere.com/assets/course-banner.png" />
-  <meta property="og:site_name" content="SatUsPhere" />
+<!-- Open Graph -->
+<meta property="og:title" content="Bitcoin Wallet Selector | SatUsPhere" />
+<meta property="og:description" content="Answer 5 questions and get a personalized Bitcoin wallet recommendation. Free tool from SatUsPhere." />
+<meta property="og:url" content="https://satusphere.com/tools/bitcoin-wallet-selector" />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="https://satusphere.com/assets/course-banner.png" />
+<meta property="og:site_name" content="SatUsPhere" />
 
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:site" content="@sat_us_phere" />
-  <meta name="twitter:title" content="Bitcoin Wallet Selector | SatUsPhere" />
-  <meta name="twitter:description" content="Answer 5 quick questions and get a personalized Bitcoin wallet recommendation." />
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@sat_us_phere" />
+<meta name="twitter:title" content="Bitcoin Wallet Selector | SatUsPhere" />
+<meta name="twitter:description" content="Answer 5 questions and get a personalized Bitcoin wallet recommendation." />
 
-  <!-- Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebApplication",
-    "name": "Bitcoin Wallet Selector",
-    "description": "A free interactive quiz that recommends the right Bitcoin wallet type based on your situation and needs.",
-    "url": "https://satusphere.com/tools/bitcoin-wallet-selector",
-    "applicationCategory": "FinanceApplication",
-    "operatingSystem": "Web",
-    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-    "author": { "@type": "Organization", "name": "SatUsPhere", "url": "https://satusphere.com" }
-  }
-  </script>
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Bitcoin Wallet Selector",
+  "description": "A free guided tool that recommends the best Bitcoin wallet based on your experience level, security needs, budget, and usage preferences.",
+  "url": "https://satusphere.com/tools/bitcoin-wallet-selector",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Web",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "author": { "@type": "Organization", "name": "SatUsPhere", "url": "https://satusphere.com" }
+}
+</script>
 
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "SatUsPhere",
-    "url": "https://satusphere.com",
-    "logo": "https://satusphere.com/assets/logo.png",
-    "sameAs": [
-      "https://x.com/sat_us_phere",
-      "https://www.youtube.com/channel/UC0jGCeBvr8qLmMhRpwda-5Q",
-      "https://satusphere.teachable.com"
-    ]
-  }
-  </script>
-
-  <style>
-    :root {
-      --navy: #0D1B2E;
-      --orange: #F7931A;
-      --blue: #1DA1F2;
-      --gold: #D4A530;
-      --white: #FFFFFF;
-      --light-bg: #f8f9fa;
-      --border: #e0e0e0;
-      --text: #1a1a2e;
-      --text-muted: #555;
-    }
-
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      color: var(--text);
-      line-height: 1.7;
-      background: #fff;
-    }
-
-    /* Navigation */
-    nav {
-      background: var(--navy);
-      padding: 16px 24px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .nav-logo {
-      color: var(--white);
-      font-weight: 700;
-      font-size: 1.2rem;
-      text-decoration: none;
-    }
-    .nav-cta {
-      background: var(--orange);
-      color: var(--white);
-      padding: 8px 20px;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 0.9rem;
-      transition: opacity 0.2s;
-    }
-    .nav-cta:hover { opacity: 0.88; }
-
-    /* Hero */
-    .hero {
-      background: var(--navy);
-      color: var(--white);
-      text-align: center;
-      padding: 56px 24px 48px;
-    }
-    .hero-label {
-      display: inline-block;
-      background: rgba(247, 147, 26, 0.15);
-      color: var(--orange);
-      font-size: 0.8rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      padding: 4px 14px;
-      border-radius: 20px;
-      margin-bottom: 20px;
-    }
-    .hero h1 {
-      font-size: 2.2rem;
-      line-height: 1.25;
-      margin-bottom: 16px;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    .hero p {
-      font-size: 1.05rem;
-      color: rgba(255,255,255,0.75);
-      max-width: 540px;
-      margin: 0 auto;
-    }
-
-    /* Main container */
-    .container {
-      max-width: 680px;
-      margin: 0 auto;
-      padding: 48px 24px;
-    }
-
-    /* Progress bar */
-    .progress-wrap {
-      margin-bottom: 36px;
-    }
-    .progress-label {
-      font-size: 0.85rem;
-      color: var(--text-muted);
-      margin-bottom: 8px;
-      font-weight: 500;
-    }
-    .progress-bar-bg {
-      background: var(--border);
-      border-radius: 100px;
-      height: 6px;
-      overflow: hidden;
-    }
-    .progress-bar-fill {
-      background: var(--orange);
-      height: 100%;
-      border-radius: 100px;
-      transition: width 0.4s ease;
-    }
-
-    /* Question card */
-    .question-card {
-      animation: fadeIn 0.3s ease;
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    .question-number {
-      font-size: 0.8rem;
-      font-weight: 700;
-      color: var(--orange);
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      margin-bottom: 10px;
-    }
-
-    .question-text {
-      font-size: 1.35rem;
-      font-weight: 700;
-      color: var(--navy);
-      margin-bottom: 28px;
-      line-height: 1.35;
-    }
-
-    /* Answer options */
-    .options {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .option-btn {
-      display: block;
-      width: 100%;
-      text-align: left;
-      padding: 16px 20px;
-      border: 2px solid var(--border);
-      border-radius: 10px;
-      background: #fff;
-      font-size: 1rem;
-      color: var(--text);
-      cursor: pointer;
-      transition: border-color 0.2s, background 0.2s, transform 0.1s;
-      line-height: 1.4;
-    }
-    .option-btn:hover {
-      border-color: var(--orange);
-      background: #fff8f0;
-      transform: translateY(-1px);
-    }
-    .option-btn:active { transform: translateY(0); }
-    .option-btn.selected {
-      border-color: var(--orange);
-      background: #fff3e0;
-    }
-
-    /* Results card */
-    .results-card {
-      background: var(--light-bg);
-      border: 2px solid var(--orange);
-      border-radius: 12px;
-      padding: 32px;
-      margin-bottom: 36px;
-      animation: fadeIn 0.4s ease;
-    }
-    .results-badge {
-      display: inline-block;
-      background: var(--orange);
-      color: var(--white);
-      font-size: 0.78rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.07em;
-      padding: 4px 12px;
-      border-radius: 20px;
-      margin-bottom: 16px;
-    }
-    .results-type {
-      font-size: 1.7rem;
-      font-weight: 800;
-      color: var(--navy);
-      margin-bottom: 12px;
-      line-height: 1.2;
-    }
-    .results-why {
-      font-size: 1rem;
-      color: var(--text-muted);
-      margin-bottom: 24px;
-      line-height: 1.6;
-    }
-    .wallets-label {
-      font-size: 0.85rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      color: var(--navy);
-      margin-bottom: 10px;
-    }
-    .wallets-list {
-      list-style: none;
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      margin-bottom: 24px;
-    }
-    .wallets-list li {
-      background: var(--navy);
-      color: var(--white);
-      padding: 6px 14px;
-      border-radius: 20px;
-      font-size: 0.9rem;
-      font-weight: 500;
-    }
-    .seed-warning {
-      background: #fff3e0;
-      border-left: 4px solid var(--gold);
-      padding: 14px 18px;
-      border-radius: 0 8px 8px 0;
-      font-size: 0.92rem;
-      color: var(--text);
-      line-height: 1.5;
-    }
-    .seed-warning strong { color: var(--navy); }
-
-    .reset-link {
-      display: block;
-      text-align: right;
-      margin-top: 20px;
-      font-size: 0.88rem;
-      color: var(--blue);
-      cursor: pointer;
-      text-decoration: underline;
-      background: none;
-      border: none;
-      padding: 0;
-    }
-    .reset-link:hover { color: var(--navy); }
-
-    /* Divider */
-    .divider {
-      border: none;
-      border-top: 2px solid var(--gold);
-      margin: 36px 0;
-      opacity: 0.3;
-    }
-
-    @media (max-width: 480px) {
-      .email-form { flex-direction: column; }
-      .hero h1 { font-size: 1.7rem; }
-      .question-text { font-size: 1.15rem; }
-      .results-type { font-size: 1.4rem; }
-    }
-
-    /* BFS CTA */
-    .bfs-cta {
-      background: var(--navy);
-      color: var(--white);
-      border-radius: 12px;
-      padding: 32px;
-      text-align: center;
-      animation: fadeIn 0.4s ease;
-    }
-    .bfs-cta p {
-      font-size: 1rem;
-      color: rgba(255,255,255,0.8);
-      margin-bottom: 24px;
-      line-height: 1.6;
-    }
-    .bfs-btn {
-      display: inline-block;
-      background: var(--orange);
-      color: var(--white);
-      padding: 14px 32px;
-      border-radius: 8px;
-      font-size: 1rem;
-      font-weight: 700;
-      text-decoration: none;
-      transition: opacity 0.2s;
-    }
-    .bfs-btn:hover { opacity: 0.88; }
-
-    /* Footer */
-    footer {
-      background: var(--navy);
-      color: rgba(255,255,255,0.5);
-      text-align: center;
-      padding: 28px 24px;
-      font-size: 0.85rem;
-      margin-top: 64px;
-    }
-    footer a { color: rgba(255,255,255,0.7); text-decoration: none; }
-    footer a:hover { color: var(--white); }
-
-    /* Hidden */
-    .hidden { display: none !important; }
-  </style>
-</head>
-<body>
-
-  <nav>
-    <a href="https://satusphere.com" class="nav-logo">SatUsPhere</a>
-    <a href="https://satusphere.teachable.com/p/bitcoin-from-scratch" class="nav-cta">Get the Course</a>
-  </nav>
-
-  <div class="hero">
-    <div class="hero-label">Free Tool</div>
-    <h1>Which Bitcoin Wallet Is Right for You?</h1>
-    <p>There is no single best Bitcoin wallet. It depends on how you use Bitcoin. Answer 5 quick questions and get a personalized recommendation.</p>
-  </div>
-
-  <div class="container">
-
-    <!-- Quiz section -->
-    <div id="quiz-section">
-      <div class="progress-wrap">
-        <div class="progress-label" id="progress-label">Question 1 of 5</div>
-        <div class="progress-bar-bg">
-          <div class="progress-bar-fill" id="progress-fill" style="width: 20%"></div>
-        </div>
-      </div>
-
-      <div class="question-card" id="question-card">
-        <!-- Populated by JS -->
-      </div>
-    </div>
-
-    <!-- Results section (hidden until quiz complete) -->
-    <div id="results-section" class="hidden">
-
-      <div class="results-card" id="results-card">
-        <!-- Populated by JS -->
-      </div>
-
-      <hr class="divider" />
-
-      <div class="bfs-cta">
-        <p>Choosing a wallet is step one. Understanding how it actually works - private keys, seed phrases, self-custody - is what keeps your Bitcoin safe long term. Bitcoin From Scratch covers all of it, in 34 3D animated lessons built for beginners.</p>
-        <a href="https://satusphere.teachable.com/p/bitcoin-from-scratch" class="bfs-btn">Learn the Bitcoin Basics</a>
-      </div>
-
-    </div>
-
-  </div>
-
-  <footer>
-    <p><a href="https://satusphere.com">SatUsPhere</a> - Bitcoin Is For All Of Us &nbsp;|&nbsp; <a href="mailto:info@satusphere.com">info@satusphere.com</a></p>
-  </footer>
-
-  <script>
-    // -------------------------------------------------------
-    // QUESTIONS
-    // -------------------------------------------------------
-    var questions = [
-      {
-        text: "How much Bitcoin are you planning to start with?",
-        options: [
-          { label: "Under $500",    value: "A" },
-          { label: "$500 - $5,000", value: "B" },
-          { label: "Over $5,000",   value: "C" },
-          { label: "Not sure yet",  value: "A" }
-        ]
-      },
-      {
-        text: "How often do you plan to spend or send Bitcoin?",
-        options: [
-          { label: "Daily or weekly",                       value: "A" },
-          { label: "Occasionally - a few times a year",     value: "B" },
-          { label: "Rarely or never, mostly holding",        value: "C" }
-        ]
-      },
-      {
-        text: "How comfortable are you with technology?",
-        options: [
-          { label: "Not very comfortable, I keep things simple",  value: "A" },
-          { label: "Fairly comfortable, I can follow instructions", value: "B" },
-          { label: "Very comfortable, I like full control",         value: "C" }
-        ]
-      },
-      {
-        text: "What matters most to you right now?",
-        options: [
-          { label: "Easiest possible experience",                           value: "A" },
-          { label: "Balance of security and convenience",                   value: "B" },
-          { label: "Maximum security, I will learn what I need to",         value: "C" }
-        ]
-      },
-      {
-        text: "Which best describes your situation?",
-        options: [
-          { label: "I am brand new to Bitcoin",                                value: "A" },
-          { label: "I have owned Bitcoin but never used a personal wallet",    value: "B" },
-          { label: "I have used wallets before and want to upgrade my security", value: "C" }
-        ]
+<!-- AEO: FAQ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the best Bitcoin wallet for beginners?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For beginners, the BitBox02 Bitcoin-only edition is one of the best choices. It has a simple setup process, a touchscreen interface, and strong security with a secure chip. For a free option, Blue Wallet is a beginner-friendly mobile wallet that supports both on-chain Bitcoin and Lightning payments."
       }
-    ];
-
-    // -------------------------------------------------------
-    // RECOMMENDATIONS
-    // -------------------------------------------------------
-    var recommendations = {
-      mobile: {
-        type: "Mobile Software Wallet",
-        why: "Based on your answers, a mobile wallet is the right starting point. It is easy to set up, works on your phone, and gives you full ownership of your Bitcoin without overwhelming you with complexity. The amounts you are working with fit well with a software wallet, and you can always upgrade to hardware later.",
-        wallets: ["Open-source non-custodial mobile wallet", "Lightning-native mobile wallet", "Beginner-friendly non-custodial mobile wallet"],
-        upgradeNote: null
-      },
-      mobile_upgrade: {
-        type: "Mobile Software Wallet",
-        why: "A mobile wallet fits your current situation well. Start here to get comfortable with how Bitcoin wallets work. As your holdings grow or your confidence increases, upgrading to a hardware wallet is a natural next step. The fundamentals you learn now transfer directly.",
-        wallets: ["Open-source non-custodial mobile wallet", "Lightning-native mobile wallet", "Multi-platform non-custodial mobile wallet"],
-        upgradeNote: "Plan to upgrade to a hardware wallet as your holdings grow."
-      },
-      desktop_mobile: {
-        type: "Desktop and Mobile Software Wallet",
-        why: "You are ready for a setup that gives you more control without requiring hardware. A desktop wallet paired with a mobile companion lets you manage Bitcoin on your own terms, with proper backups and more features than a basic mobile-only setup. Secure your seed phrase carefully.",
-        wallets: ["Advanced open-source desktop wallet with coin control", "Multi-platform non-custodial wallet", "Open-source desktop wallet with mobile companion"],
-        upgradeNote: null
-      },
-      hardware: {
-        type: "Hardware Wallet",
-        why: "Based on your answers, you are ready for a hardware wallet. You have the technical comfort and the mindset to manage your Bitcoin at the highest security level. A hardware wallet keeps your private keys offline, meaning your Bitcoin is protected even if your computer is compromised.",
-        wallets: ["Air-gapped open-source hardware wallet (advanced)", "Beginner-friendly hardware wallet with screen verification", "Established hardware wallet with broad software support"],
-        upgradeNote: null
-      },
-      hardware_ready: {
-        type: "Hardware Wallet",
-        why: "You are ready for this. You have the background to handle a hardware wallet correctly, and your priorities point toward security over convenience. The learning curve is real but manageable. Take the time to understand seed phrases before you receive any Bitcoin onto it.",
-        wallets: ["Beginner-friendly hardware wallet with screen verification", "Established hardware wallet with broad software support", "Air-gapped open-source hardware wallet (advanced)"],
-        upgradeNote: null
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between a hardware wallet and a software wallet?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A hardware wallet is a physical device that stores your private keys offline, making it much harder for hackers to access your bitcoin. A software wallet is an app on your phone or computer that stores keys on your device. Hardware wallets are more secure for long-term storage, while software wallets are more convenient for everyday transactions."
       }
-    };
-
-    // -------------------------------------------------------
-    // STATE
-    // -------------------------------------------------------
-    var currentQuestion = 0;
-    var answers = [];
-    var selectedValue = null;
-    var resultKey = null;
-
-    // -------------------------------------------------------
-    // RENDER QUESTION
-    // -------------------------------------------------------
-    function renderQuestion() {
-      var q = questions[currentQuestion];
-      var pct = ((currentQuestion + 1) / questions.length) * 100;
-      var card = document.getElementById('question-card');
-
-      document.getElementById('progress-label').textContent =
-        'Question ' + (currentQuestion + 1) + ' of ' + questions.length;
-      document.getElementById('progress-fill').style.width = pct + '%';
-
-      selectedValue = null;
-
-      var optionsHtml = q.options.map(function(opt, idx) {
-        return '<button class="option-btn" onclick="selectOption(\'' + opt.value + '\', ' + idx + ')">' +
-          opt.label + '</button>';
-      }).join('');
-
-      card.innerHTML =
-        '<div class="question-number">Question ' + (currentQuestion + 1) + ' of ' + questions.length + '</div>' +
-        '<div class="question-text">' + q.text + '</div>' +
-        '<div class="options" id="options-wrap">' + optionsHtml + '</div>' +
-        (currentQuestion > 0
-          ? '<div style="margin-top:28px;"><button class="reset-link" onclick="goBack()">Back</button></div>'
-          : '');
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need a hardware wallet for Bitcoin?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "If you hold a significant amount of bitcoin (generally over $500-1,000 worth), a hardware wallet is strongly recommended. It keeps your private keys offline and protected from malware, phishing, and remote hacking. For small amounts you use regularly, a reputable software wallet can be sufficient."
+      }
     }
+  ]
+}
+</script>
 
-    // -------------------------------------------------------
-    // SELECT OPTION
-    // -------------------------------------------------------
-    function selectOption(value, idx) {
-      selectedValue = value;
-      var btns = document.querySelectorAll('.option-btn');
-      btns.forEach(function(b) { b.classList.remove('selected'); });
-      btns[idx].classList.add('selected');
-
-      // Auto-advance after brief pause
-      setTimeout(function() {
-        answers[currentQuestion] = value;
-        if (currentQuestion < questions.length - 1) {
-          currentQuestion++;
-          renderQuestion();
-        } else {
-          showResults();
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<script>
+    tailwind.config = {
+        darkMode: "class",
+        theme: {
+            extend: {
+                colors: {
+                    primary: "#4A7BF7",
+                    "primary-glow": "#6B9AFF",
+                    "primary-dim": "#3A5FCC",
+                    amber: "#F5A623",
+                    "amber-dim": "#D48E1A",
+                    "amber-glow": "#FFD06B",
+                    steel: "#8B9DC3",
+                    silver: "#C0C8D8",
+                    "background-dark": "#080B14",
+                    "nav-bg": "#060910",
+                    "surface": "#0E1220",
+                    "surface-light": "#141A2E",
+                    success: "#34D399",
+                    error: "#F87171"
+                },
+                fontFamily: {
+                    display: ["Plus Jakarta Sans", "sans-serif"]
+                },
+                borderRadius: {
+                    DEFAULT: "1rem",
+                    card: "1.5rem"
+                }
+            }
         }
-      }, 320);
+    };
+</script>
+<style>
+body {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    background-color: #080B14;
+    color: #e0e4ef;
+    min-height: 100vh;
+}
+.bg-glow {
+    position: fixed;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80vw;
+    height: 60vh;
+    background: radial-gradient(circle, rgba(74, 123, 247, 0.08) 0%, rgba(8, 11, 20, 0) 70%);
+    z-index: -2;
+    pointer-events: none;
+}
+.bg-pattern {
+    position: fixed;
+    inset: 0;
+    background-image: linear-gradient(rgba(74, 123, 247, 0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(74, 123, 247, 0.02) 1px, transparent 1px);
+    background-size: 50px 50px;
+    z-index: -1;
+    pointer-events: none;
+}
+.bg-visual {
+    position: fixed;
+    inset: 0;
+    background:
+        radial-gradient(ellipse at 30% 20%, rgba(74, 123, 247, 0.06), transparent 50%),
+        radial-gradient(ellipse at 70% 80%, rgba(245, 166, 35, 0.04), transparent 40%);
+    z-index: -3;
+    pointer-events: none;
+}
+.vault-panel {
+    background: rgba(74, 123, 247, 0.05);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(74, 123, 247, 0.12);
+    box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.5);
+}
+.vault-sub-panel {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+}
+.option-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.option-card:hover {
+    background: rgba(74, 123, 247, 0.08);
+    border-color: rgba(74, 123, 247, 0.3);
+    transform: translateY(-2px);
+}
+.option-card.selected {
+    background: rgba(74, 123, 247, 0.12);
+    border-color: #4A7BF7;
+    box-shadow: 0 0 20px rgba(74, 123, 247, 0.15);
+}
+.wallet-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: all 0.3s ease;
+}
+.wallet-card.best-match {
+    border-color: rgba(245, 166, 35, 0.4);
+    box-shadow: 0 0 30px rgba(245, 166, 35, 0.1);
+}
+.screen { display: none; }
+.screen.active { display: flex; }
+.progress-step {
+    width: 100%;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 2px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+.progress-step .fill {
+    height: 100%;
+    border-radius: 2px;
+    background: #4A7BF7;
+    width: 0%;
+    transition: width 0.5s ease;
+}
+.progress-step.done .fill { width: 100%; }
+.progress-step.active .fill { width: 50%; background: #F5A623; }
+.security-bar {
+    height: 6px;
+    border-radius: 3px;
+    background: rgba(255, 255, 255, 0.08);
+    overflow: hidden;
+}
+.security-bar .fill {
+    height: 100%;
+    border-radius: 3px;
+    transition: width 0.8s ease;
+}
+@keyframes slide-up {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.animate-in { animation: slide-up 0.4s ease forwards; }
+</style>
+</head>
+<body class="antialiased overflow-x-hidden selection:bg-primary selection:text-white flex flex-col min-h-screen">
+
+<div class="bg-visual"></div>
+<div class="bg-glow"></div>
+<div class="bg-pattern"></div>
+
+<!-- Nav -->
+<nav class="bg-nav-bg/90 backdrop-blur-md border-b border-white/10 sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-20">
+            <a href="https://satusphere.com" class="flex items-center gap-3 no-underline">
+                <img src="../satusphere-logo.png" alt="SatUsPhere" class="w-10 h-10 rounded-full object-cover" />
+                <span class="font-display font-bold text-xl tracking-wide text-primary-glow">SatUsPhere</span>
+            </a>
+            <div class="hidden md:flex space-x-8">
+                <a class="text-white/70 hover:text-white transition font-medium no-underline" href="https://satusphere.com">Home</a>
+            </div>
+            <a class="flex items-center gap-2 px-4 py-2 rounded-lg vault-sub-panel text-sm font-semibold hover:bg-white/10 transition no-underline" href="https://satusphere.com/tools">
+                <span class="material-symbols-outlined text-[20px]">arrow_back</span>
+                Back to Tools
+            </a>
+        </div>
+    </div>
+</nav>
+
+<main class="flex-grow w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 flex flex-col items-center relative z-10">
+
+    <!-- ═══════════════════ INTRO SCREEN ═══════════════════ -->
+    <div id="screen-intro" class="screen active flex-col items-center w-full gap-10">
+        <div class="text-center space-y-6 max-w-2xl">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber/10 border border-amber/20">
+                <span class="material-symbols-outlined text-amber text-sm">shield</span>
+                <span class="text-xs uppercase tracking-[0.3em] font-bold text-amber">Guided Tool</span>
+            </div>
+            <h1 class="text-4xl sm:text-6xl font-extrabold text-white leading-tight">
+                Bitcoin <span class="text-primary">Wallet</span> Selector
+            </h1>
+            <p class="text-lg text-white/50 leading-relaxed max-w-lg mx-auto">
+                Answer 5 quick questions and get a personalized wallet recommendation based on your needs.
+            </p>
+        </div>
+
+        <!-- Wallet type cards -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 w-full max-w-2xl">
+            <div class="vault-panel rounded-card p-6 text-center">
+                <span class="material-symbols-outlined text-3xl text-primary mb-3">memory</span>
+                <h3 class="font-bold text-white text-sm mb-1">Hardware</h3>
+                <p class="text-xs text-white/40">Physical devices that store keys offline</p>
+            </div>
+            <div class="vault-panel rounded-card p-6 text-center">
+                <span class="material-symbols-outlined text-3xl text-amber mb-3">smartphone</span>
+                <h3 class="font-bold text-white text-sm mb-1">Mobile</h3>
+                <p class="text-xs text-white/40">Apps on your phone for easy access</p>
+            </div>
+            <div class="vault-panel rounded-card p-6 text-center">
+                <span class="material-symbols-outlined text-3xl text-steel mb-3">desktop_windows</span>
+                <h3 class="font-bold text-white text-sm mb-1">Desktop</h3>
+                <p class="text-xs text-white/40">Software on your computer</p>
+            </div>
+        </div>
+
+        <button onclick="startQuiz()" class="px-10 py-4 rounded-xl bg-primary text-white font-bold text-lg hover:bg-primary-glow hover:shadow-[0_0_25px_rgba(74,123,247,0.3)] transition-all">
+            Find My Wallet
+            <span class="material-symbols-outlined text-sm align-middle ml-1">arrow_forward</span>
+        </button>
+
+        <p class="text-xs text-white/30">Takes about 30 seconds. No signup required.</p>
+    </div>
+
+    <!-- ═══════════════════ QUIZ SCREEN ═══════════════════ -->
+    <div id="screen-quiz" class="screen flex-col items-center w-full gap-8">
+
+        <!-- Progress bar -->
+        <div class="w-full flex gap-2" id="progress-bar"></div>
+
+        <!-- Question container -->
+        <div class="vault-panel rounded-card p-8 sm:p-10 w-full animate-in" id="question-container">
+            <div class="flex items-center gap-3 mb-6">
+                <span class="w-8 h-8 rounded-lg bg-primary/20 flex items-center justify-center text-sm font-bold text-primary" id="q-step">1</span>
+                <span class="text-xs uppercase tracking-[0.3em] text-white/40 font-bold" id="q-label">Experience</span>
+            </div>
+            <h2 id="q-text" class="text-2xl sm:text-3xl font-bold text-white mb-8"></h2>
+            <div id="options-container" class="grid gap-3"></div>
+        </div>
+
+        <!-- Nav buttons -->
+        <div class="flex items-center justify-between w-full">
+            <button id="back-btn" onclick="prevQuestion()" class="flex items-center gap-2 px-5 py-3 rounded-lg text-white/50 hover:text-white transition hidden">
+                <span class="material-symbols-outlined text-sm">arrow_back</span>
+                Back
+            </button>
+            <div class="flex-grow"></div>
+            <button id="next-btn" onclick="nextQuestion()" class="px-8 py-3 rounded-xl bg-primary/20 border border-primary/40 text-primary font-bold hover:bg-primary/30 transition hidden">
+                Next
+                <span class="material-symbols-outlined text-sm align-middle ml-1">arrow_forward</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- ═══════════════════ RESULTS SCREEN ═══════════════════ -->
+    <div id="screen-results" class="screen flex-col items-center w-full gap-10">
+
+        <div class="text-center space-y-3">
+            <h2 class="text-3xl sm:text-5xl font-extrabold text-white">Your Wallet Match</h2>
+            <p class="text-white/50">Based on your answers, here are our top picks.</p>
+        </div>
+
+        <!-- Type recommendation -->
+        <div id="type-recommendation" class="w-full"></div>
+
+        <!-- Comparison table -->
+        <div class="w-full vault-panel rounded-card p-6 sm:p-8 overflow-x-auto">
+            <h3 class="text-lg font-bold text-white mb-2">Full Comparison</h3>
+            <p class="text-sm text-white/40 mb-6">Here are the top wallets in this category, ranked by how well they match your answers.</p>
+            <table class="w-full text-left text-sm min-w-[600px]">
+                <thead>
+                    <tr class="text-xs uppercase tracking-widest text-white/40 border-b border-white/5">
+                        <th class="pb-4 pr-4">Wallet</th>
+                        <th class="pb-4 pr-4">Details</th>
+                        <th class="pb-4 pr-4">Security</th>
+                        <th class="pb-4 pr-4">Ease of Use</th>
+                        <th class="pb-4 pr-4">Price</th>
+                        <th class="pb-4">Match</th>
+                    </tr>
+                </thead>
+                <tbody id="comparison-body"></tbody>
+            </table>
+        </div>
+
+        <!-- Education -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
+            <div class="vault-panel rounded-card p-8">
+                <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-5">
+                    <span class="material-symbols-outlined text-primary text-2xl">key</span>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-3">What is a Bitcoin Wallet?</h3>
+                <p class="text-white/50 leading-relaxed text-sm">
+                    A Bitcoin wallet doesn't actually store your bitcoin. It stores the private keys that prove you own it and let you move it. Your bitcoin always lives on the blockchain. The wallet is more like a keychain than a safe.
+                </p>
+            </div>
+            <div class="vault-panel rounded-card p-8 border-l-4 border-l-amber relative overflow-hidden group">
+                <div class="absolute -right-8 -bottom-8 opacity-5 group-hover:opacity-10 transition-opacity">
+                    <span class="material-symbols-outlined text-[160px]">auto_stories</span>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-2">Go Deeper</h3>
+                <p class="text-white/50 mb-6 text-sm">Learn how wallets, keys, and self-custody actually work. 34 lessons, 3D animated, built for beginners.</p>
+                <a class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-primary text-white font-bold hover:bg-primary-glow transition shadow-[0_4px_15px_rgba(74,123,247,0.3)] no-underline text-sm" href="https://satusphere.teachable.com/p/bitcoin-from-scratch">
+                    Get Full Bitcoin Course
+                    <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Actions -->
+        <div class="flex flex-wrap justify-center gap-4">
+            <button onclick="resetQuiz()" class="px-6 py-3 rounded-xl bg-white/5 border border-white/10 text-white font-bold hover:bg-white/10 transition">
+                Retake Quiz
+            </button>
+            <a href="https://satusphere.com/tools" class="px-6 py-3 rounded-xl bg-white/5 border border-white/10 text-white font-bold hover:bg-white/10 transition no-underline text-center">
+                Back to Tools Hub
+            </a>
+        </div>
+
+        <div class="text-center">
+            <a href="https://satusphere.com/tools" class="text-primary font-bold hover:underline hover:text-amber transition-colors no-underline text-sm">Explore all free Bitcoin tools</a>
+        </div>
+    </div>
+
+</main>
+
+<!-- Footer -->
+<footer class="bg-nav-bg border-t border-white/5 py-10 mt-auto relative z-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+            <a href="https://satusphere.com" class="flex items-center gap-3 no-underline">
+                <img src="../satusphere-logo.png" alt="SatUsPhere" class="w-8 h-8 rounded-full object-cover" />
+                <span class="font-display font-bold text-lg text-primary-glow">SatUsPhere</span>
+            </a>
+            <div class="flex flex-wrap justify-center gap-6 text-sm text-white/50">
+                <a class="hover:text-primary-glow transition no-underline" href="https://satusphere.com/privacy">Privacy</a>
+                <a class="hover:text-primary-glow transition no-underline" href="https://satusphere.com/terms">Terms</a>
+                <a class="hover:text-primary-glow transition no-underline" href="mailto:info@satusphere.com">Support</a>
+            </div>
+            <div class="text-sm text-white/40">&copy; 2026 SatUsPhere</div>
+        </div>
+    </div>
+</footer>
+
+<script>
+// ── Wallet Database ──
+const WALLETS = [
+    // ── Hardware Wallets ──
+    {
+        name: "Coldcard Mk4",
+        type: "Hardware",
+        subtype: "Air-gapped (SD card)",
+        typeLabel: "Hardware Wallet",
+        price: "$157",
+        security: 10,
+        ease: 4,
+        scores: { beginner: 2, intermediate: 7, advanced: 10, storage: 10, transactions: 3, both: 6, maxSecurity: 10, balanced: 5, easyUse: 2, free: 0, under100: 0, under200: 8, noLimit: 10, mobile: 0, desktop: 5, hardware: 10 }
+    },
+    {
+        name: "BitBox02",
+        type: "Hardware",
+        subtype: "USB-C, touchscreen",
+        typeLabel: "Hardware Wallet",
+        price: "$149",
+        security: 9,
+        ease: 9,
+        scores: { beginner: 10, intermediate: 8, advanced: 6, storage: 8, transactions: 6, both: 8, maxSecurity: 7, balanced: 10, easyUse: 8, free: 0, under100: 0, under200: 8, noLimit: 8, mobile: 3, desktop: 8, hardware: 10 }
+    },
+    {
+        name: "Trezor Safe 5",
+        type: "Hardware",
+        subtype: "USB-C, color touchscreen",
+        typeLabel: "Hardware Wallet",
+        price: "$169",
+        security: 9,
+        ease: 8,
+        scores: { beginner: 7, intermediate: 10, advanced: 8, storage: 9, transactions: 5, both: 7, maxSecurity: 8, balanced: 9, easyUse: 6, free: 0, under100: 0, under200: 7, noLimit: 9, mobile: 3, desktop: 8, hardware: 10 }
+    },
+    {
+        name: "Blockstream Jade",
+        type: "Hardware",
+        subtype: "Air-gapped (camera/QR)",
+        typeLabel: "Hardware Wallet",
+        price: "$64",
+        security: 8,
+        ease: 7,
+        scores: { beginner: 6, intermediate: 8, advanced: 7, storage: 7, transactions: 6, both: 7, maxSecurity: 6, balanced: 8, easyUse: 5, free: 0, under100: 10, under200: 10, noLimit: 7, mobile: 5, desktop: 7, hardware: 10 }
+    },
+    {
+        name: "Ledger Nano S Plus",
+        type: "Hardware",
+        subtype: "USB-C, secure element",
+        typeLabel: "Hardware Wallet",
+        price: "$79",
+        security: 8,
+        ease: 8,
+        scores: { beginner: 8, intermediate: 8, advanced: 5, storage: 8, transactions: 5, both: 7, maxSecurity: 6, balanced: 9, easyUse: 7, free: 0, under100: 10, under200: 10, noLimit: 6, mobile: 4, desktop: 8, hardware: 10 }
+    },
+    {
+        name: "Ledger Nano X",
+        type: "Hardware",
+        subtype: "USB-C + Bluetooth",
+        typeLabel: "Hardware Wallet",
+        price: "$149",
+        security: 8,
+        ease: 9,
+        scores: { beginner: 8, intermediate: 8, advanced: 5, storage: 8, transactions: 6, both: 8, maxSecurity: 6, balanced: 9, easyUse: 8, free: 0, under100: 0, under200: 8, noLimit: 7, mobile: 7, desktop: 8, hardware: 10 }
+    },
+    {
+        name: "Foundation Passport",
+        type: "Hardware",
+        subtype: "Air-gapped (camera/QR)",
+        typeLabel: "Hardware Wallet",
+        price: "$199",
+        security: 10,
+        ease: 6,
+        scores: { beginner: 3, intermediate: 7, advanced: 10, storage: 10, transactions: 3, both: 5, maxSecurity: 10, balanced: 6, easyUse: 3, free: 0, under100: 0, under200: 5, noLimit: 10, mobile: 3, desktop: 6, hardware: 10 }
+    },
+    {
+        name: "Keystone 3 Pro",
+        type: "Hardware",
+        subtype: "Air-gapped (QR), fingerprint",
+        typeLabel: "Hardware Wallet",
+        price: "$169",
+        security: 9,
+        ease: 7,
+        scores: { beginner: 5, intermediate: 8, advanced: 9, storage: 9, transactions: 4, both: 6, maxSecurity: 9, balanced: 7, easyUse: 4, free: 0, under100: 0, under200: 7, noLimit: 9, mobile: 4, desktop: 7, hardware: 10 }
+    },
+
+    // ── Free Mobile Wallets ──
+    {
+        name: "Blue Wallet",
+        type: "Software",
+        subtype: "On-chain + Lightning",
+        typeLabel: "Free Mobile Wallet",
+        price: "Free",
+        security: 6,
+        ease: 9,
+        scores: { beginner: 9, intermediate: 7, advanced: 5, storage: 4, transactions: 10, both: 8, maxSecurity: 3, balanced: 7, easyUse: 10, free: 10, under100: 10, under200: 10, noLimit: 10, mobile: 10, desktop: 2, hardware: 2 }
+    },
+    {
+        name: "Muun Wallet",
+        type: "Software",
+        subtype: "Unified on-chain + Lightning",
+        typeLabel: "Free Mobile Wallet",
+        price: "Free",
+        security: 6,
+        ease: 10,
+        scores: { beginner: 10, intermediate: 5, advanced: 3, storage: 3, transactions: 10, both: 7, maxSecurity: 2, balanced: 6, easyUse: 10, free: 10, under100: 10, under200: 10, noLimit: 10, mobile: 10, desktop: 0, hardware: 0 }
+    },
+    {
+        name: "Phoenix Wallet",
+        type: "Software",
+        subtype: "Lightning-native",
+        typeLabel: "Free Mobile Wallet",
+        price: "Free",
+        security: 6,
+        ease: 8,
+        scores: { beginner: 7, intermediate: 8, advanced: 6, storage: 2, transactions: 10, both: 6, maxSecurity: 3, balanced: 7, easyUse: 9, free: 10, under100: 10, under200: 10, noLimit: 10, mobile: 10, desktop: 0, hardware: 0 }
+    },
+    {
+        name: "Green Wallet",
+        type: "Software",
+        subtype: "On-chain, multisig option",
+        typeLabel: "Free Mobile Wallet",
+        price: "Free",
+        security: 7,
+        ease: 7,
+        scores: { beginner: 7, intermediate: 8, advanced: 6, storage: 6, transactions: 7, both: 7, maxSecurity: 5, balanced: 8, easyUse: 7, free: 10, under100: 10, under200: 10, noLimit: 10, mobile: 10, desktop: 5, hardware: 3 }
+    },
+    {
+        name: "Nunchuk",
+        type: "Software",
+        subtype: "Multisig, collaborative custody",
+        typeLabel: "Free Mobile Wallet",
+        price: "Free",
+        security: 8,
+        ease: 6,
+        scores: { beginner: 4, intermediate: 7, advanced: 9, storage: 8, transactions: 5, both: 7, maxSecurity: 7, balanced: 7, easyUse: 4, free: 10, under100: 10, under200: 10, noLimit: 10, mobile: 9, desktop: 7, hardware: 4 }
+    },
+
+    // ── Free Desktop Wallets ──
+    {
+        name: "Sparrow Wallet",
+        type: "Software",
+        subtype: "Full coin control, UTXO mgmt",
+        typeLabel: "Free Desktop Wallet",
+        price: "Free",
+        security: 7,
+        ease: 5,
+        scores: { beginner: 2, intermediate: 6, advanced: 10, storage: 6, transactions: 7, both: 7, maxSecurity: 7, balanced: 6, easyUse: 2, free: 10, under100: 10, under200: 10, noLimit: 10, mobile: 0, desktop: 10, hardware: 3 }
+    },
+    {
+        name: "Electrum",
+        type: "Software",
+        subtype: "Lightweight, plugin support",
+        typeLabel: "Free Desktop Wallet",
+        price: "Free",
+        security: 7,
+        ease: 6,
+        scores: { beginner: 4, intermediate: 8, advanced: 9, storage: 6, transactions: 8, both: 7, maxSecurity: 6, balanced: 7, easyUse: 4, free: 10, under100: 10, under200: 10, noLimit: 10, mobile: 3, desktop: 10, hardware: 3 }
+    },
+    {
+        name: "Wasabi Wallet",
+        type: "Software",
+        subtype: "Privacy-focused, CoinJoin",
+        typeLabel: "Free Desktop Wallet",
+        price: "Free",
+        security: 8,
+        ease: 5,
+        scores: { beginner: 2, intermediate: 5, advanced: 10, storage: 5, transactions: 6, both: 5, maxSecurity: 8, balanced: 5, easyUse: 2, free: 10, under100: 10, under200: 10, noLimit: 10, mobile: 0, desktop: 10, hardware: 3 }
+    },
+    {
+        name: "Specter Desktop",
+        type: "Software",
+        subtype: "Multisig, own node",
+        typeLabel: "Free Desktop Wallet",
+        price: "Free",
+        security: 8,
+        ease: 4,
+        scores: { beginner: 1, intermediate: 5, advanced: 10, storage: 8, transactions: 4, both: 6, maxSecurity: 9, balanced: 5, easyUse: 1, free: 10, under100: 10, under200: 10, noLimit: 10, mobile: 0, desktop: 10, hardware: 5 }
+    },
+    {
+        name: "Bitcoin Core",
+        type: "Software",
+        subtype: "Full node, reference client",
+        typeLabel: "Free Desktop Wallet",
+        price: "Free",
+        security: 8,
+        ease: 3,
+        scores: { beginner: 1, intermediate: 4, advanced: 10, storage: 7, transactions: 4, both: 5, maxSecurity: 8, balanced: 4, easyUse: 1, free: 10, under100: 10, under200: 10, noLimit: 10, mobile: 0, desktop: 10, hardware: 2 }
     }
+];
 
-    // -------------------------------------------------------
-    // GO BACK
-    // -------------------------------------------------------
-    function goBack() {
-      if (currentQuestion > 0) {
-        currentQuestion--;
-        renderQuestion();
-      }
+// ── Questions ──
+const QUESTIONS = [
+    {
+        label: "Experience",
+        question: "What's your experience level with Bitcoin?",
+        options: [
+            { text: "Brand new to Bitcoin", icon: "explore", key: "beginner" },
+            { text: "I've bought and held before", icon: "trending_up", key: "intermediate" },
+            { text: "Experienced, I run my own node", icon: "terminal", key: "advanced" }
+        ],
+        field: "experience"
+    },
+    {
+        label: "Purpose",
+        question: "What will you primarily use this wallet for?",
+        options: [
+            { text: "Long-term storage (holding)", icon: "savings", key: "storage" },
+            { text: "Regular transactions and spending", icon: "payments", key: "transactions" },
+            { text: "Both storage and spending", icon: "sync_alt", key: "both" }
+        ],
+        field: "purpose"
+    },
+    {
+        label: "Security",
+        question: "What's your top priority?",
+        options: [
+            { text: "Maximum security, I'll learn the tools", icon: "shield", key: "maxSecurity" },
+            { text: "Good security with ease of use", icon: "balance", key: "balanced" },
+            { text: "Easy to use, I'll level up later", icon: "touch_app", key: "easyUse" }
+        ],
+        field: "priority"
+    },
+    {
+        label: "Budget",
+        question: "What's your budget for a wallet?",
+        options: [
+            { text: "Free (software only)", icon: "money_off", key: "free" },
+            { text: "Under $100", icon: "paid", key: "under100" },
+            { text: "Under $200", icon: "account_balance_wallet", key: "under200" },
+            { text: "Whatever it takes", icon: "diamond", key: "noLimit" }
+        ],
+        field: "budget"
+    },
+    {
+        label: "Platform",
+        question: "Where do you want to use your wallet?",
+        options: [
+            { text: "On my phone", icon: "smartphone", key: "mobile" },
+            { text: "On my computer", icon: "desktop_windows", key: "desktop" },
+            { text: "A dedicated hardware device", icon: "memory", key: "hardware" }
+        ],
+        field: "platform"
     }
+];
 
-    // -------------------------------------------------------
-    // SCORE AND SHOW RESULTS
-    // -------------------------------------------------------
-    function showResults() {
-      var counts = { A: 0, B: 0, C: 0 };
-      answers.forEach(function(a) { counts[a]++; });
+// ── State ──
+let currentStep = 0;
+let userAnswers = {};
 
-      if (counts.C >= 3) {
-        resultKey = 'hardware';
-      } else if (counts.B >= 3) {
-        resultKey = 'desktop_mobile';
-      } else if (counts.A >= 3) {
-        resultKey = 'mobile';
-      } else if (counts.B + counts.C >= 4) {
-        resultKey = 'hardware_ready';
-      } else {
-        // Mixed A/B or other combos default to mobile with upgrade note
-        resultKey = 'mobile_upgrade';
-      }
+// ── Screen Management ──
+function showScreen(id) {
+    document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
 
-      var rec = recommendations[resultKey];
+// ── Start Quiz ──
+function startQuiz() {
+    currentStep = 0;
+    userAnswers = {};
+    showScreen('screen-quiz');
+    buildProgress();
+    loadStep();
+}
 
-      var walletsHtml = rec.wallets.map(function(w) {
-        return '<li>' + w + '</li>';
-      }).join('');
-
-      var upgradeHtml = rec.upgradeNote
-        ? '<p style="font-size:0.9rem;color:var(--text-muted);margin-top:16px;font-style:italic;">' + rec.upgradeNote + '</p>'
-        : '';
-
-      var resetHtml = '<button class="reset-link" onclick="resetQuiz()">Take it again</button>';
-
-      document.getElementById('results-card').innerHTML =
-        '<div class="results-badge">Your Recommendation</div>' +
-        '<div class="results-type">' + rec.type + '</div>' +
-        '<div class="results-why">' + rec.why + '</div>' +
-        '<div class="wallets-label">What to look for when searching</div>' +
-        '<ul class="wallets-list">' + walletsHtml + '</ul>' +
-        '<div class="seed-warning"><strong>Important:</strong> Whatever wallet you choose, learn how seed phrases work before you receive any Bitcoin. Your seed phrase is the only way to recover your wallet if your device is lost or damaged. Write it down offline. Never store it digitally.</div>' +
-        upgradeHtml +
-        resetHtml;
-
-      document.getElementById('quiz-section').classList.add('hidden');
-      document.getElementById('results-section').classList.remove('hidden');
-
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+// ── Build Progress ──
+function buildProgress() {
+    const bar = document.getElementById('progress-bar');
+    bar.innerHTML = '';
+    for (let i = 0; i < QUESTIONS.length; i++) {
+        const step = document.createElement('div');
+        step.className = 'progress-step';
+        step.id = 'step-' + i;
+        step.innerHTML = '<div class="fill"></div>';
+        bar.appendChild(step);
     }
+}
 
-    // -------------------------------------------------------
-    // RESET
-    // -------------------------------------------------------
-    function resetQuiz() {
-      currentQuestion = 0;
-      answers = [];
-      selectedValue = null;
-      resultKey = null;
+function updateProgress() {
+    QUESTIONS.forEach((_, i) => {
+        const el = document.getElementById('step-' + i);
+        if (i < currentStep) el.className = 'progress-step done';
+        else if (i === currentStep) el.className = 'progress-step active';
+        else el.className = 'progress-step';
+    });
+}
 
-      document.getElementById('results-section').classList.add('hidden');
-      document.getElementById('quiz-section').classList.remove('hidden');
+// ── Load Step ──
+function loadStep() {
+    const q = QUESTIONS[currentStep];
+    document.getElementById('q-step').textContent = currentStep + 1;
+    document.getElementById('q-label').textContent = q.label;
+    document.getElementById('q-text').textContent = q.question;
 
-      renderQuestion();
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+    const container = document.getElementById('options-container');
+    container.innerHTML = '';
+
+    const cols = q.options.length === 4 ? 'grid-cols-1 sm:grid-cols-2' : 'grid-cols-1';
+    container.className = 'grid gap-3 ' + cols;
+
+    q.options.forEach((opt, i) => {
+        const card = document.createElement('div');
+        card.className = 'option-card rounded-xl p-5 flex items-center gap-4' + (userAnswers[q.field] === opt.key ? ' selected' : '');
+        card.innerHTML = `
+            <span class="material-symbols-outlined text-2xl ${userAnswers[q.field] === opt.key ? 'text-primary' : 'text-white/30'}">${opt.icon}</span>
+            <span class="font-medium text-white">${opt.text}</span>
+        `;
+        card.onclick = () => selectOption(q.field, opt.key, i);
+        card.id = 'opt-' + i;
+        container.appendChild(card);
+    });
+
+    // Animate in
+    const panel = document.getElementById('question-container');
+    panel.classList.remove('animate-in');
+    void panel.offsetWidth;
+    panel.classList.add('animate-in');
+
+    // Show/hide nav buttons
+    document.getElementById('back-btn').classList.toggle('hidden', currentStep === 0);
+    document.getElementById('next-btn').classList.toggle('hidden', !userAnswers[q.field]);
+
+    updateProgress();
+}
+
+function selectOption(field, key, idx) {
+    userAnswers[field] = key;
+
+    // Update visual
+    document.querySelectorAll('.option-card').forEach((c, i) => {
+        c.classList.toggle('selected', i === idx);
+        c.querySelector('.material-symbols-outlined').classList.toggle('text-primary', i === idx);
+        c.querySelector('.material-symbols-outlined').classList.toggle('text-white/30', i !== idx);
+    });
+
+    document.getElementById('next-btn').classList.remove('hidden');
+}
+
+function nextQuestion() {
+    const q = QUESTIONS[currentStep];
+    if (!userAnswers[q.field]) return;
+
+    currentStep++;
+    if (currentStep >= QUESTIONS.length) {
+        showResults();
+    } else {
+        loadStep();
     }
+}
 
-    // -------------------------------------------------------
-    // INIT
-    // -------------------------------------------------------
-    renderQuestion();
-  </script>
+function prevQuestion() {
+    if (currentStep > 0) {
+        currentStep--;
+        loadStep();
+    }
+}
+
+// ── Calculate Results ──
+function calculateScores() {
+    return WALLETS.map(wallet => {
+        let total = 0;
+        Object.values(userAnswers).forEach(key => {
+            total += wallet.scores[key] || 0;
+        });
+        return { wallet, score: total };
+    }).sort((a, b) => b.score - a.score);
+}
+
+// ── Type descriptions based on user answers ──
+const TYPE_DESCRIPTIONS = {
+    "Hardware Wallet": {
+        icon: "memory",
+        description: "A dedicated physical device that stores your private keys offline, away from internet-connected devices. Hardware wallets come in different forms: some connect via USB, others use QR codes or SD cards to stay completely air-gapped. They range from beginner-friendly to advanced.",
+        why: "You want your private keys stored on a separate, dedicated device for stronger protection against online threats."
+    },
+    "Free Desktop Wallet": {
+        icon: "desktop_windows",
+        description: "A free application you install on your computer. Desktop wallets range from simple interfaces to advanced tools with full coin control, UTXO management, privacy features, and the ability to connect to your own Bitcoin node.",
+        why: "You want to manage your Bitcoin from your computer with more control and features than a mobile app, without spending money on hardware."
+    },
+    "Free Mobile Wallet": {
+        icon: "smartphone",
+        description: "A free app on your phone that lets you send and receive Bitcoin on the go. Mobile wallets range from simple one-tap interfaces to advanced tools with multisig and Lightning Network support for instant, low-fee payments.",
+        why: "You want a free, convenient way to use Bitcoin from your phone for everyday transactions or getting started."
+    }
+};
+
+// ── Show Results ──
+function showResults() {
+    QUESTIONS.forEach((_, i) => {
+        document.getElementById('step-' + i).className = 'progress-step done';
+    });
+
+    showScreen('screen-results');
+    const ranked = calculateScores();
+    const maxScore = ranked[0].score;
+
+    // Type recommendation (no brand names)
+    const best = ranked[0];
+    const typeInfo = TYPE_DESCRIPTIONS[best.wallet.typeLabel] || { icon: "wallet", description: "", why: "" };
+
+    document.getElementById('type-recommendation').innerHTML = `
+        <div class="wallet-card best-match rounded-card p-8 sm:p-10 relative overflow-hidden">
+            <div class="absolute top-0 right-0 bg-amber text-black px-5 py-2 rounded-bl-xl font-bold text-xs uppercase tracking-widest">
+                Recommended
+            </div>
+            <div class="flex flex-col sm:flex-row gap-6 items-start">
+                <div class="w-16 h-16 rounded-2xl bg-amber/10 flex items-center justify-center shrink-0">
+                    <span class="material-symbols-outlined text-3xl text-amber">${typeInfo.icon}</span>
+                </div>
+                <div class="space-y-4">
+                    <h3 class="text-2xl sm:text-3xl font-extrabold text-white">${best.wallet.typeLabel}</h3>
+                    <p class="text-white/60 leading-relaxed">${typeInfo.description}</p>
+                    <div class="vault-sub-panel rounded-xl p-4">
+                        <p class="text-sm text-white/70"><span class="text-amber font-bold">Why this type fits you:</span> ${typeInfo.why}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    `;
+
+    // Comparison table: only wallets matching the recommended type
+    const matchedType = best.wallet.typeLabel;
+    const filtered = ranked.filter(r => r.wallet.typeLabel === matchedType);
+    const filteredMax = filtered.length > 0 ? filtered[0].score : 1;
+
+    const tbody = document.getElementById('comparison-body');
+    tbody.innerHTML = '';
+    filtered.forEach(r => {
+        const pct = Math.round((r.score / filteredMax) * 100);
+        const matchColor = pct >= 80 ? 'text-success' : pct >= 50 ? 'text-amber' : 'text-white/40';
+        tbody.innerHTML += `
+            <tr class="border-b border-white/5">
+                <td class="py-4 pr-4 font-bold text-white">${r.wallet.name}</td>
+                <td class="py-4 pr-4 text-white/60">${r.wallet.subtype}</td>
+                <td class="py-4 pr-4">
+                    <div class="security-bar w-24"><div class="fill bg-primary" style="width: ${r.wallet.security * 10}%"></div></div>
+                </td>
+                <td class="py-4 pr-4">
+                    <div class="security-bar w-24"><div class="fill bg-amber" style="width: ${r.wallet.ease * 10}%"></div></div>
+                </td>
+                <td class="py-4 pr-4 text-white/60">${r.wallet.price}</td>
+                <td class="py-4 font-bold ${matchColor}">${pct}%</td>
+            </tr>
+        `;
+    });
+}
+
+// ── Reset ──
+function resetQuiz() {
+    currentStep = 0;
+    userAnswers = {};
+    showScreen('screen-intro');
+}
+</script>
 
 </body>
 </html>
