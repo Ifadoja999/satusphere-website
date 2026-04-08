@@ -1,1255 +1,773 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="dark" lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Are You Ready to Self-Custody Bitcoin? | SatUsPhere</title>
-  <meta name="description" content="Find out if you're ready to hold your own Bitcoin. 10 questions that assess your readiness for self-custody. Get a personalized action plan." />
-  <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://satusphere.com/tools/self-custody-quiz" />
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Self-Custody Readiness Quiz | Are You Ready? | SatUsPhere</title>
+<meta name="description" content="Find out if you're ready to hold your own Bitcoin. 10 questions that assess your readiness for self-custody. Get a personalized action plan." />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://satusphere.com/tools/self-custody-quiz" />
 
-  <!-- Open Graph -->
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Are You Ready to Self-Custody Bitcoin? | SatUsPhere" />
-  <meta property="og:description" content="10 questions that assess your Bitcoin self-custody readiness. Get a personalized action plan." />
-  <meta property="og:url" content="https://satusphere.com/tools/self-custody-quiz" />
-  <meta property="og:site_name" content="SatUsPhere" />
-  <meta property="og:image" content="https://satusphere.com/assets/og-default.png" />
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Self-Custody Readiness Quiz | SatUsPhere" />
+<meta property="og:description" content="10 questions that assess your Bitcoin self-custody readiness. Get a personalized action plan." />
+<meta property="og:url" content="https://satusphere.com/tools/self-custody-quiz" />
+<meta property="og:site_name" content="SatUsPhere" />
+<meta property="og:image" content="https://satusphere.com/assets/course-banner.png" />
 
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Are You Ready to Self-Custody Bitcoin?" />
-  <meta name="twitter:description" content="Free readiness quiz for Bitcoin beginners. 10 questions. Get your score and a personalized action plan." />
-  <meta name="twitter:image" content="https://satusphere.com/assets/og-default.png" />
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@sat_us_phere" />
+<meta name="twitter:title" content="Self-Custody Readiness Quiz | SatUsPhere" />
+<meta name="twitter:description" content="Free readiness quiz for Bitcoin beginners. 10 questions. Get your score and a personalized action plan." />
+<meta name="twitter:image" content="https://satusphere.com/assets/course-banner.png" />
 
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CSPSERCTK8"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-CSPSERCTK8');
-  </script>
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Self-Custody Readiness Quiz",
+  "url": "https://satusphere.com/tools/self-custody-quiz",
+  "description": "A free 10-question assessment that determines if you are ready to hold your own Bitcoin through self-custody.",
+  "applicationCategory": "EducationalApplication",
+  "operatingSystem": "Any",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "author": { "@type": "Organization", "name": "SatUsPhere", "url": "https://satusphere.com" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is Bitcoin self-custody?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Self-custody means holding your own Bitcoin private keys instead of trusting an exchange or third party. You control your funds directly using a hardware or software wallet."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Am I ready for Bitcoin self-custody?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "This free 10-question quiz assesses your knowledge of seed phrases, wallet types, backup strategies, and security practices to determine your readiness for self-custody."
+      }
+    }
+  ]
+}
+</script>
 
-  <style>
-    :root {
-      --orange: #F7931A;
-      --navy: #0D1B2E;
-      --navy-mid: #122438;
-      --blue: #00B4D8;
-      --blue-dark: #0090AD;
-      --green: #22c55e;
-      --red: #ef4444;
-      --text: #1A1A2E;
-      --muted: #5A6478;
-      --border: #E2E8F0;
-      --bg-light: #F8F9FB;
-      --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    }
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CSPSERCTK8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-CSPSERCTK8');
+</script>
 
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    body {
-      font-family: var(--font);
-      color: var(--text);
-      background: var(--navy);
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
-
-    /* NAV */
-    nav {
-      background: rgba(13, 27, 46, 0.95);
-      backdrop-filter: blur(8px);
-      padding: 0 24px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 64px;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      border-bottom: 1px solid rgba(255,255,255,0.06);
-    }
-    .nav-logo {
-      color: var(--orange);
-      font-weight: 800;
-      font-size: 1.3rem;
-      text-decoration: none;
-      letter-spacing: -0.5px;
-    }
-    .nav-logo span { color: #fff; }
-    .nav-cta {
-      background: var(--orange);
-      color: #fff;
-      padding: 10px 20px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 0.875rem;
-      transition: opacity 0.2s;
-    }
-    .nav-cta:hover { opacity: 0.88; }
-
-    /* MAIN */
-    main {
-      flex: 1;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 40px 16px;
-    }
-
-    .quiz-shell {
-      background: #fff;
-      border-radius: 20px;
-      width: 100%;
-      max-width: 680px;
-      overflow: hidden;
-      box-shadow: 0 24px 64px rgba(0,0,0,0.4);
-    }
-
-    /* SCREENS */
-    .screen { display: none; }
-    .screen.active { display: block; }
-
-    /* INTRO SCREEN */
-    .intro-header {
-      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
-      padding: 48px 40px 36px;
-      text-align: center;
-    }
-    .intro-badge {
-      display: inline-block;
-      background: rgba(247,147,26,0.15);
-      color: var(--orange);
-      border: 1px solid rgba(247,147,26,0.3);
-      border-radius: 100px;
-      padding: 6px 16px;
-      font-size: 0.78rem;
-      font-weight: 700;
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
-      margin-bottom: 20px;
-    }
-    .intro-title {
-      font-size: 2rem;
-      font-weight: 800;
-      color: #fff;
-      line-height: 1.2;
-      margin-bottom: 14px;
-    }
-    .intro-title span { color: var(--orange); }
-    .intro-sub {
-      color: rgba(255,255,255,0.7);
-      font-size: 1rem;
-      line-height: 1.6;
-    }
-
-    .intro-body { padding: 32px 40px 40px; }
-    .intro-stats {
-      display: flex;
-      gap: 16px;
-      margin-bottom: 28px;
-    }
-    .stat-box {
-      flex: 1;
-      background: var(--bg-light);
-      border-radius: 12px;
-      padding: 16px 12px;
-      text-align: center;
-    }
-    .stat-num {
-      font-size: 1.5rem;
-      font-weight: 800;
-      color: var(--orange);
-      line-height: 1;
-      margin-bottom: 4px;
-    }
-    .stat-label {
-      font-size: 0.78rem;
-      color: var(--muted);
-      font-weight: 600;
-    }
-
-    .intro-topics {
-      background: var(--bg-light);
-      border-radius: 12px;
-      padding: 20px 24px;
-      margin-bottom: 28px;
-    }
-    .intro-topics h3 {
-      font-size: 0.8rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      color: var(--muted);
-      margin-bottom: 12px;
-    }
-    .topics-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 8px;
-    }
-    .topic-item {
-      font-size: 0.88rem;
-      color: var(--text);
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-    .topic-dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--orange);
-      flex-shrink: 0;
-    }
-
-    .btn-start {
-      width: 100%;
-      background: var(--orange);
-      color: #fff;
-      border: none;
-      border-radius: 12px;
-      padding: 18px;
-      font-size: 1.05rem;
-      font-weight: 800;
-      cursor: pointer;
-      transition: transform 0.15s, opacity 0.15s;
-      letter-spacing: 0.2px;
-    }
-    .btn-start:hover { transform: translateY(-2px); opacity: 0.92; }
-    .btn-start:active { transform: translateY(0); }
-
-    /* QUESTION SCREEN */
-    .q-progress-bar-wrap {
-      height: 4px;
-      background: var(--border);
-    }
-    .q-progress-bar {
-      height: 100%;
-      background: linear-gradient(90deg, var(--orange), #ffb347);
-      transition: width 0.4s ease;
-    }
-
-    .q-header {
-      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
-      padding: 24px 32px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .q-counter {
-      font-size: 0.82rem;
-      font-weight: 700;
-      color: rgba(255,255,255,0.55);
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-    .q-counter strong { color: var(--orange); }
-
-    .q-body { padding: 32px; }
-    .q-category {
-      font-size: 0.72rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      color: var(--blue);
-      margin-bottom: 10px;
-    }
-    .q-text {
-      font-size: 1.2rem;
-      font-weight: 700;
-      color: var(--navy);
-      line-height: 1.4;
-      margin-bottom: 24px;
-    }
-
-    .options { display: flex; flex-direction: column; gap: 10px; }
-    .option-btn {
-      background: var(--bg-light);
-      border: 2px solid var(--border);
-      border-radius: 12px;
-      padding: 14px 20px;
-      font-size: 0.95rem;
-      font-weight: 500;
-      color: var(--text);
-      cursor: pointer;
-      text-align: left;
-      transition: border-color 0.15s, background 0.15s;
-      display: flex;
-      align-items: center;
-      gap: 14px;
-    }
-    .option-btn:hover:not(:disabled) {
-      border-color: var(--orange);
-      background: #fff8f0;
-    }
-    .option-label {
-      width: 28px;
-      height: 28px;
-      border-radius: 50%;
-      background: #fff;
-      border: 2px solid var(--border);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.78rem;
-      font-weight: 700;
-      color: var(--muted);
-      flex-shrink: 0;
-      transition: all 0.15s;
-    }
-    .option-btn:hover:not(:disabled) .option-label {
-      border-color: var(--orange);
-      color: var(--orange);
-    }
-    .option-btn.selected {
-      border-color: var(--orange);
-      background: #fff8f0;
-    }
-    .option-btn.selected .option-label {
-      background: var(--orange);
-      border-color: var(--orange);
-      color: #fff;
-    }
-    .option-btn.correct {
-      border-color: #22c55e;
-      background: #f0fdf4;
-    }
-    .option-btn.correct .option-label {
-      background: #22c55e;
-      border-color: #22c55e;
-      color: #fff;
-    }
-    .option-btn.wrong {
-      border-color: #ef4444;
-      background: #fef2f2;
-    }
-    .option-btn.wrong .option-label {
-      background: #ef4444;
-      border-color: #ef4444;
-      color: #fff;
-    }
-    .option-btn:disabled { cursor: default; }
-
-    .q-feedback {
-      display: none;
-      margin-top: 16px;
-      padding: 14px 18px;
-      border-radius: 10px;
-      font-size: 0.9rem;
-      line-height: 1.5;
-    }
-    .q-feedback.correct-fb {
-      background: #f0fdf4;
-      border-left: 3px solid #22c55e;
-      color: #166534;
-    }
-    .q-feedback.wrong-fb {
-      background: #fef2f2;
-      border-left: 3px solid #ef4444;
-      color: #991b1b;
-    }
-    .q-feedback strong { display: block; margin-bottom: 4px; }
-
-    .q-next-wrap {
-      padding: 0 32px 32px;
-      display: none;
-    }
-    .btn-next {
-      width: 100%;
-      background: var(--navy);
-      color: #fff;
-      border: none;
-      border-radius: 10px;
-      padding: 15px;
-      font-size: 0.95rem;
-      font-weight: 700;
-      cursor: pointer;
-      transition: opacity 0.15s;
-    }
-    .btn-next:hover { opacity: 0.88; }
-
-    /* EMAIL SCREEN */
-    .email-header {
-      background: linear-gradient(135deg, var(--blue-dark) 0%, var(--navy) 100%);
-      padding: 36px 40px;
-      text-align: center;
-    }
-    .email-icon {
-      width: 64px;
-      height: 64px;
-      border-radius: 50%;
-      background: rgba(0,180,216,0.2);
-      border: 2px solid rgba(0,180,216,0.4);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 16px;
-    }
-    .email-icon svg { width: 28px; height: 28px; }
-    .email-header h2 {
-      font-size: 1.5rem;
-      font-weight: 800;
-      color: #fff;
-      margin-bottom: 10px;
-    }
-    .email-header p {
-      color: rgba(255,255,255,0.7);
-      font-size: 0.95rem;
-      line-height: 1.6;
-    }
-    .email-header p strong { color: var(--blue); }
-
-    .email-body { padding: 32px 40px 40px; }
-
-    .score-preview {
-      background: var(--bg-light);
-      border-radius: 12px;
-      padding: 20px 24px;
-      margin-bottom: 24px;
-      display: flex;
-      align-items: center;
-      gap: 20px;
-    }
-    .score-circle {
-      width: 72px;
-      height: 72px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--orange), #ffb347);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      font-size: 1.4rem;
-      font-weight: 800;
-      color: #fff;
-    }
-    .score-preview-text h3 {
-      font-size: 1rem;
-      font-weight: 700;
-      color: var(--navy);
-      margin-bottom: 4px;
-    }
-    .score-preview-text p {
-      font-size: 0.875rem;
-      color: var(--muted);
-      line-height: 1.4;
-    }
-
-    .email-form { display: flex; flex-direction: column; gap: 12px; }
-    .email-form input[type="email"] {
-      border: 2px solid var(--border);
-      border-radius: 10px;
-      padding: 14px 16px;
-      font-size: 0.95rem;
-      color: var(--text);
-      font-family: var(--font);
-      transition: border-color 0.15s;
-      outline: none;
-      width: 100%;
-    }
-    .email-form input[type="email"]:focus { border-color: var(--blue); }
-    .email-form input[type="email"]::placeholder { color: var(--muted); }
-    .btn-email-submit {
-      width: 100%;
-      background: var(--orange);
-      color: #fff;
-      border: none;
-      border-radius: 10px;
-      padding: 16px;
-      font-size: 1rem;
-      font-weight: 800;
-      cursor: pointer;
-      transition: opacity 0.15s;
-    }
-    .btn-email-submit:hover:not(:disabled) { opacity: 0.88; }
-    .btn-email-submit:disabled { opacity: 0.6; cursor: default; }
-    .skip-link {
-      text-align: center;
-      font-size: 0.85rem;
-      color: var(--muted);
-    }
-    .skip-link a {
-      color: var(--muted);
-      text-decoration: underline;
-      cursor: pointer;
-      background: none;
-      border: none;
-      font-size: 0.85rem;
-      font-family: var(--font);
-    }
-    .skip-link a:hover { color: var(--text); }
-
-    /* RESULTS SCREEN */
-    .results-header {
-      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
-      padding: 40px 40px 32px;
-      text-align: center;
-    }
-
-    .results-ring-wrap {
-      position: relative;
-      width: 120px;
-      height: 120px;
-      margin: 0 auto 20px;
-    }
-    .results-ring-wrap svg {
-      transform: rotate(-90deg);
-      width: 120px;
-      height: 120px;
-    }
-    .ring-bg { fill: none; stroke: rgba(255,255,255,0.1); stroke-width: 8; }
-    .ring-fill {
-      fill: none;
-      stroke: var(--orange);
-      stroke-width: 8;
-      stroke-linecap: round;
-      stroke-dasharray: 289;
-      stroke-dashoffset: 289;
-      transition: stroke-dashoffset 1s ease;
-    }
-    .ring-score {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      text-align: center;
-    }
-    .ring-score-num {
-      font-size: 2rem;
-      font-weight: 800;
-      color: #fff;
-      line-height: 1;
-    }
-    .ring-score-denom {
-      font-size: 0.78rem;
-      color: rgba(255,255,255,0.5);
-      font-weight: 600;
-    }
-
-    #results-title {
-      font-size: 1.5rem;
-      font-weight: 800;
-      color: #fff;
-      margin-bottom: 8px;
-    }
-    #results-subtitle {
-      color: rgba(255,255,255,0.65);
-      font-size: 0.95rem;
-      line-height: 1.5;
-    }
-
-    .results-body { padding: 32px 40px 40px; }
-
-    .verdict-box {
-      background: var(--bg-light);
-      border-radius: 16px;
-      padding: 24px;
-      margin-bottom: 24px;
-    }
-    .verdict-label {
-      font-size: 0.72rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      color: var(--muted);
-      margin-bottom: 6px;
-    }
-    .verdict-title {
-      font-size: 1.15rem;
-      font-weight: 800;
-      color: var(--navy);
-      margin-bottom: 10px;
-    }
-    .verdict-desc {
-      font-size: 0.9rem;
-      color: var(--muted);
-      line-height: 1.6;
-    }
-
-    .next-steps-box {
-      background: var(--bg-light);
-      border-radius: 12px;
-      padding: 20px 24px;
-      margin-bottom: 24px;
-    }
-    .next-steps-box h3 {
-      font-size: 0.8rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      color: var(--muted);
-      margin-bottom: 14px;
-    }
-    .step-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
-      margin-bottom: 12px;
-    }
-    .step-item:last-child { margin-bottom: 0; }
-    .step-num {
-      width: 24px;
-      height: 24px;
-      border-radius: 50%;
-      background: var(--navy);
-      color: #fff;
-      font-size: 0.72rem;
-      font-weight: 800;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      margin-top: 1px;
-    }
-    .step-text {
-      font-size: 0.88rem;
-      color: var(--text);
-      line-height: 1.5;
-    }
-
-    .cta-box {
-      background: linear-gradient(135deg, var(--navy), var(--navy-mid));
-      border-radius: 16px;
-      padding: 28px 24px;
-      margin-bottom: 24px;
-      text-align: center;
-    }
-    .cta-box h3 {
-      font-size: 1.1rem;
-      font-weight: 800;
-      color: #fff;
-      margin-bottom: 10px;
-    }
-    .cta-box p {
-      font-size: 0.88rem;
-      color: rgba(255,255,255,0.65);
-      line-height: 1.6;
-      margin-bottom: 20px;
-    }
-    .btn-cta {
-      display: inline-block;
-      background: var(--orange);
-      color: #fff;
-      padding: 14px 28px;
-      border-radius: 10px;
-      text-decoration: none;
-      font-weight: 800;
-      font-size: 0.95rem;
-      transition: opacity 0.15s, transform 0.15s;
-    }
-    .btn-cta:hover { opacity: 0.88; transform: translateY(-1px); }
-
-    .breakdown-section { margin-bottom: 24px; }
-    .breakdown-section h3 {
-      font-size: 0.8rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      color: var(--muted);
-      margin-bottom: 12px;
-    }
-    .breakdown-item {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      padding: 10px 0;
-      border-bottom: 1px solid var(--border);
-      font-size: 0.875rem;
-      color: var(--text);
-    }
-    .breakdown-item:last-child { border-bottom: none; }
-    .breakdown-status {
-      width: 22px;
-      height: 22px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.7rem;
-      font-weight: 800;
-      flex-shrink: 0;
-    }
-    .breakdown-status.ok { background: #dcfce7; color: #166534; }
-    .breakdown-status.no { background: #fee2e2; color: #991b1b; }
-
-    .disclaimer {
-      background: #f8f9fb;
-      border: 1px solid #e2e8f0;
-      border-radius: 8px;
-      padding: 12px 16px;
-      font-size: 0.78rem;
-      color: var(--muted);
-      line-height: 1.5;
-      margin-bottom: 24px;
-    }
-
-    .btn-retake {
-      width: 100%;
-      background: transparent;
-      color: var(--muted);
-      border: 2px solid var(--border);
-      border-radius: 10px;
-      padding: 13px;
-      font-size: 0.875rem;
-      font-weight: 700;
-      cursor: pointer;
-      transition: border-color 0.15s, color 0.15s;
-    }
-    .btn-retake:hover { border-color: var(--navy); color: var(--navy); }
-
-    /* FOOTER */
-    footer {
-      background: rgba(13,27,46,0.8);
-      padding: 24px;
-      text-align: center;
-      border-top: 1px solid rgba(255,255,255,0.06);
-    }
-    footer p {
-      font-size: 0.8rem;
-      color: rgba(255,255,255,0.35);
-    }
-    footer a { color: rgba(255,255,255,0.45); text-decoration: none; }
-    footer a:hover { color: var(--orange); }
-
-    /* RESPONSIVE */
-    @media (max-width: 600px) {
-      .intro-header { padding: 36px 24px 28px; }
-      .intro-title { font-size: 1.6rem; }
-      .intro-body { padding: 24px 20px 28px; }
-      .intro-stats { flex-direction: column; gap: 10px; }
-      .topics-grid { grid-template-columns: 1fr; }
-      .q-body { padding: 24px 20px; }
-      .q-next-wrap { padding: 0 20px 24px; }
-      .email-header { padding: 28px 24px; }
-      .email-body { padding: 24px 20px 28px; }
-      .results-header { padding: 32px 24px 24px; }
-      .results-body { padding: 24px 20px 28px; }
-    }
-  </style>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800;900&family=Quicksand:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script>
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          "tertiary-fixed-dim": "#f7bd48",
+          "primary-fixed": "#ffdbcb",
+          "on-surface-variant": "#dfc0b2",
+          "outline-variant": "#584238",
+          "secondary-fixed": "#61f9e9",
+          "surface-container": "#1f1f29",
+          "on-error-container": "#ffdad6",
+          "on-tertiary-fixed": "#271900",
+          "surface": "#12121d",
+          "on-error": "#690005",
+          "background": "#12121d",
+          "on-surface": "#e4e1f0",
+          "surface-bright": "#393844",
+          "secondary-fixed-dim": "#3adccc",
+          "error": "#ffb4ab",
+          "surface-tint": "#ffb692",
+          "primary-fixed-dim": "#ffb692",
+          "inverse-primary": "#9f4200",
+          "primary": "#ffb692",
+          "on-tertiary-fixed-variant": "#5d4200",
+          "inverse-surface": "#e4e1f0",
+          "inverse-on-surface": "#302f3b",
+          "on-secondary": "#003732",
+          "surface-container-high": "#292934",
+          "outline": "#a78b7e",
+          "error-container": "#93000a",
+          "surface-container-low": "#1b1b25",
+          "surface-container-highest": "#34343f",
+          "on-tertiary-container": "#392700",
+          "tertiary-container": "#bb880f",
+          "on-background": "#e4e1f0",
+          "surface-variant": "#34343f",
+          "secondary-container": "#00c6b6",
+          "on-secondary-container": "#004c46",
+          "on-primary": "#562000",
+          "on-secondary-fixed-variant": "#005049",
+          "tertiary": "#f7bd48",
+          "on-tertiary": "#412d00",
+          "surface-dim": "#12121d",
+          "on-secondary-fixed": "#00201d",
+          "surface-container-lowest": "#0d0d17",
+          "secondary": "#43e2d2",
+          "primary-container": "#ea6c1f",
+          "tertiary-fixed": "#ffdea6",
+          "on-primary-container": "#4c1b00",
+          "on-primary-fixed-variant": "#793000",
+          "on-primary-fixed": "#341100"
+        },
+        borderRadius: {
+          DEFAULT: "1rem",
+          lg: "2rem",
+          xl: "3rem",
+          full: "9999px"
+        },
+        fontFamily: {
+          headline: ["Inter"],
+          body: ["Plus Jakarta Sans"],
+          label: ["Inter"]
+        }
+      }
+    }
+  }
+</script>
+<style>
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  }
+  .circuit-pattern {
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M54.627 0l.83.828-1.415 1.415L51.8 0h2.827zM5.373 0l-.83.828L5.96 2.243 8.2 0H5.374zM48 0l-2 2H0v2h44l2-2h14V0H48zM0 60V58h44l2 2H0zm54.627 0l.83-.828-1.415-1.415L51.8 60h2.827zM5.373 60l-.83-.828L5.96 57.757 8.2 60H5.374zM48 60l-2-2h14v2H48zM0 30h2l2 2v28h-2V32l-2-2zm60 0h-2l-2 2v28h2V32l2-2z' fill='%23ea6c1f' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E");
+  }
+  .glass-card {
+    background: rgba(26, 26, 46, 0.6);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+  .screen { display: none !important; }
+  .screen.active { display: flex !important; }
+  .option-btn { transition: all 0.2s; }
+  .option-btn:disabled { cursor: not-allowed; opacity: 0.7; }
+  .option-btn.correct { border-color: #22c55e !important; background: rgba(34,197,94,0.15) !important; color: #22c55e !important; }
+  .option-btn.wrong { border-color: #ef4444 !important; background: rgba(239,68,68,0.15) !important; color: #ef4444 !important; }
+  .ring-bg { fill: none; stroke: #292934; stroke-width: 8; }
+  .ring-fill {
+    fill: none;
+    stroke: #43e2d2;
+    stroke-width: 8;
+    stroke-linecap: round;
+    stroke-dasharray: 289;
+    stroke-dashoffset: 289;
+    transform: rotate(-90deg);
+    transform-origin: center;
+    transition: stroke-dashoffset 1s ease-out;
+  }
+  .feedback-box {
+    border-radius: 0.75rem;
+    padding: 1rem 1.25rem;
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+  .feedback-correct {
+    background: rgba(34,197,94,0.1);
+    border: 1px solid rgba(34,197,94,0.3);
+    color: #86efac;
+  }
+  .feedback-wrong {
+    background: rgba(239,68,68,0.1);
+    border: 1px solid rgba(239,68,68,0.3);
+    color: #fca5a5;
+  }
+  .breakdown-ok { background: #dcfce7; color: #166534; }
+  .breakdown-no { background: #fee2e2; color: #991b1b; }
+</style>
 </head>
-<body>
+<body class="bg-surface text-on-surface font-body selection:bg-primary/30 scroll-smooth">
 
-  <nav>
-    <a href="/" class="nav-logo">SatUs<span>Phere</span></a>
-    <a href="https://satusphere.teachable.com/p/bitcoin-from-scratch" class="nav-cta" target="_blank" rel="noopener">Get the Course</a>
-  </nav>
-
-  <main>
-    <div class="quiz-shell">
-
-      <!-- INTRO SCREEN -->
-      <div id="screen-intro" class="screen active">
-        <div class="intro-header">
-          <div class="intro-badge">Readiness Assessment</div>
-          <h1 class="intro-title">Are You Ready to <span>Self-Custody</span> Bitcoin?</h1>
-          <p class="intro-sub">10 questions that reveal whether you have the knowledge and habits to safely hold your own Bitcoin.</p>
-        </div>
-        <div class="intro-body">
-          <div class="intro-stats">
-            <div class="stat-box">
-              <div class="stat-num">10</div>
-              <div class="stat-label">Questions</div>
-            </div>
-            <div class="stat-box">
-              <div class="stat-num">~3</div>
-              <div class="stat-label">Minutes</div>
-            </div>
-            <div class="stat-box">
-              <div class="stat-num">Free</div>
-              <div class="stat-label">No Signup</div>
-            </div>
-          </div>
-          <div class="intro-topics">
-            <h3>What this quiz covers</h3>
-            <div class="topics-grid">
-              <div class="topic-item"><div class="topic-dot"></div>Seed phrases and keys</div>
-              <div class="topic-item"><div class="topic-dot"></div>Wallet types</div>
-              <div class="topic-item"><div class="topic-dot"></div>Backup and recovery</div>
-              <div class="topic-item"><div class="topic-dot"></div>Physical security</div>
-              <div class="topic-item"><div class="topic-dot"></div>Custodial vs. non-custodial</div>
-              <div class="topic-item"><div class="topic-dot"></div>Address verification</div>
-            </div>
-          </div>
-          <button class="btn-start" onclick="startQuiz()">Start the Assessment</button>
-        </div>
-      </div>
-
-      <!-- QUESTION SCREEN -->
-      <div id="screen-question" class="screen">
-        <div class="q-progress-bar-wrap">
-          <div class="q-progress-bar" id="q-progress-bar" style="width: 0%"></div>
-        </div>
-        <div class="q-header">
-          <span class="q-counter">Question <strong id="q-num">1</strong> of 10</span>
-          <span class="q-counter">Score: <strong id="q-score-live">0</strong></span>
-        </div>
-        <div class="q-body">
-          <div class="q-category" id="q-category"></div>
-          <div class="q-text" id="q-text"></div>
-          <div class="options" id="options-container"></div>
-          <div class="q-feedback" id="q-feedback"></div>
-        </div>
-        <div class="q-next-wrap" id="q-next-wrap">
-          <button class="btn-next" id="btn-next" onclick="nextQuestion()">Next Question</button>
-        </div>
-      </div>
-
-      <!-- EMAIL CAPTURE SCREEN -->
-      <div id="screen-email" class="screen">
-        <div class="email-header">
-          <div class="email-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="#00B4D8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"></path>
-            </svg>
-          </div>
-          <h2>Your results are ready</h2>
-          <p>Enter your email to get your full readiness report and a <strong>personalized action plan</strong>.</p>
-        </div>
-        <div class="email-body">
-          <div class="score-preview">
-            <div class="score-circle" id="email-score-circle">0/10</div>
-            <div class="score-preview-text">
-              <h3>Your score is locked in</h3>
-              <p>We'll send you a breakdown with specific steps to fill any gaps before you hold real Bitcoin.</p>
-            </div>
-          </div>
-          <form class="email-form" onsubmit="submitEmail(event)">
-            <input type="email" id="email-input" placeholder="you@example.com" autocomplete="email" />
-            <button type="submit" class="btn-email-submit">Get My Results</button>
-          </form>
-          <div class="skip-link" style="margin-top: 12px;">
-            <a onclick="showResults()">Skip and see results now</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- RESULTS SCREEN -->
-      <div id="screen-results" class="screen">
-        <div class="results-header">
-          <div class="results-ring-wrap">
-            <svg viewBox="0 0 120 120">
-              <circle class="ring-bg" cx="60" cy="60" r="46" />
-              <circle class="ring-fill" id="ring-fill" cx="60" cy="60" r="46" />
-            </svg>
-            <div class="ring-score">
-              <div class="ring-score-num" id="results-score-num">0</div>
-              <div class="ring-score-denom">/ 10</div>
-            </div>
-          </div>
-          <h2 id="results-title">Your results</h2>
-          <p id="results-subtitle"></p>
-        </div>
-        <div class="results-body">
-
-          <div class="verdict-box">
-            <div class="verdict-label">Your Verdict</div>
-            <div class="verdict-title" id="verdict-title"></div>
-            <div class="verdict-desc" id="verdict-desc"></div>
-          </div>
-
-          <div class="next-steps-box">
-            <h3>Your Next Steps</h3>
-            <div id="next-steps-list"></div>
-          </div>
-
-          <div class="cta-box">
-            <h3 id="cta-heading"></h3>
-            <p id="cta-body"></p>
-            <a href="https://satusphere.teachable.com/p/bitcoin-from-scratch" class="btn-cta" target="_blank" rel="noopener">Get Bitcoin From Scratch</a>
-          </div>
-
-          <div class="breakdown-section">
-            <h3>Question Breakdown</h3>
-            <div id="breakdown-list"></div>
-          </div>
-
-          <div class="disclaimer">
-            This quiz is for educational purposes only. Not financial advice. Bitcoin carries risk. Always do your own research before holding or transacting.
-          </div>
-
-          <button class="btn-retake" onclick="retakeQuiz()">Retake Assessment</button>
-        </div>
-      </div>
-
+<!-- NAV -->
+<nav class="fixed top-0 w-full z-50 bg-[#12121d]/80 backdrop-blur-xl shadow-[0_8px_32px_rgba(234,108,31,0.06)]">
+  <div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
+    <a href="https://satusphere.com" class="flex items-center gap-3 no-underline">
+      <img src="/assets/satusphere_logo.png" alt="SatUsPhere Logo" class="h-8 w-8 rounded-full object-cover"/>
+      <span class="text-2xl font-black tracking-tighter text-[#EA6C1F] uppercase font-headline">SatUsPhere</span>
+    </a>
+    <div class="hidden md:flex items-center gap-8">
+      <a class="text-gray-400 font-medium hover:text-[#EA6C1F] transition-colors duration-300 font-headline no-underline" href="https://satusphere.com">Home</a>
     </div>
-  </main>
+    <a href="https://satusphere.com/tools" class="flex items-center gap-2 text-gray-400 font-medium hover:text-[#40E0D0] transition-colors duration-300 no-underline">
+      <span class="material-symbols-outlined">arrow_back</span>
+      <span class="font-headline">Back to Tools</span>
+    </a>
+  </div>
+</nav>
 
-  <footer>
-    <p>
-      <a href="/">SatUsPhere</a> &nbsp;&middot;&nbsp;
-      <a href="/tools">Bitcoin Tools</a> &nbsp;&middot;&nbsp;
-      Bitcoin Is For All Of Us
+<main class="relative min-h-screen pt-24 circuit-pattern bg-[radial-gradient(circle_at_50%_50%,_rgba(43,21,55,0.4)_0%,_rgba(18,18,29,1)_70%)]">
+
+  <!-- SCREEN 1: WELCOME -->
+  <section class="min-h-[80vh] flex flex-col items-center justify-center px-6 py-12 screen active" id="screen-welcome">
+    <div class="relative w-full max-w-md mx-auto mb-16 flex justify-center">
+      <div class="relative h-64 w-64 flex items-center justify-center">
+        <!-- Bitcoin Coin -->
+        <div class="absolute -translate-x-12 -translate-y-8 z-10">
+          <div class="p-1 rounded-full bg-gradient-to-tr from-primary-container to-transparent shadow-[0_0_20px_rgba(234,108,31,0.4)]">
+            <div class="w-24 h-24 rounded-full border-4 border-surface bg-gradient-to-br from-[#F7931A] to-[#C25510] flex items-center justify-center">
+              <svg viewBox="0 0 64 64" class="w-14 h-14" fill="none">
+                <path d="M40.5 25.3c1.2-3.2-.8-5.7-4.2-6.8l.9-3.5-2.1-.5-.8 3.4c-.6-.1-1.1-.3-1.7-.4l.8-3.4-2.1-.5-.9 3.5c-.5-.1-.9-.2-1.4-.3l-2.9-.7-.6 2.2s1.6.4 1.5.4c.9.2 1 .7 1 1.2l-1 4c.1 0 .1 0 .2.1h-.2l-1.4 5.6c-.1.3-.4.6-.9.5 0 0-1.5-.4-1.5-.4l-1 2.4 2.7.7c.5.1 1 .3 1.5.4l-.9 3.5 2.1.5.9-3.5c.6.2 1.1.3 1.7.4l-.9 3.5 2.1.5.9-3.5c3.8.7 6.6.4 7.8-3 1-2.7 0-4.3-2-5.3 1.4-.3 2.5-1.3 2.8-3.3zm-5 7c-.7 2.8-5.4 1.3-7 .9l1.2-5c1.5.4 6.5 1.1 5.7 4.1zm.7-7.1c-.6 2.6-4.6 1.3-5.8.9l1.1-4.5c1.3.3 5.4.9 4.7 3.6z" fill="white"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+        <!-- Blockchain / Shield -->
+        <div class="absolute translate-x-12 -translate-y-4 z-20">
+          <div class="p-1 rounded-full bg-gradient-to-tr from-secondary to-transparent shadow-[0_0_20px_rgba(64,224,208,0.4)]">
+            <div class="w-32 h-32 rounded-full border-4 border-surface bg-gradient-to-br from-[#0D1B2E] to-[#1A2F47] flex items-center justify-center relative overflow-hidden">
+              <svg viewBox="0 0 64 64" class="w-16 h-16 relative z-10" fill="none">
+                <rect x="8" y="8" width="16" height="16" rx="3" stroke="#43e2d2" stroke-width="2"/>
+                <rect x="40" y="8" width="16" height="16" rx="3" stroke="#43e2d2" stroke-width="2"/>
+                <rect x="24" y="40" width="16" height="16" rx="3" stroke="#43e2d2" stroke-width="2"/>
+                <line x1="24" y1="16" x2="40" y2="16" stroke="#43e2d2" stroke-width="1.5"/>
+                <line x1="16" y1="24" x2="32" y2="40" stroke="#43e2d2" stroke-width="1.5"/>
+                <line x1="48" y1="24" x2="32" y2="40" stroke="#43e2d2" stroke-width="1.5"/>
+                <circle cx="16" cy="16" r="4" fill="#43e2d2" opacity="0.3"/>
+                <circle cx="48" cy="16" r="4" fill="#43e2d2" opacity="0.3"/>
+                <circle cx="32" cy="48" r="4" fill="#43e2d2" opacity="0.3"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+        <!-- Key (kept) -->
+        <div class="absolute translate-y-16 z-30">
+          <div class="p-1 rounded-full bg-gradient-to-tr from-tertiary to-transparent shadow-[0_0_20px_rgba(247,189,72,0.4)]">
+            <div class="w-20 h-20 rounded-full border-4 border-surface bg-gradient-to-br from-[#271900] to-[#412d00] flex items-center justify-center">
+              <svg viewBox="0 0 64 64" class="w-12 h-12" fill="none">
+                <circle cx="24" cy="24" r="10" stroke="#f7bd48" stroke-width="2.5"/>
+                <circle cx="24" cy="24" r="5" stroke="#f7bd48" stroke-width="1.5" opacity="0.5"/>
+                <line x1="34" y1="24" x2="52" y2="24" stroke="#f7bd48" stroke-width="2.5" stroke-linecap="round"/>
+                <line x1="44" y1="24" x2="44" y2="32" stroke="#f7bd48" stroke-width="2.5" stroke-linecap="round"/>
+                <line x1="50" y1="24" x2="50" y2="30" stroke="#f7bd48" stroke-width="2.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="glass-card max-w-2xl w-full p-10 rounded-lg text-center shadow-2xl relative overflow-hidden">
+      <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary to-secondary opacity-50"></div>
+      <h1 class="text-4xl md:text-5xl font-black font-headline tracking-tight text-on-surface mb-4">
+        Self-Custody Readiness Quiz
+      </h1>
+      <p class="text-secondary font-bold text-xl mb-6 font-headline tracking-wide uppercase">
+        Are you ready to hold your own keys?
+      </p>
+      <p class="text-on-surface-variant mb-6 text-lg leading-relaxed max-w-lg mx-auto">
+        Take control of your financial sovereignty. Answer 10 quick questions to find out if you're truly prepared for Bitcoin self-custody.
+      </p>
+      <div class="flex justify-center gap-8 mb-8">
+        <div class="text-center">
+          <div class="text-2xl font-black text-primary font-headline">10</div>
+          <div class="text-xs text-on-surface-variant uppercase tracking-wider">Questions</div>
+        </div>
+        <div class="text-center">
+          <div class="text-2xl font-black text-secondary font-headline">~3</div>
+          <div class="text-xs text-on-surface-variant uppercase tracking-wider">Minutes</div>
+        </div>
+        <div class="text-center">
+          <div class="text-2xl font-black text-tertiary font-headline">Free</div>
+          <div class="text-xs text-on-surface-variant uppercase tracking-wider">No Signup</div>
+        </div>
+      </div>
+      <div class="mb-8 text-left max-w-sm mx-auto">
+        <h3 class="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-3 text-center">What this quiz covers</h3>
+        <div class="grid grid-cols-2 gap-2 text-sm text-on-surface-variant">
+          <div class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-primary"></span>Seed phrases and keys</div>
+          <div class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>Wallet types</div>
+          <div class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>Backup and recovery</div>
+          <div class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-primary"></span>Physical security</div>
+          <div class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>Custodial vs. non-custodial</div>
+          <div class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>Address verification</div>
+        </div>
+      </div>
+      <button onclick="startQuiz()" class="group relative px-12 py-5 bg-gradient-to-r from-primary-container to-[#C25510] rounded-full font-black text-white text-xl shadow-[0_0_40px_rgba(234,108,31,0.4)] hover:shadow-[0_0_60px_rgba(234,108,31,0.6)] transition-all duration-300 transform active:scale-95 mb-4">
+        Start the Assessment
+      </button>
+      <p class="text-sm text-on-surface-variant font-medium flex items-center justify-center gap-2">
+        <span class="material-symbols-outlined text-base">schedule</span>
+        Takes about 3 minutes
+      </p>
+    </div>
+  </section>
+
+  <!-- SCREEN 2: QUESTION -->
+  <section class="min-h-screen flex flex-col items-center justify-start px-6 py-24 gap-8 screen" id="screen-question">
+    <h2 class="text-2xl font-black font-headline tracking-widest text-[#EA6C1F] uppercase">
+      Find Your Readiness Level
+    </h2>
+    <div class="max-w-3xl w-full">
+      <!-- Progress bar -->
+      <div class="w-full max-w-md mx-auto mb-8">
+        <div class="flex justify-between items-center mb-2 font-headline text-sm font-bold text-on-surface-variant">
+          <span>Question <strong id="q-num">1</strong> of 10</span>
+          <span class="text-secondary"><span id="q-progress-pct">0</span>% Complete</span>
+        </div>
+        <div class="h-1.5 w-full bg-surface-container-highest rounded-full overflow-hidden">
+          <div class="h-full bg-secondary shadow-[0_0_10px_#43e2d2] transition-all duration-500" id="q-progress-bar" style="width: 0%"></div>
+        </div>
+      </div>
+      <!-- Category badge -->
+      <div class="text-center mb-4">
+        <span class="inline-block px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest bg-primary-container/20 text-primary border border-primary/30" id="q-category"></span>
+      </div>
+      <!-- Question text -->
+      <p class="text-2xl md:text-3xl font-bold font-headline text-center mb-10 leading-tight" id="q-text"></p>
+      <!-- Options -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4" id="options-container"></div>
+      <!-- Feedback -->
+      <div class="feedback-box hidden" id="q-feedback"></div>
+      <!-- Score display -->
+      <div class="text-center mt-4 text-on-surface-variant text-sm font-headline">
+        Score: <strong class="text-secondary" id="q-score-live">0</strong>
+      </div>
+      <!-- Next button -->
+      <div class="flex flex-col items-center gap-4 mt-8 hidden" id="q-next-wrap">
+        <button onclick="nextQuestion()" id="btn-next" class="px-16 py-4 bg-primary-container text-white rounded-full font-black text-lg shadow-[0_0_30px_rgba(234,108,31,0.3)] hover:scale-105 active:scale-95 transition-all">
+          Next Question
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCREEN 3: RESULTS -->
+  <section class="min-h-screen flex flex-col items-center justify-start px-6 py-24 bg-[radial-gradient(circle_at_50%_50%,_rgba(87,66,56,0.2)_0%,_rgba(18,18,29,1)_80%)] screen" id="screen-results">
+    <div class="max-w-4xl w-full">
+      <!-- Score ring -->
+      <div class="flex flex-col items-center mb-12">
+        <div class="relative w-40 h-40 mb-6">
+          <svg viewBox="0 0 120 120" class="w-full h-full">
+            <circle class="ring-bg" cx="60" cy="60" r="46" />
+            <circle class="ring-fill" id="ring-fill" cx="60" cy="60" r="46" />
+          </svg>
+          <div class="absolute inset-0 flex flex-col items-center justify-center">
+            <div class="text-5xl font-black text-primary font-headline" id="results-score-num">0</div>
+            <div class="text-on-surface-variant text-sm font-bold">/ 10</div>
+          </div>
+        </div>
+        <h2 class="text-3xl font-black font-headline text-center mb-2" id="results-title"></h2>
+        <p class="text-on-surface-variant text-center text-lg max-w-lg" id="results-subtitle"></p>
+      </div>
+
+      <!-- Verdict card -->
+      <div class="glass-card rounded-lg p-8 text-center mb-10 relative overflow-hidden">
+        <div class="absolute top-0 right-0 p-6 opacity-10">
+          <span class="material-symbols-outlined text-8xl">verified_user</span>
+        </div>
+        <div class="inline-flex items-center gap-2 bg-secondary/20 text-secondary px-5 py-2 rounded-full mb-6 border border-secondary/30">
+          <span class="material-symbols-outlined text-sm">shield</span>
+          <span class="font-bold font-headline uppercase tracking-wider text-sm" id="verdict-badge"></span>
+        </div>
+        <h3 class="text-2xl font-bold font-headline mb-4" id="verdict-title"></h3>
+        <p class="text-on-surface-variant text-lg max-w-xl mx-auto leading-relaxed" id="verdict-desc"></p>
+      </div>
+
+      <!-- Next Steps -->
+      <h4 class="text-xl font-black font-headline tracking-widest uppercase mb-8 text-center">Your Next Steps</h4>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-12" id="next-steps-list"></div>
+
+      <!-- Course CTA -->
+      <div class="glass-card p-10 rounded-lg bg-gradient-to-br from-surface-container-high to-surface border-l-4 border-primary flex flex-col md:flex-row items-center justify-between gap-8 mb-12">
+        <div class="max-w-xl">
+          <h3 class="text-2xl font-black font-headline mb-2" id="cta-heading"></h3>
+          <p class="text-on-surface-variant text-lg" id="cta-body"></p>
+        </div>
+        <a href="https://satusphere.teachable.com/p/bitcoin-from-scratch" target="_blank" rel="noopener" class="bg-gradient-to-r from-primary-container to-[#C25510] text-white font-black px-8 py-4 rounded-full whitespace-nowrap hover:shadow-[0_0_20px_rgba(234,108,31,0.5)] transition-all no-underline">
+          Get Bitcoin From Scratch
+        </a>
+      </div>
+
+      <!-- Question Breakdown -->
+      <div class="mb-10">
+        <h4 class="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-4">Question Breakdown</h4>
+        <div class="glass-card rounded-lg overflow-hidden divide-y divide-white/5" id="breakdown-list"></div>
+      </div>
+
+      <!-- Disclaimer -->
+      <div class="glass-card rounded-lg p-4 text-sm text-on-surface-variant leading-relaxed mb-8 border border-white/10">
+        This quiz is for educational purposes only. Not financial advice. Bitcoin carries risk. Always do your own research before holding or transacting.
+      </div>
+
+      <!-- Actions -->
+      <div class="flex flex-col md:flex-row items-center justify-center gap-6 mb-12">
+        <button onclick="retakeQuiz()" class="w-full md:w-auto px-10 py-4 rounded-full border-2 border-secondary text-secondary font-bold hover:bg-secondary/10 transition-all">
+          Retake Quiz
+        </button>
+        <a href="https://satusphere.com/tools" class="w-full md:w-auto px-10 py-4 rounded-full bg-primary-container text-white font-black flex items-center justify-center gap-2 hover:scale-105 transition-all no-underline">
+          Explore More Tools
+          <span class="material-symbols-outlined">bolt</span>
+        </a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- COURSE CTA BANNER -->
+<section class="w-full px-6 py-20 bg-[radial-gradient(circle_at_50%_30%,_rgba(234,108,31,0.12)_0%,_rgba(18,18,29,1)_70%)] border-t border-white/5">
+  <div class="max-w-3xl mx-auto text-center">
+    <p class="text-sm uppercase tracking-[0.2em] text-[#EA6C1F] font-bold font-headline mb-4">Go deeper</p>
+    <h2 class="text-3xl md:text-4xl font-black font-headline text-white mb-6 leading-tight">
+      Increase Your Bitcoin Knowledge
+    </h2>
+    <p class="text-lg text-on-surface-variant leading-relaxed mb-10 max-w-xl mx-auto">
+      Take the fully 3D animated Bitcoin course, <span class="text-white font-bold">Bitcoin From Scratch</span>. 34 lessons covering everything from the history of money to running your own wallet. No jargon, no fluff, just clarity.
     </p>
-    <p style="margin-top: 8px;">&copy; 2026 SatUsPhere. Educational purposes only.</p>
-  </footer>
+    <a href="https://satusphere.teachable.com/p/bitcoin-from-scratch" target="_blank" rel="noopener" class="inline-block px-12 py-5 bg-gradient-to-r from-primary-container to-[#C25510] rounded-full font-black text-white text-lg shadow-[0_0_40px_rgba(234,108,31,0.3)] hover:shadow-[0_0_60px_rgba(234,108,31,0.5)] transition-all duration-300 transform hover:scale-105 active:scale-95 no-underline">
+      Get Bitcoin From Scratch
+    </a>
+    <p class="text-xs text-on-surface-variant mt-4">One-time purchase. Lifetime access.</p>
+  </div>
+</section>
 
-  <script>
-    var QUESTIONS = [
-      {
-        category: "Keys & Seed Phrases",
-        question: "What is a seed phrase (also called a recovery phrase)?",
-        options: [
-          "A password you set when creating a Bitcoin account",
-          "A sequence of 12 or 24 words that represents your private key and can restore your entire wallet",
-          "A PIN code used to unlock a hardware wallet",
-          "An encrypted backup file you download from an exchange"
-        ],
-        correct: 1,
-        explanation: "Your seed phrase is the master key to your Bitcoin. It generates all your private keys. Anyone who has it controls your funds. It can restore your wallet on any compatible device - which is why keeping it safe and private is everything."
-      },
-      {
-        category: "Keys & Seed Phrases",
-        question: "What happens if you lose your seed phrase and your hardware wallet breaks?",
-        options: [
-          "You can contact the wallet manufacturer to recover your funds",
-          "Your Bitcoin exchange can restore access to your wallet",
-          "Your Bitcoin is permanently inaccessible - there is no recovery",
-          "You can use your email address to reset the wallet"
-        ],
-        correct: 2,
-        explanation: "Bitcoin has no password reset and no customer support line. Without your seed phrase, a lost or broken wallet means your Bitcoin is gone forever. This is why backing up your seed phrase before you hold real funds is non-negotiable."
-      },
-      {
-        category: "Custodial vs. Non-Custodial",
-        question: "What does 'not your keys, not your coins' mean?",
-        options: [
-          "You need to own physical Bitcoin coins to invest",
-          "Bitcoin stored on an exchange is controlled by that exchange, not you",
-          "You must use a hardware wallet to legally own Bitcoin",
-          "Only miners who control private keys own real Bitcoin"
-        ],
-        correct: 1,
-        explanation: "When you leave Bitcoin on an exchange, the exchange holds the private keys - not you. They can freeze your account, get hacked, or go bankrupt. Self-custody means you hold the keys yourself, which means you truly own the Bitcoin."
-      },
-      {
-        category: "Wallet Types",
-        question: "What is the primary advantage of a hardware wallet over a software wallet?",
-        options: [
-          "It is easier to use and has a better interface",
-          "It stores your private keys offline, making them inaccessible to online attackers",
-          "It automatically backs up your seed phrase to the cloud",
-          "It allows you to hold more types of cryptocurrency"
-        ],
-        correct: 1,
-        explanation: "Hardware wallets keep your private keys in a secure offline chip that never exposes them to the internet. Even if your computer is infected with malware, the keys inside the hardware wallet cannot be stolen remotely."
-      },
-      {
-        category: "Security Practices",
-        question: "Where should you store your seed phrase backup?",
-        options: [
-          "In a password manager app on your phone",
-          "In a photo saved to cloud storage like iCloud or Google Photos",
-          "Written on paper or stamped in metal, stored in a secure physical location",
-          "In a text file on your desktop, encrypted with a password"
-        ],
-        correct: 2,
-        explanation: "Your seed phrase backup should exist offline. Digital copies - even encrypted ones - are vulnerable to malware, cloud hacks, and device theft. The gold standard is a physical backup (steel plate or paper) stored somewhere secure, ideally in multiple locations."
-      },
-      {
-        category: "Transactions",
-        question: "Before sending Bitcoin to a new address, what should you always do?",
-        options: [
-          "Call the recipient to confirm their wallet balance",
-          "Verify the full recipient address matches before hitting send, since Bitcoin transactions are irreversible",
-          "Send a small test transaction first and wait for exchange confirmation",
-          "Screenshot the address and email it to yourself as a record"
-        ],
-        correct: 1,
-        explanation: "Bitcoin transactions cannot be reversed. Malware can replace a copied address with an attacker's address - this is called address substitution. Always verify the full address (especially the first and last several characters) on a trusted display before confirming any send."
-      },
-      {
-        category: "Security Practices",
-        question: "What is a 'wrench attack' in the context of Bitcoin security?",
-        options: [
-          "A software exploit that targets hardware wallet firmware",
-          "A physical threat where someone uses force or coercion to steal your Bitcoin",
-          "A type of phishing attack disguised as a wallet update",
-          "A malware attack that replaces wallet addresses in your clipboard"
-        ],
-        correct: 1,
-        explanation: "A '$5 wrench attack' means someone uses physical force or intimidation to make you hand over your Bitcoin. Self-custody creates physical security risks that exchange users do not face. Strategies like passphrase wallets, decoy wallets, and discretion about holdings help mitigate this risk."
-      },
-      {
-        category: "Recovery & Backup",
-        question: "What is the safest way to verify your seed phrase backup actually works?",
-        options: [
-          "Trust the wallet software's confirmation screen when you first set up",
-          "Restore the wallet on a test device using your seed phrase before storing real funds on it",
-          "Check that each word in the phrase appears in the BIP-39 wordlist",
-          "Send your seed phrase to a trusted friend for safekeeping"
-        ],
-        correct: 1,
-        explanation: "The only way to know your backup truly works is to use it. Before trusting any wallet with significant funds, do a dry run: restore the wallet from your seed phrase on a separate device and confirm you get the same addresses. This catches any transcription errors before they cost you."
-      },
-      {
-        category: "Keys & Seed Phrases",
-        question: "What is the purpose of an optional 'passphrase' (sometimes called the 25th word) added to a seed phrase?",
-        options: [
-          "It replaces the seed phrase with a shorter, easier-to-remember backup",
-          "It creates a completely different wallet from the same seed phrase, adding an extra layer of protection",
-          "It encrypts the seed phrase so it can be safely stored in the cloud",
-          "It is required by all hardware wallets before transactions can be signed"
-        ],
-        correct: 1,
-        explanation: "A passphrase creates a hidden wallet derived from the same seed. Even if someone finds your seed phrase backup, they cannot access your funds without also knowing the passphrase. This is powerful for advanced users but adds complexity - if you forget the passphrase, those funds are also gone."
-      },
-      {
-        category: "Security Practices",
-        question: "Which of the following is the most dangerous mistake a new self-custody user can make?",
-        options: [
-          "Using a hardware wallet from a reputable manufacturer",
-          "Buying Bitcoin on an exchange before transferring to self-custody",
-          "Storing the only copy of their seed phrase digitally or telling others about it",
-          "Running a full Bitcoin node alongside their wallet"
-        ],
-        correct: 2,
-        explanation: "The most common and catastrophic mistake is poor seed phrase hygiene - storing it on a phone, sharing it online, or keeping only one copy. A single digital exposure or physical loss means permanent loss of funds. Physical, private, redundant backups are the foundation of safe self-custody."
-      }
-    ];
+<!-- FOOTER -->
+<footer class="w-full py-12 px-8 border-t border-white/5 bg-[#12121d]">
+  <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+    <a href="https://satusphere.com" class="text-xl font-black text-[#EA6C1F] no-underline">SatUsPhere</a>
+    <div class="flex flex-wrap justify-center gap-8 font-['Quicksand'] text-sm font-medium">
+      <a class="text-gray-500 hover:text-[#EA6C1F] transition-all no-underline" href="https://satusphere.com">SatUsPhere.com</a>
+      <a class="text-gray-500 hover:text-[#EA6C1F] transition-all no-underline" href="https://satusphere.teachable.com/p/bitcoin-from-scratch" target="_blank" rel="noopener">Bitcoin From Scratch</a>
+      <a class="text-gray-500 hover:text-[#EA6C1F] transition-all no-underline" href="https://satusphere.com/privacy">Privacy Policy</a>
+      <a class="text-gray-500 hover:text-[#EA6C1F] transition-all no-underline" href="https://satusphere.com/terms">Terms</a>
+    </div>
+    <div class="text-gray-500 font-['Quicksand'] text-sm">2026 SatUsPhere. Bitcoin education for everyone.</div>
+  </div>
+</footer>
 
-    var currentQuestion = 0;
-    var score = 0;
-    var answered = false;
-    var answers = [];
-
-    function showScreen(id) {
-      document.querySelectorAll('.screen').forEach(function(s) {
-        s.classList.remove('active');
-      });
-      document.getElementById(id).classList.add('active');
+<script>
+(function() {
+  var QUESTIONS = [
+    {
+      category: "Keys & Seed Phrases",
+      question: "What is a seed phrase (also called a recovery phrase)?",
+      options: [
+        "A password you set when creating a Bitcoin account",
+        "A sequence of 12 or 24 words that represents your private key and can restore your entire wallet",
+        "A PIN code used to unlock a hardware wallet",
+        "An encrypted backup file you download from an exchange"
+      ],
+      correct: 1,
+      explanation: "Your seed phrase is the root key to your Bitcoin. It generates all your private keys. Anyone who has it controls your funds. It can restore your wallet on any compatible device, which is why keeping it safe and private is everything."
+    },
+    {
+      category: "Keys & Seed Phrases",
+      question: "What happens if you lose your seed phrase and your hardware wallet breaks?",
+      options: [
+        "You can contact the wallet manufacturer to recover your funds",
+        "Your Bitcoin exchange can restore access to your wallet",
+        "Your Bitcoin is permanently inaccessible, there is no recovery",
+        "You can use your email address to reset the wallet"
+      ],
+      correct: 2,
+      explanation: "Bitcoin has no password reset and no customer support line. Without your seed phrase, a lost or broken wallet means your Bitcoin is gone forever. This is why backing up your seed phrase before you hold real funds is non-negotiable."
+    },
+    {
+      category: "Custodial vs. Non-Custodial",
+      question: "What does 'not your keys, not your coins' mean?",
+      options: [
+        "You need to own physical Bitcoin coins to invest",
+        "Bitcoin stored on an exchange is controlled by that exchange, not you",
+        "You must use a hardware wallet to legally own Bitcoin",
+        "Only miners who control private keys own real Bitcoin"
+      ],
+      correct: 1,
+      explanation: "When you leave Bitcoin on an exchange, the exchange holds the private keys, not you. They can freeze your account, get hacked, or go bankrupt. Self-custody means you hold the keys yourself, which means you truly own the Bitcoin."
+    },
+    {
+      category: "Wallet Types",
+      question: "What is the primary advantage of a hardware wallet over a software wallet?",
+      options: [
+        "It is easier to use and has a better interface",
+        "It stores your private keys offline, making them inaccessible to online attackers",
+        "It automatically backs up your seed phrase to the cloud",
+        "It allows you to hold more types of cryptocurrency"
+      ],
+      correct: 1,
+      explanation: "Hardware wallets keep your private keys in a secure offline chip that never exposes them to the internet. Even if your computer is infected with malware, the keys inside the hardware wallet cannot be stolen remotely."
+    },
+    {
+      category: "Security Practices",
+      question: "Where should you store your seed phrase backup?",
+      options: [
+        "In a password manager app on your phone",
+        "In a photo saved to cloud storage like iCloud or Google Photos",
+        "Written on paper or stamped in metal, stored in a secure physical location",
+        "In a text file on your desktop, encrypted with a password"
+      ],
+      correct: 2,
+      explanation: "Your seed phrase backup should exist offline. Digital copies, even encrypted ones, are vulnerable to malware, cloud hacks, and device theft. The gold standard is a physical backup (steel plate or paper) stored somewhere secure, ideally in multiple locations."
+    },
+    {
+      category: "Transactions",
+      question: "Before sending Bitcoin to a new address, what should you always do?",
+      options: [
+        "Call the recipient to confirm their wallet balance",
+        "Verify the full recipient address matches before hitting send, since Bitcoin transactions are irreversible",
+        "Send a small test transaction first and wait for exchange confirmation",
+        "Screenshot the address and email it to yourself as a record"
+      ],
+      correct: 1,
+      explanation: "Bitcoin transactions cannot be reversed. Malware can replace a copied address with an attacker's address, this is called address substitution. Always verify the full address (especially the first and last several characters) on a trusted display before confirming any send."
+    },
+    {
+      category: "Security Practices",
+      question: "What is a 'wrench attack' in the context of Bitcoin security?",
+      options: [
+        "A software exploit that targets hardware wallet firmware",
+        "A physical threat where someone uses force or coercion to steal your Bitcoin",
+        "A type of phishing attack disguised as a wallet update",
+        "A malware attack that replaces wallet addresses in your clipboard"
+      ],
+      correct: 1,
+      explanation: "A '$5 wrench attack' means someone uses physical force or intimidation to make you hand over your Bitcoin. Self-custody creates physical security risks that exchange users do not face. Strategies like passphrase wallets, decoy wallets, and discretion about holdings help mitigate this risk."
+    },
+    {
+      category: "Recovery & Backup",
+      question: "What is the safest way to verify your seed phrase backup actually works?",
+      options: [
+        "Trust the wallet software's confirmation screen when you first set up",
+        "Restore the wallet on a test device using your seed phrase before storing real funds on it",
+        "Check that each word in the phrase appears in the BIP-39 wordlist",
+        "Send your seed phrase to a trusted friend for safekeeping"
+      ],
+      correct: 1,
+      explanation: "The only way to know your backup truly works is to use it. Before trusting any wallet with significant funds, do a dry run: restore the wallet from your seed phrase on a separate device and confirm you get the same addresses. This catches any transcription errors before they cost you."
+    },
+    {
+      category: "Keys & Seed Phrases",
+      question: "What is the purpose of an optional 'passphrase' (sometimes called the 25th word) added to a seed phrase?",
+      options: [
+        "It replaces the seed phrase with a shorter, easier-to-remember backup",
+        "It creates a completely different wallet from the same seed phrase, adding an extra layer of protection",
+        "It encrypts the seed phrase so it can be safely stored in the cloud",
+        "It is required by all hardware wallets before transactions can be signed"
+      ],
+      correct: 1,
+      explanation: "A passphrase creates a hidden wallet derived from the same seed. Even if someone finds your seed phrase backup, they cannot access your funds without also knowing the passphrase. This is powerful for advanced users but adds complexity. If you forget the passphrase, those funds are also gone."
+    },
+    {
+      category: "Security Practices",
+      question: "Which of the following is the most dangerous mistake a new self-custody user can make?",
+      options: [
+        "Using a hardware wallet from a reputable manufacturer",
+        "Buying Bitcoin on an exchange before transferring to self-custody",
+        "Storing the only copy of their seed phrase digitally or telling others about it",
+        "Running a full Bitcoin node alongside their wallet"
+      ],
+      correct: 2,
+      explanation: "The most common and catastrophic mistake is poor seed phrase hygiene: storing it on a phone, sharing it online, or keeping only one copy. A single digital exposure or physical loss means permanent loss of funds. Physical, private, redundant backups are the foundation of safe self-custody."
     }
+  ];
 
-    function startQuiz() {
-      currentQuestion = 0;
-      score = 0;
-      answered = false;
-      answers = [];
-      showScreen('screen-question');
-      renderQuestion();
+  var currentQuestion = 0;
+  var score = 0;
+  var answered = false;
+  var answers = [];
+  var labels = ['A', 'B', 'C', 'D'];
 
-      gtag('event', 'quiz_start', {
-        event_category: 'self_custody_quiz',
-        event_label: 'self-custody-readiness'
-      });
-    }
+  function showScreen(id) {
+    document.querySelectorAll('.screen').forEach(function(s) { s.classList.remove('active'); });
+    document.getElementById(id).classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
 
-    function renderQuestion() {
-      var q = QUESTIONS[currentQuestion];
-      var labels = ['A', 'B', 'C', 'D'];
+  window.startQuiz = function() {
+    currentQuestion = 0;
+    score = 0;
+    answered = false;
+    answers = [];
+    showScreen('screen-question');
+    renderQuestion();
+    gtag('event', 'quiz_start', { event_category: 'self_custody_quiz', event_label: 'self-custody-readiness' });
+  };
 
-      document.getElementById('q-num').textContent = currentQuestion + 1;
-      document.getElementById('q-progress-bar').style.width = ((currentQuestion / QUESTIONS.length) * 100) + '%';
-      document.getElementById('q-category').textContent = q.category;
-      document.getElementById('q-text').textContent = q.question;
+  function renderQuestion() {
+    var q = QUESTIONS[currentQuestion];
+    var pct = Math.round((currentQuestion / QUESTIONS.length) * 100);
 
-      var container = document.getElementById('options-container');
-      container.innerHTML = '';
-      answered = false;
+    document.getElementById('q-num').textContent = currentQuestion + 1;
+    document.getElementById('q-progress-pct').textContent = pct;
+    document.getElementById('q-progress-bar').style.width = pct + '%';
+    document.getElementById('q-category').textContent = q.category;
+    document.getElementById('q-text').textContent = q.question;
 
-      q.options.forEach(function(opt, i) {
-        var btn = document.createElement('button');
-        btn.className = 'option-btn';
-        btn.innerHTML = '<span class="option-label">' + labels[i] + '</span><span>' + opt + '</span>';
-        btn.onclick = function() { selectAnswer(i); };
-        container.appendChild(btn);
-      });
+    var container = document.getElementById('options-container');
+    container.innerHTML = '';
+    answered = false;
 
-      var feedback = document.getElementById('q-feedback');
-      feedback.style.display = 'none';
-      feedback.className = 'q-feedback';
+    q.options.forEach(function(opt, i) {
+      var btn = document.createElement('button');
+      btn.className = 'option-btn py-5 px-8 rounded-full font-bold text-lg border-2 border-white/5 text-on-surface-variant hover:border-secondary/50 hover:bg-secondary/5 transition-all text-left';
+      btn.innerHTML = '<span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-surface-container-highest text-sm font-black mr-3">' + labels[i] + '</span>' + opt;
+      btn.onclick = function() { selectAnswer(i); };
+      container.appendChild(btn);
+    });
 
-      var nextWrap = document.getElementById('q-next-wrap');
-      nextWrap.style.display = 'none';
-      document.getElementById('btn-next').textContent =
-        currentQuestion === QUESTIONS.length - 1 ? 'See My Results' : 'Next Question';
-    }
+    document.getElementById('q-feedback').classList.add('hidden');
+    document.getElementById('q-next-wrap').classList.add('hidden');
+    document.getElementById('btn-next').textContent = currentQuestion === QUESTIONS.length - 1 ? 'See My Results' : 'Next Question';
+  }
 
-    function selectAnswer(index) {
-      if (answered) return;
-      answered = true;
+  function selectAnswer(index) {
+    if (answered) return;
+    answered = true;
 
-      var q = QUESTIONS[currentQuestion];
-      var isCorrect = index === q.correct;
-      if (isCorrect) score++;
+    var q = QUESTIONS[currentQuestion];
+    var isCorrect = index === q.correct;
+    if (isCorrect) score++;
 
-      answers.push({ correct: isCorrect, questionIndex: currentQuestion });
+    answers.push({ correct: isCorrect, questionIndex: currentQuestion });
 
-      var buttons = document.querySelectorAll('.option-btn');
-      buttons.forEach(function(btn, i) {
-        btn.disabled = true;
-        if (i === q.correct) btn.classList.add('correct');
-        else if (i === index && !isCorrect) btn.classList.add('wrong');
-      });
-      if (index !== q.correct) {
-        buttons[index].classList.add('selected');
-      }
-
-      var feedback = document.getElementById('q-feedback');
-      feedback.style.display = 'block';
-      if (isCorrect) {
-        feedback.className = 'q-feedback correct-fb';
-        feedback.innerHTML = '<strong>Correct.</strong>' + q.explanation;
-      } else {
-        feedback.className = 'q-feedback wrong-fb';
-        feedback.innerHTML = '<strong>Not quite.</strong>' + q.explanation;
-      }
-
-      document.getElementById('q-next-wrap').style.display = 'block';
-      document.getElementById('q-score-live').innerHTML = score;
-    }
-
-    function nextQuestion() {
-      currentQuestion++;
-      if (currentQuestion >= QUESTIONS.length) {
-        document.getElementById('email-score-circle').textContent = score + '/10';
-        showScreen('screen-email');
-
-        gtag('event', 'quiz_complete', {
-          event_category: 'self_custody_quiz',
-          event_label: 'self-custody-readiness',
-          value: score
-        });
-      } else {
-        renderQuestion();
-      }
-    }
-
-    var EMAIL_WEBHOOK = "https://ireaje.app.n8n.cloud/webhook/004d62fc-5120-4e35-822f-287d578af89f";
-
-    function submitEmail(e) {
-      e.preventDefault();
-      var email = document.getElementById('email-input').value.trim();
-      if (!email || !email.includes('@')) {
-        document.getElementById('email-input').focus();
-        return;
-      }
-
-      var btn = document.querySelector('.btn-email-submit');
-      btn.textContent = 'Sending...';
+    var buttons = document.querySelectorAll('.option-btn');
+    buttons.forEach(function(btn, i) {
       btn.disabled = true;
+      if (i === q.correct) btn.classList.add('correct');
+      else if (i === index && !isCorrect) btn.classList.add('wrong');
+    });
 
-      gtag('event', 'email_submit', {
-        event_category: 'self_custody_quiz',
-        event_label: 'self-custody-readiness'
-      });
-
-      var xhr = new XMLHttpRequest();
-      xhr.open("POST", EMAIL_WEBHOOK, true);
-      xhr.setRequestHeader("Content-Type", "application/json");
-      xhr.timeout = 8000;
-      xhr.onload = function() { showResults(); };
-      xhr.onerror = function() { showResults(); };
-      xhr.ontimeout = function() { showResults(); };
-      xhr.send(JSON.stringify({ email: email, source: "self-custody-quiz", score: score }));
+    var feedback = document.getElementById('q-feedback');
+    feedback.classList.remove('hidden', 'feedback-correct', 'feedback-wrong');
+    if (isCorrect) {
+      feedback.classList.add('feedback-correct');
+      feedback.innerHTML = '<strong>Correct.</strong> ' + q.explanation;
+    } else {
+      feedback.classList.add('feedback-wrong');
+      feedback.innerHTML = '<strong>Not quite.</strong> ' + q.explanation;
     }
 
-    function showResults() {
+    document.getElementById('q-next-wrap').classList.remove('hidden');
+    document.getElementById('q-score-live').textContent = score;
+  }
+
+  window.nextQuestion = function() {
+    currentQuestion++;
+    if (currentQuestion >= QUESTIONS.length) {
+      gtag('event', 'quiz_complete', { event_category: 'self_custody_quiz', event_label: 'self-custody-readiness', value: score });
       showScreen('screen-results');
       renderResults();
+    } else {
+      renderQuestion();
+    }
+  };
+
+
+  function renderResults() {
+    var pct = score / QUESTIONS.length;
+    var circumference = 289;
+    var offset = circumference - (pct * circumference);
+
+    document.getElementById('results-score-num').textContent = score;
+    setTimeout(function() { document.getElementById('ring-fill').style.strokeDashoffset = offset; }, 100);
+
+    var verdictBadge, verdictTitle, verdictDesc, ctaHeading, ctaBody, steps;
+
+    if (score <= 3) {
+      document.getElementById('results-title').textContent = 'You scored ' + score + ' out of 10';
+      document.getElementById('results-subtitle').textContent = 'Not ready yet, and that is okay. Most beginners start here.';
+      verdictBadge = 'Beginner';
+      verdictTitle = 'Not Ready for Self-Custody Yet';
+      verdictDesc = 'Self-custody without the right foundation is dangerous. The good news: the concepts you are missing are straightforward. A few hours of focused learning is all it takes to close the gap and be ready to hold your own Bitcoin safely.';
+      ctaHeading = 'Build the foundation before you self-custody';
+      ctaBody = 'Bitcoin From Scratch covers seed phrases, private keys, hardware wallets, and real-world security from the ground up. It is built for exactly this situation.';
+      steps = [
+        { icon: 'school', title: 'Learn the Basics', desc: 'Understand what private keys and seed phrases are. These are the foundation of everything.' },
+        { icon: 'swap_horiz', title: 'Custodial vs. Non-Custodial', desc: 'Learn the difference between exchange wallets and self-custody wallets.' },
+        { icon: 'devices', title: 'Understand Hardware Wallets', desc: 'Study how hardware wallets work and why they matter before buying one.' },
+        { icon: 'science', title: 'Practice First', desc: 'Use testnet or a small amount to practice before moving real funds.' }
+      ];
+    } else if (score <= 5) {
+      document.getElementById('results-title').textContent = 'You scored ' + score + ' out of 10';
+      document.getElementById('results-subtitle').textContent = 'Some solid knowledge, but important gaps remain.';
+      verdictBadge = 'Almost Ready';
+      verdictTitle = 'Almost Ready, Gaps to Fill First';
+      verdictDesc = 'You understand the basics of Bitcoin self-custody but there are specific areas where a mistake could cost you your funds. Filling these gaps now is much easier than learning from a real loss later.';
+      ctaHeading = 'Close the gaps before you hold real Bitcoin';
+      ctaBody = 'Bitcoin From Scratch covers every area that showed up in this quiz: seed phrase security, backup strategies, address verification, and real-world threat models.';
+      steps = [
+        { icon: 'shield_locked', title: 'Review Your Backup Plan', desc: 'Make sure your seed phrase backup is physical, private, and redundant.' },
+        { icon: 'verified', title: 'Verify Addresses', desc: 'Learn to verify Bitcoin addresses on a trusted display before every transaction.' },
+        { icon: 'security', title: 'Physical Security', desc: 'Understand the physical security risks that come with self-custody.' },
+        { icon: 'restart_alt', title: 'Test Your Recovery', desc: 'Practice a full wallet restore from your seed phrase on a test device.' }
+      ];
+    } else if (score <= 8) {
+      document.getElementById('results-title').textContent = 'Strong score: ' + score + ' out of 10';
+      document.getElementById('results-subtitle').textContent = 'You have solid fundamentals. A few areas worth sharpening.';
+      verdictBadge = 'Nearly Ready';
+      verdictTitle = 'Nearly Ready, Sharpen the Edges';
+      verdictDesc = 'You clearly understand Bitcoin self-custody at a solid level. The gaps you have are specific. Address the ones you missed in this quiz and you will be in a strong position to hold your own Bitcoin with confidence.';
+      ctaHeading = 'Turn knowledge into practical confidence';
+      ctaBody = 'Bitcoin From Scratch covers the topics you missed in depth: hardware wallets, passphrase wallets, real-world security, and recovery procedures.';
+      steps = [
+        { icon: 'search', title: 'Review Your Misses', desc: 'Check the breakdown below and dig into any topic you got wrong.' },
+        { icon: 'restart_alt', title: 'Recovery Test', desc: 'Do a full seed phrase recovery test on a clean device before trusting real funds.' },
+        { icon: 'key', title: 'Add a Passphrase', desc: 'Consider adding a passphrase to your wallet for an extra layer of security.' },
+        { icon: 'local_fire_department', title: 'Audit Your Backup', desc: 'Is your backup resilient to fire, theft, and loss? Check now.' }
+      ];
+    } else {
+      document.getElementById('results-title').textContent = 'Excellent: ' + score + ' out of 10';
+      document.getElementById('results-subtitle').textContent = 'You have the knowledge. Make sure your practice matches it.';
+      verdictBadge = 'Ready';
+      verdictTitle = 'Ready, Knowledge is There';
+      verdictDesc = 'You scored at the top of this assessment. You understand Bitcoin self-custody at a strong conceptual level. The final step is making sure your actual setup and habits match what you know.';
+      ctaHeading = 'Take your knowledge to the next level';
+      ctaBody = 'Bitcoin From Scratch covers advanced topics including multisig setups, inheritance planning, and building a security model that accounts for real-world threats.';
+      steps = [
+        { icon: 'fact_check', title: 'Audit Your Setup', desc: 'Check your seed phrase backup: physical copies, secure locations, tested recently?' },
+        { icon: 'key', title: 'Advanced Security', desc: 'Consider whether a passphrase or multisig setup fits your security model.' },
+        { icon: 'verified', title: 'Verify Habits', desc: 'Are you checking full addresses every time you send? Make it a habit.' },
+        { icon: 'family_restroom', title: 'Plan for the Worst', desc: 'Think through your inheritance and recovery plan if something happens to you.' }
+      ];
     }
 
-    function renderResults() {
-      var pct = score / QUESTIONS.length;
-      var circumference = 289;
-      var offset = circumference - (pct * circumference);
+    document.getElementById('verdict-badge').textContent = verdictBadge;
+    document.getElementById('verdict-title').textContent = verdictTitle;
+    document.getElementById('verdict-desc').textContent = verdictDesc;
+    document.getElementById('cta-heading').textContent = ctaHeading;
+    document.getElementById('cta-body').textContent = ctaBody;
 
-      document.getElementById('results-score-num').textContent = score;
+    var stepsList = document.getElementById('next-steps-list');
+    stepsList.innerHTML = '';
+    steps.forEach(function(step) {
+      var card = document.createElement('div');
+      card.className = 'glass-card p-6 rounded-lg hover:bg-surface-container-high transition-colors group';
+      card.innerHTML = '<span class="material-symbols-outlined text-secondary text-3xl mb-3 group-hover:scale-110 transition-transform block">' + step.icon + '</span>' +
+        '<h5 class="font-black font-headline mb-2">' + step.title + '</h5>' +
+        '<p class="text-on-surface-variant text-sm">' + step.desc + '</p>';
+      stepsList.appendChild(card);
+    });
 
-      setTimeout(function() {
-        document.getElementById('ring-fill').style.strokeDashoffset = offset;
-      }, 100);
+    var breakdownList = document.getElementById('breakdown-list');
+    breakdownList.innerHTML = '';
+    answers.forEach(function(a) {
+      var q = QUESTIONS[a.questionIndex];
+      var item = document.createElement('div');
+      item.className = 'flex items-center gap-3 px-4 py-3';
+      item.innerHTML = '<span class="w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0 ' +
+        (a.correct ? 'breakdown-ok' : 'breakdown-no') + '">' + (a.correct ? 'Y' : 'N') + '</span>' +
+        '<span class="text-sm text-on-surface-variant">' + q.question + '</span>';
+      breakdownList.appendChild(item);
+    });
+  }
 
-      var verdictTitle, verdictDesc, ctaHeading, ctaBody, steps;
-
-      if (score <= 3) {
-        document.getElementById('results-title').textContent = 'You scored ' + score + ' out of 10';
-        document.getElementById('results-subtitle').textContent = 'Not ready yet - and that is okay. Most beginners start here.';
-        verdictTitle = 'Not Ready for Self-Custody Yet';
-        verdictDesc = 'Self-custody without the right foundation is dangerous. The good news: the concepts you are missing are straightforward. A few hours of focused learning is all it takes to close the gap and be ready to hold your own Bitcoin safely.';
-        ctaHeading = 'Build the foundation before you self-custody';
-        ctaBody = 'Bitcoin From Scratch covers seed phrases, private keys, hardware wallets, and real-world security from the ground up. It is built for exactly this situation - someone who wants to get it right.';
-        steps = [
-          'Learn what private keys and seed phrases are - these are the foundation of everything',
-          'Understand the difference between custodial (exchange) and non-custodial (self-custody) wallets',
-          'Study how hardware wallets work and why they matter before buying one',
-          'Practice on testnet or with a small amount before moving real funds'
-        ];
-      } else if (score <= 5) {
-        document.getElementById('results-title').textContent = 'You scored ' + score + ' out of 10';
-        document.getElementById('results-subtitle').textContent = 'Some solid knowledge, but important gaps remain.';
-        verdictTitle = 'Almost Ready - Gaps to Fill First';
-        verdictDesc = 'You understand the basics of Bitcoin self-custody but there are specific areas where a mistake could cost you your funds. Filling these gaps now is much easier than learning from a real loss later.';
-        ctaHeading = 'Close the gaps before you hold real Bitcoin';
-        ctaBody = 'Bitcoin From Scratch covers every area that showed up in this quiz - seed phrase security, backup strategies, address verification, and real-world threat models. Structured, step-by-step, no assumptions.';
-        steps = [
-          'Review your seed phrase backup strategy - physical, private, and redundant',
-          'Learn to verify Bitcoin addresses on a trusted display before every transaction',
-          'Understand the physical security risks that come with self-custody',
-          'Practice a full wallet restore from your seed phrase on a test device'
-        ];
-      } else if (score <= 8) {
-        document.getElementById('results-title').textContent = 'Strong score: ' + score + ' out of 10';
-        document.getElementById('results-subtitle').textContent = 'You have solid fundamentals. A few areas worth sharpening.';
-        verdictTitle = 'Nearly Ready - Sharpen the Edges';
-        verdictDesc = 'You clearly understand Bitcoin self-custody at a solid level. The gaps you have are specific - address the ones you missed in this quiz and you will be in a strong position to hold your own Bitcoin with confidence.';
-        ctaHeading = 'Turn knowledge into practical confidence';
-        ctaBody = 'Bitcoin From Scratch covers the topics you missed in depth - hardware wallets, passphrase wallets, real-world security, and recovery procedures. It builds on what you already know.';
-        steps = [
-          'Review your answers above and dig into any topic you missed',
-          'Do a full seed phrase recovery test on a clean device before trusting real funds',
-          'Consider adding a passphrase to your wallet for an extra layer of security',
-          'Audit your physical backup situation - is it resilient to fire, theft, and loss?'
-        ];
-      } else {
-        document.getElementById('results-title').textContent = 'Excellent: ' + score + ' out of 10';
-        document.getElementById('results-subtitle').textContent = 'You have the knowledge. Make sure your practice matches it.';
-        verdictTitle = 'Ready - Knowledge is There';
-        verdictDesc = 'You scored at the top of this assessment. You understand Bitcoin self-custody at a strong conceptual level. The final step is making sure your actual setup and habits match what you know - knowing and doing are different things.';
-        ctaHeading = 'Take your knowledge to the next level';
-        ctaBody = 'Bitcoin From Scratch covers advanced topics including multisig setups, inheritance planning, and building a security model that accounts for real-world threats. For someone at your level, the depth goes further.';
-        steps = [
-          'Audit your current seed phrase backup - physical copies, secure locations, tested recently?',
-          'Consider whether a passphrase or multisig setup fits your security model',
-          'Review your transaction verification habits - are you checking full addresses every time?',
-          'Think through your inheritance and recovery plan if something happens to you'
-        ];
-      }
-
-      document.getElementById('verdict-title').textContent = verdictTitle;
-      document.getElementById('verdict-desc').textContent = verdictDesc;
-      document.getElementById('cta-heading').textContent = ctaHeading;
-      document.getElementById('cta-body').textContent = ctaBody;
-
-      var stepsList = document.getElementById('next-steps-list');
-      stepsList.innerHTML = '';
-      steps.forEach(function(step, i) {
-        var item = document.createElement('div');
-        item.className = 'step-item';
-        item.innerHTML = '<div class="step-num">' + (i + 1) + '</div><div class="step-text">' + step + '</div>';
-        stepsList.appendChild(item);
-      });
-
-      var breakdownList = document.getElementById('breakdown-list');
-      breakdownList.innerHTML = '';
-      answers.forEach(function(a, i) {
-        var q = QUESTIONS[a.questionIndex];
-        var item = document.createElement('div');
-        item.className = 'breakdown-item';
-        item.innerHTML =
-          '<span class="breakdown-status ' + (a.correct ? 'ok' : 'no') + '">' + (a.correct ? 'Y' : 'N') + '</span>' +
-          '<span>' + q.question + '</span>';
-        breakdownList.appendChild(item);
-      });
-    }
-
-    function retakeQuiz() {
-      startQuiz();
-    }
-  </script>
+  window.retakeQuiz = function() { startQuiz(); };
+})();
+</script>
 </body>
 </html>

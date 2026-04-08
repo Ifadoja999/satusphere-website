@@ -1,615 +1,403 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="dark" lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bitcoin News Decoder - Understand Any Bitcoin Headline | SatUsPhere</title>
-  <meta name="description" content="Paste any Bitcoin headline and get a plain-English explanation. Free tool from SatUsPhere - Bitcoin education for beginners." />
-  <link rel="canonical" href="https://satusphere.com/tools/bitcoin-news-decoder" />
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Bitcoin News Decoder - Understand Any Bitcoin Headline" />
-  <meta property="og:description" content="Paste any Bitcoin headline and get a plain-English explanation. Free from SatUsPhere." />
-  <meta property="og:url" content="https://satusphere.com/tools/bitcoin-news-decoder" />
-  <meta property="og:image" content="https://satusphere.com/assets/og-default.png" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Bitcoin News Decoder" />
-  <meta name="twitter:description" content="Paste any Bitcoin headline and get a plain-English explanation." />
-  <meta name="twitter:image" content="https://satusphere.com/assets/og-default.png" />
-  <style>
-    :root {
-      --orange: #F7931A;
-      --navy: #0D1B2E;
-      --navy-light: #122236;
-      --navy-mid: #1a2f47;
-      --blue: #1A6EF7;
-      --gold: #E5B94B;
-      --white: #FFFFFF;
-      --muted: #8BA0B4;
-      --border: rgba(255,255,255,0.08);
-      --bullish: #22c55e;
-      --bearish: #ef4444;
-      --neutral: #94a3b8;
-    }
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      background: var(--navy);
-      color: var(--white);
-      line-height: 1.6;
-      min-height: 100vh;
-    }
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Bitcoin News Decoder | Understand Any Headline | SatUsPhere</title>
+<meta name="description" content="Paste any Bitcoin headline or news excerpt and get a plain-English explanation. Free tool for beginners from SatUsPhere." />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://satusphere.com/tools/bitcoin-news-decoder" />
 
-    /* NAV */
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 16px 24px;
-      border-bottom: 1px solid var(--border);
-      max-width: 800px;
-      margin: 0 auto;
-    }
-    .nav-logo {
-      font-weight: 700;
-      font-size: 18px;
-      color: var(--orange);
-      text-decoration: none;
-    }
-    .nav-cta {
-      background: var(--orange);
-      color: var(--white);
-      text-decoration: none;
-      padding: 8px 16px;
-      border-radius: 6px;
-      font-size: 14px;
-      font-weight: 600;
-    }
-    .nav-cta:hover { opacity: 0.88; }
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Bitcoin News Decoder | SatUsPhere" />
+<meta property="og:description" content="Paste any Bitcoin headline or news excerpt and get a plain-English explanation. Free tool for beginners." />
+<meta property="og:url" content="https://satusphere.com/tools/bitcoin-news-decoder" />
+<meta property="og:site_name" content="SatUsPhere" />
+<meta property="og:image" content="https://satusphere.com/assets/course-banner.png" />
 
-    /* MAIN */
-    main {
-      max-width: 720px;
-      margin: 0 auto;
-      padding: 40px 24px 80px;
-    }
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@sat_us_phere" />
+<meta name="twitter:title" content="Bitcoin News Decoder | SatUsPhere" />
+<meta name="twitter:description" content="Paste any Bitcoin headline and get a plain-English explanation. Free from SatUsPhere." />
+<meta name="twitter:image" content="https://satusphere.com/assets/course-banner.png" />
 
-    /* HERO */
-    .hero { text-align: center; margin-bottom: 40px; }
-    .hero h1 {
-      font-size: clamp(28px, 5vw, 40px);
-      font-weight: 800;
-      line-height: 1.2;
-      margin-bottom: 12px;
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Bitcoin News Decoder",
+  "url": "https://satusphere.com/tools/bitcoin-news-decoder",
+  "description": "A free AI-powered tool that translates confusing Bitcoin news headlines into plain English explanations for beginners.",
+  "applicationCategory": "EducationalApplication",
+  "operatingSystem": "Any",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "author": { "@type": "Organization", "name": "SatUsPhere", "url": "https://satusphere.com" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the Bitcoin News Decoder?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The Bitcoin News Decoder is a free AI tool that takes confusing Bitcoin headlines or news excerpts and explains them in plain English for beginners."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does the Bitcoin News Decoder work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Paste any Bitcoin-related headline or paragraph into the tool. The AI analyzes it and returns a simple, jargon-free explanation of what it means and why it matters."
+      }
     }
-    .hero h1 span { color: var(--orange); }
-    .hero p {
-      font-size: 17px;
-      color: var(--muted);
-      max-width: 520px;
-      margin: 0 auto;
-    }
+  ]
+}
+</script>
 
-    /* DECODER CARD */
-    .decoder-card {
-      background: var(--navy-light);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 28px;
-      margin-bottom: 28px;
-    }
-    .decoder-card label {
-      display: block;
-      font-weight: 600;
-      margin-bottom: 10px;
-      font-size: 15px;
-    }
-    textarea {
-      width: 100%;
-      background: var(--navy);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      color: var(--white);
-      font-size: 15px;
-      font-family: inherit;
-      padding: 14px;
-      resize: vertical;
-      min-height: 100px;
-      transition: border-color 0.2s;
-    }
-    textarea:focus { outline: none; border-color: var(--orange); }
-    textarea::placeholder { color: var(--muted); }
-    .char-count {
-      text-align: right;
-      font-size: 12px;
-      color: var(--muted);
-      margin-top: 6px;
-    }
-    .char-count.warning { color: var(--orange); }
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CSPSERCTK8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-CSPSERCTK8');
+</script>
 
-    /* SAMPLE PILLS */
-    .pills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin: 14px 0 20px;
-    }
-    .pill {
-      background: var(--navy-mid);
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      padding: 6px 14px;
-      font-size: 13px;
-      color: var(--muted);
-      cursor: pointer;
-      transition: all 0.2s;
-    }
-    .pill:hover { border-color: var(--orange); color: var(--white); }
-
-    /* DECODE BUTTON */
-    .btn-decode {
-      width: 100%;
-      background: var(--orange);
-      color: var(--white);
-      border: none;
-      border-radius: 8px;
-      padding: 14px;
-      font-size: 16px;
-      font-weight: 700;
-      cursor: pointer;
-      transition: opacity 0.2s;
-    }
-    .btn-decode:hover { opacity: 0.88; }
-    .btn-decode:disabled { opacity: 0.5; cursor: default; }
-
-    /* LOADING */
-    .loading { display: none; text-align: center; padding: 32px; }
-    .loading.visible { display: block; }
-    .spinner {
-      width: 36px; height: 36px;
-      border: 3px solid var(--border);
-      border-top-color: var(--orange);
-      border-radius: 50%;
-      animation: spin 0.8s linear infinite;
-      margin: 0 auto 12px;
-    }
-    @keyframes spin { to { transform: rotate(360deg); } }
-    .loading p { color: var(--muted); }
-
-    /* RESULTS */
-    .results { display: none; }
-    .results.visible { display: block; }
-    .results-card {
-      background: var(--navy-light);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      overflow: hidden;
-      margin-bottom: 24px;
-    }
-    .results-header {
-      padding: 20px 24px 16px;
-      border-bottom: 1px solid var(--border);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-    .results-header h2 {
-      font-size: 18px;
-      font-weight: 700;
-    }
-    .signal-badge {
-      padding: 4px 12px;
-      border-radius: 20px;
-      font-size: 12px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-    .signal-bullish { background: rgba(34,197,94,0.15); color: var(--bullish); }
-    .signal-bearish { background: rgba(239,68,68,0.15); color: var(--bearish); }
-    .signal-neutral { background: rgba(148,163,184,0.15); color: var(--neutral); }
-    .results-body { padding: 20px 24px; }
-    .result-section { margin-bottom: 20px; }
-    .result-section:last-child { margin-bottom: 0; }
-    .result-section h3 {
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--orange);
-      margin-bottom: 8px;
-      font-weight: 600;
-    }
-    .result-section p {
-      font-size: 15px;
-      line-height: 1.65;
-      color: rgba(255,255,255,0.88);
-    }
-    .signal-reason {
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      padding: 14px;
-      background: var(--navy-mid);
-      border-radius: 8px;
-    }
-    .signal-dot {
-      width: 8px; height: 8px;
-      border-radius: 50%;
-      margin-top: 6px;
-      flex-shrink: 0;
-    }
-    .signal-reason p { font-size: 14px; }
-    .ai-disclaimer {
-      font-size: 12px;
-      color: var(--muted);
-      margin-top: 16px;
-      padding-top: 16px;
-      border-top: 1px solid var(--border);
-    }
-    .decode-again {
-      background: none;
-      border: none;
-      color: var(--orange);
-      cursor: pointer;
-      font-size: 14px;
-      font-weight: 600;
-      padding: 0;
-      text-decoration: underline;
-      margin-top: 16px;
-      display: block;
-    }
-
-    /* NOT RELATED */
-    .not-related {
-      display: none;
-      background: var(--navy-light);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 24px;
-      text-align: center;
-      margin-bottom: 24px;
-    }
-    .not-related.visible { display: block; }
-    .not-related p { color: var(--muted); margin-bottom: 12px; }
-
-    /* EMAIL CAPTURE */
-    .email-capture {
-      background: var(--navy-light);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 28px;
-      margin-bottom: 28px;
-    }
-    .email-capture h3 {
-      font-size: 20px;
-      font-weight: 700;
-      margin-bottom: 8px;
-    }
-    .email-capture p {
-      font-size: 15px;
-      color: var(--muted);
-      margin-bottom: 20px;
-    }
-    .email-form {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-    .email-form input[type="email"] {
-      flex: 1;
-      min-width: 200px;
-      background: var(--navy);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      color: var(--white);
-      font-size: 15px;
-      font-family: inherit;
-      padding: 12px 14px;
-    }
-    .email-form input[type="email"]:focus { outline: none; border-color: var(--orange); }
-    .email-form input[type="email"]::placeholder { color: var(--muted); }
-    .btn-email {
-      background: var(--blue);
-      color: var(--white);
-      border: none;
-      border-radius: 8px;
-      padding: 12px 20px;
-      font-size: 15px;
-      font-weight: 600;
-      cursor: pointer;
-      white-space: nowrap;
-      transition: opacity 0.2s;
-    }
-    .btn-email:hover { opacity: 0.88; }
-    .btn-email:disabled { opacity: 0.5; cursor: default; }
-    .email-success { display: none; }
-    .email-success.visible { display: block; }
-    .email-success p { color: var(--bullish); font-weight: 600; }
-    .privacy-note { font-size: 12px; color: var(--muted); margin-top: 10px; }
-
-    /* CTA */
-    .cta-card {
-      background: linear-gradient(135deg, var(--navy-mid) 0%, #1e3a5c 100%);
-      border: 1px solid rgba(247,147,26,0.2);
-      border-radius: 12px;
-      padding: 32px 28px;
-      text-align: center;
-      margin-bottom: 28px;
-    }
-    .cta-card h3 {
-      font-size: 22px;
-      font-weight: 800;
-      margin-bottom: 10px;
-    }
-    .cta-card p {
-      color: var(--muted);
-      font-size: 15px;
-      margin-bottom: 22px;
-    }
-    .btn-cta {
-      display: inline-block;
-      background: var(--orange);
-      color: var(--white);
-      text-decoration: none;
-      padding: 14px 32px;
-      border-radius: 8px;
-      font-weight: 700;
-      font-size: 16px;
-      transition: opacity 0.2s;
-    }
-    .btn-cta:hover { opacity: 0.88; }
-
-    /* FOOTER */
-    footer {
-      text-align: center;
-      padding: 24px;
-      border-top: 1px solid var(--border);
-      color: var(--muted);
-      font-size: 13px;
-    }
-    footer a { color: var(--orange); text-decoration: none; }
-  </style>
-
-  <!-- GA4 -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CSPSERCTK8"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-CSPSERCTK8');
-  </script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Montserrat:wght@300;400;500;600;700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          primary: "#EA6C1F",
+          neonTurquoise: "#4DA6FF",
+          gold: "#B8860B",
+          accentPurple: "#5B9BFF",
+          "background-dark": "#4A1A00",
+        },
+        fontFamily: {
+          serif: ["'Playfair Display'", "serif"],
+          sans: ["'Montserrat'", "sans-serif"],
+        },
+      },
+    },
+  };
+</script>
+<style>
+  body { background: #4A1A00; color: #4DA6FF; font-family: 'Montserrat', sans-serif; min-height: 100vh; }
+  h1, h2, h3, .serif-heading { font-family: 'Playfair Display', serif; color: #fff; }
+  .glass-panel {
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+  .magazine-card {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 2rem;
+    min-height: 350px;
+    transition: all 0.5s;
+    border: 1px solid rgba(255,255,255,0.1);
+  }
+  .magazine-card:hover { border-color: rgba(255,255,255,0.3); transform: translateY(-2px); }
+  .abstract-bg-1 { background: radial-gradient(at top left, #EA6C1F22, transparent 70%); }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .spinner {
+    width: 24px; height: 24px;
+    border: 3px solid rgba(255,255,255,0.1);
+    border-top-color: #EA6C1F;
+    border-radius: 50%;
+    animation: spin 0.7s linear infinite;
+  }
+  .result-section { display: none; }
+  .result-section.visible { display: block; }
+  .loading-state { display: none; }
+  .loading-state.visible { display: flex; }
+</style>
 </head>
-<body>
+<body class="selection:bg-primary/30">
 
-<nav>
-  <a href="https://satusphere.com" class="nav-logo">SatUsPhere</a>
-  <a href="https://checkout.teachable.com/secure/2684007/checkout/order_1y3wjzbk" class="nav-cta" target="_blank" rel="noopener">Get the Course</a>
+<!-- NAV -->
+<nav class="sticky top-0 z-50 glass-panel border-b border-white/10 px-6 py-4 flex justify-between items-center bg-[#4A1A00]/80 backdrop-blur-xl">
+  <a href="https://satusphere.com" class="flex items-center gap-3 no-underline">
+    <img src="/assets/satusphere_logo.png" alt="SatUsPhere Logo" class="h-8 w-8 rounded-full object-cover"/>
+    <span class="text-2xl font-serif italic font-black tracking-tighter text-white">SatUsPhere</span>
+  </a>
+  <div class="hidden md:flex items-center gap-8">
+    <a class="text-[#4DA6FF] font-medium hover:text-primary transition-colors text-sm no-underline" href="https://satusphere.com">Home</a>
+  </div>
+  <a href="https://satusphere.com/tools" class="flex items-center gap-2 text-[#4DA6FF] font-medium hover:text-neonTurquoise transition-colors no-underline">
+    <span class="material-symbols-outlined">arrow_back</span>
+    <span class="text-sm">Back to Tools</span>
+  </a>
 </nav>
 
-<main>
-
-  <!-- HERO -->
-  <div class="hero">
-    <h1>Bitcoin News <span>Decoded</span></h1>
-    <p>Paste any Bitcoin headline or excerpt. Get a plain-English explanation of what it means and why it matters.</p>
-  </div>
-
-  <!-- DECODER CARD -->
-  <div class="decoder-card">
-    <label for="headline-input">Paste a Bitcoin headline or excerpt here</label>
-
-    <div class="pills" id="sample-pills">
-      <button class="pill" onclick="fillPill(this)">Bitcoin hits new all-time high</button>
-      <button class="pill" onclick="fillPill(this)">Fed raises interest rates by 50 basis points</button>
-      <button class="pill" onclick="fillPill(this)">Bitcoin halving is 90 days away</button>
-      <button class="pill" onclick="fillPill(this)">BlackRock files for Bitcoin ETF</button>
-      <button class="pill" onclick="fillPill(this)">El Salvador makes Bitcoin legal tender</button>
-    </div>
-
-    <textarea
-      id="headline-input"
-      placeholder="e.g. Bitcoin surges 15% as institutional buyers return..."
-      maxlength="500"
-      oninput="updateCharCount()"
-    ></textarea>
-    <div class="char-count" id="char-count">0 / 500</div>
-
-    <button class="btn-decode" id="decode-btn" onclick="decode()">Decode This</button>
-  </div>
-
-  <!-- LOADING -->
-  <div class="loading" id="loading">
-    <div class="spinner"></div>
-    <p>Decoding...</p>
-  </div>
-
-  <!-- NOT RELATED -->
-  <div class="not-related" id="not-related">
-    <p id="not-related-msg">That does not appear to be a Bitcoin-related headline. Try pasting a Bitcoin news headline.</p>
-    <button class="decode-again" onclick="resetForm()">Try another headline</button>
-  </div>
-
-  <!-- RESULTS -->
-  <div class="results" id="results">
-    <div class="results-card">
-      <div class="results-header">
-        <h2>Here is what that means</h2>
-        <span class="signal-badge" id="signal-badge"></span>
+<!-- HERO + INPUT -->
+<header class="px-6 py-10 bg-gradient-to-b from-[#4A1A00] to-transparent">
+  <div class="max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-8 glass-panel p-6 rounded-2xl">
+    <div class="relative w-28 h-28 flex-shrink-0">
+      <!-- Outer glow rings -->
+      <div class="absolute inset-[-8px] rounded-full bg-gradient-to-tr from-[#FFD700] via-[#FFA500] to-[#FF8C00] opacity-30 blur-xl animate-pulse"></div>
+      <div class="absolute inset-[-4px] rounded-full bg-gradient-to-br from-[#FFD700]/20 to-transparent blur-md"></div>
+      <!-- Coin body -->
+      <div class="relative w-28 h-28 rounded-full overflow-hidden" style="background: conic-gradient(from 0deg, #FFD700, #FFA500, #B8860B, #DAA520, #FFD700); box-shadow: 0 0 30px rgba(255,215,0,0.4), inset 0 2px 4px rgba(255,255,255,0.3), inset 0 -2px 4px rgba(0,0,0,0.3);">
+        <!-- Inner coin face -->
+        <div class="absolute inset-[4px] rounded-full flex items-center justify-center" style="background: radial-gradient(circle at 35% 35%, #FFD700, #DAA520 40%, #B8860B 70%, #8B6914); box-shadow: inset 0 2px 8px rgba(255,255,255,0.4), inset 0 -2px 8px rgba(0,0,0,0.2);">
+          <!-- Coin rim -->
+          <div class="absolute inset-[3px] rounded-full border-2 border-[#FFD700]/30"></div>
+          <!-- Bitcoin symbol -->
+          <svg viewBox="0 0 64 64" class="w-14 h-14 drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)]" fill="none">
+            <path d="M40.5 25.3c1.2-3.2-.8-5.7-4.2-6.8l.9-3.5-2.1-.5-.8 3.4c-.6-.1-1.1-.3-1.7-.4l.8-3.4-2.1-.5-.9 3.5c-.5-.1-.9-.2-1.4-.3l-2.9-.7-.6 2.2s1.6.4 1.5.4c.9.2 1 .7 1 1.2l-1 4c.1 0 .1 0 .2.1h-.2l-1.4 5.6c-.1.3-.4.6-.9.5 0 0-1.5-.4-1.5-.4l-1 2.4 2.7.7c.5.1 1 .3 1.5.4l-.9 3.5 2.1.5.9-3.5c.6.2 1.1.3 1.7.4l-.9 3.5 2.1.5.9-3.5c3.8.7 6.6.4 7.8-3 1-2.7 0-4.3-2-5.3 1.4-.3 2.5-1.3 2.8-3.3zm-5 7c-.7 2.8-5.4 1.3-7 .9l1.2-5c1.5.4 6.5 1.1 5.7 4.1zm.7-7.1c-.6 2.6-4.6 1.3-5.8.9l1.1-4.5c1.3.3 5.4.9 4.7 3.6z" fill="white"/>
+          </svg>
+        </div>
       </div>
-      <div class="results-body">
-        <div class="result-section">
-          <h3>Plain English</h3>
-          <p id="result-explanation"></p>
+    </div>
+    <div class="flex-grow text-center md:text-left">
+      <p class="text-sm uppercase tracking-widest text-primary font-bold mb-1">Free Tool</p>
+      <h1 class="text-3xl md:text-4xl font-serif italic mb-4">Bitcoin News, <span class="text-primary">Decoded</span></h1>
+      <p class="text-[#4DA6FF] text-sm mb-4">Bitcoin news is full of jargon that makes no sense unless you already know Bitcoin. Paste any headline or paragraph below and we will translate it for you.</p>
+      <div class="relative group">
+        <textarea id="newsInput" maxlength="500" rows="3" class="w-full bg-white/5 border border-white/10 rounded-xl px-6 py-4 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all text-white placeholder:text-[#4DA6FF]/50 resize-none font-sans text-sm" placeholder="Paste any Bitcoin headline, article excerpt, or question..."></textarea>
+        <div class="flex justify-between items-center mt-2">
+          <span class="text-xs text-[#4DA6FF]/50" id="charCount">0 / 500</span>
+          <div class="text-xs text-red-400 hidden" id="inputError"></div>
         </div>
-        <div class="result-section">
-          <h3>Why It Matters</h3>
-          <p id="result-why"></p>
+        <button id="btnDecode" class="w-full mt-3 bg-primary hover:bg-primary/90 text-white font-bold py-4 rounded-xl transition-all flex items-center justify-center gap-2">
+          <span class="material-symbols-outlined text-sm">bolt</span>
+          Decode This
+        </button>
+      </div>
+      <div class="flex flex-wrap gap-2 mt-4 justify-center md:justify-start">
+        <button class="sample-pill text-xs px-3 py-1.5 rounded-full border border-white/10 hover:bg-white/5 hover:border-primary/30 transition-colors text-[#4DA6FF]" data-text="Bitcoin ETF sees record outflows as institutional investors rotate into gold amid macro uncertainty.">Bitcoin ETF record outflows</button>
+        <button class="sample-pill text-xs px-3 py-1.5 rounded-full border border-white/10 hover:bg-white/5 hover:border-primary/30 transition-colors text-[#4DA6FF]" data-text="The halving has historically preceded major bull runs as the block reward reduction creates supply shock.">Halving and bull runs</button>
+        <button class="sample-pill text-xs px-3 py-1.5 rounded-full border border-white/10 hover:bg-white/5 hover:border-primary/30 transition-colors text-[#4DA6FF]" data-text="On-chain data shows long-term holders are in distribution phase as exchange inflows spike above 30-day average.">Long-term holder distribution</button>
+        <button class="sample-pill text-xs px-3 py-1.5 rounded-full border border-white/10 hover:bg-white/5 hover:border-primary/30 transition-colors text-[#4DA6FF]" data-text="Lightning Network capacity hits all-time high as layer-2 adoption accelerates among merchants.">Lightning Network ATH</button>
+        <button class="sample-pill text-xs px-3 py-1.5 rounded-full border border-white/10 hover:bg-white/5 hover:border-primary/30 transition-colors text-[#4DA6FF]" data-text="Miners are capitulating as hash rate drops 12% following difficulty adjustment, putting pressure on BTC price.">Miner capitulation</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- LOADING STATE -->
+<div class="loading-state max-w-4xl mx-auto px-6 py-8 flex items-center gap-4" id="loadingState">
+  <div class="spinner"></div>
+  <span class="text-[#4DA6FF] text-sm font-medium">Decoding your headline...</span>
+</div>
+
+<!-- RESULTS -->
+<section class="result-section max-w-4xl mx-auto px-6 pb-8" id="resultsSection">
+  <div class="glass-panel rounded-2xl overflow-hidden">
+    <div class="bg-white/5 py-20 px-8 border-b border-white/10">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-4 mb-8 text-xs font-bold uppercase tracking-[0.2em] text-[#4DA6FF]/70">
+          <div class="h-[1px] flex-grow bg-white/10"></div>
+          AI Signal
+          <div class="h-[1px] flex-grow bg-white/10"></div>
         </div>
-        <div class="result-section">
-          <h3>Market Signal</h3>
-          <div class="signal-reason">
-            <div class="signal-dot" id="signal-dot"></div>
-            <p id="result-signal-reason"></p>
+        <div class="mb-8">
+          <p class="text-xl font-serif italic text-white mb-4" id="originalHeadline"></p>
+          <div class="flex items-center gap-2">
+            <div class="w-6 h-6 rounded-full bg-gradient-to-r from-accentPurple to-neonTurquoise"></div>
+            <span class="text-[10px] font-bold uppercase text-accentPurple tracking-widest">News Decoder Analysis</span>
           </div>
         </div>
-        <p class="ai-disclaimer">Explanation generated by AI. Always verify with primary sources.</p>
+        <div>
+          <h3 class="text-2xl font-serif italic text-neonTurquoise mb-6">Here's what this means:</h3>
+          <div class="text-lg font-light text-[#7CC0FF] leading-relaxed" id="explanationText"></div>
+        </div>
+        <div class="glass-panel p-6 border-l-4 border-l-white/20 bg-white/[0.02] mt-8 rounded-lg">
+          <p class="text-xs text-[#4DA6FF]/70">Explanation generated by AI. Always verify with primary sources.</p>
+        </div>
       </div>
     </div>
-    <button class="decode-again" onclick="resetForm()">Decode another one</button>
-  </div>
-
-  <!-- EMAIL CAPTURE -->
-  <div class="email-capture" id="email-section">
-    <h3>Want to understand Bitcoin at a deeper level?</h3>
-    <p>SatUsPhere teaches Bitcoin fundamentals from scratch - no jargon, no experience needed. Join the list for free education.</p>
-    <div class="email-form" id="email-form">
-      <input type="email" id="email-input" placeholder="your@email.com" />
-      <button class="btn-email" id="email-btn" onclick="submitEmail(event)">Get Free Bitcoin Education</button>
+    <div class="px-8 py-4 flex gap-4">
+      <button id="btnDecodeAgain" class="flex-1 py-3 px-4 border border-white/10 text-[10px] font-black uppercase tracking-widest hover:bg-white/5 transition-all text-[#4DA6FF]">Decode Another</button>
     </div>
-    <div class="email-success" id="email-success">
-      <p>Welcome. Check your inbox.</p>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="py-24 px-6 border-t border-white/10">
+  <div class="max-w-6xl mx-auto">
+    <h2 class="text-4xl font-serif italic text-center mb-16">3 Steps to Clarity</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+      <div class="text-center">
+        <div class="w-16 h-16 border border-primary/30 text-primary rounded-full flex items-center justify-center mx-auto mb-6 font-serif text-2xl">I</div>
+        <h3 class="text-xl font-serif mb-4">Paste Headline</h3>
+        <p class="text-sm font-light text-[#4DA6FF]/70 leading-relaxed">Copy any confusing headline or article from your feed.</p>
+      </div>
+      <div class="text-center">
+        <div class="w-16 h-16 border border-neonTurquoise/30 text-neonTurquoise rounded-full flex items-center justify-center mx-auto mb-6 font-serif text-2xl">II</div>
+        <h3 class="text-xl font-serif mb-4">AI Decodes It</h3>
+        <p class="text-sm font-light text-[#4DA6FF]/70 leading-relaxed">SatUsPhere analyzes the headline and translates it into plain English.</p>
+      </div>
+      <div class="text-center">
+        <div class="w-16 h-16 border border-accentPurple/30 text-accentPurple rounded-full flex items-center justify-center mx-auto mb-6 font-serif text-2xl">III</div>
+        <h3 class="text-xl font-serif mb-4">Understand</h3>
+        <p class="text-sm font-light text-[#4DA6FF]/70 leading-relaxed">Get a clear explanation of what the news actually means for you.</p>
+      </div>
     </div>
-    <p class="privacy-note">No spam. Unsubscribe anytime.</p>
   </div>
+</section>
 
-  <!-- CTA -->
-  <div class="cta-card">
-    <h3>Ready to learn Bitcoin from the ground up?</h3>
-    <p>34 animated lessons covering everything from the history of money to the Lightning Network. Built for complete beginners.</p>
-    <a href="https://checkout.teachable.com/secure/2684007/checkout/order_1y3wjzbk" class="btn-cta" target="_blank" rel="noopener">Start Bitcoin From Scratch</a>
+<!-- COURSE CTA -->
+<section class="w-full px-6 py-20 border-t border-white/10">
+  <div class="max-w-6xl mx-auto">
+    <div class="magazine-card abstract-bg-1 min-h-[300px] rounded-2xl border-2 border-white/10">
+      <div class="mb-auto text-right">
+        <span class="text-[10px] font-black uppercase tracking-[0.4em] text-primary">Go Deeper</span>
+      </div>
+      <div class="max-w-2xl">
+        <h2 class="text-4xl md:text-5xl font-serif italic mb-6 leading-tight">Increase Your Bitcoin Knowledge</h2>
+        <p class="text-xl text-[#7CC0FF] font-light mb-10 leading-relaxed">Take the fully 3D animated Bitcoin course, <span class="text-white border-b border-primary">Bitcoin From Scratch</span>. 34 lessons from the history of money to running your own wallet.</p>
+        <a href="https://satusphere.teachable.com/p/bitcoin-from-scratch" target="_blank" rel="noopener" class="inline-block bg-white text-black font-black py-4 px-12 text-xs uppercase tracking-widest hover:bg-primary hover:text-white transition-all no-underline rounded-lg">
+          Get Bitcoin From Scratch
+        </a>
+      </div>
+    </div>
   </div>
+</section>
 
-</main>
-
-<footer>
-  <p>Built by <a href="https://satusphere.com" rel="noopener">SatUsPhere</a> - Bitcoin Is For All Of Us.</p>
-  <p style="margin-top:6px;">&copy; 2026 SatUsPhere / IDBA Investments</p>
+<!-- FOOTER -->
+<footer class="py-16 border-t border-white/10 px-6">
+  <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+    <a href="https://satusphere.com" class="text-2xl font-serif italic font-black text-white no-underline">SatUsPhere</a>
+    <div class="flex flex-wrap justify-center gap-8 text-sm">
+      <a class="text-[#4DA6FF]/70 hover:text-primary transition-all no-underline" href="https://satusphere.com">SatUsPhere.com</a>
+      <a class="text-[#4DA6FF]/70 hover:text-primary transition-all no-underline" href="https://satusphere.com/tools">Free Tools</a>
+      <a class="text-[#4DA6FF]/70 hover:text-primary transition-all no-underline" href="https://satusphere.com/privacy">Privacy</a>
+      <a class="text-[#4DA6FF]/70 hover:text-primary transition-all no-underline" href="https://satusphere.com/terms">Terms</a>
+    </div>
+    <p class="text-[10px] uppercase tracking-widest text-[#4DA6FF]/50">2026 SatUsPhere. Bitcoin education for everyone.</p>
+  </div>
 </footer>
 
 <script>
-  var WEBHOOK_URL = 'https://ireaje.app.n8n.cloud/webhook/bitcoin-news-decoder-email';
+(function() {
   var API_URL = '/api/decode';
+  var textarea = document.getElementById('newsInput');
+  var charCount = document.getElementById('charCount');
+  var inputError = document.getElementById('inputError');
+  var btnDecode = document.getElementById('btnDecode');
+  var loadingState = document.getElementById('loadingState');
+  var resultsSection = document.getElementById('resultsSection');
+  var originalHeadline = document.getElementById('originalHeadline');
+  var explanationText = document.getElementById('explanationText');
+  var btnDecodeAgain = document.getElementById('btnDecodeAgain');
 
-  function updateCharCount() {
-    var input = document.getElementById('headline-input');
-    var count = document.getElementById('char-count');
-    var len = input.value.length;
-    count.textContent = len + ' / 500';
-    count.classList.toggle('warning', len > 450);
+  textarea.addEventListener('input', function() {
+    var len = textarea.value.length;
+    charCount.textContent = len + ' / 500';
+    charCount.style.color = len > 500 ? '#ef4444' : '';
+    if (len > 0) hideError();
+  });
+
+  document.querySelectorAll('.sample-pill').forEach(function(pill) {
+    pill.addEventListener('click', function() {
+      textarea.value = pill.getAttribute('data-text');
+      textarea.dispatchEvent(new Event('input'));
+      textarea.focus();
+    });
+  });
+
+  function showError(msg) {
+    inputError.textContent = msg;
+    inputError.classList.remove('hidden');
   }
 
-  function fillPill(btn) {
-    document.getElementById('headline-input').value = btn.textContent;
-    updateCharCount();
-    document.getElementById('headline-input').focus();
+  function hideError() {
+    inputError.classList.add('hidden');
   }
 
-  function decode() {
-    var input = document.getElementById('headline-input').value.trim();
-    if (input.length < 10) {
-      document.getElementById('headline-input').focus();
+  function resetToInput() {
+    resultsSection.classList.remove('visible');
+    loadingState.classList.remove('visible');
+    hideError();
+    textarea.value = '';
+    charCount.textContent = '0 / 500';
+    textarea.focus();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function showResults(headline, explanation) {
+    loadingState.classList.remove('visible');
+    originalHeadline.textContent = '"' + headline + '"';
+    explanationText.textContent = explanation;
+    resultsSection.classList.add('visible');
+    resultsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  btnDecode.addEventListener('click', function() {
+    var text = textarea.value.trim();
+
+    if (text.length < 10) {
+      showError('Please enter at least 10 characters.');
+      return;
+    }
+    if (text.length > 500) {
+      showError('Your input is over 500 characters. Please shorten it.');
       return;
     }
 
-    // Hide previous results
-    document.getElementById('results').classList.remove('visible');
-    document.getElementById('not-related').classList.remove('visible');
-    document.getElementById('loading').classList.add('visible');
-    document.getElementById('decode-btn').disabled = true;
+    hideError();
+    btnDecode.disabled = true;
+    btnDecode.style.opacity = '0.5';
+    loadingState.classList.add('visible');
+    resultsSection.classList.remove('visible');
+
+    gtag('event', 'decode_start', { event_category: 'news_decoder', event_label: text.substring(0, 50) });
 
     fetch(API_URL, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ headline: input })
+      body: JSON.stringify({ text: text }),
     })
-    .then(function(r) { return r.json(); })
-    .then(function(data) {
-      document.getElementById('loading').classList.remove('visible');
-      document.getElementById('decode-btn').disabled = false;
+      .then(function(res) { return res.json(); })
+      .then(function(data) {
+        btnDecode.disabled = false;
+        btnDecode.style.opacity = '1';
 
-      if (data.notRelated) {
-        document.getElementById('not-related-msg').textContent = data.message || 'That does not appear to be a Bitcoin-related headline. Try pasting a Bitcoin news headline.';
-        document.getElementById('not-related').classList.add('visible');
-        return;
-      }
-
-      if (data.error) {
-        alert(data.error);
-        return;
-      }
-
-      // Populate results
-      document.getElementById('result-explanation').textContent = data.explanation || '';
-      document.getElementById('result-why').textContent = data.whyItMatters || '';
-      document.getElementById('result-signal-reason').textContent = data.signalReason || '';
-
-      var signal = (data.signal || 'neutral').toLowerCase();
-      var badge = document.getElementById('signal-badge');
-      var dot = document.getElementById('signal-dot');
-      badge.textContent = signal.charAt(0).toUpperCase() + signal.slice(1);
-      badge.className = 'signal-badge signal-' + signal;
-      dot.style.background = signal === 'bullish' ? 'var(--bullish)' : signal === 'bearish' ? 'var(--bearish)' : 'var(--neutral)';
-
-      document.getElementById('results').classList.add('visible');
-    })
-    .catch(function() {
-      document.getElementById('loading').classList.remove('visible');
-      document.getElementById('decode-btn').disabled = false;
-      alert('Something went wrong. Please try again.');
-    });
-  }
-
-  function resetForm() {
-    document.getElementById('headline-input').value = '';
-    updateCharCount();
-    document.getElementById('results').classList.remove('visible');
-    document.getElementById('not-related').classList.remove('visible');
-    document.getElementById('headline-input').focus();
-  }
-
-  function submitEmail(event) {
-    event.preventDefault();
-    var email = document.getElementById('email-input').value.trim();
-    if (!email || !email.includes('@')) {
-      document.getElementById('email-input').focus();
-      return;
-    }
-    var btn = document.getElementById('email-btn');
-    btn.disabled = true;
-    btn.textContent = 'Sending...';
-
-    fetch(WEBHOOK_URL, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        email: email,
-        source: 'bitcoin-news-decoder',
-        tool: 'bitcoin-news-decoder',
-        timestamp: new Date().toISOString()
+        if (data.notRelated) {
+          loadingState.classList.remove('visible');
+          showError('This does not look Bitcoin-related. Try pasting a Bitcoin headline or news excerpt.');
+          return;
+        }
+        if (data.error) {
+          loadingState.classList.remove('visible');
+          showError(data.error);
+          return;
+        }
+        if (data.explanation) {
+          showResults(text, data.explanation);
+          gtag('event', 'decode_complete', { event_category: 'news_decoder' });
+        } else {
+          loadingState.classList.remove('visible');
+          showError('Something went wrong. Try again in a moment.');
+        }
       })
-    })
-    .then(function() {
-      showEmailSuccess();
-    })
-    .catch(function() {
-      showEmailSuccess();
-    });
-  }
-
-  function showEmailSuccess() {
-    document.getElementById('email-form').style.display = 'none';
-    document.getElementById('email-success').classList.add('visible');
-  }
-
-  // Allow Enter key in textarea to not submit (textarea default)
-  document.getElementById('headline-input').addEventListener('keydown', function(e) {
-    if (e.key === 'Enter' && !e.shiftKey) {
-      e.preventDefault();
-      decode();
-    }
+      .catch(function() {
+        loadingState.classList.remove('visible');
+        btnDecode.disabled = false;
+        btnDecode.style.opacity = '1';
+        showError('Something went wrong. Try again in a moment.');
+      });
   });
-</script>
 
+  btnDecodeAgain.addEventListener('click', resetToInput);
+})();
+</script>
 </body>
 </html>
