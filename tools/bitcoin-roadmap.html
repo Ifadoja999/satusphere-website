@@ -4,23 +4,23 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Bitcoin Beginner Roadmap: From Zero to Self-Custody | SatUsPhere</title>
-  <meta name="description" content="The complete Bitcoin learning path for beginners. 9 stages from monetary history to the Bitcoin halving. Track your progress, watch free videos, and build real Bitcoin knowledge." />
+  <meta name="description" content="The complete Bitcoin learning path for beginners. 8 stages from monetary history to self-custody. Track your progress, explore free resources, and build real Bitcoin knowledge." />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://satusphere.com/tools/bitcoin-roadmap" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Bitcoin Beginner Roadmap: From Zero to Self-Custody | SatUsPhere" />
-  <meta property="og:description" content="The complete Bitcoin learning path for beginners. 9 stages, free video lessons, progress tracking." />
+  <meta property="og:description" content="The complete Bitcoin learning path for beginners. 8 stages, free resources, progress tracking." />
   <meta property="og:url" content="https://satusphere.com/tools/bitcoin-roadmap" />
   <meta property="og:site_name" content="SatUsPhere" />
-  <meta property="og:image" content="https://satusphere.com/assets/og-default.png" />
+  <meta property="og:image" content="https://satusphere.com/assets/course-banner.png" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Bitcoin Beginner Roadmap | SatUsPhere" />
-  <meta name="twitter:description" content="Learn Bitcoin in the right order. 9 stages from zero to self-custody, with free video lessons." />
-  <meta name="twitter:image" content="https://satusphere.com/assets/og-default.png" />
+  <meta name="twitter:description" content="Learn Bitcoin in the right order. 8 stages from zero to self-custody." />
+  <meta name="twitter:image" content="https://satusphere.com/assets/course-banner.png" />
 
   <style>
     :root {
@@ -623,33 +623,6 @@
     footer a { color: rgba(255,255,255,0.5); text-decoration: none; }
     footer a:hover { color: var(--orange); }
 
-    /* VIDEO EMBED */
-    .stage-video {
-      margin-top: 20px;
-      border-radius: 10px;
-      overflow: hidden;
-      position: relative;
-      padding-bottom: 56.25%;
-      height: 0;
-      background: #000;
-    }
-    .stage-video iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      border: none;
-    }
-    .stage-video-label {
-      font-size: 0.75rem;
-      font-weight: 600;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: var(--orange);
-      margin-bottom: 8px;
-    }
-
     /* RESPONSIVE */
     @media (max-width: 600px) {
       .stage-header { padding: 16px; gap: 12px; }
@@ -680,7 +653,7 @@
   <!-- PROGRESS BAR -->
   <div class="progress-bar-wrapper">
     <div class="progress-bar-inner">
-      <span class="progress-label" id="progress-label">0 of 9 stages covered</span>
+      <span class="progress-label" id="progress-label">0 of 8 stages covered</span>
       <div class="progress-track">
         <div class="progress-fill" id="progress-fill"></div>
       </div>
@@ -743,14 +716,13 @@
       {
         id: 1,
         tag: "Stage 1",
-        title: "What Is the Gold Standard?",
-        subtitle: "How money was once backed by gold and what that meant",
-        videoId: "Kdbfm3x-hvw",
-        what: "The gold standard was a monetary system where currencies were directly tied to gold. Each dollar represented a fixed amount of gold that could theoretically be redeemed. This system constrained how much money governments could create because they needed physical gold reserves to back every bill in circulation.",
-        why: "Understanding the gold standard shows you what sound money looked like in practice and why it worked as a check on inflation for centuries. It sets the stage for everything that came after.",
-        concept: "When money is tied to a scarce physical commodity, governments cannot simply print more without acquiring more gold. The gold standard enforced fiscal discipline by making unlimited money creation impossible.",
+        title: "Why does Bitcoin exist?",
+        subtitle: "Monetary history, inflation, and the problem Bitcoin solves",
+        what: "Bitcoin did not appear out of nowhere. It was created in 2009 as a direct response to the 2008 financial crisis and decades of governments and central banks inflating their currencies. This stage covers the history of money, how inflation erodes purchasing power, and why a fixed-supply, decentralized currency was a radical idea worth building.",
+        why: "Understanding why Bitcoin was created gives you a foundation for everything else. Without this context, Bitcoin looks like speculation. With it, Bitcoin looks like a solution.",
+        concept: "Inflation is not natural - it is a policy choice. Every dollar printed dilutes the dollars already in existence. Bitcoin was designed so no one can print more.",
         resources: [
-          { label: "Bitcoin From Scratch - Full Course", url: "https://satusphere.teachable.com/p/bitcoin-from-scratch", type: "course" },
+          { label: "Bitcoin From Scratch - Module 1: The History of Money", url: "https://satusphere.teachable.com/p/bitcoin-from-scratch", type: "course" },
           { label: "SatUsPhere: What problem does Bitcoin solve?", url: "https://satusphere.com/learn/what-is-the-bitcoin-whitepaper", type: "article" }
         ],
         showCta: false
@@ -758,120 +730,98 @@
       {
         id: 2,
         tag: "Stage 2",
-        title: "What Happened to Money in 1971?",
-        subtitle: "The end of Bretton Woods and the birth of fiat currency",
-        videoId: "JK5unHtlGAo",
-        what: "In 1971, President Nixon ended the convertibility of the US dollar to gold, severing the last link between money and a physical commodity. Every currency in the world became a fiat currency - backed only by government decree and trust. This single decision changed the rules of the global economy forever.",
-        why: "1971 is the most important date in modern monetary history. Every currency devaluation, every inflation spike, every financial crisis since then has been shaped by the untethering of money from gold.",
-        concept: "Since 1971, no currency in the world is backed by anything physical. The dollar's value rests entirely on confidence in the US government. This is exactly the problem Bitcoin was designed to solve.",
+        title: "What is Bitcoin?",
+        subtitle: "Digital scarcity, decentralization, and no middlemen",
+        what: "Bitcoin is the first scarce digital asset in history. Before Bitcoin, any digital file could be copied infinitely. Bitcoin solved this by creating a shared ledger that everyone can verify but no one can alter unilaterally. There will only ever be 21 million Bitcoin - that limit is enforced by code, not by a company or government.",
+        why: "Most people think Bitcoin is just digital cash or internet money. It is actually the first time scarcity has existed in a purely digital form. That is the breakthrough.",
+        concept: "Decentralization means there is no single point of control. No CEO, no headquarters, no shutdown button. Bitcoin runs on thousands of computers worldwide simultaneously.",
         resources: [
-          { label: "Bitcoin From Scratch - Full Course", url: "https://satusphere.teachable.com/p/bitcoin-from-scratch", type: "course" },
-          { label: "SatUsPhere: What is the Bitcoin whitepaper?", url: "https://satusphere.com/learn/what-is-the-bitcoin-whitepaper", type: "article" }
+          { label: "Bitcoin From Scratch - Module 2: What Is Bitcoin?", url: "https://satusphere.teachable.com/p/bitcoin-from-scratch", type: "course" },
+          { label: "SatUsPhere: Bitcoin explained for beginners", url: "https://satusphere.com/learn/who-created-bitcoin", type: "article" }
         ],
         showCta: false
       },
       {
         id: 3,
         tag: "Stage 3",
-        title: "How the Federal Reserve Prints Money",
-        subtitle: "Quantitative easing, bank reserves, and how new dollars enter circulation",
-        videoId: "eS4yNdPAQNM",
-        what: "The Federal Reserve does not print physical bills - it creates money electronically. When the Fed buys Treasury bonds, it credits bank accounts with newly created dollars. Banks can then lend out multiples of those deposits through fractional reserve banking. This process expands the money supply without any gold backing.",
-        why: "Most people think money printing is literal. Understanding how it actually works - through bond purchases, bank reserves, and credit expansion - helps you see how inflation really happens and why Bitcoin's fixed supply is radical.",
-        concept: "Every new dollar created dilutes the purchasing power of existing dollars. The US money supply expanded by trillions since 2020 alone. Bitcoin was designed as an alternative: no central bank, no money printing, fixed supply forever.",
+        title: "How does it work?",
+        subtitle: "Blockchain basics, transactions, and confirmations",
+        what: "Every Bitcoin transaction is recorded on a public ledger called the blockchain. When you send Bitcoin, your transaction is broadcast to the network, grouped with other transactions into a block, and permanently added to the chain after miners validate it. Once confirmed, it cannot be reversed.",
+        why: "You do not need to understand every technical detail, but knowing how transactions and confirmations work helps you use Bitcoin confidently and safely.",
+        concept: "A confirmation means a block containing your transaction has been added to the chain. The more confirmations, the more permanent the transaction. Most transactions are considered final after 6 confirmations.",
         resources: [
-          { label: "Bitcoin From Scratch - Full Course", url: "https://satusphere.teachable.com/p/bitcoin-from-scratch", type: "course" },
-          { label: "SatUsPhere: What is Bitcoin mining?", url: "https://satusphere.com/learn/what-is-bitcoin-mining", type: "article" }
+          { label: "Bitcoin From Scratch - Module 3: The Blockchain", url: "https://satusphere.teachable.com/p/bitcoin-from-scratch", type: "course" },
+          { label: "SatUsPhere: How Bitcoin transactions work", url: "https://satusphere.com/learn/how-do-bitcoin-transactions-work", type: "article" }
         ],
         showCta: false
       },
       {
         id: 4,
         tag: "Stage 4",
-        title: "The Bitcoin Whitepaper Explained",
-        subtitle: "Satoshi's 9-page document that changed everything",
-        videoId: "pLfUsP3jXzs",
-        what: "In October 2008, Satoshi Nakamoto published a 9-page document called Bitcoin: A Peer-to-Peer Electronic Cash System. It described a way to send digital payments directly between two people without a bank. It introduced the blockchain and proof-of-work consensus - two ideas that made decentralized money possible for the first time.",
-        why: "The whitepaper is the founding document of Bitcoin. Understanding what problem Satoshi was solving and why each design decision was made gives you a deeper foundation than 99% of people who own Bitcoin.",
-        concept: "Satoshi's core breakthrough was solving the double-spend problem without a trusted third party. Before Bitcoin, digital money could be copied and spent twice. The blockchain solves this with a public, tamper-resistant ledger anyone can verify.",
+        title: "How is it secured?",
+        subtitle: "Mining, hash power, and why attacks are nearly impossible",
+        what: "Bitcoin is secured by a process called proof-of-work mining. Miners compete to solve a mathematical puzzle using computing power. The winner adds the next block and earns newly created Bitcoin. Rewriting history would require controlling more computing power than the entire rest of the network combined - which becomes more expensive as the network grows.",
+        why: "Bitcoin security is not based on trust in a company. It is based on the economics of computation. The more people mine, the harder and more expensive it becomes to attack.",
+        concept: "A 51% attack - controlling more than half the network's hash power - would cost billions of dollars and would likely destroy the value of the coins the attacker was trying to steal. The economics make attacks self-defeating.",
         resources: [
-          { label: "Bitcoin From Scratch - Full Course", url: "https://satusphere.teachable.com/p/bitcoin-from-scratch", type: "course" },
-          { label: "SatUsPhere: What is the Bitcoin whitepaper?", url: "https://satusphere.com/learn/what-is-the-bitcoin-whitepaper", type: "article" }
+          { label: "Bitcoin From Scratch - Module 4: Mining and Security", url: "https://satusphere.teachable.com/p/bitcoin-from-scratch", type: "course" },
+          { label: "SatUsPhere: How Bitcoin mining works", url: "https://satusphere.com/learn/what-is-bitcoin-mining", type: "article" }
         ],
         showCta: false
       },
       {
         id: 5,
         tag: "Stage 5",
-        title: "What Is a Blockchain?",
-        subtitle: "How Bitcoin's public ledger works and why it cannot be altered",
-        videoId: "urfFAOziZ20",
-        what: "A blockchain is a chain of blocks, where each block contains a batch of transactions. Every block includes a cryptographic link to the previous block, making it impossible to alter one block without changing every block after it. The blockchain is public, distributed across thousands of computers, and updated approximately every 10 minutes.",
-        why: "The blockchain is the foundation of everything Bitcoin does. Understanding what it is - and why it is hard to tamper with - explains why Bitcoin transactions are irreversible and why the system does not need a bank.",
-        concept: "Immutability means once a transaction is confirmed and buried under multiple blocks, changing it would require redoing all the computational work for every block that followed - an astronomically expensive task.",
+        title: "What is a Bitcoin address?",
+        subtitle: "Public keys, private keys, and how ownership works",
+        what: "Owning Bitcoin means owning a private key - a secret number that proves you control certain Bitcoin on the blockchain. From your private key, a public key is derived, and from that, a Bitcoin address is created. You share your address to receive Bitcoin. Your private key is what you use to send. Anyone who has your private key controls your Bitcoin.",
+        why: "Bitcoin ownership works completely differently from a bank account. There is no username, no password reset, no support line. Your private key is your Bitcoin. This is liberating and requires responsibility.",
+        concept: "The phrase 'not your keys, not your coins' means: if you do not control the private key, someone else controls your Bitcoin. When Bitcoin sits on an exchange, the exchange holds the keys.",
         resources: [
-          { label: "Bitcoin From Scratch - Full Course", url: "https://satusphere.teachable.com/p/bitcoin-from-scratch", type: "course" },
-          { label: "SatUsPhere: How do Bitcoin transactions work?", url: "https://satusphere.com/learn/how-do-bitcoin-transactions-work", type: "article" }
+          { label: "Bitcoin From Scratch - Module 5: Keys and Addresses", url: "https://satusphere.teachable.com/p/bitcoin-from-scratch", type: "course" },
+          { label: "SatUsPhere: Public vs private keys explained", url: "https://satusphere.com/learn/what-is-a-bitcoin-address", type: "article" }
         ],
         showCta: false
       },
       {
         id: 6,
         tag: "Stage 6",
-        title: "Why You Can't Cheat the Blockchain",
-        subtitle: "Cryptographic hashing, SHA-256, and why tampering is impossible",
-        videoId: "ZXTthXlZyBc",
-        what: "Every block in the Bitcoin blockchain contains a hash - a unique cryptographic fingerprint of its contents. Change any transaction and the hash changes completely. Since each block contains the previous block's hash, altering one block means recalculating every block after it, faster than the entire rest of the network. That is practically impossible.",
-        why: "Understanding why the blockchain cannot be cheated is what makes Bitcoin trustworthy without a central authority. It is not trust in a company or government. It is trust in mathematics.",
-        concept: "Cryptographic hash functions are one-way: easy to compute, impossible to reverse. SHA-256 produces a 64-character fingerprint from any input. Even a single character change produces a completely different hash.",
+        title: "How do I buy Bitcoin?",
+        subtitle: "Exchanges, peer-to-peer, KYC, and what to watch out for",
+        what: "Most people buy Bitcoin through a centralized exchange like Coinbase, Kraken, or Cash App. These are convenient but require identity verification (KYC) and mean the exchange holds your Bitcoin until you withdraw it. Peer-to-peer options let you buy directly from another person, sometimes without KYC. Each approach has tradeoffs around convenience, privacy, and counterparty risk.",
+        why: "Knowing your options before you buy saves you from making costly mistakes. Buying on an exchange is fine as a starting point, but leaving large amounts on an exchange for a long time is not.",
+        concept: "KYC (Know Your Customer) verification links your real identity to your Bitcoin purchases. Some people prefer peer-to-peer methods for privacy reasons. Neither approach is wrong - it depends on your priorities.",
         resources: [
-          { label: "Bitcoin From Scratch - Full Course", url: "https://satusphere.teachable.com/p/bitcoin-from-scratch", type: "course" },
-          { label: "SatUsPhere: How do Bitcoin transactions work?", url: "https://satusphere.com/learn/how-do-bitcoin-transactions-work", type: "article" }
+          { label: "Bitcoin From Scratch - Module 6: Buying Bitcoin", url: "https://satusphere.teachable.com/p/bitcoin-from-scratch", type: "course" },
+          { label: "SatUsPhere: What is a Bitcoin wallet?", url: "https://satusphere.com/learn/what-is-a-bitcoin-wallet", type: "article" }
         ],
         showCta: true
       },
       {
         id: 7,
         tag: "Stage 7",
-        title: "Why Is Bitcoin Scarce?",
-        subtitle: "The 21 million cap, the halving schedule, and digital scarcity",
-        videoId: "lKTehkLqXz4",
-        what: "Bitcoin's scarcity is enforced by code. There will only ever be 21 million Bitcoin. New Bitcoin is created only through mining, and the rate is cut in half approximately every four years in an event called the halving. The last Bitcoin will be mined around the year 2140. No person or government can change this.",
-        why: "Scarcity is what gives Bitcoin its monetary properties. Gold is scarce because it is hard to mine from the earth. Bitcoin is scarce because the code will never allow more than 21 million to exist - and thousands of nodes around the world enforce this rule.",
-        concept: "Unlike the Federal Reserve, which can expand the money supply with a keystroke, Bitcoin's supply schedule is written in code and enforced by a decentralized network. No single entity can change it without consensus from the entire network.",
+        title: "How do I store Bitcoin safely?",
+        subtitle: "Custodial vs. non-custodial, hot vs. cold wallets",
+        what: "Once you buy Bitcoin, the most important decision is where to keep it. Custodial wallets (exchanges, apps like Cash App) hold your keys for you. Non-custodial wallets give you full control. Hot wallets are connected to the internet - convenient but more exposed. Cold wallets are offline hardware devices - more secure for larger amounts. Each approach is appropriate in different situations.",
+        why: "More Bitcoin has been lost to bad storage decisions than to network hacks. Understanding the options and tradeoffs is essential for anyone holding meaningful amounts.",
+        concept: "The rule of thumb: hot wallet for spending amounts (like cash in your pocket), cold wallet for savings amounts (like a home safe). Most beginners should start with a reputable software wallet and graduate to hardware as their holdings grow.",
         resources: [
-          { label: "Bitcoin From Scratch - Full Course", url: "https://satusphere.teachable.com/p/bitcoin-from-scratch", type: "course" },
-          { label: "SatUsPhere: What is Bitcoin mining?", url: "https://satusphere.com/learn/what-is-bitcoin-mining", type: "article" }
+          { label: "Bitcoin From Scratch - Module 7: Bitcoin Wallets", url: "https://satusphere.teachable.com/p/bitcoin-from-scratch", type: "course" },
+          { label: "SatUsPhere: Hot vs cold storage explained", url: "https://satusphere.com/learn/what-is-a-bitcoin-wallet", type: "article" }
         ],
         showCta: true
       },
       {
         id: 8,
         tag: "Stage 8",
-        title: "What Is Proof of Work?",
-        subtitle: "Mining, hash power, and why Bitcoin's history cannot be rewritten",
-        videoId: "-LRswLpFceY",
-        what: "Proof of Work is the consensus mechanism that secures Bitcoin. Miners compete to find a number that, when combined with block data and run through SHA-256 twice, produces a hash below a target value. This requires massive computational effort but is trivially easy for anyone to verify. The winner adds the block and earns newly created Bitcoin.",
-        why: "Proof of Work is what makes Bitcoin's history expensive to rewrite. The energy is not wasted - it is the security. Every joule of energy spent mining is part of Bitcoin's security wall.",
-        concept: "Mining difficulty adjusts automatically every 2,016 blocks to target a 10-minute average block time. As more miners join, it gets harder. As miners leave, it gets easier. Bitcoin's security scales with the network.",
+        title: "What is self-custody?",
+        subtitle: "Seed phrases, hardware wallets, and backup strategies",
+        what: "Self-custody means holding your own private keys - no exchange or third party involved. A hardware wallet is a physical device that stores your private key offline. Your wallet is backed up by a seed phrase: 12 or 24 random words that can recreate your wallet from scratch. If you lose your device, your seed phrase is the only recovery option. Keeping that phrase secure and backed up is the most important thing you will do in Bitcoin.",
+        why: "Self-custody is the end goal for most serious Bitcoin holders. It removes counterparty risk entirely. If you understand seed phrases and can secure them, you have achieved real Bitcoin ownership.",
+        concept: "Your seed phrase IS your Bitcoin. Whoever has those 12 to 24 words can access your coins from any compatible wallet, anywhere in the world. Store it offline, in multiple secure locations, and never share it with anyone or any website.",
         resources: [
-          { label: "Bitcoin From Scratch - Full Course", url: "https://satusphere.teachable.com/p/bitcoin-from-scratch", type: "course" },
-          { label: "SatUsPhere: What is Bitcoin mining?", url: "https://satusphere.com/learn/what-is-bitcoin-mining", type: "article" }
-        ],
-        showCta: true
-      },
-      {
-        id: 9,
-        tag: "Stage 9",
-        title: "What Is the Bitcoin Halving?",
-        subtitle: "How Bitcoin's supply schedule works and why it matters",
-        videoId: "adnIhLq_1BM",
-        what: "Approximately every four years (every 210,000 blocks), the reward miners receive for adding a block is cut in half. This is called the halving. Bitcoin started with a 50 BTC block reward. It has halved to 25, then 12.5, then 6.25, and now 3.125 BTC. The halving continues until the last Bitcoin is mined around 2140.",
-        why: "The halving is Bitcoin's built-in inflation schedule. It is how Bitcoin transitions from a new-supply-driven asset to a fee-driven network. Each halving cuts the rate of new supply and has historically preceded major price appreciation.",
-        concept: "Bitcoin's total supply is fixed at 21 million, and the halving is how that cap is enforced over time. No government or company triggered it - it is automatic code that every node in the network agrees to follow.",
-        resources: [
-          { label: "Bitcoin From Scratch - Full Course", url: "https://satusphere.teachable.com/p/bitcoin-from-scratch", type: "course" },
-          { label: "SatUsPhere: What is Bitcoin mining?", url: "https://satusphere.com/learn/what-is-bitcoin-mining", type: "article" }
+          { label: "Bitcoin From Scratch - Module 8: Self-Custody", url: "https://satusphere.teachable.com/p/bitcoin-from-scratch", type: "course" },
+          { label: "SatUsPhere: How to set up a hardware wallet", url: "https://satusphere.com/learn/what-is-a-seed-phrase", type: "article" }
         ],
         showCta: true
       }
@@ -989,14 +939,6 @@
           '<div class="stage-section-label">Where to learn this</div>' +
           '<div class="resources-list">' + resourcesHtml + '</div>' +
           '</div>' +
-          (stage.videoId ? '<div class="stage-section">' +
-          '<div class="stage-video-label">Free video lesson</div>' +
-          '<div class="stage-video">' +
-          '<iframe src="https://www.youtube.com/embed/' + stage.videoId + '" ' +
-          'title="' + stage.title + '" ' +
-          'allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" ' +
-          'allowfullscreen loading="lazy"></iframe>' +
-          '</div></div>' : '') +
           ctaHtml +
           '</div>' +
           '</div>';
