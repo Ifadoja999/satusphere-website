@@ -1,636 +1,761 @@
 <!DOCTYPE html>
-<html class="dark" lang="en">
+<html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Stack the Sats Calculator | How Fast Can You Accumulate Bitcoin? | SatUsPhere</title>
-<meta name="description" content="Enter your savings amount and a target sat goal. See exactly how long it will take you to accumulate Bitcoin. Free tool from SatUsPhere." />
-<meta name="robots" content="index, follow" />
-<link rel="canonical" href="https://satusphere.com/tools/stack-the-sats-calculator" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stack the Sats Calculator | How Fast Can You Accumulate Bitcoin? | SatUsPhere</title>
+  <meta name="description" content="Enter your weekly savings and a target sat goal - see exactly how long it will take you to accumulate Bitcoin. Free tool from SatUsPhere Bitcoin education." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://satusphere.com/tools/stack-the-sats-calculator" />
 
-<!-- Open Graph -->
-<meta property="og:title" content="Stack the Sats Calculator | SatUsPhere" />
-<meta property="og:description" content="Enter your savings and a target sat goal. See how fast you can stack sats. Free tool from SatUsPhere." />
-<meta property="og:url" content="https://satusphere.com/tools/stack-the-sats-calculator" />
-<meta property="og:type" content="website" />
-<meta property="og:image" content="https://satusphere.com/assets/course-banner.png" />
-<meta property="og:site_name" content="SatUsPhere" />
+  <!-- Open Graph -->
+  <meta property="og:title" content="Stack the Sats Calculator | SatUsPhere" />
+  <meta property="og:description" content="Enter your weekly savings and a target sat goal - see exactly how long it will take you to accumulate Bitcoin. Free tool from SatUsPhere." />
+  <meta property="og:url" content="https://satusphere.com/tools/stack-the-sats-calculator" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://satusphere.com/assets/course-banner.png" />
+  <meta property="og:site_name" content="SatUsPhere" />
 
-<!-- Twitter Card -->
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:site" content="@sat_us_phere" />
-<meta name="twitter:title" content="Stack the Sats Calculator | SatUsPhere" />
-<meta name="twitter:description" content="Enter your savings and see how fast you can stack sats." />
-<meta name="twitter:image" content="https://satusphere.com/assets/course-banner.png" />
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@sat_us_phere" />
+  <meta name="twitter:title" content="Stack the Sats Calculator | SatUsPhere" />
+  <meta name="twitter:description" content="Enter your weekly savings and see how fast you can stack sats." />
 
-<!-- Structured Data -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  "name": "Stack the Sats Calculator",
-  "description": "A free calculator that shows you how long it will take to accumulate your target number of Bitcoin satoshis based on your savings.",
-  "url": "https://satusphere.com/tools/stack-the-sats-calculator",
-  "applicationCategory": "FinanceApplication",
-  "operatingSystem": "Web",
-  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-  "author": { "@type": "Organization", "name": "SatUsPhere", "url": "https://satusphere.com" }
-}
-</script>
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Stack the Sats Calculator",
+    "description": "A free calculator that shows you how long it will take to accumulate your target number of Bitcoin satoshis based on your weekly savings.",
+    "url": "https://satusphere.com/tools/stack-the-sats-calculator",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Web",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "author": { "@type": "Organization", "name": "SatUsPhere", "url": "https://satusphere.com" }
+  }
+  </script>
 
-<!-- AEO: FAQ -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "What does it mean to stack sats?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Stacking sats means accumulating satoshis (sats), the smallest unit of Bitcoin. 1 Bitcoin equals 100,000,000 satoshis. Most people buy sats, not whole bitcoins. Stacking sats is the practice of regularly buying small amounts of Bitcoin over time."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How long does it take to stack 1 million sats?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "It depends on how much you save and the current Bitcoin price. For example, at a BTC price of $80,000, saving $50 per week would get you about 62,500 sats per week, meaning it would take roughly 16 weeks (4 months) to reach 1,000,000 sats. Use the Stack the Sats Calculator to see your personalized timeline."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How many sats are in one Bitcoin?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "There are exactly 100,000,000 (one hundred million) satoshis in one Bitcoin. A satoshi is the smallest unit of Bitcoin, named after its creator Satoshi Nakamoto."
-      }
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "SatUsPhere",
+    "url": "https://satusphere.com",
+    "logo": "https://satusphere.com/assets/logo.png",
+    "sameAs": [
+      "https://x.com/sat_us_phere",
+      "https://www.youtube.com/channel/UC0jGCeBvr8qLmMhRpwda-5Q",
+      "https://satusphere.teachable.com"
+    ]
+  }
+  </script>
+
+  <script src="/assets/satusphere-gate.js"></script>
+  <link rel="stylesheet" href="/assets/shared.css" />
+
+  <style>
+    :root {
+      --navy: #0D1B2E;
+      --orange: #F7931A;
+      --blue: #1DA1F2;
+      --gold: #D4A530;
+      --white: #FFFFFF;
+      --light-bg: #f8f9fa;
+      --border: #e0e0e0;
+      --text: #1a1a2e;
+      --text-muted: #555;
     }
-  ]
-}
-</script>
 
-<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
-<script>
-    tailwind.config = {
-        darkMode: "class",
-        theme: {
-            extend: {
-                colors: {
-                    primary: "#9333EA",
-                    "primary-light": "#A855F7",
-                    "primary-dim": "#7C3AED",
-                    "primary-glow": "#C084FC",
-                    accent: "#E9D5FF",
-                    "background-dark": "#0A0A14",
-                    "nav-bg": "#051426",
-                    gold: "#F59E0B",
-                    turquoise: "#2DD4BF",
-                    orange: "#EA6C1F"
-                },
-                fontFamily: {
-                    display: ["Plus Jakarta Sans", "sans-serif"],
-                },
-                borderRadius: {
-                    DEFAULT: "1rem",
-                    card: "2rem",
-                },
-            },
-        },
-    };
-</script>
-<style>
-body {
-    font-family: "Plus Jakarta Sans", sans-serif;
-    background-color: #0A0A14;
-    color: #fff;
-    position: relative;
-    min-height: 100vh;
-}
-.bg-glow {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 80vw;
-    height: 80vh;
-    background: radial-gradient(circle, rgba(147, 51, 234, 0.15) 0%, rgba(10, 10, 20, 0) 70%);
-    z-index: -2;
-    pointer-events: none;
-}
-.bg-pattern {
-    position: fixed;
-    inset: 0;
-    background-image: linear-gradient(rgba(147, 51, 234, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(147, 51, 234, 0.03) 1px, transparent 1px);
-    background-size: 40px 40px;
-    z-index: -1;
-    pointer-events: none;
-}
-.bg-visual {
-    position: fixed;
-    inset: 0;
-    background:
-        radial-gradient(ellipse at 20% 30%, rgba(147, 51, 234, 0.12), transparent 50%),
-        radial-gradient(ellipse at 80% 70%, rgba(45, 212, 191, 0.06), transparent 40%),
-        radial-gradient(ellipse at 50% 90%, rgba(234, 108, 31, 0.05), transparent 35%);
-    z-index: -3;
-    pointer-events: none;
-}
-.glass-panel {
-    background: rgba(147, 51, 234, 0.08);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(147, 51, 234, 0.15);
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-}
-.glass-sub-panel {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    backdrop-filter: blur(10px);
-}
-.glass-input {
-    background: transparent;
-    border: none;
-    color: white;
-    width: 100%;
-    outline: none;
-    font-size: 1.125rem;
-}
-.glass-input::placeholder {
-    color: rgba(255, 255, 255, 0.4);
-}
-.glass-input:focus {
-    box-shadow: none;
-    border-color: transparent;
-}
-.glass-button {
-    background: rgba(147, 51, 234, 0.2);
-    border: 1px solid rgba(147, 51, 234, 0.4);
-    backdrop-filter: blur(10px);
-    transition: all 0.3s ease;
-}
-.glass-button:hover {
-    background: rgba(147, 51, 234, 0.3);
-    box-shadow: 0 0 20px rgba(147, 51, 234, 0.3);
-    border-color: rgba(192, 132, 252, 0.6);
-}
-input[type="text"], input[type="number"], select {
-    background-color: transparent;
-    border: none;
-    padding: 0;
-    color: white;
-}
-input[type="text"]:focus, input[type="number"]:focus, select:focus {
-    box-shadow: none;
-    border-color: transparent;
-}
-input[type="number"] { -moz-appearance: textfield; }
-input[type="number"]::-webkit-outer-spin-button,
-input[type="number"]::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
-select option {
-    background-color: #0A0A14;
-    color: white;
-}
-</style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      color: var(--text);
+      line-height: 1.7;
+      background: #fff;
+    }
+
+    /* Navigation */
+    nav {
+      background: var(--navy);
+      padding: 16px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .nav-logo {
+      color: var(--white);
+      font-weight: 700;
+      font-size: 1.2rem;
+      text-decoration: none;
+    }
+    .nav-cta {
+      background: var(--orange);
+      color: var(--white);
+      padding: 8px 20px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: opacity 0.2s;
+    }
+    .nav-cta:hover { opacity: 0.88; }
+
+    /* Hero */
+    .hero {
+      background: var(--navy);
+      color: var(--white);
+      text-align: center;
+      padding: 56px 24px 48px;
+    }
+    .hero-label {
+      display: inline-block;
+      background: var(--orange);
+      color: var(--white);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 4px;
+      margin-bottom: 20px;
+    }
+    .hero h1 {
+      font-size: clamp(1.6rem, 4vw, 2.4rem);
+      font-weight: 800;
+      line-height: 1.25;
+      margin-bottom: 16px;
+      max-width: 680px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .hero p {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.75);
+      max-width: 560px;
+      margin: 0 auto;
+    }
+
+    /* Main container */
+    .container {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 48px 24px;
+    }
+
+    /* Intro note */
+    .intro-note {
+      background: var(--light-bg);
+      border-left: 4px solid var(--orange);
+      padding: 16px 20px;
+      border-radius: 0 8px 8px 0;
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      margin-bottom: 36px;
+      line-height: 1.6;
+    }
+
+    /* Calculator form */
+    .calc-form {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 32px;
+    }
+
+    .field-group {
+      margin-bottom: 24px;
+    }
+    .field-group label {
+      display: block;
+      font-weight: 600;
+      font-size: 0.95rem;
+      margin-bottom: 8px;
+      color: var(--text);
+    }
+    .field-group .field-hint {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin-top: 6px;
+    }
+
+    .input-wrap {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+    .input-prefix {
+      position: absolute;
+      left: 14px;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      pointer-events: none;
+    }
+    .input-wrap input {
+      width: 100%;
+      padding: 13px 16px 13px 32px;
+      font-size: 1rem;
+      border: 2px solid var(--border);
+      border-radius: 8px;
+      outline: none;
+      transition: border-color 0.2s;
+      color: var(--text);
+    }
+    .input-wrap input.no-prefix {
+      padding-left: 16px;
+    }
+    .input-wrap input:focus {
+      border-color: var(--orange);
+    }
+
+    .calc-btn {
+      width: 100%;
+      padding: 15px;
+      background: var(--orange);
+      color: var(--white);
+      border: none;
+      border-radius: 8px;
+      font-size: 1.05rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: opacity 0.2s;
+      margin-top: 8px;
+    }
+    .calc-btn:hover { opacity: 0.88; }
+
+    /* Results */
+    .results-wrap {
+      margin-top: 36px;
+      display: none;
+    }
+    .results-wrap.visible { display: block; }
+
+    .results-card {
+      background: var(--navy);
+      color: var(--white);
+      border-radius: 12px;
+      padding: 32px;
+      margin-bottom: 24px;
+    }
+
+    .results-headline {
+      font-size: clamp(1.1rem, 3vw, 1.4rem);
+      font-weight: 700;
+      line-height: 1.35;
+      margin-bottom: 12px;
+      color: var(--white);
+    }
+    .results-subline {
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.7);
+      margin-bottom: 24px;
+    }
+
+    /* Progress bar */
+    .progress-section {
+      margin-bottom: 24px;
+    }
+    .progress-label-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 8px;
+    }
+    .progress-bar-bg {
+      background: rgba(255,255,255,0.15);
+      border-radius: 100px;
+      height: 10px;
+      overflow: hidden;
+    }
+    .progress-bar-fill {
+      height: 100%;
+      background: var(--orange);
+      border-radius: 100px;
+      transition: width 0.6s ease;
+      min-width: 4px;
+    }
+
+    /* Stats row */
+    .stats-row {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .stat-box {
+      flex: 1;
+      min-width: 140px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 8px;
+      padding: 14px 16px;
+    }
+    .stat-value {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--orange);
+      line-height: 1.2;
+    }
+    .stat-label {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.55);
+      margin-top: 4px;
+    }
+
+    .price-note {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.4);
+      margin-top: 20px;
+      font-style: italic;
+    }
+
+    /* Divider */
+    .divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 32px 0;
+    }
+
+    /* Email capture */
+    .email-section {
+      background: var(--light-bg);
+      border-radius: 12px;
+      padding: 28px;
+      margin-bottom: 32px;
+    }
+    .email-section h2 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--text);
+    }
+    .email-section p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+    .email-form {
+      display: flex;
+      gap: 12px;
+    }
+    .email-form input[type="email"] {
+      flex: 1;
+      padding: 12px 16px;
+      font-size: 0.95rem;
+      border: 2px solid var(--border);
+      border-radius: 8px;
+      outline: none;
+      transition: border-color 0.2s;
+      color: var(--text);
+    }
+    .email-form input[type="email"]:focus {
+      border-color: var(--orange);
+    }
+    .email-form button {
+      padding: 12px 22px;
+      background: var(--navy);
+      color: var(--white);
+      border: none;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: opacity 0.2s;
+    }
+    .email-form button:hover { opacity: 0.85; }
+    .email-confirm {
+      display: none;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #2e7d32;
+    }
+    .email-confirm.visible { display: block; }
+
+    /* BFS CTA */
+    .bfs-cta {
+      background: var(--navy);
+      border-radius: 12px;
+      padding: 32px;
+      text-align: center;
+      color: var(--white);
+    }
+    .bfs-cta p {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.8);
+      margin-bottom: 24px;
+      line-height: 1.6;
+    }
+    .bfs-btn {
+      display: inline-block;
+      background: var(--orange);
+      color: var(--white);
+      padding: 14px 32px;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+    .bfs-btn:hover { opacity: 0.88; }
+
+    /* Reset link */
+    .reset-link {
+      display: inline-block;
+      margin-top: 20px;
+      background: none;
+      border: none;
+      color: var(--orange);
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: underline;
+      padding: 0;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--navy);
+      color: rgba(255,255,255,0.5);
+      text-align: center;
+      padding: 28px 24px;
+      font-size: 0.85rem;
+      margin-top: 64px;
+    }
+    footer a { color: rgba(255,255,255,0.7); text-decoration: none; }
+    footer a:hover { color: var(--white); }
+
+    @media (max-width: 520px) {
+      .calc-form { padding: 24px 18px; }
+      .results-card { padding: 24px 18px; }
+      .email-form { flex-direction: column; }
+      .stats-row { gap: 10px; }
+    }
+  </style>
 </head>
-<body class="antialiased overflow-x-hidden selection:bg-primary selection:text-white flex flex-col min-h-screen">
+<body>
 
-<div class="bg-visual"></div>
-<div class="bg-glow"></div>
-<div class="bg-pattern"></div>
+  <nav>
+    <a href="https://satusphere.com" class="nav-logo">SatUsPhere</a>
+    <a href="https://satusphere.teachable.com/p/bitcoin-from-scratch" class="nav-cta">Get the Course</a>
+  </nav>
 
-<!-- Nav -->
-<nav class="bg-nav-bg/90 backdrop-blur-md border-b border-white/10 sticky top-0 z-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between items-center h-20">
-            <a href="https://satusphere.com" class="flex items-center gap-3 no-underline">
-                <img src="/assets/satusphere_logo.png" alt="SatUsPhere" class="w-10 h-10 rounded-full object-cover" />
-                <span class="font-display font-bold text-xl tracking-wide text-primary-glow">SatUsPhere</span>
-            </a>
-            <div class="hidden md:flex space-x-8">
-                <a class="text-white/70 hover:text-white transition font-medium no-underline" href="https://satusphere.com">Home</a>
-            </div>
-            <a class="flex items-center gap-2 px-4 py-2 rounded-lg glass-sub-panel text-sm font-semibold hover:bg-white/10 transition no-underline" href="https://satusphere.com/tools">
-                <span class="material-symbols-outlined text-[20px]">arrow_back</span>
-                Back to Tools
-            </a>
-        </div>
-    </div>
-</nav>
+  <div class="hero">
+    <div class="hero-label">Free Tool</div>
+    <h1>How Fast Can You Stack Sats?</h1>
+    <p>Bitcoin is bought in pieces called satoshis (sats). One bitcoin = 100,000,000 sats. See how fast you can stack yours.</p>
+  </div>
 
-<main class="flex-grow w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 flex flex-col gap-12 relative z-10">
+  <div class="container">
 
-    <!-- Two Panel Layout -->
-    <div class="flex flex-col lg:flex-row gap-8 lg:gap-0 lg:-mx-4 relative">
-
-        <!-- LEFT: Form Panel -->
-        <div class="w-full lg:w-5/12 lg:pr-8 z-20">
-            <div class="glass-panel rounded-card p-6 sm:p-8 flex flex-col gap-6">
-                <h1 class="text-xl font-bold text-center"><span class="text-turquoise">Stack</span> <span class="text-white">the</span> <span class="text-orange">Sats</span> <span class="text-white">Calculator</span></h1>
-
-                <!-- Stacking Goal Display -->
-                <div class="glass-sub-panel rounded-2xl p-4 flex justify-between items-center relative overflow-hidden border-l-4 border-turquoise">
-                    <div class="absolute inset-0 bg-gradient-to-r from-turquoise/10 via-primary/10 to-transparent pointer-events-none"></div>
-                    <div>
-                        <p class="text-sm text-turquoise font-medium">Stacking Goal</p>
-                        <p class="text-2xl font-bold text-white tracking-wide" id="goal-display">1,000,000 SATS</p>
-                    </div>
-                    <div class="text-orange">
-                        <span class="material-symbols-outlined text-2xl">flag</span>
-                    </div>
-                </div>
-
-                <!-- Inputs -->
-                <div class="flex flex-col gap-3">
-                    <div class="glass-sub-panel rounded-xl p-4">
-                        <label class="block text-xs font-semibold text-white/50 uppercase tracking-wider mb-1">Target Sats Goal</label>
-                        <div class="flex items-center">
-                            <span class="text-turquoise mr-2 text-lg font-bold">SAT</span>
-                            <input id="input-target" class="glass-input font-medium" placeholder="1000000" type="number" value="1000000" oninput="updateGoalDisplay()"/>
-                        </div>
-                    </div>
-
-                    <div class="glass-sub-panel rounded-xl p-4">
-                        <label class="block text-xs font-semibold text-white/50 uppercase tracking-wider mb-1">Current Stack</label>
-                        <div class="flex items-center">
-                            <span class="text-turquoise mr-2 text-lg font-bold">SAT</span>
-                            <input id="input-current" class="glass-input font-medium" placeholder="0" type="number" value="0"/>
-                        </div>
-                    </div>
-
-                    <div class="glass-sub-panel rounded-xl p-4 flex justify-between items-center">
-                        <div class="flex-grow">
-                            <label class="block text-xs font-semibold text-white/50 uppercase tracking-wider mb-1">Contribution (USD)</label>
-                            <div class="flex items-center">
-                                <span class="text-orange mr-2 text-lg font-bold">$</span>
-                                <input id="input-contribution" class="glass-input font-medium" placeholder="50" type="number" value="50"/>
-                            </div>
-                        </div>
-                        <div class="w-28 border-l border-white/10 pl-4">
-                            <label class="block text-xs font-semibold text-white/50 uppercase tracking-wider mb-1">Freq</label>
-                            <select id="input-freq" class="w-full bg-transparent border-none text-white focus:ring-0 text-sm font-medium p-0">
-                                <option value="daily">Daily</option>
-                                <option value="weekly" selected>Weekly</option>
-                                <option value="biweekly">Bi-Weekly</option>
-                                <option value="bimonthly">Bi-Monthly</option>
-                                <option value="monthly">Monthly</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <!-- Target Timeframe (optional) -->
-                    <div class="glass-sub-panel rounded-xl p-4 border border-turquoise/30">
-                        <label class="block text-xs font-semibold text-white/50 uppercase tracking-wider mb-1">Target Timeframe (optional)</label>
-                        <div class="flex items-center gap-3">
-                            <input id="input-timeframe" class="glass-input font-medium w-20" placeholder="--" type="number" min="1"/>
-                            <select id="input-timeframe-unit" class="bg-transparent border-none text-white focus:ring-0 text-sm font-medium p-0">
-                                <option value="days">Days</option>
-                                <option value="weeks">Weeks</option>
-                                <option value="months" selected>Months</option>
-                                <option value="years">Years</option>
-                            </select>
-                        </div>
-                        <p class="text-[10px] text-white/30 mt-1">Fill this in to calculate the contribution needed. Leave blank to calculate time instead.</p>
-                    </div>
-
-                    <div class="glass-sub-panel rounded-xl p-4">
-                        <label class="block text-xs font-semibold text-white/50 uppercase tracking-wider mb-1">BTC Price (auto-fetched, or enter manually)</label>
-                        <div class="flex items-center justify-between">
-                            <div class="flex items-center flex-grow">
-                                <span class="text-orange mr-2 text-lg font-bold">$</span>
-                                <input id="input-price" class="glass-input font-medium" placeholder="Loading..." type="number"/>
-                            </div>
-                            <button type="button" onclick="refreshPrice()" class="ml-3 text-turquoise hover:text-white transition" title="Refresh live price">
-                                <span class="material-symbols-outlined text-xl">refresh</span>
-                            </button>
-                        </div>
-                        <p class="text-[10px] text-white/30 mt-1" id="price-status">Fetching live price...</p>
-                    </div>
-                </div>
-
-                <button type="button" onclick="calculate()" id="calc-btn" class="w-full py-4 rounded-xl bg-gradient-to-r from-primary via-turquoise/80 to-orange text-white font-bold tracking-wide mt-2 flex items-center justify-center gap-2 group hover:shadow-[0_0_25px_rgba(45,212,191,0.3)] transition-all">
-                    <span class="material-symbols-outlined text-[20px]">calculate</span>
-                    Calculate Stack
-                </button>
-            </div>
-        </div>
-
-        <!-- RIGHT: Results Panel -->
-        <div class="w-full lg:w-7/12 lg:pl-12 lg:-ml-12 lg:mt-12 z-10">
-            <div class="glass-panel rounded-card p-6 sm:p-10 h-full flex flex-col">
-                <div class="flex items-center justify-between mb-8">
-                    <h2 class="text-2xl font-bold text-white tracking-wide">Your <span class="text-turquoise">Stacking</span> Plan</h2>
-                    <span class="material-symbols-outlined text-orange">monitoring</span>
-                </div>
-
-                <!-- Stats Grid -->
-                <div class="grid grid-cols-2 gap-4 mb-10">
-                    <div class="glass-sub-panel rounded-2xl p-5 border-t-2 border-turquoise">
-                        <p class="text-sm text-turquoise mb-1">Target Goal</p>
-                        <p class="text-xl font-bold text-white" id="stat-target">--</p>
-                    </div>
-                    <div class="glass-sub-panel rounded-2xl p-5 border-t-2 border-orange">
-                        <p class="text-sm text-orange mb-1">Remaining</p>
-                        <p class="text-xl font-bold text-white" id="stat-remaining">--</p>
-                    </div>
-                    <div class="glass-sub-panel rounded-2xl p-5 border-t-2 border-orange">
-                        <p class="text-sm text-orange mb-1">Contribution</p>
-                        <p class="text-xl font-bold text-white" id="stat-contribution">--</p>
-                    </div>
-                    <div class="glass-sub-panel rounded-2xl p-5 relative overflow-hidden border-t-2 border-turquoise">
-                        <div class="absolute top-0 right-0 p-2 opacity-10">
-                            <span class="material-symbols-outlined text-4xl text-turquoise">schedule</span>
-                        </div>
-                        <p class="text-sm text-turquoise mb-1">Time to Goal</p>
-                        <p class="text-xl font-bold text-white" id="stat-time">--</p>
-                    </div>
-                </div>
-
-                <!-- Ring Chart -->
-                <div class="flex-grow flex flex-col items-center justify-center gap-10">
-                    <div class="relative w-[250px] h-[250px]">
-                        <svg viewBox="0 0 250 250" class="w-full h-full" style="transform: rotate(-90deg);">
-                            <circle cx="125" cy="125" r="100" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="24"/>
-                            <!-- Purple remaining (drawn first, behind) -->
-                            <circle id="ring-remaining" cx="125" cy="125" r="100" fill="none" stroke="#9333EA" stroke-width="24" stroke-dasharray="628.32" stroke-dashoffset="628.32" style="transition: stroke-dashoffset 1s ease;"/>
-                            <!-- Turquoise current stack (drawn second, on top) -->
-                            <circle id="ring-current" cx="125" cy="125" r="100" fill="none" stroke="#2DD4BF" stroke-width="24" stroke-dasharray="628.32" stroke-dashoffset="628.32" style="transition: stroke-dashoffset 1s ease;"/>
-                        </svg>
-                        <div class="absolute inset-0 flex flex-col items-center justify-center">
-                            <p class="text-sm text-turquoise font-medium mb-1 tracking-wider uppercase">Current Value</p>
-                            <p class="text-3xl font-black text-orange tracking-tight" id="ring-value">--</p>
-                        </div>
-                    </div>
-
-                    <!-- Legend -->
-                    <div class="w-full max-w-sm space-y-3">
-                        <div class="flex items-center justify-between text-sm">
-                            <div class="flex items-center gap-3">
-                                <div class="w-4 h-4 rounded-full bg-turquoise shadow-[0_0_10px_#2DD4BF]"></div>
-                                <span class="text-white/80 font-medium">Current Stack</span>
-                            </div>
-                            <span class="font-bold text-white" id="legend-current">-- sats</span>
-                        </div>
-                        <div class="flex items-center justify-between text-sm">
-                            <div class="flex items-center gap-3">
-                                <div class="w-4 h-4 rounded-full bg-primary shadow-[0_0_10px_#9333EA]"></div>
-                                <span class="text-white/80 font-medium">Remaining to Goal</span>
-                            </div>
-                            <span class="font-bold text-white" id="legend-remaining">-- sats</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Price Note -->
-                <div class="mt-8 text-center text-xs text-white/30" id="result-note">
-                    Enter your details and click Calculate Stack to see your plan.
-                </div>
-            </div>
-        </div>
+    <div class="intro-note">
+      Bitcoin is divisible to eight decimal places. Most people never own a full bitcoin - they stack satoshis (sats). This calculator shows you how long it takes to hit your sat goal based on your weekly savings and today's BTC price.
     </div>
 
-    <!-- Bottom Cards -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
-        <!-- Why Stack Sats -->
-        <div class="glass-panel rounded-card p-8 flex flex-col justify-center">
-            <div class="w-12 h-12 rounded-full glass-sub-panel flex items-center justify-center mb-6 border border-turquoise/30">
-                <span class="material-symbols-outlined text-turquoise text-2xl">school</span>
-            </div>
-            <h3 class="text-2xl font-bold mb-4"><span class="text-white">Why</span> <span class="text-turquoise">Stack</span> <span class="text-orange">Sats?</span></h3>
-            <p class="text-white/70 leading-relaxed">
-                Most people will never own a full bitcoin. That's fine. Bitcoin is divisible to 8 decimal places, and the smallest unit, a satoshi, is how most people accumulate. Small, consistent purchases over time is one of the most common ways to build a Bitcoin position without trying to time the market.
-            </p>
-        </div>
+    <!-- Calculator Form -->
+    <div class="calc-form">
 
-        <!-- Course CTA -->
-        <div class="glass-panel rounded-card p-8 border-l-4 border-l-primary flex flex-col justify-center relative overflow-hidden group">
-            <div class="absolute -right-10 -bottom-10 opacity-5 group-hover:opacity-10 transition-opacity duration-500">
-                <span class="material-symbols-outlined text-[200px]">auto_stories</span>
-            </div>
-            <h3 class="text-2xl font-black text-white mb-2 leading-tight">Understand Bitcoin From the Ground Up</h3>
-            <p class="text-white/60 mb-8 max-w-sm">Learn what Bitcoin is, how it works, and why millions of people are accumulating it. 34 lessons, 3D animated, built for beginners.</p>
-            <a class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-primary text-white font-bold hover:bg-primary/90 transition shadow-[0_4px_20px_rgba(147,51,234,0.3)] w-max no-underline" href="https://satusphere.teachable.com/p/bitcoin-from-scratch">
-                Get Full Bitcoin Course
-                <span class="material-symbols-outlined text-sm">arrow_forward</span>
-            </a>
+      <div class="field-group">
+        <label for="weekly-savings">How much can you save per week? ($)</label>
+        <div class="input-wrap">
+          <span class="input-prefix">$</span>
+          <input type="number" id="weekly-savings" min="1" step="0.01" placeholder="25" />
         </div>
+        <div class="field-hint">Enter any amount, even $5 or $10 per week.</div>
+      </div>
+
+      <div class="field-group">
+        <label for="target-sats">How many sats do you want to accumulate?</label>
+        <div class="input-wrap">
+          <input type="number" id="target-sats" class="no-prefix" min="1000" step="1000" value="1000000" />
+        </div>
+        <div class="field-hint">Default: 1,000,000 sats = approximately 0.01 BTC at today's price.</div>
+      </div>
+
+      <button class="calc-btn" onclick="calculate()">Calculate</button>
+
     </div>
 
-    <!-- Tools Link -->
-    <div class="text-center">
-        <a href="https://satusphere.com/tools" class="text-turquoise font-bold hover:underline hover:text-orange transition-colors no-underline">Explore all free Bitcoin tools</a>
-    </div>
-</main>
+    <!-- Results -->
+    <div class="results-wrap" id="results-wrap">
 
-<!-- Footer -->
-<footer class="bg-nav-bg border-t border-white/5 py-10 mt-auto relative z-20">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex flex-col md:flex-row justify-between items-center gap-6">
-            <a href="https://satusphere.com" class="flex items-center gap-3 no-underline">
-                <img src="/assets/satusphere_logo.png" alt="SatUsPhere" class="w-8 h-8 rounded-full object-cover" />
-                <span class="font-display font-bold text-lg text-primary-glow">SatUsPhere</span>
-            </a>
-            <div class="flex flex-wrap justify-center gap-6 text-sm text-white/50">
-                <a class="hover:text-primary-glow transition no-underline" href="https://satusphere.com/privacy">Privacy</a>
-                <a class="hover:text-primary-glow transition no-underline" href="https://satusphere.com/terms">Terms</a>
-                <a class="hover:text-primary-glow transition no-underline" href="mailto:info@satusphere.com">Support</a>
-            </div>
-            <div class="text-sm text-white/40">&copy; 2026 SatUsPhere</div>
+      <div class="results-card" id="results-card">
+        <div class="results-headline" id="results-headline"></div>
+        <div class="results-subline" id="results-subline"></div>
+
+        <div class="progress-section">
+          <div class="progress-label-row">
+            <span>0 sats</span>
+            <span id="progress-goal-label"></span>
+          </div>
+          <div class="progress-bar-bg">
+            <div class="progress-bar-fill" id="progress-bar" style="width: 4%"></div>
+          </div>
         </div>
+
+        <div class="stats-row">
+          <div class="stat-box">
+            <div class="stat-value" id="stat-sats-week"></div>
+            <div class="stat-label">sats per week</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-value" id="stat-btc-price"></div>
+            <div class="stat-label">BTC price today</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-value" id="stat-decimal-btc"></div>
+            <div class="stat-label">decimal BTC at goal</div>
+          </div>
+        </div>
+
+        <div class="price-note" id="price-note"></div>
+        <button class="reset-link" onclick="resetCalc()">Recalculate</button>
+      </div>
+
+      <!-- Disclaimer -->
+      <div class="disclaimer">
+        This tool is for educational purposes only. Not financial advice.
+      </div>
+
+      <hr class="divider" />
+
+      <!-- Email Capture -->
+      <div class="email-section" id="email-section">
+        <h2>Want to learn what to do with those sats when you get there?</h2>
+        <p>Get free Bitcoin education from SatUsPhere. No spam, no noise - just the fundamentals.</p>
+        <div class="email-form" id="email-form">
+          <input type="email" id="email-input" placeholder="you@example.com" />
+          <button onclick="submitEmail()">Send me the guide</button>
+        </div>
+        <div class="email-confirm" id="email-confirm">You are in. We will be in touch.</div>
+      </div>
+
+      <!-- BFS CTA -->
+      <div class="bfs-cta">
+        <p>Ready to go deeper? Bitcoin From Scratch is the only Bitcoin course built entirely with 3D animation - 34 lessons from monetary history to self-custody. Start learning today.</p>
+        <a href="https://satusphere.teachable.com/p/bitcoin-from-scratch" class="bfs-btn">Get Bitcoin From Scratch</a>
+      </div>
+
     </div>
-</footer>
 
-<script>
-const SATS_PER_BTC = 100_000_000;
-const RING_CIRC = 2 * Math.PI * 100; // ~628.32
-let liveBtcPrice = null;
+  </div>
 
-// ── Fetch BTC Price ──
-async function fetchPrice() {
-    const priceInput = document.getElementById('input-price');
-    const statusEl = document.getElementById('price-status');
-    try {
-        const res = await fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd', { cache: 'no-store' });
-        if (!res.ok) throw new Error('fetch failed');
-        const data = await res.json();
-        liveBtcPrice = data.bitcoin.usd;
-        priceInput.value = Math.round(liveBtcPrice);
-        priceInput.placeholder = Math.round(liveBtcPrice);
-        statusEl.textContent = 'Live price from CoinGecko. Updated ' + new Date().toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
-    } catch (e) {
-        statusEl.textContent = 'Could not fetch live price. Enter manually.';
+  <footer>
+    <p><a href="https://satusphere.com">SatUsPhere</a> - Bitcoin Is For All Of Us &nbsp;|&nbsp; <a href="mailto:info@satusphere.com">info@satusphere.com</a></p>
+  </footer>
+
+  <script>
+    // -------------------------------------------------------
+    // CONFIG
+    // -------------------------------------------------------
+    var FALLBACK_BTC_PRICE = 83000;
+    var FALLBACK_PRICE_DATE = "April 1, 2026";
+    var EMAIL_WEBHOOK = "https://ireaje.app.n8n.cloud/webhook/004d62fc-5120-4e35-822f-287d578af89f";
+
+    // -------------------------------------------------------
+    // STATE
+    // -------------------------------------------------------
+    var btcPrice = null;
+    var priceSource = "live";
+
+    // -------------------------------------------------------
+    // FETCH BTC PRICE
+    // -------------------------------------------------------
+    function fetchBtcPrice(callback) {
+      var xhr = new XMLHttpRequest();
+      xhr.open("GET", "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd", true);
+      xhr.timeout = 6000;
+      xhr.onload = function() {
+        if (xhr.status === 200) {
+          try {
+            var data = JSON.parse(xhr.responseText);
+            if (data && data.bitcoin && data.bitcoin.usd) {
+              btcPrice = data.bitcoin.usd;
+              priceSource = "live";
+              callback(btcPrice);
+              return;
+            }
+          } catch (e) {}
+        }
+        useFallback(callback);
+      };
+      xhr.onerror = function() { useFallback(callback); };
+      xhr.ontimeout = function() { useFallback(callback); };
+      xhr.send();
     }
-}
 
-function refreshPrice() {
-    document.getElementById('price-status').textContent = 'Refreshing...';
-    fetchPrice();
-}
-
-// ── Update Goal Display ──
-function updateGoalDisplay() {
-    const target = parseInt(document.getElementById('input-target').value) || 0;
-    document.getElementById('goal-display').textContent = target.toLocaleString() + ' SATS';
-}
-
-// ── Format Duration ──
-function formatDuration(totalDays) {
-    if (totalDays < 1) return 'less than a day';
-    const years = Math.floor(totalDays / 365);
-    const remaining = totalDays % 365;
-    const months = Math.floor(remaining / 30);
-    const days = Math.round(remaining % 30);
-
-    if (years === 0 && months === 0) return days + ' day' + (days !== 1 ? 's' : '');
-    if (years === 0) {
-        if (days === 0) return months + ' month' + (months !== 1 ? 's' : '');
-        return months + ' month' + (months !== 1 ? 's' : '') + ', ' + days + ' day' + (days !== 1 ? 's' : '');
+    function useFallback(callback) {
+      btcPrice = FALLBACK_BTC_PRICE;
+      priceSource = "fallback";
+      callback(btcPrice);
     }
-    if (months === 0) return years + ' year' + (years !== 1 ? 's' : '');
-    return years + ' year' + (years !== 1 ? 's' : '') + ', ' + months + ' month' + (months !== 1 ? 's' : '');
-}
 
-// ── Get periods per year ──
-function periodsPerYear(freq) {
-    switch (freq) {
-        case 'daily': return 365;
-        case 'weekly': return 52;
-        case 'biweekly': return 26;
-        case 'bimonthly': return 24;
-        case 'monthly': return 12;
-        default: return 52;
+    // -------------------------------------------------------
+    // FORMAT HELPERS
+    // -------------------------------------------------------
+    function formatNumber(n) {
+      return n.toLocaleString("en-US", { maximumFractionDigits: 0 });
     }
-}
 
-function freqLabel(freq) {
-    switch (freq) {
-        case 'daily': return '/day';
-        case 'weekly': return '/wk';
-        case 'biweekly': return '/2wk';
-        case 'bimonthly': return '/2x mo';
-        case 'monthly': return '/mo';
-        default: return '/wk';
+    function formatDuration(weeks) {
+      if (weeks < 1) {
+        return "less than 1 week";
+      }
+      var totalDays = Math.round(weeks * 7);
+      var years = Math.floor(totalDays / 365);
+      var remainingDays = totalDays % 365;
+      var months = Math.floor(remainingDays / 30);
+      var days = remainingDays % 30;
+
+      if (years === 0 && months === 0) {
+        return days + " day" + (days !== 1 ? "s" : "");
+      }
+      if (years === 0) {
+        if (days === 0) {
+          return months + " month" + (months !== 1 ? "s" : "");
+        }
+        return months + " month" + (months !== 1 ? "s" : "") + " and " + days + " day" + (days !== 1 ? "s" : "");
+      }
+      if (months === 0) {
+        return years + " year" + (years !== 1 ? "s" : "");
+      }
+      return years + " year" + (years !== 1 ? "s" : "") + " and " + months + " month" + (months !== 1 ? "s" : "");
     }
-}
 
-// ── Convert timeframe input to days ──
-function timeframeToDays(value, unit) {
-    switch (unit) {
-        case 'days': return value;
-        case 'weeks': return value * 7;
-        case 'months': return value * 30.44;
-        case 'years': return value * 365;
-        default: return value * 30.44;
-    }
-}
+    // -------------------------------------------------------
+    // CALCULATE
+    // -------------------------------------------------------
+    function calculate() {
+      var savingsInput = parseFloat(document.getElementById("weekly-savings").value);
+      var targetSatsInput = parseFloat(document.getElementById("target-sats").value);
 
-// ── Calculate ──
-function calculate() {
-    const target = parseInt(document.getElementById('input-target').value) || 0;
-    const current = parseInt(document.getElementById('input-current').value) || 0;
-    const contribution = parseFloat(document.getElementById('input-contribution').value) || 0;
-    const freq = document.getElementById('input-freq').value;
-    const price = parseFloat(document.getElementById('input-price').value) || 0;
-    const timeframeVal = parseFloat(document.getElementById('input-timeframe').value) || 0;
-    const timeframeUnit = document.getElementById('input-timeframe-unit').value;
-
-    if (target <= 0) { alert('Please enter a target sats goal.'); return; }
-    if (price <= 0) { alert('Please enter a BTC price or wait for live price to load.'); return; }
-
-    const remaining = Math.max(target - current, 0);
-    const currentUSD = (current / SATS_PER_BTC) * price;
-    const satsPerDollar = SATS_PER_BTC / price;
-    const daysPerPeriod = 365 / periodsPerYear(freq);
-
-    // Already at goal
-    if (remaining === 0) {
-        updateStats(target, 0, contribution, freq, 0);
-        updateRing(current, target);
-        document.getElementById('ring-value').textContent = '$' + currentUSD.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
-        document.getElementById('legend-current').textContent = current.toLocaleString() + ' sats';
-        document.getElementById('legend-remaining').textContent = '0 sats';
-        document.getElementById('result-note').textContent = 'You have already reached your goal!';
+      if (!savingsInput || savingsInput < 1) {
+        alert("Please enter a weekly savings amount of at least $1.");
         return;
-    }
-
-    // MODE 1: Timeframe provided -> calculate required contribution
-    if (timeframeVal > 0) {
-        const totalDays = timeframeToDays(timeframeVal, timeframeUnit);
-        const totalPeriods = totalDays / daysPerPeriod;
-        const satsNeededPerPeriod = remaining / totalPeriods;
-        const usdPerPeriod = satsNeededPerPeriod / satsPerDollar;
-        const roundedContribution = Math.ceil(usdPerPeriod * 100) / 100;
-
-        // Update the contribution field to show the calculated amount
-        document.getElementById('input-contribution').value = roundedContribution.toFixed(2);
-
-        updateStats(target, remaining, roundedContribution, freq, totalDays);
-        updateRing(current, target);
-
-        document.getElementById('ring-value').textContent = '$' + currentUSD.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
-        document.getElementById('legend-current').textContent = current.toLocaleString() + ' sats';
-        document.getElementById('legend-remaining').textContent = remaining.toLocaleString() + ' sats';
-
-        const decimalBtc = (target / SATS_PER_BTC).toFixed(8);
-        document.getElementById('result-note').textContent =
-            'To reach ' + target.toLocaleString() + ' sats in ' + timeframeVal + ' ' + timeframeUnit +
-            ', you need to save $' + roundedContribution.toFixed(2) + freqLabel(freq) +
-            '. (' + decimalBtc + ' BTC at $' + Math.round(price).toLocaleString() + '/BTC)';
+      }
+      if (!targetSatsInput || targetSatsInput < 1000) {
+        alert("Please enter a target of at least 1,000 sats.");
         return;
+      }
+
+      var btn = document.querySelector(".calc-btn");
+      btn.textContent = "Calculating...";
+      btn.disabled = true;
+
+      fetchBtcPrice(function(price) {
+        btn.textContent = "Calculate";
+        btn.disabled = false;
+        if (window.SatuGate && !SatuGate.hasSubscribed()) {
+          SatuGate.showModal({
+            heading: 'Your results are ready',
+            subtext: 'Enter your email to unlock your results and get the free Bitcoin Beginner Guide.',
+            ctaLabel: 'Show My Results',
+            source: 'stack-the-sats-calculator',
+            onSubmit: function(email) { renderResults(savingsInput, targetSatsInput, price); },
+            onSkip: function() { renderResults(savingsInput, targetSatsInput, price); }
+          });
+        } else {
+          renderResults(savingsInput, targetSatsInput, price);
+        }
+      });
     }
 
-    // MODE 2: Contribution provided -> calculate time to goal
-    if (contribution <= 0) { alert('Please enter a contribution amount or a target timeframe.'); return; }
+    // -------------------------------------------------------
+    // RENDER RESULTS
+    // -------------------------------------------------------
+    function renderResults(weeklySavings, targetSats, price) {
+      var satsPerDollar = 100000000 / price;
+      var satsPerWeek = weeklySavings * satsPerDollar;
+      var weeksToGoal = targetSats / satsPerWeek;
+      var decimalBtc = targetSats / 100000000;
 
-    const satsPerPeriod = contribution * satsPerDollar;
-    const periodsNeeded = remaining / satsPerPeriod;
-    const totalDays = periodsNeeded * daysPerPeriod;
+      // Progress bar - show a small starting position (0%)
+      var progressPct = 4; // represents "just starting"
 
-    updateStats(target, remaining, contribution, freq, totalDays);
-    updateRing(current, target);
+      // Headline
+      var duration = formatDuration(weeksToGoal);
+      document.getElementById("results-headline").textContent =
+        "At $" + weeklySavings.toLocaleString("en-US", {minimumFractionDigits: 0, maximumFractionDigits: 2}) +
+        "/week, you will hit " + formatNumber(targetSats) + " sats in " + duration + ".";
 
-    document.getElementById('ring-value').textContent = '$' + currentUSD.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
-    document.getElementById('legend-current').textContent = current.toLocaleString() + ' sats';
-    document.getElementById('legend-remaining').textContent = remaining.toLocaleString() + ' sats';
+      // Sub-line
+      document.getElementById("results-subline").textContent =
+        "That is approximately " + decimalBtc.toFixed(8) + " BTC at today's price of $" + formatNumber(Math.round(price)) + ".";
 
-    const decimalBtc = (target / SATS_PER_BTC).toFixed(8);
-    document.getElementById('result-note').textContent =
-        target.toLocaleString() + ' sats = ' + decimalBtc + ' BTC at $' + Math.round(price).toLocaleString() + '/BTC. Estimates change as price fluctuates.';
-}
+      // Progress bar
+      document.getElementById("progress-goal-label").textContent = formatNumber(targetSats) + " sats";
+      document.getElementById("progress-bar").style.width = progressPct + "%";
 
-function updateStats(target, remaining, contribution, freq, totalDays) {
-    document.getElementById('stat-target').textContent = formatSats(target);
-    document.getElementById('stat-remaining').textContent = formatSats(remaining);
-    document.getElementById('stat-contribution').textContent = '$' + contribution + freqLabel(freq);
-    document.getElementById('stat-time').textContent = totalDays > 0 ? '~' + formatDuration(totalDays) : 'Done!';
-}
+      // Stats
+      document.getElementById("stat-sats-week").textContent = formatNumber(Math.round(satsPerWeek));
+      document.getElementById("stat-btc-price").textContent = "$" + formatNumber(Math.round(price));
+      document.getElementById("stat-decimal-btc").textContent = decimalBtc.toFixed(8);
 
-function formatSats(n) {
-    if (n >= 1_000_000) return (n / 1_000_000).toFixed(1) + 'M Sats';
-    if (n >= 1_000) return (n / 1_000).toFixed(0) + 'K Sats';
-    return n.toLocaleString() + ' Sats';
-}
+      // Price note
+      var noteText = priceSource === "fallback"
+        ? "BTC price last updated " + FALLBACK_PRICE_DATE + ". Results are estimates and change with BTC price."
+        : "BTC price updates in real time via CoinGecko. Results are estimates.";
+      document.getElementById("price-note").textContent = noteText;
 
-function updateRing(current, target) {
-    const currentPct = Math.min(current / target, 1);
+      // Show results
+      document.getElementById("results-wrap").classList.add("visible");
+      window.scrollTo({ top: document.getElementById("results-wrap").offsetTop - 24, behavior: "smooth" });
+    }
 
-    // Purple ring: fill the entire circle (represents the full goal)
-    const ringRemaining = document.getElementById('ring-remaining');
-    ringRemaining.setAttribute('stroke-dashoffset', '0');
+    // -------------------------------------------------------
+    // RESET
+    // -------------------------------------------------------
+    function resetCalc() {
+      document.getElementById("results-wrap").classList.remove("visible");
+      document.getElementById("weekly-savings").value = "";
+      document.getElementById("target-sats").value = "1000000";
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
 
-    // Turquoise ring: fill only the current stack portion (drawn on top)
-    const ringCurrent = document.getElementById('ring-current');
-    const currentOffset = RING_CIRC * (1 - currentPct);
-    ringCurrent.setAttribute('stroke-dashoffset', currentOffset);
-}
+    // -------------------------------------------------------
+    // EMAIL CAPTURE
+    // -------------------------------------------------------
+    function submitEmail() {
+      var emailInput = document.getElementById("email-input");
+      var email = emailInput.value.trim();
 
-// ── Init ──
-fetchPrice();
-</script>
+      if (!email || !email.includes("@") || !email.includes(".")) {
+        emailInput.style.borderColor = "red";
+        setTimeout(function() { emailInput.style.borderColor = ""; }, 1500);
+        return;
+      }
+
+      var btn = document.querySelector("#email-form button");
+      btn.textContent = "Sending...";
+      btn.disabled = true;
+
+      var xhr = new XMLHttpRequest();
+      xhr.open("POST", EMAIL_WEBHOOK, true);
+      xhr.setRequestHeader("Content-Type", "application/json");
+      xhr.timeout = 8000;
+
+      xhr.onload = function() {
+        showEmailConfirm();
+      };
+      xhr.onerror = function() {
+        // Still show confirm - don't frustrate user over network issues
+        showEmailConfirm();
+      };
+      xhr.ontimeout = function() {
+        showEmailConfirm();
+      };
+
+      xhr.send(JSON.stringify({ email: email, source: "stack-the-sats" }));
+    }
+
+    function showEmailConfirm() {
+      document.getElementById("email-form").style.display = "none";
+      document.getElementById("email-confirm").classList.add("visible");
+    }
+  </script>
 
 </body>
 </html>

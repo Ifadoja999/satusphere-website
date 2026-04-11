@@ -1,601 +1,1051 @@
 <!DOCTYPE html>
-<html class="dark" lang="en">
+<html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Bitcoin Learning Roadmap | Your Path From Zero to Sovereignty | SatUsPhere</title>
-<meta name="description" content="An interactive 8-zone learning roadmap that takes you from Bitcoin beginner to self-sovereign. Track your progress and learn at your own pace. Free from SatUsPhere." />
-<meta name="robots" content="index, follow" />
-<link rel="canonical" href="https://satusphere.com/tools/bitcoin-roadmap" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bitcoin Beginner Roadmap: From Zero to Self-Custody | SatUsPhere</title>
+  <meta name="description" content="The complete Bitcoin learning path for beginners. 8 stages from monetary history to self-custody. Track your progress, explore free resources, and build real Bitcoin knowledge." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://satusphere.com/tools/bitcoin-roadmap" />
 
-<!-- Open Graph -->
-<meta property="og:title" content="Bitcoin Learning Roadmap | SatUsPhere" />
-<meta property="og:description" content="An interactive 8-zone roadmap from Bitcoin beginner to self-sovereign. Track your progress. Free from SatUsPhere." />
-<meta property="og:url" content="https://satusphere.com/tools/bitcoin-roadmap" />
-<meta property="og:type" content="website" />
-<meta property="og:image" content="https://satusphere.com/assets/course-banner.png" />
-<meta property="og:site_name" content="SatUsPhere" />
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Bitcoin Beginner Roadmap: From Zero to Self-Custody | SatUsPhere" />
+  <meta property="og:description" content="The complete Bitcoin learning path for beginners. 8 stages, free resources, progress tracking." />
+  <meta property="og:url" content="https://satusphere.com/tools/bitcoin-roadmap" />
+  <meta property="og:site_name" content="SatUsPhere" />
+  <meta property="og:image" content="https://satusphere.com/assets/og-default.png" />
 
-<!-- Twitter Card -->
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:site" content="@sat_us_phere" />
-<meta name="twitter:title" content="Bitcoin Learning Roadmap | SatUsPhere" />
-<meta name="twitter:description" content="8-zone interactive roadmap from beginner to self-sovereign." />
-<meta name="twitter:image" content="https://satusphere.com/assets/course-banner.png" />
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Bitcoin Beginner Roadmap | SatUsPhere" />
+  <meta name="twitter:description" content="Learn Bitcoin in the right order. 8 stages from zero to self-custody." />
+  <meta name="twitter:image" content="https://satusphere.com/assets/og-default.png" />
 
-<!-- Structured Data -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  "name": "Bitcoin Learning Roadmap",
-  "description": "A free interactive roadmap that guides you through 8 zones of Bitcoin knowledge, from the basics to full sovereignty.",
-  "url": "https://satusphere.com/tools/bitcoin-roadmap",
-  "applicationCategory": "EducationalApplication",
-  "operatingSystem": "Web",
-  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-  "author": { "@type": "Organization", "name": "SatUsPhere", "url": "https://satusphere.com" }
-}
-</script>
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Bitcoin Beginner Roadmap",
+    "description": "An interactive learning roadmap guiding Bitcoin beginners through 8 stages from monetary history to full self-custody.",
+    "url": "https://satusphere.com/tools/bitcoin-roadmap",
+    "applicationCategory": "EducationalApplication",
+    "operatingSystem": "Web",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "author": { "@type": "Organization", "name": "SatUsPhere", "url": "https://satusphere.com" }
+  }
+  </script>
 
-<!-- AEO: FAQ -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "What should I learn first about Bitcoin?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Start with the basics: what Bitcoin is, who created it, and why it exists. Understand that Bitcoin is a decentralized digital currency with a fixed supply of 21 million coins. Then learn how transactions work, what mining does, and how to safely buy and store bitcoin. Most beginners benefit from a structured path that builds on each concept."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How long does it take to learn Bitcoin?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "You can understand the fundamentals in a few hours. Getting comfortable with buying, storing, and securing your own bitcoin typically takes a few days to a week of learning. Deeper topics like running your own node, understanding the Lightning Network, and achieving full self-sovereignty can take weeks to months depending on your pace."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What is Bitcoin self-sovereignty?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Self-sovereignty means taking full control of your own bitcoin by holding your own private keys, verifying transactions with your own node, and not relying on third parties like exchanges or custodians. It is the ultimate goal for many Bitcoin holders because it removes counterparty risk and gives you true ownership."
-      }
+  <script src="/assets/satusphere-gate.js"></script>
+
+  <style>
+    :root {
+      --orange: #F7931A;
+      --orange-dark: #d97a0f;
+      --navy: #0D1B2E;
+      --navy-mid: #122438;
+      --navy-light: #1a2e47;
+      --blue: #00B4D8;
+      --blue-dark: #0090AD;
+      --text: #1A1A2E;
+      --muted: #5A6478;
+      --border: #E2E8F0;
+      --bg-light: #F8F9FB;
+      --green: #10B981;
+      --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     }
-  ]
-}
-</script>
 
-<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
-<script>
-    tailwind.config = {
-        darkMode: "class",
-        theme: {
-            extend: {
-                colors: {
-                    gold: "#F7931A",
-                    "gold-light": "#FFB347",
-                    "gold-glow": "#FFD700",
-                    neon: "#00FF66",
-                    "neon-dim": "#00CC52",
-                    "neon-glow": "#66FF99",
-                    "background-dark": "#061208",
-                    "nav-bg": "#041006",
-                    surface: "#0A1A0D",
-                    "surface-light": "#122214"
-                },
-                fontFamily: {
-                    display: ["Plus Jakarta Sans", "sans-serif"]
-                }
-            }
-        }
-    };
-</script>
-<style>
-body {
-    font-family: "Plus Jakarta Sans", sans-serif;
-    background-color: #061208;
-    color: #e0f0e4;
-    min-height: 100vh;
-}
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-/* Star field background */
-.star-field {
-    position: fixed;
-    inset: 0;
-    background-image:
-        radial-gradient(1px 1px at 10% 20%, rgba(0,255,102,0.5), transparent),
-        radial-gradient(1px 1px at 30% 50%, rgba(0,255,102,0.3), transparent),
-        radial-gradient(1px 1px at 50% 10%, rgba(102,255,153,0.2), transparent),
-        radial-gradient(1px 1px at 70% 40%, rgba(0,255,102,0.3), transparent),
-        radial-gradient(1px 1px at 90% 70%, rgba(102,255,153,0.2), transparent),
-        radial-gradient(1px 1px at 15% 80%, rgba(0,255,102,0.25), transparent),
-        radial-gradient(1px 1px at 45% 90%, rgba(0,255,102,0.15), transparent),
-        radial-gradient(1px 1px at 85% 15%, rgba(102,255,153,0.3), transparent),
-        radial-gradient(1px 1px at 60% 60%, rgba(0,255,102,0.2), transparent),
-        radial-gradient(1px 1px at 25% 35%, rgba(0,255,102,0.25), transparent);
-    z-index: -3;
-    pointer-events: none;
-}
-.bg-glow {
-    position: fixed;
-    top: 20%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 80vw;
-    height: 50vh;
-    background: radial-gradient(circle, rgba(0, 255, 102, 0.1) 0%, transparent 70%);
-    z-index: -2;
-    pointer-events: none;
-}
+    body {
+      font-family: var(--font);
+      color: var(--text);
+      background: var(--navy);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
 
-/* Zone cards */
-.zone-card {
-    background: rgba(0, 255, 102, 0.03);
-    backdrop-filter: blur(12px);
-    border: 1px solid rgba(0, 255, 102, 0.1);
-    transition: all 0.3s ease;
-    cursor: pointer;
-}
-.zone-card:hover {
-    border-color: rgba(0, 255, 102, 0.3);
-    transform: translateY(-2px);
-}
-.zone-card.completed {
-    border-color: rgba(0, 255, 102, 0.4);
-}
-.zone-card.expanded {
-    border-color: rgba(0, 255, 102, 0.5);
-    box-shadow: 0 0 30px rgba(0, 255, 102, 0.1);
-}
+    /* NAV */
+    nav {
+      background: rgba(13, 27, 46, 0.97);
+      backdrop-filter: blur(8px);
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .nav-logo {
+      color: var(--orange);
+      font-weight: 800;
+      font-size: 1.3rem;
+      text-decoration: none;
+      letter-spacing: -0.5px;
+    }
+    .nav-logo span { color: #fff; }
+    .nav-cta {
+      background: var(--orange);
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.875rem;
+      transition: opacity 0.2s;
+    }
+    .nav-cta:hover { opacity: 0.88; }
 
-/* Path connector */
-.path-line {
-    width: 2px;
-    height: 32px;
-    margin: 0 auto;
-    transition: background-color 0.3s ease;
-}
-.path-line.done { background: #00FF66; box-shadow: 0 0 8px rgba(0, 255, 102, 0.6); }
-.path-line.pending { background: rgba(255, 255, 255, 0.1); }
+    /* HERO */
+    .hero {
+      background: linear-gradient(160deg, #122438 0%, #0D1B2E 60%);
+      padding: 64px 24px 48px;
+      text-align: center;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .hero-badge {
+      display: inline-block;
+      background: rgba(247,147,26,0.15);
+      border: 1px solid rgba(247,147,26,0.3);
+      color: var(--orange);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 100px;
+      margin-bottom: 20px;
+    }
+    .hero h1 {
+      color: #fff;
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 800;
+      line-height: 1.2;
+      letter-spacing: -0.03em;
+      margin-bottom: 16px;
+      max-width: 640px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .hero h1 span { color: var(--orange); }
+    .hero p {
+      color: rgba(255,255,255,0.7);
+      font-size: 1.05rem;
+      line-height: 1.6;
+      max-width: 520px;
+      margin: 0 auto;
+    }
 
-/* Phase badge */
-.phase-badge {
-    background: rgba(0, 255, 102, 0.05);
-    border: 1px solid rgba(0, 255, 102, 0.15);
-}
+    /* PROGRESS BAR */
+    .progress-bar-wrapper {
+      background: #fff;
+      border-bottom: 1px solid var(--border);
+      padding: 20px 24px;
+      position: sticky;
+      top: 64px;
+      z-index: 90;
+    }
+    .progress-bar-inner {
+      max-width: 760px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .progress-label {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--text);
+      white-space: nowrap;
+    }
+    .progress-track {
+      flex: 1;
+      height: 10px;
+      background: var(--border);
+      border-radius: 100px;
+      overflow: hidden;
+    }
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--orange), #f5a623);
+      border-radius: 100px;
+      transition: width 0.4s ease;
+      width: 0%;
+    }
+    .progress-pct {
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: var(--orange);
+      min-width: 36px;
+      text-align: right;
+    }
 
-/* Expand content */
-.zone-content {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.5s ease, padding 0.3s ease;
-}
-.zone-content.open {
-    max-height: 600px;
-    padding-top: 1.5rem;
-}
+    /* MAIN CONTENT */
+    main {
+      flex: 1;
+      padding: 48px 24px 80px;
+    }
+    .roadmap-container {
+      max-width: 760px;
+      margin: 0 auto;
+    }
 
-/* YouTube embed */
-.video-wrapper {
-    position: relative;
-    padding-bottom: 56.25%;
-    height: 0;
-    border-radius: 12px;
-    overflow: hidden;
-    background: rgba(0,0,0,0.3);
-}
-.video-wrapper iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: 0;
-}
+    /* STAGES */
+    .stages-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      position: relative;
+    }
 
-/* Progress bar */
-.progress-track {
-    height: 8px;
-    background: rgba(255, 255, 255, 0.08);
-    border-radius: 4px;
-    overflow: hidden;
-}
-.progress-fill {
-    height: 100%;
-    border-radius: 4px;
-    background: linear-gradient(90deg, #00FF66, #66FF99);
-    transition: width 0.8s ease;
-}
+    /* Connector line between stages */
+    .stage-connector {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 32px;
+      position: relative;
+    }
+    .stage-connector::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 2px;
+      height: 100%;
+      border-left: 2px dashed rgba(247,147,26,0.3);
+    }
+    .connector-dot {
+      width: 8px;
+      height: 8px;
+      background: var(--orange);
+      border-radius: 50%;
+      opacity: 0.4;
+      position: relative;
+      z-index: 1;
+    }
 
-/* Text gradient */
-.text-gradient {
-    background: linear-gradient(135deg, #00FF66 0%, #66FF99 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
+    /* STAGE CARD */
+    .stage-card {
+      background: #fff;
+      border-radius: 16px;
+      border: 2px solid var(--border);
+      overflow: hidden;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .stage-card:hover {
+      border-color: rgba(247,147,26,0.4);
+      box-shadow: 0 4px 24px rgba(247,147,26,0.08);
+    }
+    .stage-card.completed {
+      border-color: var(--green);
+      background: #f0fdf4;
+    }
+    .stage-card.completed:hover {
+      border-color: #059669;
+      box-shadow: 0 4px 24px rgba(16,185,129,0.08);
+    }
+    .stage-card.expanded {
+      border-color: var(--orange);
+      box-shadow: 0 8px 32px rgba(247,147,26,0.12);
+    }
 
-/* Checkbox */
-.zone-check {
-    width: 24px;
-    height: 24px;
-    border-radius: 50%;
-    border: 2px solid rgba(255, 255, 255, 0.2);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    flex-shrink: 0;
-}
-.zone-check.checked {
-    background: #00FF66;
-    border-color: #00FF66;
-}
-.zone-check:hover:not(.checked) {
-    border-color: rgba(0, 255, 102, 0.5);
-}
-</style>
+    /* STAGE HEADER */
+    .stage-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 20px 24px;
+      cursor: pointer;
+      user-select: none;
+      transition: background 0.15s;
+    }
+    .stage-header:hover { background: rgba(247,147,26,0.03); }
+
+    .stage-number-wrap {
+      position: relative;
+      flex-shrink: 0;
+    }
+    .stage-number {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--bg-light);
+      border: 2px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      font-weight: 800;
+      color: var(--muted);
+      transition: all 0.2s;
+    }
+    .stage-card.completed .stage-number {
+      background: var(--green);
+      border-color: var(--green);
+      color: #fff;
+    }
+    .stage-card.expanded .stage-number {
+      background: var(--orange);
+      border-color: var(--orange);
+      color: #fff;
+    }
+
+    .stage-title-block {
+      flex: 1;
+      min-width: 0;
+    }
+    .stage-tag {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 4px;
+    }
+    .stage-card.completed .stage-tag { color: var(--green); }
+    .stage-card.expanded .stage-tag { color: var(--orange); }
+
+    .stage-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1.3;
+    }
+
+    .stage-controls {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-shrink: 0;
+    }
+
+    .stage-checkbox {
+      appearance: none;
+      -webkit-appearance: none;
+      width: 22px;
+      height: 22px;
+      border-radius: 6px;
+      border: 2px solid var(--border);
+      background: #fff;
+      cursor: pointer;
+      transition: all 0.15s;
+      position: relative;
+      flex-shrink: 0;
+    }
+    .stage-checkbox:checked {
+      background: var(--green);
+      border-color: var(--green);
+    }
+    .stage-checkbox:checked::after {
+      content: '';
+      position: absolute;
+      left: 5px;
+      top: 2px;
+      width: 7px;
+      height: 11px;
+      border: 2px solid #fff;
+      border-top: none;
+      border-left: none;
+      transform: rotate(45deg);
+    }
+    .stage-checkbox:hover {
+      border-color: var(--green);
+    }
+
+    .stage-chevron {
+      width: 20px;
+      height: 20px;
+      color: var(--muted);
+      transition: transform 0.25s;
+      flex-shrink: 0;
+    }
+    .stage-card.expanded .stage-chevron {
+      transform: rotate(180deg);
+      color: var(--orange);
+    }
+
+    /* STAGE BODY */
+    .stage-body {
+      display: none;
+      border-top: 1px solid var(--border);
+      padding: 24px;
+    }
+    .stage-card.expanded .stage-body { display: block; }
+
+    .stage-section {
+      margin-bottom: 20px;
+    }
+    .stage-section:last-child { margin-bottom: 0; }
+
+    .stage-section-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 8px;
+    }
+    .stage-section p {
+      font-size: 0.95rem;
+      color: #3A3A5C;
+      line-height: 1.65;
+    }
+
+    .key-concept {
+      background: linear-gradient(135deg, #fff8ef 0%, #fff3e0 100%);
+      border: 1px solid rgba(247,147,26,0.2);
+      border-radius: 10px;
+      padding: 14px 18px;
+    }
+    .key-concept .stage-section-label {
+      color: var(--orange-dark);
+      margin-bottom: 6px;
+    }
+    .key-concept p {
+      font-size: 0.9rem;
+      color: #5a3e0a;
+      font-weight: 500;
+    }
+
+    .resources-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .resource-link {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 14px;
+      background: var(--bg-light);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      text-decoration: none;
+      color: var(--text);
+      font-size: 0.875rem;
+      font-weight: 600;
+      transition: all 0.15s;
+    }
+    .resource-link:hover {
+      border-color: var(--blue);
+      background: #f0faff;
+      color: var(--blue-dark);
+    }
+    .resource-icon {
+      width: 18px;
+      height: 18px;
+      color: var(--blue);
+      flex-shrink: 0;
+    }
+
+    /* INLINE CTA (stages 6-8) */
+    .inline-cta {
+      margin-top: 20px;
+      background: linear-gradient(135deg, #0D1B2E 0%, #1a2e47 100%);
+      border-radius: 12px;
+      padding: 20px;
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+    .inline-cta-icon {
+      width: 36px;
+      height: 36px;
+      background: var(--orange);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      color: #fff;
+    }
+    .inline-cta-icon svg { width: 18px; height: 18px; }
+    .inline-cta-content {}
+    .inline-cta-content p {
+      color: rgba(255,255,255,0.8);
+      font-size: 0.875rem;
+      line-height: 1.55;
+      margin-bottom: 12px;
+    }
+    .inline-cta-content a {
+      display: inline-block;
+      background: var(--orange);
+      color: #fff;
+      padding: 9px 18px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      transition: opacity 0.2s;
+    }
+    .inline-cta-content a:hover { opacity: 0.88; }
+
+    /* BOTTOM CTA BLOCK */
+    .bottom-cta {
+      background: linear-gradient(135deg, #1a2e47 0%, #0D1B2E 100%);
+      border: 1px solid rgba(247,147,26,0.2);
+      border-radius: 20px;
+      padding: 40px;
+      text-align: center;
+      margin-top: 48px;
+    }
+    .bottom-cta-eyebrow {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 14px;
+    }
+    .bottom-cta h2 {
+      color: #fff;
+      font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+      font-weight: 800;
+      line-height: 1.25;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+    }
+    .bottom-cta p {
+      color: rgba(255,255,255,0.7);
+      font-size: 0.95rem;
+      line-height: 1.6;
+      max-width: 480px;
+      margin: 0 auto 28px;
+    }
+    .btn-cta {
+      display: inline-block;
+      background: var(--orange);
+      color: #fff;
+      padding: 16px 36px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+      transition: opacity 0.2s, transform 0.15s;
+    }
+    .btn-cta:hover { opacity: 0.9; transform: translateY(-2px); }
+    .btn-cta:active { transform: translateY(0); }
+
+    /* EMAIL CAPTURE */
+    .email-capture {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      overflow: hidden;
+      margin-top: 32px;
+    }
+    .email-capture-header {
+      background: var(--navy);
+      padding: 28px 32px;
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+    .email-icon {
+      width: 44px;
+      height: 44px;
+      background: rgba(247,147,26,0.15);
+      border: 1px solid rgba(247,147,26,0.3);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .email-icon svg { width: 22px; height: 22px; color: var(--orange); }
+    .email-capture-header h3 {
+      color: #fff;
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+    .email-capture-header p {
+      color: rgba(255,255,255,0.6);
+      font-size: 0.875rem;
+      line-height: 1.5;
+    }
+    .email-capture-body {
+      padding: 28px 32px;
+    }
+    .email-form {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .email-form input[type="email"] {
+      flex: 1;
+      min-width: 200px;
+      border: 2px solid var(--border);
+      border-radius: 8px;
+      padding: 13px 16px;
+      font-size: 0.95rem;
+      font-family: var(--font);
+      color: var(--text);
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .email-form input[type="email"]:focus { border-color: var(--orange); }
+    .email-form input[type="email"]::placeholder { color: var(--muted); }
+    .btn-email {
+      background: var(--orange);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 13px 24px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      font-family: var(--font);
+      cursor: pointer;
+      transition: opacity 0.2s;
+      white-space: nowrap;
+    }
+    .btn-email:hover { opacity: 0.88; }
+    .btn-email:disabled { opacity: 0.6; cursor: default; }
+    .email-success {
+      display: none;
+      text-align: center;
+      padding: 8px 0;
+    }
+    .email-success p {
+      color: var(--green);
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+    .email-privacy {
+      font-size: 0.75rem;
+      color: var(--muted);
+      margin-top: 10px;
+    }
+
+    /* FOOTER */
+    footer {
+      background: rgba(13,27,46,0.8);
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding: 24px;
+      text-align: center;
+    }
+    footer p {
+      color: rgba(255,255,255,0.4);
+      font-size: 0.8rem;
+    }
+    footer a { color: rgba(255,255,255,0.5); text-decoration: none; }
+    footer a:hover { color: var(--orange); }
+
+    /* RESPONSIVE */
+    @media (max-width: 600px) {
+      .stage-header { padding: 16px; gap: 12px; }
+      .stage-body { padding: 16px; }
+      .stage-number { width: 38px; height: 38px; font-size: 0.8rem; }
+      .stage-title { font-size: 0.95rem; }
+      .bottom-cta { padding: 28px 20px; }
+      .email-capture-header, .email-capture-body { padding: 20px; }
+      .inline-cta { flex-direction: column; gap: 12px; }
+    }
+  </style>
 </head>
-<body class="antialiased overflow-x-hidden selection:bg-neon selection:text-black flex flex-col min-h-screen">
+<body>
 
-<div class="star-field"></div>
-<div class="bg-glow"></div>
+  <!-- NAV -->
+  <nav>
+    <a href="https://satusphere.com" class="nav-logo">SatUsPhere</a>
+    <a href="https://satusphere.teachable.com/p/bitcoin-from-scratch" class="nav-cta" target="_blank" rel="noopener">Get the Course</a>
+  </nav>
 
-<!-- Nav -->
-<nav class="bg-nav-bg/90 backdrop-blur-md border-b border-neon/10 sticky top-0 z-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between items-center h-20">
-            <a href="https://satusphere.com" class="flex items-center gap-3 no-underline">
-                <img src="/assets/satusphere_logo.png" alt="SatUsPhere" class="w-10 h-10 rounded-full object-cover" />
-                <span class="font-display font-bold text-xl tracking-wide text-neon-glow">SatUsPhere</span>
-            </a>
-            <div class="hidden md:flex space-x-8">
-                <a class="text-white/70 hover:text-white transition font-medium no-underline" href="https://satusphere.com">Home</a>
-            </div>
-            <a class="flex items-center gap-2 px-4 py-2 rounded-lg bg-white/5 border border-white/8 text-sm font-semibold hover:bg-white/10 transition no-underline" href="https://satusphere.com/tools">
-                <span class="material-symbols-outlined text-[20px]">arrow_back</span>
-                Back to Tools
-            </a>
-        </div>
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-badge">Free Learning Tool</div>
+    <h1>The Bitcoin Beginner <span>Roadmap</span></h1>
+    <p>Learning Bitcoin is not complicated, but it does have a right order. This roadmap shows you the path from complete beginner to confidently holding your own Bitcoin.</p>
+  </div>
+
+  <!-- PROGRESS BAR -->
+  <div class="progress-bar-wrapper">
+    <div class="progress-bar-inner">
+      <span class="progress-label" id="progress-label">0 of 8 stages covered</span>
+      <div class="progress-track">
+        <div class="progress-fill" id="progress-fill"></div>
+      </div>
+      <span class="progress-pct" id="progress-pct">0%</span>
     </div>
-</nav>
+  </div>
 
-<main class="flex-grow w-full max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12 flex flex-col gap-10 relative z-10">
+  <!-- MAIN -->
+  <main>
+    <div class="roadmap-container">
+      <div class="stages-list" id="stages-list">
+        <!-- Stages are rendered by JavaScript -->
+      </div>
 
-    <!-- Header -->
-    <div class="text-center space-y-4">
-        <h1 class="text-4xl sm:text-6xl font-extrabold text-gradient drop-shadow-[0_4px_12px_rgba(0,255,102,0.3)]">
-            Bitcoin Learning Roadmap
-        </h1>
-        <p class="text-lg text-white/50 max-w-lg mx-auto leading-relaxed">
-            9 free lessons from the Bitcoin from Scratch course. Watch each one, mark it complete, and track your progress.
-        </p>
-    </div>
+      <!-- BOTTOM CTA BLOCK -->
+      <div class="bottom-cta">
+        <div class="bottom-cta-eyebrow">Bitcoin From Scratch</div>
+        <h2>This roadmap is a preview of what Bitcoin From Scratch teaches in full.</h2>
+        <p>Go from zero to self-custody with 34 3D animated lessons designed for people who learn by seeing. Wallets, keys, seed phrases, the blockchain - all of it, built for beginners.</p>
+        <a href="https://satusphere.teachable.com/p/bitcoin-from-scratch" class="btn-cta" target="_blank" rel="noopener">Start the Full Course</a>
+      </div>
 
-    <!-- Progress bar -->
-    <div class="space-y-3">
-        <div class="flex items-center justify-between text-sm">
-            <span class="text-white/50">Your Progress</span>
-            <span class="font-bold"><span id="progress-pct" class="text-neon">0</span><span class="text-white/50">% complete</span></span>
+      <!-- EMAIL CAPTURE -->
+      <div class="email-capture">
+        <div class="email-capture-header">
+          <div class="email-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+              <polyline points="22,6 12,13 2,6"/>
+            </svg>
+          </div>
+          <div>
+            <h3>Get this roadmap as a PDF</h3>
+            <p>We will email you a printable version so you can work through it offline.</p>
+          </div>
         </div>
-        <div class="progress-track">
-            <div id="progress-bar" class="progress-fill" style="width: 0%;"></div>
+        <div class="email-capture-body">
+          <form class="email-form" id="email-form" onsubmit="submitEmail(event)">
+            <input type="email" id="email-input" placeholder="Your email address" required autocomplete="email" />
+            <button type="submit" class="btn-email" id="email-btn">Email Me the Roadmap</button>
+          </form>
+          <div class="email-success" id="email-success">
+            <p>Check your inbox. The PDF is on its way.</p>
+          </div>
+          <p class="email-privacy">No spam. Unsubscribe any time.</p>
         </div>
-        <div class="flex gap-4 text-xs font-semibold">
-            <span class="flex items-center gap-1.5 text-neon"><span class="w-2 h-2 rounded-full bg-neon"></span> <span id="count-done">0</span> Completed</span>
-            <span class="flex items-center gap-1.5 text-white/40"><span class="w-2 h-2 rounded-full bg-white/20"></span> <span id="count-remaining">9</span> Remaining</span>
-        </div>
+      </div>
+
     </div>
+  </main>
 
-    <!-- Phase 1 Label -->
-    <div class="flex items-center gap-3">
-        <div class="phase-badge px-3 py-1 rounded-full">
-            <span class="text-xs font-bold uppercase tracking-widest text-neon">Phase 1</span>
-        </div>
-        <span class="text-xs text-white/30 uppercase tracking-wider">Money & History</span>
-        <div class="flex-grow h-px bg-white/5"></div>
-    </div>
+  <!-- FOOTER -->
+  <footer>
+    <p>Built by <a href="https://satusphere.com" target="_blank" rel="noopener">SatUsPhere</a> - Bitcoin education for beginners.</p>
+  </footer>
 
-    <!-- Roadmap -->
-    <div id="roadmap" class="flex flex-col items-center gap-0"></div>
+  <script>
+    // ─── ROADMAP DATA ────────────────────────────────────────────────────────────
+    var ROADMAP = [
+      {
+        id: 1,
+        tag: "Stage 1",
+        title: "Why does Bitcoin exist?",
+        subtitle: "Monetary history, inflation, and the problem Bitcoin solves",
+        what: "Bitcoin did not appear out of nowhere. It was created in 2009 as a direct response to the 2008 financial crisis and decades of governments and central banks inflating their currencies. This stage covers the history of money, how inflation erodes purchasing power, and why a fixed-supply, decentralized currency was a radical idea worth building.",
+        why: "Understanding why Bitcoin was created gives you a foundation for everything else. Without this context, Bitcoin looks like speculation. With it, Bitcoin looks like a solution.",
+        concept: "Inflation is not natural - it is a policy choice. Every dollar printed dilutes the dollars already in existence. Bitcoin was designed so no one can print more.",
+        resources: [
+          { label: "Bitcoin From Scratch - Module 1: The History of Money", url: "https://satusphere.teachable.com/p/bitcoin-from-scratch", type: "course" },
+          { label: "SatUsPhere: What problem does Bitcoin solve?", url: "https://satusphere.com/learn/what-is-the-bitcoin-whitepaper", type: "article" }
+        ],
+        showCta: false
+      },
+      {
+        id: 2,
+        tag: "Stage 2",
+        title: "What is Bitcoin?",
+        subtitle: "Digital scarcity, decentralization, and no middlemen",
+        what: "Bitcoin is the first scarce digital asset in history. Before Bitcoin, any digital file could be copied infinitely. Bitcoin solved this by creating a shared ledger that everyone can verify but no one can alter unilaterally. There will only ever be 21 million Bitcoin - that limit is enforced by code, not by a company or government.",
+        why: "Most people think Bitcoin is just digital cash or internet money. It is actually the first time scarcity has existed in a purely digital form. That is the breakthrough.",
+        concept: "Decentralization means there is no single point of control. No CEO, no headquarters, no shutdown button. Bitcoin runs on thousands of computers worldwide simultaneously.",
+        resources: [
+          { label: "Bitcoin From Scratch - Module 2: What Is Bitcoin?", url: "https://satusphere.teachable.com/p/bitcoin-from-scratch", type: "course" },
+          { label: "SatUsPhere: Bitcoin explained for beginners", url: "https://satusphere.com/learn/who-created-bitcoin", type: "article" }
+        ],
+        showCta: false
+      },
+      {
+        id: 3,
+        tag: "Stage 3",
+        title: "How does it work?",
+        subtitle: "Blockchain basics, transactions, and confirmations",
+        what: "Every Bitcoin transaction is recorded on a public ledger called the blockchain. When you send Bitcoin, your transaction is broadcast to the network, grouped with other transactions into a block, and permanently added to the chain after miners validate it. Once confirmed, it cannot be reversed.",
+        why: "You do not need to understand every technical detail, but knowing how transactions and confirmations work helps you use Bitcoin confidently and safely.",
+        concept: "A confirmation means a block containing your transaction has been added to the chain. The more confirmations, the more permanent the transaction. Most transactions are considered final after 6 confirmations.",
+        resources: [
+          { label: "Bitcoin From Scratch - Module 3: The Blockchain", url: "https://satusphere.teachable.com/p/bitcoin-from-scratch", type: "course" },
+          { label: "SatUsPhere: How Bitcoin transactions work", url: "https://satusphere.com/learn/how-do-bitcoin-transactions-work", type: "article" }
+        ],
+        showCta: false
+      },
+      {
+        id: 4,
+        tag: "Stage 4",
+        title: "How is it secured?",
+        subtitle: "Mining, hash power, and why attacks are nearly impossible",
+        what: "Bitcoin is secured by a process called proof-of-work mining. Miners compete to solve a mathematical puzzle using computing power. The winner adds the next block and earns newly created Bitcoin. Rewriting history would require controlling more computing power than the entire rest of the network combined - which becomes more expensive as the network grows.",
+        why: "Bitcoin security is not based on trust in a company. It is based on the economics of computation. The more people mine, the harder and more expensive it becomes to attack.",
+        concept: "A 51% attack - controlling more than half the network's hash power - would cost billions of dollars and would likely destroy the value of the coins the attacker was trying to steal. The economics make attacks self-defeating.",
+        resources: [
+          { label: "Bitcoin From Scratch - Module 4: Mining and Security", url: "https://satusphere.teachable.com/p/bitcoin-from-scratch", type: "course" },
+          { label: "SatUsPhere: How Bitcoin mining works", url: "https://satusphere.com/learn/what-is-bitcoin-mining", type: "article" }
+        ],
+        showCta: false
+      },
+      {
+        id: 5,
+        tag: "Stage 5",
+        title: "What is a Bitcoin address?",
+        subtitle: "Public keys, private keys, and how ownership works",
+        what: "Owning Bitcoin means owning a private key - a secret number that proves you control certain Bitcoin on the blockchain. From your private key, a public key is derived, and from that, a Bitcoin address is created. You share your address to receive Bitcoin. Your private key is what you use to send. Anyone who has your private key controls your Bitcoin.",
+        why: "Bitcoin ownership works completely differently from a bank account. There is no username, no password reset, no support line. Your private key is your Bitcoin. This is liberating and requires responsibility.",
+        concept: "The phrase 'not your keys, not your coins' means: if you do not control the private key, someone else controls your Bitcoin. When Bitcoin sits on an exchange, the exchange holds the keys.",
+        resources: [
+          { label: "Bitcoin From Scratch - Module 5: Keys and Addresses", url: "https://satusphere.teachable.com/p/bitcoin-from-scratch", type: "course" },
+          { label: "SatUsPhere: Public vs private keys explained", url: "https://satusphere.com/learn/what-is-a-bitcoin-address", type: "article" }
+        ],
+        showCta: false
+      },
+      {
+        id: 6,
+        tag: "Stage 6",
+        title: "How do I buy Bitcoin?",
+        subtitle: "Exchanges, peer-to-peer, KYC, and what to watch out for",
+        what: "Most people buy Bitcoin through a centralized exchange like Coinbase, Kraken, or Cash App. These are convenient but require identity verification (KYC) and mean the exchange holds your Bitcoin until you withdraw it. Peer-to-peer options let you buy directly from another person, sometimes without KYC. Each approach has tradeoffs around convenience, privacy, and counterparty risk.",
+        why: "Knowing your options before you buy saves you from making costly mistakes. Buying on an exchange is fine as a starting point, but leaving large amounts on an exchange for a long time is not.",
+        concept: "KYC (Know Your Customer) verification links your real identity to your Bitcoin purchases. Some people prefer peer-to-peer methods for privacy reasons. Neither approach is wrong - it depends on your priorities.",
+        resources: [
+          { label: "Bitcoin From Scratch - Module 6: Buying Bitcoin", url: "https://satusphere.teachable.com/p/bitcoin-from-scratch", type: "course" },
+          { label: "SatUsPhere: What is a Bitcoin wallet?", url: "https://satusphere.com/learn/what-is-a-bitcoin-wallet", type: "article" }
+        ],
+        showCta: true
+      },
+      {
+        id: 7,
+        tag: "Stage 7",
+        title: "How do I store Bitcoin safely?",
+        subtitle: "Custodial vs. non-custodial, hot vs. cold wallets",
+        what: "Once you buy Bitcoin, the most important decision is where to keep it. Custodial wallets (exchanges, apps like Cash App) hold your keys for you. Non-custodial wallets give you full control. Hot wallets are connected to the internet - convenient but more exposed. Cold wallets are offline hardware devices - more secure for larger amounts. Each approach is appropriate in different situations.",
+        why: "More Bitcoin has been lost to bad storage decisions than to network hacks. Understanding the options and tradeoffs is essential for anyone holding meaningful amounts.",
+        concept: "The rule of thumb: hot wallet for spending amounts (like cash in your pocket), cold wallet for savings amounts (like a home safe). Most beginners should start with a reputable software wallet and graduate to hardware as their holdings grow.",
+        resources: [
+          { label: "Bitcoin From Scratch - Module 7: Bitcoin Wallets", url: "https://satusphere.teachable.com/p/bitcoin-from-scratch", type: "course" },
+          { label: "SatUsPhere: Hot vs cold storage explained", url: "https://satusphere.com/learn/what-is-a-bitcoin-wallet", type: "article" }
+        ],
+        showCta: true
+      },
+      {
+        id: 8,
+        tag: "Stage 8",
+        title: "What is self-custody?",
+        subtitle: "Seed phrases, hardware wallets, and backup strategies",
+        what: "Self-custody means holding your own private keys - no exchange or third party involved. A hardware wallet is a physical device that stores your private key offline. Your wallet is backed up by a seed phrase: 12 or 24 random words that can recreate your wallet from scratch. If you lose your device, your seed phrase is the only recovery option. Keeping that phrase secure and backed up is the most important thing you will do in Bitcoin.",
+        why: "Self-custody is the end goal for most serious Bitcoin holders. It removes counterparty risk entirely. If you understand seed phrases and can secure them, you have achieved real Bitcoin ownership.",
+        concept: "Your seed phrase IS your Bitcoin. Whoever has those 12 to 24 words can access your coins from any compatible wallet, anywhere in the world. Store it offline, in multiple secure locations, and never share it with anyone or any website.",
+        resources: [
+          { label: "Bitcoin From Scratch - Module 8: Self-Custody", url: "https://satusphere.teachable.com/p/bitcoin-from-scratch", type: "course" },
+          { label: "SatUsPhere: How to set up a hardware wallet", url: "https://satusphere.com/learn/what-is-a-seed-phrase", type: "article" }
+        ],
+        showCta: true
+      }
+    ];
 
-    <!-- Related Tools -->
-    <div class="space-y-4 mt-6">
-        <h3 class="text-sm uppercase tracking-widest text-white/40 font-bold">Related Tools</h3>
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-            <a href="../knowledge-quiz/code.html" class="zone-card rounded-xl p-5 text-center no-underline group">
-                <span class="material-symbols-outlined text-3xl text-neon mb-2 group-hover:scale-110 transition-transform">quiz</span>
-                <h4 class="font-bold text-white text-sm">Knowledge Quiz</h4>
-                <p class="text-xs text-white/40 mt-1">Test what you've learned</p>
-            </a>
-            <a href="../wallet-selector/code.html" class="zone-card rounded-xl p-5 text-center no-underline group">
-                <span class="material-symbols-outlined text-3xl text-neon mb-2 group-hover:scale-110 transition-transform">account_balance_wallet</span>
-                <h4 class="font-bold text-white text-sm">Wallet Selector</h4>
-                <p class="text-xs text-white/40 mt-1">Find the right wallet</p>
-            </a>
-            <a href="../halving-countdown/code.html" class="zone-card rounded-xl p-5 text-center no-underline group">
-                <span class="material-symbols-outlined text-3xl text-neon mb-2 group-hover:scale-110 transition-transform">timer</span>
-                <h4 class="font-bold text-white text-sm">Halving Countdown</h4>
-                <p class="text-xs text-white/40 mt-1">Track Bitcoin's supply schedule</p>
-            </a>
-        </div>
-    </div>
+    // ─── CONSTANTS ───────────────────────────────────────────────────────────────
+    var LS_PREFIX = 'btc_roadmap_stage_';
+    var COURSE_URL = 'https://satusphere.teachable.com/p/bitcoin-from-scratch';
+    var WEBHOOK_URL = 'https://ireaje.app.n8n.cloud/webhook/004d62fc-5120-4e35-822f-287d578af89f';
 
-    <!-- Course CTA -->
-    <div class="zone-card rounded-2xl p-8 border-l-4 border-l-neon relative overflow-hidden group">
-        <div class="absolute -right-8 -bottom-8 opacity-5 group-hover:opacity-10 transition-opacity">
-            <span class="material-symbols-outlined text-[160px]">auto_stories</span>
-        </div>
-        <h3 class="text-2xl font-extrabold text-white mb-2">Want the full guided experience?</h3>
-        <p class="text-white/50 mb-6 max-w-md">This roadmap gives you the path. The course gives you the depth. 34 lessons, 3D animated, built for beginners.</p>
-        <a class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-neon text-black font-bold hover:bg-neon-light transition shadow-[0_4px_15px_rgba(0,255,102,0.3)] no-underline" href="https://satusphere.teachable.com/p/bitcoin-from-scratch">
-            Get Full Bitcoin Course
-            <span class="material-symbols-outlined text-sm">arrow_forward</span>
-        </a>
-    </div>
+    // ─── ICONS ───────────────────────────────────────────────────────────────────
+    var ICONS = {
+      chevronDown: '<svg class="stage-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>',
+      course: '<svg class="resource-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>',
+      article: '<svg class="resource-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>',
+      star: '<svg style="width:18px;height:18px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>'
+    };
 
-    <!-- Tools link -->
-    <div class="text-center">
-        <a href="https://satusphere.com/tools" class="text-neon font-bold hover:underline hover:text-neon transition-colors no-underline text-sm">Explore all free Bitcoin tools</a>
-    </div>
-</main>
+    // ─── STATE ───────────────────────────────────────────────────────────────────
+    var expandedStage = null;
 
-<!-- Footer -->
-<footer class="bg-nav-bg border-t border-white/5 py-10 mt-auto relative z-20">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex flex-col md:flex-row justify-between items-center gap-6">
-            <a href="https://satusphere.com" class="flex items-center gap-3 no-underline">
-                <img src="/assets/satusphere_logo.png" alt="SatUsPhere" class="w-8 h-8 rounded-full object-cover" />
-                <span class="font-display font-bold text-lg text-neon-glow">SatUsPhere</span>
-            </a>
-            <div class="flex flex-wrap justify-center gap-6 text-sm text-white/50">
-                <a class="hover:text-neon-glow transition no-underline" href="https://satusphere.com/privacy">Privacy</a>
-                <a class="hover:text-neon-glow transition no-underline" href="https://satusphere.com/terms">Terms</a>
-                <a class="hover:text-neon-glow transition no-underline" href="mailto:info@satusphere.com">Support</a>
-            </div>
-            <div class="text-sm text-white/40">&copy; 2026 SatUsPhere</div>
-        </div>
-    </div>
-</footer>
-
-<script>
-// ── Lessons (9 free videos from Bitcoin from Scratch course) ──
-const ZONES = [
-    {
-        id: "gold-standard",
-        zone: 1,
-        phase: 1,
-        title: "What Was the Gold Standard?",
-        subtitle: "How money used to work",
-        icon: "paid",
-        videoId: "Kdbfm3x-hvw",
-        duration: "3:53",
-        description: "Before you can understand Bitcoin, you need to understand the money system it was built to fix. This lesson starts at the beginning: the gold standard and why it was abandoned."
-    },
-    {
-        id: "1971",
-        zone: 2,
-        phase: 1,
-        title: "What Happened to Money in 1971?",
-        subtitle: "The moment everything changed",
-        icon: "history",
-        videoId: "JK5unHtlGAo",
-        duration: "3:12",
-        description: "In 1971, the U.S. severed the link between the dollar and gold. This lesson covers what happened, why it matters, and how it set the stage for Bitcoin."
-    },
-    {
-        id: "federal-reserve",
-        zone: 3,
-        phase: 1,
-        title: "How the Federal Reserve Prints Money",
-        subtitle: "Where dollars actually come from",
-        icon: "account_balance",
-        videoId: "eS4yNdPAQNM",
-        duration: "3:23",
-        description: "Most people don't know how new money enters the system. This lesson explains how the Federal Reserve creates money and what that means for the value of your savings."
-    },
-    {
-        id: "whitepaper",
-        zone: 4,
-        phase: 2,
-        title: "The Bitcoin Whitepaper Explained",
-        subtitle: "Satoshi's solution in under 5 minutes",
-        icon: "description",
-        videoId: "pLfUsP3jXzs",
-        duration: "4:09",
-        description: "The Bitcoin whitepaper is only 9 pages long, but it introduced a solution to a problem computer scientists had been working on for decades. This lesson breaks it down."
-    },
-    {
-        id: "scarcity",
-        zone: 5,
-        phase: 2,
-        title: "Why Is Bitcoin Scarce?",
-        subtitle: "Digital scarcity explained",
-        icon: "diamond",
-        videoId: "lKTehkLqXz4",
-        duration: "3:27",
-        description: "There will only ever be 21 million bitcoin. This lesson explains how digital scarcity works and why it makes Bitcoin fundamentally different from any other digital asset."
-    },
-    {
-        id: "blockchain",
-        zone: 6,
-        phase: 2,
-        title: "What Is a Blockchain?",
-        subtitle: "The digital ledger explained",
-        icon: "view_timeline",
-        videoId: "urfFAOziZ20",
-        duration: "2:20",
-        description: "A blockchain is just a chain of blocks, but what does that actually mean? This lesson explains how Bitcoin's ledger works and why it can't be tampered with."
-    },
-    {
-        id: "immutability",
-        zone: 7,
-        phase: 3,
-        title: "Why You Can't Cheat the Blockchain",
-        subtitle: "Immutability and trustless verification",
-        icon: "verified_user",
-        videoId: "ZXTthXlZyBc",
-        duration: "2:27",
-        description: "Bitcoin doesn't need trust because the math does the work. This lesson explains why it's practically impossible to cheat, fake, or reverse a Bitcoin transaction."
-    },
-    {
-        id: "proof-of-work",
-        zone: 8,
-        phase: 3,
-        title: "What Is Proof of Work?",
-        subtitle: "Bitcoin mining explained",
-        icon: "precision_manufacturing",
-        videoId: "-LRswLpFceY",
-        duration: "2:21",
-        description: "Miners aren't digging for coins. They're competing to solve math problems that secure the network. This lesson explains Proof of Work and why it matters."
-    },
-    {
-        id: "halving",
-        zone: 9,
-        phase: 3,
-        title: "What Is the Bitcoin Halving?",
-        subtitle: "Bitcoin's built-in supply schedule",
-        icon: "event_repeat",
-        videoId: "adnIhLq_1BM",
-        duration: "2:32",
-        description: "Every four years, the reward for mining new bitcoin gets cut in half. This lesson explains the halving, why it happens, and what it means for Bitcoin's future."
+    // ─── LOCALSTORAGE HELPERS ────────────────────────────────────────────────────
+    function isStageComplete(id) {
+      return localStorage.getItem(LS_PREFIX + id) === 'true';
     }
-];
 
-const PHASE_LABELS = {
-    1: { label: "Phase 1", desc: "Money & History", color: "text-neon" },
-    2: { label: "Phase 2", desc: "Bitcoin Foundations", color: "text-neon" },
-    3: { label: "Phase 3", desc: "How It Works", color: "text-neon-glow" }
-};
+    function setStageComplete(id, val) {
+      if (val) {
+        localStorage.setItem(LS_PREFIX + id, 'true');
+      } else {
+        localStorage.removeItem(LS_PREFIX + id);
+      }
+    }
 
-// ── State ──
-let completedZones = JSON.parse(localStorage.getItem('roadmap-progress') || '[]');
-let expandedZone = null;
+    function getCompletedCount() {
+      return ROADMAP.filter(function(s) { return isStageComplete(s.id); }).length;
+    }
 
-// ── Save/Load ──
-function saveProgress() {
-    localStorage.setItem('roadmap-progress', JSON.stringify(completedZones));
-}
+    // ─── PROGRESS UPDATE ─────────────────────────────────────────────────────────
+    function updateProgress() {
+      var count = getCompletedCount();
+      var pct = Math.round((count / ROADMAP.length) * 100);
+      document.getElementById('progress-fill').style.width = pct + '%';
+      document.getElementById('progress-pct').textContent = pct + '%';
+      document.getElementById('progress-label').textContent = count + ' of ' + ROADMAP.length + ' stages covered';
+    }
 
-// ── Render ──
-function render() {
-    const container = document.getElementById('roadmap');
-    container.innerHTML = '';
+    // ─── RENDER ───────────────────────────────────────────────────────────────────
+    function renderRoadmap() {
+      var container = document.getElementById('stages-list');
+      var html = '';
 
-    let lastPhase = 0;
+      ROADMAP.forEach(function(stage, index) {
+        var completed = isStageComplete(stage.id);
+        var expanded = expandedStage === stage.id;
 
-    ZONES.forEach((zone, i) => {
-        const isCompleted = completedZones.includes(zone.id);
-        const isExpanded = expandedZone === zone.id;
+        var cardClasses = 'stage-card' +
+          (completed ? ' completed' : '') +
+          (expanded ? ' expanded' : '');
 
-        // Phase divider
-        if (zone.phase !== lastPhase && zone.phase > 1) {
-            const phaseInfo = PHASE_LABELS[zone.phase];
-            const divider = document.createElement('div');
-            divider.className = 'flex items-center gap-3 w-full my-4';
-            divider.innerHTML = `
-                <div class="phase-badge px-3 py-1 rounded-full">
-                    <span class="text-xs font-bold uppercase tracking-widest ${phaseInfo.color}">${phaseInfo.label}</span>
-                </div>
-                <span class="text-xs text-white/30 uppercase tracking-wider">${phaseInfo.desc}</span>
-                <div class="flex-grow h-px bg-white/5"></div>
-            `;
-            container.appendChild(divider);
-            lastPhase = zone.phase;
-        } else if (zone.phase === 1 && lastPhase === 0) {
-            lastPhase = 1;
+        // Resources HTML
+        var resourcesHtml = stage.resources.map(function(r) {
+          return '<a href="' + r.url + '" target="_blank" rel="noopener" class="resource-link">' +
+            ICONS[r.type] + r.label + '</a>';
+        }).join('');
+
+        // Inline CTA HTML
+        var ctaHtml = '';
+        if (stage.showCta) {
+          ctaHtml = '<div class="inline-cta">' +
+            '<div class="inline-cta-icon">' + ICONS.star + '</div>' +
+            '<div class="inline-cta-content">' +
+            '<p>Bitcoin From Scratch has a full section on this. 34 3D animated lessons, built for beginners.</p>' +
+            '<a href="' + COURSE_URL + '" target="_blank" rel="noopener">See Bitcoin From Scratch</a>' +
+            '</div></div>';
         }
 
-        // Zone card
-        const card = document.createElement('div');
-        card.className = `zone-card rounded-2xl p-6 w-full ${isCompleted ? 'completed' : ''} ${isExpanded ? 'expanded' : ''}`;
-        card.onclick = (e) => {
-            if (e.target.closest('.zone-check')) return;
-            toggleExpand(zone.id);
-        };
+        // Stage card
+        html += '<div class="' + cardClasses + '" id="stage-card-' + stage.id + '">' +
+          '<div class="stage-header" onclick="toggleStage(' + stage.id + ')" role="button" tabindex="0" ' +
+          'aria-expanded="' + (expanded ? 'true' : 'false') + '" ' +
+          'onkeydown="if(event.key===\'Enter\'||event.key===\' \'){toggleStage(' + stage.id + ')}">' +
+          '<div class="stage-number-wrap">' +
+          '<div class="stage-number">' + (completed ? checkSvg() : stage.id) + '</div>' +
+          '</div>' +
+          '<div class="stage-title-block">' +
+          '<div class="stage-tag">' + stage.tag + '</div>' +
+          '<div class="stage-title">' + stage.title + '</div>' +
+          '</div>' +
+          '<div class="stage-controls">' +
+          '<input type="checkbox" class="stage-checkbox" ' +
+          (completed ? 'checked' : '') +
+          ' title="Mark stage ' + stage.id + ' as complete" ' +
+          'onclick="handleCheckbox(event, ' + stage.id + ')" ' +
+          'onkeydown="if(event.key===\'Enter\'){handleCheckbox(event,' + stage.id + ')}" />' +
+          ICONS.chevronDown +
+          '</div>' +
+          '</div>' +
+          '<div class="stage-body">' +
+          '<div class="stage-section">' +
+          '<div class="stage-section-label">What this covers</div>' +
+          '<p>' + stage.what + '</p>' +
+          '</div>' +
+          '<div class="stage-section">' +
+          '<div class="stage-section-label">Why it matters</div>' +
+          '<p>' + stage.why + '</p>' +
+          '</div>' +
+          '<div class="stage-section">' +
+          '<div class="key-concept">' +
+          '<div class="stage-section-label">Key concept</div>' +
+          '<p>' + stage.concept + '</p>' +
+          '</div>' +
+          '</div>' +
+          '<div class="stage-section">' +
+          '<div class="stage-section-label">Where to learn this</div>' +
+          '<div class="resources-list">' + resourcesHtml + '</div>' +
+          '</div>' +
+          ctaHtml +
+          '</div>' +
+          '</div>';
 
-        card.innerHTML = `
-            <div class="flex items-center gap-4">
-                <div class="zone-check ${isCompleted ? 'checked' : ''}" onclick="toggleComplete('${zone.id}', event)">
-                    ${isCompleted ? '<span class="material-symbols-outlined text-black text-sm">check</span>' : ''}
-                </div>
-                <div class="w-12 h-12 rounded-xl ${isCompleted ? 'bg-neon/10' : 'bg-neon/10'} flex items-center justify-center shrink-0">
-                    <span class="material-symbols-outlined text-2xl ${isCompleted ? 'text-neon' : 'text-neon'}">${zone.icon}</span>
-                </div>
-                <div class="flex-grow min-w-0">
-                    <div class="flex items-center gap-2">
-                        <span class="text-xs font-bold uppercase tracking-widest ${isCompleted ? 'text-neon' : 'text-white/30'}">Lesson ${zone.zone}</span>
-                        <span class="text-[10px] text-white/20 flex items-center gap-1"><span class="material-symbols-outlined text-[10px]">play_circle</span>${zone.duration}</span>
-                        ${isCompleted ? '<span class="text-[10px] bg-neon/10 text-neon px-2 py-0.5 rounded-full font-bold">WATCHED</span>' : ''}
-                    </div>
-                    <h3 class="text-lg font-bold text-white">${zone.title}</h3>
-                    <p class="text-sm text-white/40">${zone.subtitle}</p>
-                </div>
-                <span class="material-symbols-outlined text-white/20 transition-transform ${isExpanded ? 'rotate-180' : ''} shrink-0">expand_more</span>
-            </div>
-
-            <div class="zone-content ${isExpanded ? 'open' : ''}">
-                <div class="space-y-4 mt-2">
-                    <p class="text-sm text-white/50 leading-relaxed">${zone.description}</p>
-                    <div class="video-wrapper">
-                        ${isExpanded ? `<iframe src="https://www.youtube.com/embed/${zone.videoId}?rel=0" title="${zone.title}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>` : ''}
-                    </div>
-                </div>
-            </div>
-        `;
-
-        container.appendChild(card);
-
-        // Path connector (except last)
-        if (i < ZONES.length - 1) {
-            const line = document.createElement('div');
-            line.className = `path-line ${isCompleted ? 'done' : 'pending'}`;
-            container.appendChild(line);
+        // Add connector between stages (not after last)
+        if (index < ROADMAP.length - 1) {
+          html += '<div class="stage-connector"><div class="connector-dot"></div></div>';
         }
-    });
+      });
 
+      container.innerHTML = html;
+    }
+
+    function checkSvg() {
+      return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px"><polyline points="20 6 9 17 4 12"/></svg>';
+    }
+
+    // ─── INTERACTIONS ─────────────────────────────────────────────────────────────
+    function toggleStage(id) {
+      expandedStage = (expandedStage === id) ? null : id;
+      renderRoadmap();
+    }
+
+    function handleCheckbox(event, id) {
+      event.stopPropagation();
+      var checkbox = event.target;
+      setStageComplete(id, checkbox.checked);
+      updateProgress();
+      // Re-render only the card to update completed class
+      var card = document.getElementById('stage-card-' + id);
+      if (checkbox.checked) {
+        card.classList.add('completed');
+        card.classList.remove('expanded');
+      } else {
+        card.classList.remove('completed');
+      }
+      // Update the stage number display
+      var numEl = card.querySelector('.stage-number');
+      if (numEl) {
+        numEl.innerHTML = checkbox.checked ? checkSvg() : id;
+      }
+    }
+
+    // ─── EMAIL CAPTURE ────────────────────────────────────────────────────────────
+    function submitEmail(event) {
+      event.preventDefault();
+      var email = document.getElementById('email-input').value.trim();
+      if (!email || !email.includes('@')) {
+        document.getElementById('email-input').focus();
+        return;
+      }
+
+      var btn = document.getElementById('email-btn');
+      btn.disabled = true;
+      btn.textContent = 'Sending...';
+
+      if (window.SatuGate) {
+        SatuGate.submit(email, { source: 'bitcoin-roadmap', tool: 'bitcoin-beginner-roadmap' }, function() {
+          showEmailSuccess();
+        });
+      } else {
+        fetch(WEBHOOK_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            email: email,
+            source: 'bitcoin-roadmap',
+            tool: 'bitcoin-beginner-roadmap',
+            timestamp: new Date().toISOString()
+          })
+        })
+        .then(function() {
+          showEmailSuccess();
+        })
+        .catch(function() {
+          // Show success even if webhook fails - don't block UX
+          showEmailSuccess();
+        });
+      }
+    }
+
+    function showEmailSuccess() {
+      document.getElementById('email-form').style.display = 'none';
+      document.getElementById('email-success').style.display = 'block';
+    }
+
+    // ─── INIT ─────────────────────────────────────────────────────────────────────
+    renderRoadmap();
     updateProgress();
-}
-
-function toggleExpand(id) {
-    expandedZone = expandedZone === id ? null : id;
-    render();
-}
-
-function toggleComplete(id, event) {
-    event.stopPropagation();
-    if (completedZones.includes(id)) {
-        completedZones = completedZones.filter(z => z !== id);
-    } else {
-        completedZones.push(id);
-    }
-    saveProgress();
-    render();
-}
-
-function updateProgress() {
-    const done = completedZones.length;
-    const total = ZONES.length;
-    const pct = Math.round((done / total) * 100);
-
-    document.getElementById('progress-pct').textContent = pct;
-    document.getElementById('progress-bar').style.width = pct + '%';
-    document.getElementById('count-done').textContent = done;
-    document.getElementById('count-remaining').textContent = total - done;
-}
-
-// ── Init ──
-render();
-</script>
+  </script>
 
 </body>
 </html>
