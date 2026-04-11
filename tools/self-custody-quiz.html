@@ -71,6 +71,7 @@
   gtag('config', 'G-CSPSERCTK8');
 </script>
 
+<script src="/assets/satusphere-gate.js"></script>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800;900&family=Quicksand:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
@@ -660,8 +661,27 @@
     currentQuestion++;
     if (currentQuestion >= QUESTIONS.length) {
       gtag('event', 'quiz_complete', { event_category: 'self_custody_quiz', event_label: 'self-custody-readiness', value: score });
-      showScreen('screen-results');
-      renderResults();
+      // Show email gate before results (skip if already subscribed)
+      if (window.SatuGate && !SatuGate.hasSubscribed()) {
+        SatuGate.showModal({
+          heading: 'Your readiness score is ready',
+          subtext: 'Enter your email to see your full results and get the Bitcoin Beginner Checklist - free.',
+          ctaLabel: 'Show My Results',
+          source: 'self-custody-quiz',
+          metadata: { score: score },
+          onSubmit: function() {
+            showScreen('screen-results');
+            renderResults();
+          },
+          onSkip: function() {
+            showScreen('screen-results');
+            renderResults();
+          }
+        });
+      } else {
+        showScreen('screen-results');
+        renderResults();
+      }
     } else {
       renderQuestion();
     }
