@@ -4,7 +4,7 @@
 # These files are Stitch-designed. Shrinking them = overwriting the design.
 # If a reduction is genuinely intentional, use: git commit --no-verify
 
-TOOLS_PATTERN="^tools/.*\.html$"
+TOOLS_PATTERN="^(tools/.*\.html|index\.html|learn/index\.html)$"
 MIN_RATIO=0.85  # File must retain at least 85% of its previous line count
 BLOCKED=0
 
