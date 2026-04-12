@@ -22,20 +22,25 @@ export default async function handler(req, res) {
 
   const apiKey = process.env.KIT_API_KEY;
   const formId = process.env.KIT_FORM_ID || '9316004';
+  const sequenceId = process.env.KIT_SEQUENCE_ID || '2718150';
 
   if (!apiKey) {
     return res.status(500).json({ error: 'Server configuration error.' });
   }
 
   try {
-    const kitRes = await fetch('https://api.kit.com/v4/subscribers', {
+    const headers = {
+      'X-Kit-Api-Key': apiKey,
+      'Content-Type': 'application/json',
+    };
+    const emailAddress = email.trim().toLowerCase();
+
+    // Step 1: Subscribe to form
+    const subRes = await fetch('https://api.kit.com/v4/subscribers', {
       method: 'POST',
-      headers: {
-        'X-Kit-Api-Key': apiKey,
-        'Content-Type': 'application/json',
-      },
+      headers,
       body: JSON.stringify({
-        email_address: email.trim().toLowerCase(),
+        email_address: emailAddress,
         form_id: Number(formId),
         fields: {
           source: source || 'unknown',
@@ -44,10 +49,22 @@ export default async function handler(req, res) {
       }),
     });
 
-    if (!kitRes.ok) {
-      const body = await kitRes.text();
-      console.error('Kit API error:', kitRes.status, body);
+    if (!subRes.ok) {
+      const body = await subRes.text();
+      console.error('Kit subscribe error:', subRes.status, body);
       return res.status(502).json({ error: 'Subscription failed. Try again.' });
+    }
+
+    const subData = await subRes.json();
+    const subscriberId = subData?.subscriber?.id;
+
+    // Step 2: Add to welcome sequence
+    if (subscriberId) {
+      await fetch(`https://api.kit.com/v4/sequences/${sequenceId}/subscribers`, {
+        method: 'POST',
+        headers,
+        body: JSON.stringify({ subscriber_id: subscriberId }),
+      });
     }
 
     return res.status(200).json({ ok: true });
