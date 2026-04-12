@@ -160,6 +160,7 @@
   .screen.active { display: flex !important; }
   .option-btn { transition: all 0.2s; }
   .option-btn:disabled { cursor: not-allowed; opacity: 0.7; }
+  .option-btn.selected { border-color: #43e2d2 !important; background: rgba(67,226,210,0.10) !important; color: #43e2d2 !important; }
   .option-btn.correct { border-color: #22c55e !important; background: rgba(34,197,94,0.15) !important; color: #22c55e !important; }
   .option-btn.wrong { border-color: #ef4444 !important; background: rgba(239,68,68,0.15) !important; color: #ef4444 !important; }
   .ring-bg { fill: none; stroke: #292934; stroke-width: 8; }
@@ -652,7 +653,7 @@
 
   var currentQuestion = 0;
   var score = 0;
-  var answered = false;
+  var selectedIndex = -1;
   var answers = [];
   var labels = ['A', 'B', 'C', 'D'];
 
@@ -665,7 +666,7 @@
   window.startQuiz = function() {
     currentQuestion = 0;
     score = 0;
-    answered = false;
+    selectedIndex = -1;
     answers = [];
     showScreen('screen-question');
     renderQuestion();
@@ -684,7 +685,6 @@
 
     var container = document.getElementById('options-container');
     container.innerHTML = '';
-    answered = false;
 
     q.options.forEach(function(opt, i) {
       var btn = document.createElement('button');
@@ -694,43 +694,29 @@
       container.appendChild(btn);
     });
 
+    selectedIndex = -1;
     document.getElementById('q-feedback').classList.add('hidden');
     document.getElementById('q-next-wrap').classList.add('hidden');
     document.getElementById('btn-next').textContent = currentQuestion === QUESTIONS.length - 1 ? 'See My Results' : 'Next Question';
   }
 
   function selectAnswer(index) {
-    if (answered) return;
-    answered = true;
-
-    var q = QUESTIONS[currentQuestion];
-    var isCorrect = index === q.correct;
-    if (isCorrect) score++;
-
-    answers.push({ correct: isCorrect, questionIndex: currentQuestion });
-
     var buttons = document.querySelectorAll('.option-btn');
-    buttons.forEach(function(btn, i) {
-      btn.disabled = true;
-      if (i === q.correct) btn.classList.add('correct');
-      else if (i === index && !isCorrect) btn.classList.add('wrong');
-    });
-
-    var feedback = document.getElementById('q-feedback');
-    feedback.classList.remove('hidden', 'feedback-correct', 'feedback-wrong');
-    if (isCorrect) {
-      feedback.classList.add('feedback-correct');
-      feedback.innerHTML = '<strong>Correct.</strong> ' + q.explanation;
-    } else {
-      feedback.classList.add('feedback-wrong');
-      feedback.innerHTML = '<strong>Not quite.</strong> ' + q.explanation;
-    }
-
+    buttons.forEach(function(btn) { btn.classList.remove('selected'); });
+    buttons[index].classList.add('selected');
+    selectedIndex = index;
     document.getElementById('q-next-wrap').classList.remove('hidden');
-    document.getElementById('q-score-live').textContent = score;
   }
 
   window.nextQuestion = function() {
+    // Lock in the selected answer before advancing
+    if (selectedIndex >= 0) {
+      var q = QUESTIONS[currentQuestion];
+      var isCorrect = selectedIndex === q.correct;
+      if (isCorrect) score++;
+      answers.push({ correct: isCorrect, questionIndex: currentQuestion });
+      document.getElementById('q-score-live').textContent = score;
+    }
     currentQuestion++;
     if (currentQuestion >= QUESTIONS.length) {
       gtag('event', 'quiz_complete', { event_category: 'self_custody_quiz', event_label: 'self-custody-readiness', value: score });
