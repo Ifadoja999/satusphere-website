@@ -935,6 +935,7 @@
     let score = 0;
     let answers = [];
     let answered = false;
+    let selectedIndex = -1;
 
     function startQuiz() {
       currentQuestion = 0;
@@ -951,6 +952,7 @@
 
     function renderQuestion() {
       answered = false;
+      selectedIndex = -1;
       const q = QUESTIONS[currentQuestion];
       const progress = (currentQuestion / QUESTIONS.length) * 100;
 
@@ -983,31 +985,38 @@
 
     function selectAnswer(index) {
       if (answered) return;
-      answered = true;
-
-      const q = QUESTIONS[currentQuestion];
-      const isCorrect = index === q.correct;
-      if (isCorrect) score++;
-
-      answers.push({ correct: isCorrect, questionIndex: currentQuestion, selectedIndex: index });
+      selectedIndex = index;
 
       const buttons = document.querySelectorAll('.option-btn');
       buttons.forEach((btn, i) => {
-        btn.disabled = true;
-        if (i === index) btn.classList.add('selected');
+        btn.classList.toggle('selected', i === index);
       });
 
       document.getElementById('q-next-wrap').style.display = 'block';
     }
 
+    function lockAnswer() {
+      if (answered || selectedIndex === -1) return;
+      answered = true;
+
+      const q = QUESTIONS[currentQuestion];
+      const isCorrect = selectedIndex === q.correct;
+      if (isCorrect) score++;
+
+      answers.push({ correct: isCorrect, questionIndex: currentQuestion, selectedIndex: selectedIndex });
+
+      const buttons = document.querySelectorAll('.option-btn');
+      buttons.forEach(btn => { btn.disabled = true; });
+    }
+
     function nextQuestion() {
+      lockAnswer();
       currentQuestion++;
       if (currentQuestion >= QUESTIONS.length) {
         // Skip gate for returning subscribers - go straight to results
         if (window.SatuGate && SatuGate.hasSubscribed()) {
           showResults();
         } else {
-          document.getElementById('email-score-circle').textContent = score + '/10';
           showScreen('screen-email');
         }
       } else {
