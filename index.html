@@ -1,750 +1,179 @@
 <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SatUsPhere | Bitcoin Is For All Of Us</title>
+  <meta name="description" content="SatUsPhere teaches Bitcoin fundamentals through 3D animated video education. Bitcoin From Scratch is a 34-video course for complete beginners." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://satusphere.com/" />
 
-<html class="dark" lang="en"><head>
-<meta charset="utf-8"/>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-CSPSERCTK8"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-CSPSERCTK8');
-</script>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>SatUsPhere | Bitcoin Is For All Of Us</title>
-<meta name="description" content="SatUsPhere teaches Bitcoin fundamentals through 3D animated video education. Bitcoin From Scratch is a 34-video course for complete beginners." />
-<meta name="robots" content="index, follow" />
-<link rel="canonical" href="https://satusphere.com/" />
+  <!-- Open Graph -->
+  <meta property="og:title" content="SatUsPhere | Bitcoin Is For All Of Us" />
+  <meta property="og:description" content="Bitcoin From Scratch - 34 3D animated videos teaching Bitcoin fundamentals for complete beginners." />
+  <meta property="og:url" content="https://satusphere.com/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://satusphere.com/assets/course-banner.png" />
+  <meta property="og:site_name" content="SatUsPhere" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@sat_us_phere" />
 
-<!-- Open Graph -->
-<meta property="og:title" content="SatUsPhere | Bitcoin Is For All Of Us" />
-<meta property="og:description" content="Bitcoin From Scratch - 34 3D animated videos teaching Bitcoin fundamentals for complete beginners." />
-<meta property="og:url" content="https://satusphere.com/" />
-<meta property="og:type" content="website" />
-<meta property="og:image" content="https://res.cloudinary.com/dohifm2sv/image/upload/v1775325777/bitcoin-from-scratch-course-banner.png" />
-<meta property="og:site_name" content="SatUsPhere" />
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:site" content="@sat_us_phere" />
-<meta name="twitter:title" content="SatUsPhere | Bitcoin Is For All Of Us" />
-<meta name="twitter:description" content="Bitcoin From Scratch - 34 3D animated videos teaching Bitcoin fundamentals for complete beginners." />
-<meta name="twitter:image" content="https://res.cloudinary.com/dohifm2sv/image/upload/v1775325777/bitcoin-from-scratch-course-banner.png" />
-
-<!-- Structured Data: Organization -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "SatUsPhere",
-  "url": "https://satusphere.com",
-  "logo": "https://res.cloudinary.com/dohifm2sv/image/upload/v1775244863/satusphere_logo_cwrmdt.png",
-  "description": "Bitcoin fundamental education company. Bitcoin Is For All Of Us.",
-  "sameAs": [
-    "https://x.com/sat_us_phere",
-    "https://www.youtube.com/channel/UC0jGCeBvr8qLmMhRpwda-5Q",
-    "https://satusphere.teachable.com"
-  ],
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "email": "info@satusphere.com",
-    "contactType": "customer support"
-  }
-}
-</script>
-
-<!-- Structured Data: Course -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Course",
-  "name": "Bitcoin From Scratch",
-  "description": "A 34-video 3D animated course teaching Bitcoin fundamentals for complete beginners. Covers wallets, mining, blockchain, Lightning Network, and more.",
-  "url": "https://satusphere.teachable.com/p/bitcoin-from-scratch",
-  "provider": {
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
     "@type": "Organization",
     "name": "SatUsPhere",
-    "url": "https://satusphere.com"
-  },
-  "offers": {
-    "@type": "Offer",
-    "price": "97",
-    "priceCurrency": "USD",
-    "url": "https://satusphere.teachable.com/p/bitcoin-from-scratch"
-  },
-  "numberOfCredits": 34,
-  "educationalLevel": "Beginner",
-  "about": "Bitcoin"
-}
-</script>
+    "url": "https://satusphere.com",
+    "logo": "https://satusphere.com/assets/logo.png",
+    "description": "Bitcoin fundamental education company. Bitcoin Is For All Of Us.",
+    "sameAs": [
+      "https://x.com/sat_us_phere",
+      "https://www.youtube.com/channel/UC0jGCeBvr8qLmMhRpwda-5Q",
+      "https://satusphere.teachable.com"
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "email": "info@satusphere.com",
+      "contactType": "customer support"
+    }
+  }
+  </script>
 
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700;900&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    colors: {
-                        "on-surface": "#d5e3fd",
-                        "primary-fixed-dim": "#ffb874",
-                        "surface-container": "#122033",
-                        "on-error-container": "#ffdad6",
-                        "on-primary-container": "#603500",
-                        "on-secondary-container": "#372700",
-                        "surface-bright": "#2c3a4e",
-                        "tertiary-container": "#4bb2ff",
-                        "secondary": "#f1bf49",
-                        "secondary-container": "#b68a11",
-                        "on-error": "#690005",
-                        "tertiary-fixed": "#cde5ff",
-                        "surface-variant": "#283649",
-                        "on-tertiary-fixed-variant": "#004a75",
-                        "on-surface-variant": "#dbc2ae",
-                        "tertiary": "#95ccff",
-                        "inverse-surface": "#d5e3fd",
-                        "error": "#ffb4ab",
-                        "secondary-fixed": "#ffdf9d",
-                        "primary-fixed": "#ffdcbf",
-                        "on-primary-fixed": "#2d1600",
-                        "background": "#051426",
-                        "on-background": "#d5e3fd",
-                        "surface-container-low": "#0d1c2e",
-                        "outline-variant": "#554335",
-                        "tertiary-fixed-dim": "#95ccff",
-                        "on-tertiary-fixed": "#001d32",
-                        "surface-dim": "#051426",
-                        "surface-container-high": "#1d2b3e",
-                        "on-secondary": "#3f2e00",
-                        "primary-container": "#f7931a",
-                        "outline": "#a38d7b",
-                        "on-primary": "#4b2800",
-                        "surface": "#051426",
-                        "on-secondary-fixed-variant": "#5b4300",
-                        "error-container": "#93000a",
-                        "on-tertiary": "#003352",
-                        "surface-tint": "#ffb874",
-                        "surface-container-highest": "#283649",
-                        "inverse-on-surface": "#233144",
-                        "inverse-primary": "#8c4f00",
-                        "surface-container-lowest": "#010f20",
-                        "secondary-fixed-dim": "#f1bf49",
-                        "primary": "#ffb874",
-                        "on-tertiary-container": "#004369"
-                    },
-                    fontFamily: {
-                        "headline": ["Space Grotesk"],
-                        "body": ["Inter"],
-                        "label": ["Inter"]
-                    },
-                    borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
-                },
-            },
-        }
-    </script>
-<style>
-        body {
-            background-color: #051426;
-            color: #d5e3fd;
-            overflow-x: hidden;
-        }
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-        }
-        .bloom-orange {
-            box-shadow: 0 0 25px rgba(247, 147, 26, 0.4), 0 0 50px rgba(247, 147, 26, 0.2);
-        }
-        .edge-glow-blue {
-            box-shadow: inset 0 0 15px rgba(29, 161, 242, 0.15), 0 0 30px rgba(29, 161, 242, 0.08);
-        }
-        .glass-panel {
-            background: rgba(13, 28, 46, 0.6);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-        }
-        @keyframes pulse-glow {
-            0%, 100% { opacity: 0.4; transform: scale(1); }
-            50% { opacity: 0.7; transform: scale(1.1); }
-        }
-        .coin-glow-field {
-            position: absolute;
-            inset: 0;
-            background: 
-                radial-gradient(circle at 20% 30%, rgba(247, 147, 26, 0.3) 0%, transparent 40%),
-                radial-gradient(circle at 80% 20%, rgba(247, 147, 26, 0.25) 0%, transparent 35%),
-                radial-gradient(circle at 50% 50%, rgba(247, 147, 26, 0.2) 0%, transparent 50%),
-                radial-gradient(circle at 10% 80%, rgba(247, 147, 26, 0.3) 0%, transparent 40%),
-                radial-gradient(circle at 90% 70%, rgba(247, 147, 26, 0.25) 0%, transparent 35%);
-            filter: blur(20px);
-            animation: pulse-glow 8s ease-in-out infinite;
-            z-index: 1;
-        }
-        .luminous-bg-filter {
-            filter: brightness(1.3) saturate(1.8) contrast(1.1);
-        }
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    "name": "Bitcoin From Scratch",
+    "description": "A 34-video 3D animated course teaching Bitcoin fundamentals for complete beginners. Covers wallets, mining, blockchain, Lightning Network, and more.",
+    "url": "https://satusphere.teachable.com/p/bitcoin-from-scratch",
+    "provider": {
+      "@type": "Organization",
+      "name": "SatUsPhere",
+      "url": "https://satusphere.com"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "97",
+      "priceCurrency": "USD",
+      "url": "https://satusphere.teachable.com/p/bitcoin-from-scratch"
+    },
+    "numberOfCredits": 34,
+    "educationalLevel": "Beginner",
+    "about": "Bitcoin"
+  }
+  </script>
 
-        /* New Quiz Section Specific Styles */
-        @keyframes text-pulse-bg {
-            0%, 100% { opacity: 0.15; transform: scale(1); }
-            50% { opacity: 0.3; transform: scale(1.15); }
-        }
-        .fluorescent-glow {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 120%;
-            height: 120%;
-            background: radial-gradient(circle, #F7931A 0%, transparent 70%);
-            animation: text-pulse-bg 4s ease-in-out infinite;
-            z-index: -1;
-            pointer-events: none;
-        }
-        .neon-border-orange {
-            border: 1px solid rgba(247, 147, 26, 0.5);
-            box-shadow: 0 0 15px rgba(247, 147, 26, 0.3), inset 0 0 15px rgba(247, 147, 26, 0.2);
-        }
-        .btn-glow-intense {
-            box-shadow: 0 0 20px rgba(247, 147, 26, 0.6), 0 0 40px rgba(247, 147, 26, 0.3);
-        }
-
-        /* 21Dev Colorful Button */
-        .btn-colorful {
-            position: relative;
-            overflow: hidden;
-            background: #18181b;
-            border: none;
-            border-radius: 0.75rem;
-            cursor: pointer;
-        }
-        .btn-colorful .btn-gradient {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(to right, #6366f1, #a855f7, #ec4899);
-            opacity: 0.4;
-            filter: blur(8px);
-            transition: opacity 0.5s ease;
-        }
-        .btn-colorful:hover .btn-gradient {
-            opacity: 0.85;
-        }
-        .btn-colorful .btn-content {
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-            color: white;
-            z-index: 1;
-        }
-        .btn-colorful .btn-arrow {
-            width: 16px;
-            height: 16px;
-            stroke: rgba(255, 255, 255, 0.9);
-            stroke-width: 2;
-            fill: none;
-            stroke-linecap: round;
-            stroke-linejoin: round;
-        }
-
-        /* Neon CTA Button */
-        .btn-neon-cta {
-            background: #0a0a14;
-            color: white;
-            border: 2px solid rgba(147, 130, 255, 0.6);
-            border-radius: 9999px;
-            box-shadow:
-                0 0 15px rgba(147, 130, 255, 0.4),
-                0 0 40px rgba(147, 130, 255, 0.25),
-                0 0 80px rgba(147, 130, 255, 0.15),
-                inset 0 0 20px rgba(147, 130, 255, 0.1);
-            text-shadow: 0 0 10px rgba(147, 130, 255, 0.5);
-        }
-        .btn-neon-cta:hover {
-            border-color: rgba(147, 130, 255, 0.9);
-            box-shadow:
-                0 0 20px rgba(147, 130, 255, 0.6),
-                0 0 60px rgba(147, 130, 255, 0.35),
-                0 0 100px rgba(147, 130, 255, 0.2),
-                inset 0 0 30px rgba(147, 130, 255, 0.15);
-            text-shadow: 0 0 15px rgba(147, 130, 255, 0.7);
-        }
-        @keyframes neon-pulse-border {
-            0% {
-                box-shadow:
-                    0 0 5px rgba(147, 130, 255, 0.1),
-                    0 0 10px rgba(147, 130, 255, 0.05),
-                    inset 0 0 5px rgba(147, 130, 255, 0.02);
-                border-color: rgba(147, 130, 255, 0.15);
-                text-shadow: 0 0 3px rgba(147, 130, 255, 0.1);
-            }
-            50% {
-                box-shadow:
-                    0 0 25px rgba(147, 130, 255, 0.8),
-                    0 0 60px rgba(147, 130, 255, 0.5),
-                    0 0 120px rgba(147, 130, 255, 0.3),
-                    0 0 200px rgba(147, 130, 255, 0.1),
-                    inset 0 0 40px rgba(147, 130, 255, 0.2);
-                border-color: rgba(147, 130, 255, 1);
-                text-shadow: 0 0 20px rgba(147, 130, 255, 0.9), 0 0 40px rgba(147, 130, 255, 0.5);
-            }
-            100% {
-                box-shadow:
-                    0 0 5px rgba(147, 130, 255, 0.1),
-                    0 0 10px rgba(147, 130, 255, 0.05),
-                    inset 0 0 5px rgba(147, 130, 255, 0.02);
-                border-color: rgba(147, 130, 255, 0.15);
-                text-shadow: 0 0 3px rgba(147, 130, 255, 0.1);
-            }
-        }
-        .btn-neon-cta { animation: neon-pulse-border 2.5s ease-in-out infinite; }
-
-        /* Orbit Decorations */
-        .orbit-bg {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            pointer-events: none;
-            z-index: 0;
-        }
-        .orbit {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            border: 1px solid rgba(247, 147, 26, 0.25);
-            border-radius: 50%;
-            box-shadow: 0 0 15px rgba(247, 147, 26, 0.1), inset 0 0 15px rgba(247, 147, 26, 0.05);
-        }
-        @keyframes orbit-rotate {
-            from { transform: translate(-50%, -50%) rotate(0deg); }
-            to { transform: translate(-50%, -50%) rotate(360deg); }
-        }
-        @keyframes orbit-pulse {
-            0%, 100% { border-color: rgba(247, 147, 26, 0.15); box-shadow: 0 0 10px rgba(247, 147, 26, 0.05); }
-            50% { border-color: rgba(247, 147, 26, 0.35); box-shadow: 0 0 25px rgba(247, 147, 26, 0.15), 0 0 50px rgba(29, 161, 242, 0.08); }
-        }
-        .orbit-1 { animation: orbit-pulse 6s ease-in-out infinite, orbit-rotate 120s linear infinite; }
-        .orbit-2 { animation: orbit-pulse 8s ease-in-out infinite 2s, orbit-rotate 180s linear infinite reverse; }
-        .orbit-3 { animation: orbit-pulse 10s ease-in-out infinite 4s, orbit-rotate 240s linear infinite; }
-
-        /* Neon Logo */
-        .neon-logo {
-            filter: drop-shadow(0 0 30px rgba(247, 147, 26, 0.6)) drop-shadow(0 0 60px rgba(247, 147, 26, 0.3)) drop-shadow(0 0 10px rgba(29, 161, 242, 0.3));
-        }
-        @keyframes logo-breathe {
-            0%, 100% { opacity: 0.25; filter: drop-shadow(0 0 20px rgba(247, 147, 26, 0.4)) drop-shadow(0 0 40px rgba(247, 147, 26, 0.2)); }
-            50% { opacity: 0.4; filter: drop-shadow(0 0 40px rgba(247, 147, 26, 0.7)) drop-shadow(0 0 80px rgba(247, 147, 26, 0.4)) drop-shadow(0 0 15px rgba(29, 161, 242, 0.3)); }
-        }
-        .neon-logo-animated { animation: logo-breathe 5s ease-in-out infinite; }
-
-        /* CTA beam drift animations */
-        @keyframes beam-drift-h1 {
-            0%, 100% { transform: translateX(0) translateY(0); opacity: 0.3; }
-            25% { transform: translateX(80px) translateY(-15px); opacity: 0.7; }
-            50% { transform: translateX(-40px) translateY(10px); opacity: 0.4; }
-            75% { transform: translateX(60px) translateY(-8px); opacity: 0.8; }
-        }
-        @keyframes beam-drift-h2 {
-            0%, 100% { transform: translateX(0) translateY(0); opacity: 0.4; }
-            30% { transform: translateX(-70px) translateY(12px); opacity: 0.7; }
-            60% { transform: translateX(50px) translateY(-10px); opacity: 0.3; }
-        }
-        @keyframes beam-drift-h3 {
-            0%, 100% { transform: translateX(0) translateY(0); opacity: 0.5; }
-            50% { transform: translateX(90px) translateY(8px); opacity: 0.8; }
-        }
-        @keyframes beam-drift-h4 {
-            0%, 100% { transform: translateX(0) translateY(0); opacity: 0.3; }
-            35% { transform: translateX(-60px) translateY(-12px); opacity: 0.6; }
-            70% { transform: translateX(40px) translateY(6px); opacity: 0.9; }
-        }
-        @keyframes beam-drift-v1 {
-            0%, 100% { transform: rotate(25deg) translateX(0); opacity: 0.3; }
-            50% { transform: rotate(25deg) translateX(30px); opacity: 0.6; }
-        }
-        @keyframes beam-drift-v2 {
-            0%, 100% { transform: rotate(-20deg) translateX(0); opacity: 0.2; }
-            50% { transform: rotate(-20deg) translateX(-25px); opacity: 0.5; }
-        }
-
-        /* Hero light sweep */
-        @keyframes light-sweep {
-            0% { left: -100%; }
-            40% { left: 150%; }
-            100% { left: 150%; }
-        }
-
-        /* Hero coin animations */
-        @keyframes coin-float-1 {
-            0%, 100% { transform: translate(0, 0) rotate(0deg); }
-            25% { transform: translate(15px, -20px) rotate(5deg); }
-            50% { transform: translate(-10px, -35px) rotate(-3deg); }
-            75% { transform: translate(20px, -15px) rotate(4deg); }
-        }
-        @keyframes coin-float-2 {
-            0%, 100% { transform: translate(0, 0) rotate(0deg); }
-            33% { transform: translate(-20px, -25px) rotate(-6deg); }
-            66% { transform: translate(15px, -10px) rotate(4deg); }
-        }
-        @keyframes coin-shimmer {
-            0%, 100% { filter: brightness(1.3) saturate(1.8) contrast(1.1); }
-            50% { filter: brightness(1.6) saturate(2.2) contrast(1.2); }
-        }
-        .hero-bg-animated {
-            animation: coin-float-1 20s ease-in-out infinite, coin-shimmer 6s ease-in-out infinite;
-            transform: scale(1.15);
-            transform-origin: center center;
-        }
-        @media (max-width: 768px) {
-            .hero-bg-animated {
-                animation: coin-shimmer 6s ease-in-out infinite;
-            }
-        }
-        .coin-glow-field {
-            animation: pulse-glow 8s ease-in-out infinite;
-        }
-
-        /* Bottom CTA ambient glow */
-        @keyframes ambient-shift {
-            0%, 100% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-        }
-        .cta-ambient {
-            background: linear-gradient(135deg, rgba(247, 147, 26, 0.08) 0%, rgba(29, 161, 242, 0.05) 50%, rgba(224, 102, 255, 0.05) 100%);
-            background-size: 200% 200%;
-            animation: ambient-shift 10s ease-in-out infinite;
-        }
-    </style>
+  <style>
+    :root {
+      --navy: #0D1B2E;
+      --orange: #F7931A;
+      --blue: #1DA1F2;
+      --gold: #D4A530;
+      --white: #FFFFFF;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--navy);
+      color: var(--white);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      text-align: center;
+    }
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--orange);
+      letter-spacing: -0.02em;
+      margin-bottom: 8px;
+    }
+    .tagline {
+      font-size: 1rem;
+      color: #aaa;
+      margin-bottom: 48px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+    }
+    h1 {
+      font-size: clamp(1.8rem, 5vw, 2.8rem);
+      font-weight: 800;
+      margin-bottom: 20px;
+      line-height: 1.2;
+    }
+    h1 span { color: var(--orange); }
+    p {
+      font-size: 1.1rem;
+      color: #ccc;
+      max-width: 540px;
+      margin: 0 auto 40px;
+      line-height: 1.7;
+    }
+    .cta-group { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+    .btn-primary {
+      background: var(--orange);
+      color: var(--white);
+      padding: 14px 32px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1rem;
+      display: inline-block;
+      transition: opacity 0.2s;
+    }
+    .btn-primary:hover { opacity: 0.9; }
+    .btn-secondary {
+      background: transparent;
+      color: var(--white);
+      padding: 14px 32px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      border: 2px solid #444;
+      display: inline-block;
+      transition: border-color 0.2s;
+    }
+    .btn-secondary:hover { border-color: var(--orange); }
+    .divider {
+      width: 60px;
+      height: 3px;
+      background: var(--gold);
+      margin: 48px auto;
+      border-radius: 2px;
+    }
+    footer {
+      position: fixed;
+      bottom: 20px;
+      font-size: 0.8rem;
+      color: #555;
+    }
+    footer a { color: #555; text-decoration: none; }
+    footer a:hover { color: #aaa; }
+  </style>
 </head>
-<body class="font-body selection:bg-primary-container selection:text-on-primary-container">
-<!-- TopNavBar -->
-<nav class="fixed top-0 w-full z-50 bg-[#051426]/80 backdrop-blur-xl shadow-[0_0_40px_rgba(29,161,242,0.08)]">
-<div class="flex justify-between items-center px-4 md:px-10 py-4 md:py-6 max-w-[1440px] mx-auto gap-3">
-<div class="flex items-center gap-2 md:gap-3 min-w-0">
-<img alt="SatUsPhere Logo" class="h-8 w-8 md:h-10 md:w-10 rounded-full shrink-0" src="https://res.cloudinary.com/dohifm2sv/image/upload/q_auto/f_auto/v1775244863/satusphere_logo_cwrmdt.png"/>
-<span class="text-lg md:text-2xl font-black tracking-tighter text-[#F7931A] font-headline uppercase truncate">SatUsPhere</span>
-</div>
-<a href="https://satusphere.teachable.com/p/bitcoin-from-scratch" target="_blank" rel="noopener" class="bg-[#F7931A] text-[#4b2800] px-4 md:px-6 py-2 md:py-2.5 rounded-xl font-headline font-black uppercase tracking-tighter text-xs md:text-sm transition-transform scale-95 active:scale-90 bloom-orange inline-block no-underline shrink-0 whitespace-nowrap">
-            START LEARNING
-        </a>
-</div>
-</nav>
-<!-- Hero Section -->
-<header class="relative min-h-screen flex flex-col items-center justify-center pt-32 md:pt-24 overflow-hidden">
-<!-- Celestial Background Elements -->
-<div class="absolute inset-0 z-0">
-<div class="coin-glow-field"></div>
-<img alt="Cinematic floating 3D Bitcoin coins" class="w-full h-full object-cover opacity-80 hero-bg-animated relative z-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDWIUhyKiwEKjlqbR7j8anhM6CwwYc7Tly-yx09Ef9CirFXvfPlfGZ8XNqe83tO6qepPLVowCURJq2Z6pIu4_3fp6ttCk-IMFjCwDgrD_I_11ICkeafS7PibCfA73DMoJ3z7g9XReMD6rpg9XxK69jQ8B8266hKfV2xtxjYX72iX47_OHNXpIvAwGfKYhCnNsW8JFZAjQp1HpEffp4o354Hflz02VFy9tPKYbjroLNYlP0S4YmnJISoETR1qUqC4GT9_KW-wtTQbU"/>
-<div class="absolute inset-0 bg-gradient-to-b from-[#051426]/20 via-[#051426]/50 to-[#051426] z-2"></div>
-</div>
-<div class="relative z-10 text-center px-6 max-w-5xl mx-auto">
-<h1 class="text-6xl md:text-8xl font-headline font-black tracking-tighter leading-[0.9] mb-6 text-white" style="text-shadow: 0 4px 24px rgba(0,0,0,0.5);">
-            SEE BITCOIN LIKE <br/> <span class="bg-gradient-to-r from-[#F7931A] via-[#E066FF] to-[#1DA1F2] bg-clip-text text-transparent">NEVER BEFORE</span>
-</h1>
-<p class="text-xl md:text-2xl text-white/80 max-w-2xl mx-auto mb-10 leading-relaxed font-medium">
-            34 3D animated lessons. From the history of money to self-custody.
-        </p>
-<div class="flex flex-col sm:flex-row gap-4 sm:gap-8 justify-center items-center">
-<a href="https://satusphere.teachable.com/p/bitcoin-from-scratch" target="_blank" rel="noopener" class="px-12 py-6 bg-[#F7931A] text-[#4b2800] rounded-xl font-headline font-black text-xl tracking-widest transition-all bloom-orange hover:scale-105 active:scale-95 inline-block no-underline">
-                START LEARNING
-            </a>
-<button onclick="document.getElementById('videoModal').classList.remove('hidden')" class="group flex items-center gap-2 text-white/70 hover:text-white font-headline font-bold text-sm tracking-widest uppercase transition-colors">
-<span class="material-symbols-outlined text-base" style='font-variation-settings: "FILL" 1;'>play_circle</span>
-                Watch Sample Video
-            </button>
-</div>
-</div>
-</header>
-<!-- Stats Bar -->
-<section class="relative z-10 -mt-16 md:-mt-20 mb-16 px-6">
-<div class="max-w-6xl mx-auto">
-<div class="glass-panel p-8 rounded-2xl edge-glow-blue flex flex-col md:flex-row justify-between items-center gap-8">
-<div class="text-left">
-<span class="text-[#F7931A] font-headline font-bold uppercase text-xs tracking-[0.3em] block mb-2">3D Animated course</span>
-<h3 class="text-2xl font-headline font-black uppercase text-white tracking-tight">Bitcoin from Scratch</h3>
-</div>
-<div class="flex gap-12">
-<div class="text-center">
-<div class="text-3xl font-headline font-black text-white">34</div>
-<div class="text-[10px] uppercase tracking-widest text-on-surface-variant font-bold">Deep Lessons</div>
-</div>
-<div class="text-center">
-<div class="text-3xl font-headline font-black text-secondary">94%</div>
-<div class="text-[10px] uppercase tracking-widest text-on-surface-variant font-bold">Completion Rate</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- Curriculum Section -->
-<section class="py-32 px-10 max-w-[1440px] mx-auto relative">
-<div class="mb-20 text-center md:text-left">
-<h2 class="text-5xl md:text-7xl font-headline font-black uppercase tracking-tighter text-white mb-4">
-            CURRICULUM <br/> OF THE <span class="text-secondary">FUTURE</span>
-</h2>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-<!-- Card 1 -->
-<div class="glass-panel p-10 rounded-2xl relative group overflow-hidden transition-transform hover:-translate-y-2">
-<div class="absolute top-0 right-0 w-32 h-32 bg-[#F7931A]/10 rounded-full blur-3xl group-hover:bg-[#F7931A]/20 transition-colors"></div>
-<div class="mb-8">
-<span class="material-symbols-outlined text-4xl text-[#F7931A]" style='font-variation-settings: "FILL" 1;'>history_edu</span>
-</div>
-<h4 class="text-2xl font-headline font-black uppercase mb-4 text-white">The History of Money</h4>
-<p class="text-on-surface-variant leading-relaxed mb-8">From shells and salt to gold coins and paper notes. Understand why money exists and what makes it work.</p>
-<div class="h-1 w-20 bg-[#F7931A] rounded-full"></div>
-</div>
-<!-- Card 2 -->
-<div class="glass-panel p-10 rounded-2xl relative group overflow-hidden transition-transform hover:-translate-y-2">
-<div class="absolute top-0 right-0 w-32 h-32 bg-tertiary/10 rounded-full blur-3xl group-hover:bg-tertiary/20 transition-colors"></div>
-<div class="mb-8">
-<span class="material-symbols-outlined text-4xl text-tertiary" style='font-variation-settings: "FILL" 1;'>precision_manufacturing</span>
-</div>
-<h4 class="text-2xl font-headline font-black uppercase mb-4 text-white">How Bitcoin Works</h4>
-<p class="text-on-surface-variant leading-relaxed mb-8">Proof of Work, the blockchain, mining, and digital scarcity explained through 3D animated visuals.</p>
-<div class="h-1 w-20 bg-tertiary rounded-full"></div>
-</div>
-<!-- Card 3 -->
-<div class="glass-panel p-10 rounded-2xl relative group overflow-hidden transition-transform hover:-translate-y-2">
-<div class="absolute top-0 right-0 w-32 h-32 bg-[#E066FF]/10 rounded-full blur-3xl group-hover:bg-[#E066FF]/20 transition-colors"></div>
-<div class="mb-8">
-<span class="material-symbols-outlined text-4xl text-[#E066FF]" style='font-variation-settings: "FILL" 1;'>bolt</span>
-</div>
-<h4 class="text-2xl font-headline font-black uppercase mb-4 text-white">The Lightning Network</h4>
-<p class="text-on-surface-variant leading-relaxed mb-8">How Bitcoin scales to handle millions of transactions per second through payment channels.</p>
-<div class="h-1 w-20 bg-[#E066FF] rounded-full"></div>
-</div>
-</div>
-</section>
-<!-- Quiz Lead Gen Section -->
-<section class="py-24 px-6 max-w-6xl mx-auto">
-<div class="relative glass-panel rounded-[2rem] overflow-hidden neon-border-orange py-24 px-10 text-center">
-<!-- Ambient Glow Accents -->
-<div class="absolute -top-32 -left-32 w-80 h-80 bg-[#F7931A]/10 rounded-full blur-[100px] pointer-events-none"></div>
-<div class="absolute -bottom-32 -right-32 w-80 h-80 bg-[#F7931A]/10 rounded-full blur-[100px] pointer-events-none"></div>
-<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-gradient-to-tr from-[#F7931A]/5 via-transparent to-[#F7931A]/5 pointer-events-none"></div>
-<div class="relative z-10 max-w-3xl mx-auto">
-<div class="relative inline-block mb-8">
-<div class="fluorescent-glow"></div>
-<h2 class="text-4xl md:text-6xl font-headline font-black uppercase text-white tracking-tighter leading-[1.1] drop-shadow-lg">
-                FIND YOUR PERFECT <br class="hidden md:block"/> BITCOIN WALLET
-            </h2>
-</div>
-<p class="text-xl md:text-2xl text-white/80 mb-14 font-body max-w-2xl mx-auto leading-relaxed">
-                Take our 60-second quiz and we'll recommend the best wallet for your experience level.
-            </p>
-<div class="flex flex-col items-center gap-6">
-<a href="/tools/bitcoin-wallet-selector" class="btn-colorful px-14 py-6 transition-transform duration-200 hover:scale-105 active:scale-95 inline-block no-underline">
-<div class="btn-gradient"></div>
-<div class="btn-content font-headline font-black text-2xl uppercase tracking-widest">
-<span>START THE QUIZ</span>
-<svg class="btn-arrow" viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
-</div>
-</a>
-<div class="flex items-center gap-3 text-sm text-white/50 font-medium tracking-wide uppercase">
-<span class="material-symbols-outlined text-lg text-[#F7931A]" style='font-variation-settings: "FILL" 1;'>verified</span>
-                    Join 12,000+ students who found their ideal setup.
-                </div>
-</div>
-</div>
-</div>
-</section>
-<!-- Interactive Globe Section -->
-<section class="py-24 px-6 relative overflow-hidden">
-<div class="max-w-6xl mx-auto flex flex-col lg:flex-row items-center gap-16">
-<!-- Globe -->
-<div class="relative w-full max-w-lg mx-auto lg:mx-0" style="aspect-ratio: 1/1; padding: 20px; transform: translate(100px, -80px);">
-<canvas id="cobe-globe" style="width: 100%; height: 100%; cursor: grab; opacity: 0; transition: opacity 1.2s ease; touch-action: none;"></canvas>
-<!-- Glow behind globe -->
-<div class="absolute inset-0 -z-10 rounded-full" style="background: radial-gradient(circle, rgba(247, 147, 26, 0.25) 0%, rgba(29, 161, 242, 0.15) 30%, rgba(224, 102, 255, 0.08) 50%, transparent 70%); filter: blur(30px); transform: scale(1.1);"></div>
-</div>
-<!-- Text content -->
-<div class="flex-1 text-center lg:text-left">
-<span class="text-[#F7931A] font-headline font-bold uppercase text-xs tracking-[0.3em] block mb-4">Global Community</span>
-<h2 class="text-4xl md:text-6xl font-headline font-black uppercase tracking-tighter text-white mb-6 leading-[1.1]">
-BITCOIN HAS NO <span class="text-secondary">BORDERS</span>
-</h2>
-<p class="text-lg text-white/70 max-w-xl leading-relaxed mb-8">
-Students from over 40 countries are learning Bitcoin from scratch. Join a growing community of people who refuse to leave their financial future to chance.
-</p>
-<div class="flex flex-wrap gap-8 justify-center lg:justify-start">
-<div>
-<div class="text-3xl font-headline font-black text-[#F7931A]">12,000+</div>
-<div class="text-xs uppercase tracking-widest text-white/40 font-bold mt-1">Students</div>
-</div>
-<div>
-<div class="text-3xl font-headline font-black text-tertiary">40+</div>
-<div class="text-xs uppercase tracking-widest text-white/40 font-bold mt-1">Countries</div>
-</div>
-<div>
-<div class="text-3xl font-headline font-black text-[#E066FF]">34</div>
-<div class="text-xs uppercase tracking-widest text-white/40 font-bold mt-1">Lessons</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- Course CTA Section (Replaces Community Section) -->
-<section class="py-48 px-10 relative overflow-hidden flex items-center justify-center min-h-[80vh]">
-<!-- Animated particle grid background -->
-<div class="absolute inset-0 z-0 pointer-events-none" style="
-    background-image:
-        radial-gradient(circle at 25% 25%, rgba(247, 147, 26, 0.12) 0%, transparent 50%),
-        radial-gradient(circle at 75% 75%, rgba(29, 161, 242, 0.08) 0%, transparent 50%),
-        radial-gradient(circle at 50% 10%, rgba(224, 102, 255, 0.06) 0%, transparent 40%);
-    animation: ambient-shift 12s ease-in-out infinite;
-    background-size: 200% 200%;
-"></div>
-<!-- Animated floating light beams -->
-<div class="absolute inset-0 z-0 pointer-events-none overflow-hidden">
-  <!-- Horizontal beams -->
-  <div style="position:absolute; top:15%; left:-50%; width:200%; height:1px; background:linear-gradient(90deg, transparent 20%, rgba(247,147,26,0.4), rgba(29,161,242,0.3), transparent 80%); animation: beam-drift-h1 12s ease-in-out infinite;"></div>
-  <div style="position:absolute; top:35%; left:-50%; width:200%; height:1px; background:linear-gradient(90deg, transparent 10%, rgba(29,161,242,0.35), rgba(224,102,255,0.25), transparent 90%); animation: beam-drift-h2 15s ease-in-out infinite;"></div>
-  <div style="position:absolute; top:55%; left:-50%; width:200%; height:1px; background:linear-gradient(90deg, transparent 30%, rgba(247,147,26,0.3), transparent 70%); animation: beam-drift-h3 10s ease-in-out infinite;"></div>
-  <div style="position:absolute; top:75%; left:-50%; width:200%; height:1px; background:linear-gradient(90deg, transparent 15%, rgba(224,102,255,0.3), rgba(247,147,26,0.2), transparent 85%); animation: beam-drift-h4 18s ease-in-out infinite;"></div>
-  <div style="position:absolute; top:90%; left:-50%; width:200%; height:1px; background:linear-gradient(90deg, transparent 25%, rgba(29,161,242,0.25), transparent 75%); animation: beam-drift-h1 14s ease-in-out infinite 3s;"></div>
-  <!-- Diagonal beams -->
-  <div style="position:absolute; top:-20%; left:10%; width:1px; height:140%; background:linear-gradient(180deg, transparent, rgba(247,147,26,0.2), rgba(29,161,242,0.15), transparent); transform:rotate(25deg); animation: beam-drift-v1 16s ease-in-out infinite;"></div>
-  <div style="position:absolute; top:-20%; left:50%; width:1px; height:140%; background:linear-gradient(180deg, transparent, rgba(224,102,255,0.15), rgba(247,147,26,0.2), transparent); transform:rotate(-20deg); animation: beam-drift-v2 20s ease-in-out infinite;"></div>
-  <div style="position:absolute; top:-20%; left:80%; width:1px; height:140%; background:linear-gradient(180deg, transparent, rgba(29,161,242,0.2), transparent); transform:rotate(15deg); animation: beam-drift-v1 13s ease-in-out infinite 5s;"></div>
-</div>
-<!-- Floating orbs -->
-<div class="absolute top-[15%] left-[10%] w-3 h-3 rounded-full bg-[#F7931A] z-0" style="filter: blur(2px); box-shadow: 0 0 20px rgba(247, 147, 26, 0.6); animation: coin-float-1 15s ease-in-out infinite;"></div>
-<div class="absolute top-[70%] right-[15%] w-2 h-2 rounded-full bg-[#1DA1F2] z-0" style="filter: blur(1px); box-shadow: 0 0 15px rgba(29, 161, 242, 0.6); animation: coin-float-2 18s ease-in-out infinite;"></div>
-<div class="absolute top-[40%] right-[8%] w-4 h-4 rounded-full bg-[#F7931A] z-0" style="filter: blur(3px); box-shadow: 0 0 30px rgba(247, 147, 26, 0.5); animation: coin-float-1 22s ease-in-out infinite 3s;"></div>
-<div class="absolute bottom-[20%] left-[20%] w-2 h-2 rounded-full bg-[#E066FF] z-0" style="filter: blur(2px); box-shadow: 0 0 15px rgba(224, 102, 255, 0.5); animation: coin-float-2 20s ease-in-out infinite 5s;"></div>
-<div class="absolute top-[25%] right-[35%] w-1.5 h-1.5 rounded-full bg-[#1DA1F2] z-0" style="filter: blur(1px); box-shadow: 0 0 12px rgba(29, 161, 242, 0.4); animation: coin-float-1 25s ease-in-out infinite 2s;"></div>
-<!-- Center glow burst -->
-<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full z-0 pointer-events-none" style="background: radial-gradient(circle, rgba(247, 147, 26, 0.08) 0%, transparent 70%); animation: pulse-glow 8s ease-in-out infinite;"></div>
-<div class="max-w-4xl mx-auto text-center relative z-10">
-<h2 class="text-5xl md:text-7xl font-headline font-black uppercase tracking-tighter text-white mb-8 leading-[1.1]">
-            YOUR <span style="color: #F7931A; font-style: italic;">BITCOIN JOURNEY</span> STARTS HERE
-        </h2>
-<p class="text-xl md:text-2xl text-white/90 mb-16 max-w-3xl mx-auto leading-relaxed font-body" style="text-shadow: 0 0 15px rgba(0,0,0,0.6);">
-            34 cinematic lessons. From the history of money to sovereign self-custody. No jargon, no assumptions. Just Bitcoin, explained from scratch.
-        </p>
-<a href="https://satusphere.teachable.com/p/bitcoin-from-scratch" target="_blank" rel="noopener" class="btn-neon-cta px-20 py-8 font-headline font-black uppercase text-2xl tracking-widest transition-all duration-300 hover:scale-105 active:scale-95 inline-block no-underline">
-            GET THE FULL COURSE
-        </a>
-</div>
-</section>
-<!-- Footer -->
-<footer class="w-full border-t border-white/5 bg-[#051426]">
-<div class="flex flex-col md:flex-row justify-between items-center px-10 py-12 w-full max-w-[1440px] mx-auto">
-<div class="mb-8 md:mb-0">
-<div class="text-xl font-black uppercase text-[#F7931A] font-headline mb-2">SatUsPhere</div>
-<p class="text-white/40 text-sm font-body tracking-wide">© 2026 SatUsPhere.</p>
-</div>
-<div class="flex flex-wrap justify-center gap-8">
-<a class="text-white/40 font-body text-sm tracking-wide hover:text-[#F7931A] transition-colors" href="/privacy">Privacy</a>
-<a class="text-white/40 font-body text-sm tracking-wide hover:text-[#F7931A] transition-colors" href="/terms">Terms</a>
-<a class="text-white/40 font-body text-sm tracking-wide hover:text-[#F7931A] transition-colors" href="/tools">Tools</a>
-<a class="text-white/40 font-body text-sm tracking-wide hover:text-[#F7931A] transition-colors" href="https://www.youtube.com/channel/UC0jGCeBvr8qLmMhRpwda-5Q" target="_blank" rel="noopener">YouTube</a>
-<a class="text-white/40 font-body text-sm tracking-wide hover:text-[#F7931A] transition-colors" href="/learn">Learn</a>
-</div>
-</div>
-</footer>
-<script type="module">
-import createGlobe from 'https://cdn.jsdelivr.net/npm/cobe@0.6.3/+esm';
+<body>
+  <div class="logo">SatUsPhere</div>
+  <div class="tagline">Bitcoin Is For All Of Us</div>
 
-const canvas = document.getElementById('cobe-globe');
-if (canvas) {
-  let phi = 0;
-  let pointerDown = null;
-  let dragPhi = 0;
-  let dragTheta = 0;
-  let offsetPhi = 0;
-  let offsetTheta = 0;
-  let paused = false;
+  <h1>Learn <span>Bitcoin</span><br>From Scratch</h1>
+  <p>34 3D animated videos teaching Bitcoin fundamentals - from zero to confident in your own custody. No jargon. No fluff.</p>
 
-  const markers = [
-    { location: [37.78, -122.44], size: 0.03 },
-    { location: [52.52, 13.41], size: 0.03 },
-    { location: [35.68, 139.65], size: 0.03 },
-    { location: [-23.55, -46.63], size: 0.03 },
-    { location: [25.2, 55.27], size: 0.03 },
-    { location: [-33.87, 151.21], size: 0.03 },
-    { location: [51.51, -0.13], size: 0.025 },
-    { location: [1.35, 103.82], size: 0.025 },
-    { location: [19.43, -99.13], size: 0.025 },
-    { location: [-1.29, 36.82], size: 0.02 },
-  ];
-
-  function init() {
-    const width = canvas.offsetWidth;
-    if (width === 0) return;
-
-    const globe = createGlobe(canvas, {
-      devicePixelRatio: Math.min(window.devicePixelRatio || 1, 2),
-      width: width,
-      height: width,
-      phi: 0,
-      theta: 0.15,
-      dark: 1,
-      diffuse: 2,
-      mapSamples: 16000,
-      mapBrightness: 8,
-      baseColor: [0.15, 0.2, 0.35],
-      markerColor: [0.97, 0.58, 0.1],
-      glowColor: [0.3, 0.4, 0.6],
-      markers: markers,
-      onRender: function(state) {
-        if (!paused) phi += 0.003;
-        state.phi = phi + offsetPhi + dragPhi;
-        state.theta = 0.15 + offsetTheta + dragTheta;
-      }
-    });
-
-    canvas.style.opacity = '1';
-
-    canvas.addEventListener('pointerdown', function(e) {
-      pointerDown = { x: e.clientX, y: e.clientY };
-      canvas.style.cursor = 'grabbing';
-      paused = true;
-    });
-
-    window.addEventListener('pointermove', function(e) {
-      if (pointerDown) {
-        dragPhi = (e.clientX - pointerDown.x) / 300;
-        dragTheta = (e.clientY - pointerDown.y) / 1000;
-      }
-    });
-
-    window.addEventListener('pointerup', function() {
-      if (pointerDown) {
-        offsetPhi += dragPhi;
-        offsetTheta += dragTheta;
-        dragPhi = 0;
-        dragTheta = 0;
-      }
-      pointerDown = null;
-      canvas.style.cursor = 'grab';
-      paused = false;
-    });
-  }
-
-  if (canvas.offsetWidth > 0) {
-    init();
-  } else {
-    const ro = new ResizeObserver(function(entries) {
-      if (entries[0] && entries[0].contentRect.width > 0) {
-        ro.disconnect();
-        init();
-      }
-    });
-    ro.observe(canvas);
-  }
-}
-</script>
-
-<!-- Video Modal -->
-<div id="videoModal" class="hidden fixed inset-0 z-[9999] flex items-center justify-center bg-black/90 backdrop-blur-sm" onclick="if(event.target===this){this.classList.add('hidden');this.querySelector('video').pause();}">
-  <div class="relative w-full max-w-4xl mx-4">
-    <button onclick="document.getElementById('videoModal').classList.add('hidden');document.getElementById('sampleVideo').pause();" class="absolute -top-12 right-0 text-white/70 hover:text-white text-3xl font-bold z-10">&times;</button>
-    <video id="sampleVideo" controls class="w-full rounded-2xl shadow-2xl" poster="https://res.cloudinary.com/dohifm2sv/video/upload/q_auto,f_jpg,so_0/v1775244191/24_TheHalving_u91mf5.jpg">
-      <source src="https://res.cloudinary.com/dohifm2sv/video/upload/q_auto/f_auto/v1775244191/24_TheHalving_u91mf5.mp4" type="video/mp4">
-    </video>
+  <div class="cta-group">
+    <a href="https://satusphere.teachable.com/p/bitcoin-from-scratch" class="btn-primary">Get the Course - $97</a>
+    <a href="/learn" class="btn-secondary">Free Bitcoin Lessons</a>
   </div>
-</div>
-</body></html>
+
+  <div class="divider"></div>
+
+  <footer>
+    <a href="mailto:info@satusphere.com">info@satusphere.com</a> &nbsp;|&nbsp;
+    <a href="https://x.com/sat_us_phere" target="_blank" rel="noopener">@sat_us_phere</a>
+  </footer>
+</body>
+</html>
