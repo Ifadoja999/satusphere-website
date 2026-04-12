@@ -193,6 +193,47 @@
   }
   .breakdown-ok { background: #dcfce7; color: #166534; }
   .breakdown-no { background: #fee2e2; color: #991b1b; }
+  /* EMAIL GATE SCREEN */
+  .sc-email-icon {
+    width: 56px; height: 56px; border-radius: 14px;
+    background: rgba(67,226,210,0.12); border: 1px solid rgba(67,226,210,0.25);
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 20px;
+  }
+  .sc-score-preview {
+    display: flex; align-items: center; gap: 16px;
+    background: rgba(67,226,210,0.06); border: 1px solid rgba(67,226,210,0.15);
+    border-radius: 12px; padding: 16px 20px; margin-bottom: 24px;
+  }
+  .sc-score-bubble {
+    width: 52px; height: 52px; border-radius: 50%;
+    background: rgba(67,226,210,0.15); border: 2px solid rgba(67,226,210,0.4);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.4rem; font-weight: 900; color: #43e2d2; flex-shrink: 0;
+  }
+  .sc-email-input {
+    width: 100%; padding: 14px 16px; border-radius: 10px;
+    border: 2px solid rgba(255,255,255,0.08); background: rgba(255,255,255,0.04);
+    color: #e4e1f0; font-size: 1rem; font-family: inherit; outline: none;
+    transition: border-color 0.2s; box-sizing: border-box;
+  }
+  .sc-email-input:focus { border-color: #43e2d2; }
+  .sc-email-input::placeholder { color: rgba(255,255,255,0.3); }
+  .sc-btn-submit {
+    width: 100%; padding: 14px; border-radius: 10px; border: none; cursor: pointer;
+    background: linear-gradient(135deg, #43e2d2, #00b4a0);
+    color: #003732; font-weight: 900; font-size: 1rem; font-family: inherit;
+    transition: opacity 0.2s, transform 0.1s;
+  }
+  .sc-btn-submit:hover { opacity: 0.9; }
+  .sc-btn-submit:active { transform: scale(0.98); }
+  .sc-btn-submit:disabled { opacity: 0.5; cursor: not-allowed; }
+  .sc-btn-skip {
+    background: none; border: none; cursor: pointer; padding: 8px;
+    color: rgba(255,255,255,0.3); font-size: 0.8rem; font-family: inherit;
+    text-decoration: underline; transition: color 0.2s;
+  }
+  .sc-btn-skip:hover { color: rgba(255,255,255,0.6); }
 </style>
 </head>
 <body class="bg-surface text-on-surface font-body selection:bg-primary/30 scroll-smooth">
@@ -349,7 +390,39 @@
     </div>
   </section>
 
-  <!-- SCREEN 3: RESULTS -->
+  <!-- SCREEN 3: EMAIL GATE -->
+  <section class="min-h-[80vh] flex flex-col items-center justify-center px-6 py-24 screen" id="screen-email">
+    <div class="glass-card max-w-md w-full rounded-lg overflow-hidden shadow-2xl">
+      <div class="p-10 text-center">
+        <div class="sc-email-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#43e2d2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="26" height="26">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+            <polyline points="22,6 12,13 2,6"/>
+          </svg>
+        </div>
+        <p style="font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#43e2d2;font-weight:600;margin:0 0 10px;">Your results are ready</p>
+        <h2 class="text-3xl font-black font-headline mb-3">Unlock Your Readiness Score</h2>
+        <p class="text-on-surface-variant text-base leading-relaxed mb-8 max-w-sm mx-auto">
+          Enter your email to see your full results, your custody readiness level, and your personalized action plan.
+        </p>
+        <div class="sc-score-preview">
+          <div class="sc-score-bubble">?</div>
+          <div class="text-left">
+            <div class="text-sm font-bold text-on-surface">Your score is waiting</div>
+            <div class="text-xs text-on-surface-variant mt-1">Submit your email to unlock your readiness level and next steps.</div>
+          </div>
+        </div>
+        <form id="sc-email-form" onsubmit="submitEmail(event)" style="display:flex;flex-direction:column;gap:12px;">
+          <input class="sc-email-input" type="email" id="sc-email-input" placeholder="Enter your email address" autocomplete="email" />
+          <button class="sc-btn-submit" type="submit">Show My Results</button>
+          <p style="color:rgba(255,255,255,0.25);font-size:0.75rem;margin:0;">No spam. Unsubscribe anytime. SatUsPhere respects your privacy.</p>
+          <button class="sc-btn-skip" type="button" onclick="skipAndShowResults()">Skip and see results without email</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCREEN 4: RESULTS -->
   <section class="min-h-screen flex flex-col items-center justify-start px-6 py-24 bg-[radial-gradient(circle_at_50%_50%,_rgba(87,66,56,0.2)_0%,_rgba(18,18,29,1)_80%)] screen" id="screen-results">
     <div class="max-w-4xl w-full">
       <!-- Score ring -->
@@ -661,30 +734,37 @@
     currentQuestion++;
     if (currentQuestion >= QUESTIONS.length) {
       gtag('event', 'quiz_complete', { event_category: 'self_custody_quiz', event_label: 'self-custody-readiness', value: score });
-      // Show email gate before results (skip if already subscribed)
-      if (window.SatuGate && !SatuGate.hasSubscribed()) {
-        SatuGate.showModal({
-          heading: 'Your readiness score is ready',
-          subtext: 'Enter your email to see your full results and get the Bitcoin Beginner Checklist - free.',
-          ctaLabel: 'Show My Results',
-          source: 'self-custody-quiz',
-          metadata: { score: score },
-          onSubmit: function() {
-            showScreen('screen-results');
-            renderResults();
-          },
-          onSkip: function() {
-            showScreen('screen-results');
-            renderResults();
-          }
-        });
-      } else {
+      // Hard gate - skip only for returning subscribers
+      if (window.SatuGate && SatuGate.hasSubscribed()) {
         showScreen('screen-results');
         renderResults();
+      } else {
+        showScreen('screen-email');
       }
     } else {
       renderQuestion();
     }
+  };
+
+  window.submitEmail = function(e) {
+    e.preventDefault();
+    var email = (document.getElementById('sc-email-input').value || '').trim();
+    if (!email || email.indexOf('@') === -1) {
+      document.getElementById('sc-email-input').focus();
+      return;
+    }
+    var btn = document.querySelector('#sc-email-form .sc-btn-submit');
+    btn.textContent = 'Sending...';
+    btn.disabled = true;
+    SatuGate.submit(email, { source: 'self-custody-quiz', score: score }, function() {
+      showScreen('screen-results');
+      renderResults();
+    });
+  };
+
+  window.skipAndShowResults = function() {
+    showScreen('screen-results');
+    renderResults();
   };
 
 
