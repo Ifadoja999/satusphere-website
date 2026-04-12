@@ -1,0 +1,47 @@
+#!/bin/bash
+# STITCH DESIGN PROTECTION HOOK
+# Blocks any commit where a tools/*.html file shrinks by more than 15%.
+# These files are Stitch-designed. Shrinking them = overwriting the design.
+# If a reduction is genuinely intentional, use: git commit --no-verify
+
+TOOLS_PATTERN="^tools/.*\.html$"
+MIN_RATIO=0.85  # File must retain at least 85% of its previous line count
+BLOCKED=0
+
+for file in $(git diff --cached --name-only | grep -E "$TOOLS_PATTERN"); do
+    # Skip new files (no previous version to compare against)
+    if ! git show HEAD:"$file" > /dev/null 2>&1; then
+        continue
+    fi
+
+    new_lines=$(git show :"$file" 2>/dev/null | wc -l | tr -d ' ')
+    old_lines=$(git show HEAD:"$file" 2>/dev/null | wc -l | tr -d ' ')
+
+    if [ "$old_lines" -le 0 ]; then
+        continue
+    fi
+
+    # Use awk for float comparison (bc may not be available)
+    shrink_ok=$(awk -v n="$new_lines" -v o="$old_lines" -v r="$MIN_RATIO" 'BEGIN { print (n/o >= r) ? "yes" : "no" }')
+
+    if [ "$shrink_ok" = "no" ]; then
+        pct=$(awk -v n="$new_lines" -v o="$old_lines" 'BEGIN { printf "%d", (1 - n/o) * 100 }')
+        echo ""
+        echo "BLOCKED: Stitch design protection triggered on $file"
+        echo "  Previous version: $old_lines lines"
+        echo "  Staged version:   $new_lines lines  (-${pct}% reduction)"
+        echo ""
+        echo "  Tool HTML files cannot shrink by more than 15% in a single commit."
+        echo "  This prevents accidentally overwriting Stitch-designed frontends."
+        echo ""
+        echo "  If this reduction is intentional, bypass with: git commit --no-verify"
+        echo ""
+        BLOCKED=1
+    fi
+done
+
+if [ "$BLOCKED" -eq 1 ]; then
+    exit 1
+fi
+
+exit 0
