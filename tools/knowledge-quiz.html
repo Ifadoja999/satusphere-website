@@ -808,8 +808,16 @@
           <div class="cta-block">
             <h2 id="cta-heading">Go from beginner to confident</h2>
             <p id="cta-body">Bitcoin From Scratch is SatUsPhere's flagship course. Animated 3D lessons that explain Bitcoin the way no book or YouTube video can.</p>
+            <ul id="cta-features" style="list-style:none;padding:0;margin:0 0 20px;display:flex;flex-direction:column;gap:8px;text-align:left;"></ul>
+            <div style="font-size:0.85rem;color:rgba(255,255,255,0.45);margin-bottom:16px;">34 animated 3D lessons &nbsp;·&nbsp; 8 PDF resources &nbsp;·&nbsp; Lightning Network bonus</div>
             <a href="https://satusphere.teachable.com/p/bitcoin-from-scratch" class="btn-cta" id="cta-btn">Get Bitcoin From Scratch</a>
-            <p class="cta-guarantee">30-day money-back guarantee. No risk.</p>
+            <p class="cta-guarantee">$97 one-time &nbsp;·&nbsp; Lifetime access &nbsp;·&nbsp; 30-day money-back guarantee</p>
+          </div>
+          <div id="next-challenge" style="display:none;background:rgba(67,226,210,0.06);border:1px solid rgba(67,226,210,0.2);border-radius:12px;padding:24px;margin-bottom:24px;text-align:center;">
+            <p style="font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#43e2d2;font-weight:700;margin:0 0 8px;">Next Challenge</p>
+            <h3 style="font-size:1.1rem;font-weight:800;color:#fff;margin:0 0 8px;">Are You Ready for Self-Custody?</h3>
+            <p style="color:rgba(255,255,255,0.5);font-size:0.875rem;margin:0 0 16px;">You know the fundamentals. Now find out if your security practices are actually ready for holding your own Bitcoin.</p>
+            <a href="https://satusphere.com/tools/self-custody-quiz" style="display:inline-block;padding:10px 28px;border-radius:999px;border:1px solid rgba(67,226,210,0.4);color:#43e2d2;font-weight:700;font-size:0.875rem;text-decoration:none;">Take the Self-Custody Quiz</a>
           </div>
           <button class="btn-retake" onclick="retakeQuiz()">Take the quiz again</button>
         </div>
@@ -1057,42 +1065,79 @@
         document.getElementById('ring-fill').style.strokeDashoffset = offset;
       }, 100);
 
-      let level, desc, ctaHeading, ctaBody;
+      let level, desc, ctaHeading, ctaBody, ctaBtnText, ctaFeatures, showNextChallenge;
 
       if (score <= 3) {
         document.getElementById('results-title').textContent = 'You scored ' + score + ' out of 10';
         document.getElementById('results-subtitle').textContent = 'A solid starting point. Most people score here before studying the fundamentals.';
         level = 'Bitcoin Beginner';
         desc = 'You have heard of Bitcoin but the core concepts are still fuzzy. That is completely normal. The fundamentals take about an hour to learn properly, and once they click, everything else follows.';
-        ctaHeading = 'The fundamentals course is exactly what you need';
-        ctaBody = 'Bitcoin From Scratch covers everything in this quiz and more, with animated 3D visuals that make the concepts stick. Designed specifically for beginners who want to get it right.';
+        ctaHeading = 'Bitcoin From Scratch is built for exactly where you are';
+        ctaBody = 'Every question you missed in this quiz is covered in depth - with 3D animations that make abstract concepts click. No jargon, no assumed knowledge. Start from zero and build a real foundation.';
+        ctaBtnText = 'Start Building Your Foundation';
+        ctaFeatures = [
+          'What Bitcoin actually is and why it exists',
+          'How wallets, keys, and the blockchain work together',
+          'Why self-custody matters and how to do it safely'
+        ];
+        showNextChallenge = false;
       } else if (score <= 6) {
         document.getElementById('results-title').textContent = 'You scored ' + score + ' out of 10';
         document.getElementById('results-subtitle').textContent = 'You know the basics. A few gaps remain that are worth filling.';
         level = 'Bitcoin Curious';
         desc = 'You understand some of what makes Bitcoin work, but there are gaps in your foundation. Getting those gaps filled now prevents confusion later when the stakes are higher.';
-        ctaHeading = 'Fill the gaps before they become problems';
-        ctaBody = 'Bitcoin From Scratch will take your partial knowledge and turn it into a complete, confident understanding. Structured lessons, no jargon, no assumptions about what you already know.';
+        ctaHeading = 'Fill the gaps before they become costly';
+        ctaBody = 'Bitcoin From Scratch takes your partial knowledge and builds it into a complete picture. Structured lessons in the exact order they need to be learned - no guessing what you missed.';
+        ctaBtnText = 'Fill the Gaps Now';
+        ctaFeatures = [
+          'Private keys, seed phrases, and what happens if you lose them',
+          'Custodial vs. non-custodial - and which one you should use',
+          'How mining, halvings, and supply work in practice'
+        ];
+        showNextChallenge = false;
       } else if (score <= 8) {
         document.getElementById('results-title').textContent = 'Strong score: ' + score + ' out of 10';
         document.getElementById('results-subtitle').textContent = 'You are on the right track. A structured review will sharpen what you know.';
         level = 'Bitcoin Student';
         desc = 'You clearly understand Bitcoin at a solid level. The areas you missed in this quiz point to concepts worth reinforcing. Confidence in self-custody and key management is worth getting right.';
         ctaHeading = 'Turn strong knowledge into practical confidence';
-        ctaBody = 'Bitcoin From Scratch covers self-custody, hardware wallets, and real-world Bitcoin security in depth. The course builds on what you already know and fills the rest in.';
+        ctaBody = 'You are close - but the gaps that remain are exactly the ones that matter most when real money is involved. Bitcoin From Scratch covers self-custody, hardware wallets, and real-world security in depth.';
+        ctaBtnText = 'Close the Gap';
+        ctaFeatures = [
+          'Hardware wallets - how they work and how to choose one',
+          'Seed phrase security and real-world backup strategies',
+          'Address verification and how to avoid the most common mistakes'
+        ];
+        showNextChallenge = false;
       } else {
         document.getElementById('results-title').textContent = 'Excellent: ' + score + ' out of 10';
         document.getElementById('results-subtitle').textContent = 'You have a strong grasp of Bitcoin fundamentals.';
         level = 'Bitcoin Aware';
-        desc = 'You scored at the top of this quiz. You understand Bitcoin at a conceptual level. The next step is making sure your practical knowledge, especially around self-custody and key management, matches your theory.';
-        ctaHeading = 'Take your knowledge from theory to practice';
-        ctaBody = 'Bitcoin From Scratch covers real-world self-custody setups, hardware wallets, seed phrase security, and more. The people who score well on quizzes but skip the practical parts are often the ones who make costly mistakes.';
+        desc = 'You scored at the top of this quiz. You understand Bitcoin at a conceptual level. The next step is making sure your practical knowledge - especially around self-custody and key management - matches your theory.';
+        ctaHeading = 'Strong score. Now go deeper.';
+        ctaBody = 'Most people who score this well have the theory down but have never built a real self-custody setup. Bitcoin From Scratch covers advanced security, hardware wallets, and the practical side that separates knowing from doing.';
+        ctaBtnText = 'Take It Further';
+        ctaFeatures = [
+          'Advanced self-custody setups and hardware wallet best practices',
+          'Passphrase wallets and layered security strategies',
+          'The Lightning Network and what comes after the basics'
+        ];
+        showNextChallenge = true;
       }
 
       document.getElementById('level-name').textContent = level;
       document.getElementById('level-desc').textContent = desc;
       document.getElementById('cta-heading').textContent = ctaHeading;
       document.getElementById('cta-body').textContent = ctaBody;
+      document.getElementById('cta-btn').textContent = ctaBtnText;
+
+      const featuresList = document.getElementById('cta-features');
+      featuresList.innerHTML = ctaFeatures.map(f =>
+        '<li style="display:flex;align-items:flex-start;gap:10px;font-size:0.875rem;color:rgba(255,255,255,0.7);">' +
+        '<span style="color:#EA6C1F;font-weight:900;flex-shrink:0;">-</span>' + f + '</li>'
+      ).join('');
+
+      document.getElementById('next-challenge').style.display = showNextChallenge ? 'block' : 'none';
 
       const breakdownList = document.getElementById('breakdown-list');
       breakdownList.innerHTML = '';
