@@ -474,20 +474,49 @@
     </div>
 </main>
 
-<!-- Email CTA -->
-<section class="py-12 px-6 text-center" id="sp-email-cta">
+<!-- Lead Magnet Card -->
+<section class="py-10 px-6" id="sp-lead-magnet">
   <div class="max-w-lg mx-auto">
-    <p class="text-xs uppercase tracking-widest text-[#ff9157] mb-3">Free Guide</p>
-    <h3 class="text-2xl font-bold text-white mb-2">Why Bitcoin Never Clicks</h3>
-    <p class="text-white/50 mb-6 text-sm">Get the exact learning sequence that makes Bitcoin finally make sense.</p>
-    <div class="flex gap-2 max-w-sm mx-auto">
-      <input id="sp-cta-email" type="email" placeholder="Your email" class="flex-1 px-4 py-2 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/30 text-sm focus:outline-none focus:border-[#ff9157]" />
-      <button onclick="SatuGate.submit(document.getElementById('sp-cta-email').value, 'halving-countdown')" class="px-5 py-2 rounded-lg bg-[#ff9157] text-black font-bold text-sm hover:opacity-90 transition">Get It</button>
+    <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.10);border-radius:16px;padding:32px 28px;text-align:center;">
+      <div style="width:44px;height:44px;border-radius:10px;background:rgba(255,145,87,0.12);border:1px solid rgba(255,145,87,0.25);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ff9157" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+      </div>
+      <p style="font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#ff9157;font-weight:600;margin:0 0 8px;">Free Guide</p>
+      <h3 style="font-size:1.25rem;font-weight:800;color:#fff;margin:0 0 8px;">The Bitcoin Beginner Guide</h3>
+      <p style="color:rgba(255,255,255,0.5);font-size:0.875rem;line-height:1.6;margin:0 0 20px;">Your step-by-step path to understanding Bitcoin fundamentals. Free, no fluff.</p>
+      <div id="sp-lm-form">
+        <div style="display:flex;gap:8px;max-width:340px;margin:0 auto;">
+          <input id="sp-lm-email" type="email" placeholder="Your email" autocomplete="email" style="flex:1;padding:10px 14px;border-radius:8px;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.15);color:#fff;font-size:0.875rem;outline:none;min-width:0;" />
+          <button onclick="spLMSubmit()" style="padding:10px 18px;border-radius:8px;background:#ff9157;color:#000;font-weight:700;font-size:0.875rem;border:none;cursor:pointer;white-space:nowrap;">Get It Free</button>
+        </div>
+        <p style="color:rgba(255,255,255,0.3);font-size:0.75rem;margin:8px 0 0;">No spam. Unsubscribe anytime.</p>
+      </div>
+      <div id="sp-lm-success" style="display:none;">
+        <p style="color:#ff9157;font-weight:600;margin:0 0 10px;">Check your inbox! Your guide is on the way.</p>
+        <a href="https://satusphere.com/bitcoin-beginner-guide.pdf" target="_blank" style="color:#ff9157;font-size:0.875rem;text-decoration:underline;">Or download it directly &rarr;</a>
+      </div>
     </div>
-    <p id="sp-cta-thanks" class="text-white/40 text-sm mt-3 hidden">Check your inbox.</p>
   </div>
 </section>
-<script>if(localStorage.getItem('sp_subscribed')){document.getElementById('sp-email-cta').style.display='none';}</script>
+<script>
+(function() {
+  function spLMSubmit() {
+    var email = (document.getElementById('sp-lm-email').value || '').trim();
+    if (!email || email.indexOf('@') === -1) { document.getElementById('sp-lm-email').focus(); return; }
+    var btn = document.querySelector('#sp-lm-form button');
+    if (btn) { btn.textContent = 'Sending...'; btn.disabled = true; }
+    SatuGate.submit(email, { source: 'halving-countdown' }, function() {
+      document.getElementById('sp-lm-form').style.display = 'none';
+      document.getElementById('sp-lm-success').style.display = 'block';
+    });
+  }
+  window.spLMSubmit = spLMSubmit;
+  if (typeof SatuGate !== 'undefined' && SatuGate.hasSubscribed()) {
+    document.getElementById('sp-lm-form').style.display = 'none';
+    document.getElementById('sp-lm-success').style.display = 'block';
+  }
+})();
+</script>
 
 <!-- Footer -->
 <footer class="bg-[#0d0d17] w-full py-12 mt-auto border-t border-white/5">
