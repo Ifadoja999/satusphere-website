@@ -28,7 +28,7 @@ export default async function handler(req, res) {
   }
 
   try {
-    const kitRes = await fetch(`https://api.kit.com/v4/forms/${formId}/subscribers`, {
+    const kitRes = await fetch('https://api.kit.com/v4/subscribers', {
       method: 'POST',
       headers: {
         'X-Kit-Api-Key': apiKey,
@@ -36,6 +36,7 @@ export default async function handler(req, res) {
       },
       body: JSON.stringify({
         email_address: email.trim().toLowerCase(),
+        form_id: Number(formId),
         fields: {
           source: source || 'unknown',
           score: score !== undefined ? String(score) : 'n/a',
