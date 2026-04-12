@@ -31,7 +31,7 @@ export default async function handler(req, res) {
     const kitRes = await fetch(`https://api.kit.com/v4/forms/${formId}/subscribers`, {
       method: 'POST',
       headers: {
-        'Authorization': `Bearer ${apiKey}`,
+        'X-Kit-Api-Key': apiKey,
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
