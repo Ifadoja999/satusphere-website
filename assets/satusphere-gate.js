@@ -5,14 +5,10 @@
  * Provides:
  *   SatuGate.hasSubscribed()          - returns true if this browser already captured email
  *   SatuGate.markSubscribed()         - set the localStorage flag
- *   SatuGate.submit(email, payload, onComplete) - POST to n8n -> Kit
+ *   SatuGate.submit(email, payload, onComplete) - POST to /api/subscribe -> Kit
  *   SatuGate.showModal(opts)          - generic overlay modal for tools without their own gate UI
  *
- * Configuration (set before this script or update inline below):
- *   SatuGate.WEBHOOK_URL              - n8n webhook that forwards to Kit
- *
- * Kit form ID and API key live in n8n (server-side), not here.
- * Update WEBHOOK_URL once the Kit forwarding workflow is live in n8n.
+ * Kit API key lives in Vercel environment (KIT_API_KEY). Not exposed client-side.
  */
 
 (function (window) {
@@ -20,9 +16,8 @@
 
   var STORAGE_KEY = 'sp_subscribed';
 
-  // n8n webhook - receives email + metadata, subscribes to Kit form, applies tags
-  // Update this URL if the n8n workflow endpoint changes
-  var WEBHOOK_URL = 'https://ireaje.app.n8n.cloud/webhook/satusphere-kit-subscribe';
+  // Vercel serverless function - receives email + metadata, subscribes to Kit
+  var WEBHOOK_URL = '/api/subscribe';
 
   var SatuGate = {
 
