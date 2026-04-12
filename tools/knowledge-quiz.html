@@ -989,30 +989,15 @@
       const isCorrect = index === q.correct;
       if (isCorrect) score++;
 
-      answers.push({ correct: isCorrect, questionIndex: currentQuestion });
+      answers.push({ correct: isCorrect, questionIndex: currentQuestion, selectedIndex: index });
 
       const buttons = document.querySelectorAll('.option-btn');
       buttons.forEach((btn, i) => {
         btn.disabled = true;
-        if (i === q.correct) btn.classList.add('correct');
-        else if (i === index && !isCorrect) btn.classList.add('wrong');
+        if (i === index) btn.classList.add('selected');
       });
-      if (index !== q.correct) {
-        buttons[index].classList.add('selected');
-      }
-
-      const feedback = document.getElementById('q-feedback');
-      feedback.style.display = 'block';
-      if (isCorrect) {
-        feedback.className = 'q-feedback correct-fb';
-        feedback.innerHTML = '<strong>Correct.</strong>' + q.explanation;
-      } else {
-        feedback.className = 'q-feedback wrong-fb';
-        feedback.innerHTML = '<strong>Not quite.</strong>' + q.explanation;
-      }
 
       document.getElementById('q-next-wrap').style.display = 'block';
-      document.getElementById('q-score-live').innerHTML = 'Score: <strong>' + score + '</strong>';
     }
 
     function nextQuestion() {
@@ -1102,13 +1087,19 @@
 
       const breakdownList = document.getElementById('breakdown-list');
       breakdownList.innerHTML = '';
+      const labels = ['A', 'B', 'C', 'D'];
       answers.forEach((a, i) => {
         const q = QUESTIONS[a.questionIndex];
         const item = document.createElement('div');
         item.className = 'breakdown-item';
-        item.innerHTML =
-          '<span class="breakdown-status ' + (a.correct ? 'ok' : 'no') + '">' + (a.correct ? 'Y' : 'N') + '</span>' +
-          '<span>' + q.question + '</span>';
+        item.style.cssText = 'display:flex;flex-direction:column;gap:6px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.07);';
+        const header = '<div style="display:flex;align-items:flex-start;gap:10px;">' +
+          '<span class="breakdown-status ' + (a.correct ? 'ok' : 'no') + '" style="flex-shrink:0;margin-top:2px;">' + (a.correct ? '✓' : '✗') + '</span>' +
+          '<span style="font-weight:600;">' + q.question + '</span></div>';
+        const yourAnswer = '<div style="font-size:0.85rem;color:' + (a.correct ? '#4ade80' : '#f87171') + ';padding-left:28px;">Your answer: ' + labels[a.selectedIndex] + '. ' + q.options[a.selectedIndex] + '</div>';
+        const correctAnswer = a.correct ? '' : '<div style="font-size:0.85rem;color:#94a3b8;padding-left:28px;">Correct: ' + labels[q.correct] + '. ' + q.options[q.correct] + '</div>';
+        const explanation = '<div style="font-size:0.85rem;color:#94a3b8;padding-left:28px;font-style:italic;">' + q.explanation + '</div>';
+        item.innerHTML = header + yourAnswer + correctAnswer + explanation;
         breakdownList.appendChild(item);
       });
     }
