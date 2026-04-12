@@ -55,17 +55,12 @@ export default async function handler(req, res) {
       return res.status(502).json({ error: 'Subscription failed. Try again.' });
     }
 
-    const subData = await subRes.json();
-    const subscriberId = subData?.subscriber?.id;
-
-    // Step 2: Add to welcome sequence
-    if (subscriberId) {
-      await fetch(`https://api.kit.com/v4/sequences/${sequenceId}/subscribers`, {
-        method: 'POST',
-        headers,
-        body: JSON.stringify({ subscriber_id: subscriberId }),
-      });
-    }
+    // Step 2: Add to welcome sequence by email_address (Kit V4 requires this, not subscriber_id)
+    await fetch(`https://api.kit.com/v4/sequences/${sequenceId}/subscribers`, {
+      method: 'POST',
+      headers,
+      body: JSON.stringify({ email_address: emailAddress }),
+    });
 
     return res.status(200).json({ ok: true });
   } catch (err) {
