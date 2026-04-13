@@ -6,7 +6,7 @@
     <loc>https://satusphere.com/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-    <lastmod>2026-04-01</lastmod>
+    <lastmod>2026-04-13</lastmod>
   </url>
 
   <!-- Learn Hub -->
@@ -14,7 +14,7 @@
     <loc>https://satusphere.com/learn</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <lastmod>2026-04-01</lastmod>
+    <lastmod>2026-04-13</lastmod>
   </url>
 
   <!-- Tier 1 SEO Pages (highest priority) -->
@@ -22,67 +22,67 @@
     <loc>https://satusphere.com/learn/what-is-bitcoin</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
-    <lastmod>2026-04-01</lastmod>
+    <lastmod>2026-04-13</lastmod>
   </url>
   <url>
     <loc>https://satusphere.com/learn/what-is-bitcoin-mining</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
-    <lastmod>2026-04-01</lastmod>
+    <lastmod>2026-04-13</lastmod>
   </url>
   <url>
     <loc>https://satusphere.com/learn/what-is-a-bitcoin-wallet</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
-    <lastmod>2026-04-01</lastmod>
+    <lastmod>2026-04-13</lastmod>
   </url>
   <url>
     <loc>https://satusphere.com/learn/what-is-the-lightning-network</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
-    <lastmod>2026-04-01</lastmod>
+    <lastmod>2026-04-13</lastmod>
   </url>
   <url>
     <loc>https://satusphere.com/learn/what-is-a-private-key</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
-    <lastmod>2026-04-01</lastmod>
+    <lastmod>2026-04-13</lastmod>
   </url>
   <url>
     <loc>https://satusphere.com/learn/how-does-blockchain-work</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
-    <lastmod>2026-04-01</lastmod>
+    <lastmod>2026-04-13</lastmod>
   </url>
   <url>
     <loc>https://satusphere.com/learn/what-is-self-custody</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
-    <lastmod>2026-04-01</lastmod>
+    <lastmod>2026-04-13</lastmod>
   </url>
   <url>
     <loc>https://satusphere.com/learn/what-is-a-utxo</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
-    <lastmod>2026-04-01</lastmod>
+    <lastmod>2026-04-13</lastmod>
   </url>
   <url>
     <loc>https://satusphere.com/learn/what-is-bitcoin-halving</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
-    <lastmod>2026-04-01</lastmod>
+    <lastmod>2026-04-13</lastmod>
   </url>
   <url>
     <loc>https://satusphere.com/learn/what-is-proof-of-work</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
-    <lastmod>2026-04-01</lastmod>
+    <lastmod>2026-04-13</lastmod>
   </url>
   <url>
     <loc>https://satusphere.com/learn/what-is-a-bitcoin-node</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
-    <lastmod>2026-04-01</lastmod>
+    <lastmod>2026-04-13</lastmod>
   </url>
 
   <!-- Tier 2 SEO Pages -->
@@ -90,55 +90,55 @@
     <loc>https://satusphere.com/learn/what-is-a-seed-phrase</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2026-04-01</lastmod>
+    <lastmod>2026-04-13</lastmod>
   </url>
   <url>
     <loc>https://satusphere.com/learn/what-is-a-hardware-wallet</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2026-04-01</lastmod>
+    <lastmod>2026-04-13</lastmod>
   </url>
   <url>
     <loc>https://satusphere.com/learn/how-do-bitcoin-transactions-work</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2026-04-01</lastmod>
+    <lastmod>2026-04-13</lastmod>
   </url>
   <url>
     <loc>https://satusphere.com/learn/what-is-bitcoin-dominance</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2026-04-01</lastmod>
+    <lastmod>2026-04-13</lastmod>
   </url>
   <url>
     <loc>https://satusphere.com/learn/what-is-the-bitcoin-whitepaper</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2026-04-01</lastmod>
+    <lastmod>2026-04-13</lastmod>
   </url>
   <url>
     <loc>https://satusphere.com/learn/who-created-bitcoin</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2026-04-01</lastmod>
+    <lastmod>2026-04-13</lastmod>
   </url>
   <url>
     <loc>https://satusphere.com/learn/what-is-a-bitcoin-address</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2026-04-01</lastmod>
+    <lastmod>2026-04-13</lastmod>
   </url>
   <url>
     <loc>https://satusphere.com/learn/how-many-bitcoins-are-there</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2026-04-01</lastmod>
+    <lastmod>2026-04-13</lastmod>
   </url>
   <url>
     <loc>https://satusphere.com/learn/what-is-a-satoshi</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2026-04-01</lastmod>
+    <lastmod>2026-04-13</lastmod>
   </url>
 
   <!-- Tier 3 SEO Pages (long-tail / AEO) -->
@@ -146,79 +146,79 @@
     <loc>https://satusphere.com/learn/can-bitcoin-be-hacked</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <lastmod>2026-04-01</lastmod>
+    <lastmod>2026-04-13</lastmod>
   </url>
   <url>
     <loc>https://satusphere.com/learn/what-is-a-bitcoin-fork</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <lastmod>2026-04-01</lastmod>
+    <lastmod>2026-04-13</lastmod>
   </url>
   <url>
     <loc>https://satusphere.com/learn/what-is-segwit</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <lastmod>2026-04-01</lastmod>
+    <lastmod>2026-04-13</lastmod>
   </url>
   <url>
     <loc>https://satusphere.com/learn/what-is-a-mempool</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <lastmod>2026-04-01</lastmod>
+    <lastmod>2026-04-13</lastmod>
   </url>
   <url>
     <loc>https://satusphere.com/learn/what-is-bitcoin-layer-2</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <lastmod>2026-04-01</lastmod>
+    <lastmod>2026-04-13</lastmod>
   </url>
   <url>
     <loc>https://satusphere.com/learn/what-is-on-chain-vs-off-chain</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <lastmod>2026-04-01</lastmod>
+    <lastmod>2026-04-13</lastmod>
   </url>
   <url>
     <loc>https://satusphere.com/learn/how-does-bitcoin-mining-difficulty-work</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <lastmod>2026-04-01</lastmod>
+    <lastmod>2026-04-13</lastmod>
   </url>
   <url>
     <loc>https://satusphere.com/learn/what-is-a-block-reward</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <lastmod>2026-04-01</lastmod>
+    <lastmod>2026-04-13</lastmod>
   </url>
   <url>
     <loc>https://satusphere.com/learn/what-is-the-bitcoin-genesis-block</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <lastmod>2026-04-01</lastmod>
+    <lastmod>2026-04-13</lastmod>
   </url>
   <url>
     <loc>https://satusphere.com/learn/what-is-a-51-percent-attack</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <lastmod>2026-04-01</lastmod>
+    <lastmod>2026-04-13</lastmod>
   </url>
   <url>
     <loc>https://satusphere.com/learn/what-is-multisig</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <lastmod>2026-04-01</lastmod>
+    <lastmod>2026-04-13</lastmod>
   </url>
   <url>
     <loc>https://satusphere.com/learn/what-is-byzantine-fault-tolerance</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <lastmod>2026-04-01</lastmod>
+    <lastmod>2026-04-13</lastmod>
   </url>
   <url>
     <loc>https://satusphere.com/learn/bitcoin-vs-blockchain</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <lastmod>2026-04-01</lastmod>
+    <lastmod>2026-04-13</lastmod>
   </url>
 
 </urlset>
