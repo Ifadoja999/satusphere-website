@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <defs>
+    <clipPath id="globe">
+      <circle cx="16" cy="16" r="14"/>
+    </clipPath>
+  </defs>
+  <!-- Dark outer ring -->
+  <circle cx="16" cy="16" r="16" fill="#090d18"/>
+  <!-- Blue left half -->
+  <rect x="2" y="2" width="14" height="28" fill="#1976d2" clip-path="url(#globe)"/>
+  <!-- Orange right half -->
+  <rect x="16" y="2" width="14" height="28" fill="#f57c00" clip-path="url(#globe)"/>
+  <!-- Subtle globe border -->
+  <circle cx="16" cy="16" r="14" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+  <!-- Circuit nodes -->
+  <circle cx="10" cy="10" r="2" fill="white"/>
+  <circle cx="22" cy="8"  r="2" fill="white"/>
+  <circle cx="8"  cy="23" r="2" fill="white"/>
+  <circle cx="24" cy="22" r="2" fill="white"/>
+  <circle cx="16" cy="16" r="2" fill="white"/>
+  <!-- Connection lines radiating from center -->
+  <line x1="10" y1="10" x2="16" y2="16" stroke="white" stroke-width="0.8" opacity="0.55"/>
+  <line x1="22" y1="8"  x2="16" y2="16" stroke="white" stroke-width="0.8" opacity="0.55"/>
+  <line x1="8"  y1="23" x2="16" y2="16" stroke="white" stroke-width="0.8" opacity="0.55"/>
+  <line x1="24" y1="22" x2="16" y2="16" stroke="white" stroke-width="0.8" opacity="0.55"/>
+</svg>
